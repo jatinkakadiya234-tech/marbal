@@ -38,7 +38,7 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6">
             <Link 
-              to="#" 
+              to="/" 
               className={`transition-all duration-300 flex items-center group ${activeItem === 'home' ? 'text-amber-400' : 'text-gray-300 hover:text-amber-300'}`}
               onClick={() => handleItemClick('home')}
             >
@@ -50,7 +50,7 @@ const Navbar = () => {
               </span>
             </Link>
             <Link 
-              to="#about" 
+              to="/about" 
               className={`transition-all duration-300 flex items-center group ${activeItem === 'about' ? 'text-amber-400' : 'text-gray-300 hover:text-amber-300'}`}
               onClick={() => handleItemClick('about')}
             >
@@ -62,7 +62,7 @@ const Navbar = () => {
               </span>
             </Link>
             <Link 
-              to="#products" 
+              to="/products" 
               className={`transition-all duration-300 flex items-center group ${activeItem === 'products' ? 'text-amber-400' : 'text-gray-300 hover:text-amber-300'}`}
               onClick={() => handleItemClick('products')}
             >
