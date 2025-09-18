@@ -614,6 +614,7 @@ return (
       `}</style>
     </section>
   );
+  
 };
 
 export default Products;
