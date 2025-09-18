@@ -1,6 +1,7 @@
 // components/Navbar.js
 import React, { useState, useEffect } from 'react';
 import { FiMenu, FiX, FiHome, FiInfo, FiBox, FiPhone, FiSearch, FiHeart } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,8 +37,8 @@ const Navbar = () => {
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6">
-            <a 
-              href="#" 
+            <Link 
+              to="#" 
               className={`transition-all duration-300 flex items-center group ${activeItem === 'home' ? 'text-amber-400' : 'text-gray-300 hover:text-amber-300'}`}
               onClick={() => handleItemClick('home')}
             >
@@ -47,9 +48,9 @@ const Navbar = () => {
               <span className="relative font-medium after:absolute after:w-0 after:h-px after:bg-amber-400 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
                 Home
               </span>
-            </a>
-            <a 
-              href="#about" 
+            </Link>
+            <Link 
+              to="#about" 
               className={`transition-all duration-300 flex items-center group ${activeItem === 'about' ? 'text-amber-400' : 'text-gray-300 hover:text-amber-300'}`}
               onClick={() => handleItemClick('about')}
             >
@@ -59,9 +60,9 @@ const Navbar = () => {
               <span className="relative font-medium after:absolute after:w-0 after:h-px after:bg-amber-400 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
                 About
               </span>
-            </a>
-            <a 
-              href="#products" 
+            </Link>
+            <Link 
+              to="#products" 
               className={`transition-all duration-300 flex items-center group ${activeItem === 'products' ? 'text-amber-400' : 'text-gray-300 hover:text-amber-300'}`}
               onClick={() => handleItemClick('products')}
             >
@@ -71,9 +72,9 @@ const Navbar = () => {
               <span className="relative font-medium after:absolute after:w-0 after:h-px after:bg-amber-400 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
                 Products
               </span>
-            </a>
-            <a 
-              href="contact" 
+            </Link>
+            <Link 
+              to="/contact" 
               className={`transition-all duration-300 flex items-center group ${activeItem === 'contact' ? 'text-amber-400' : 'text-gray-300 hover:text-amber-300'}`}
               onClick={() => handleItemClick('contact')}
             >
@@ -84,7 +85,7 @@ const Navbar = () => {
               className="relative font-medium after:absolute after:w-0 after:h-px after:bg-amber-400 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
                 Contact
               </span>
-            </a>
+            </Link>
             
             {/* Unique elements */}
             <div className="flex items-center space-x-3 ml-4 pl-4 border-l border-gray-700">
@@ -126,8 +127,8 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div className={`md:hidden bg-gray-900/98 backdrop-blur-lg overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
         <div className="px-2 pt-2 pb-6 space-y-2 sm:px-4">
-          <a 
-            href="#" 
+          <Link 
+            to="#" 
             className={`block px-4 py-3 rounded-xl transition-all duration-300 flex items-center group ${activeItem === 'home' ? 'bg-amber-400/10 text-amber-400' : 'text-gray-300 hover:bg-gray-800/50 hover:text-amber-300'}`}
             onClick={() => handleItemClick('home')}
           >
@@ -135,9 +136,9 @@ const Navbar = () => {
               <FiHome className="text-lg" />
             </div>
             <span className="font-medium">Home</span>
-          </a>
-          <a 
-            href="#about" 
+          </Link>
+          <Link 
+            to="#about" 
             className={`block px-4 py-3 rounded-xl transition-all duration-300 flex items-center group ${activeItem === 'about' ? 'bg-amber-400/10 text-amber-400' : 'text-gray-300 hover:bg-gray-800/50 hover:text-amber-300'}`}
             onClick={() => handleItemClick('about')}
           >
@@ -145,9 +146,9 @@ const Navbar = () => {
               <FiInfo className="text-lg" />
             </div>
             <span className="font-medium">About</span>
-          </a>
-          <a 
-            href="#products" 
+          </Link>
+          <Link 
+            to="#products" 
             className={`block px-4 py-3 rounded-xl transition-all duration-300 flex items-center group ${activeItem === 'products' ? 'bg-amber-400/10 text-amber-400' : 'text-gray-300 hover:bg-gray-800/50 hover:text-amber-300'}`}
             onClick={() => handleItemClick('products')}
           >
@@ -155,9 +156,9 @@ const Navbar = () => {
               <FiBox className="text-lg" />
             </div>
             <span className="font-medium">Products</span>
-          </a>
-          <a 
-            href="#contact" 
+          </Link>
+          <Link 
+            to="#contact" 
             className={`block px-4 py-3 rounded-xl transition-all duration-300 flex items-center group ${activeItem === 'contact' ? 'bg-amber-400/10 text-amber-400' : 'text-gray-300 hover:bg-gray-800/50 hover:text-amber-300'}`}
             onClick={() => handleItemClick('contact')}
           >
@@ -165,7 +166,7 @@ const Navbar = () => {
               <FiPhone className="text-lg" />
             </div>
             <span className="font-medium">Contact</span>
-          </a>
+          </Link>
           
           <div className="pt-3 mt-3 border-t border-gray-800">
             <div className="px-4 py-3">
@@ -181,7 +182,7 @@ const Navbar = () => {
               </div>
             </div>
             
-            <a href="#" className="block px-4 py-3 text-gray-300 hover:bg-gray-800/50 hover:text-amber-300 rounded-xl transition-all duration-300 flex items-center group">
+            <Link to="#" className="block px-4 py-3 text-gray-300 hover:bg-gray-800/50 hover:text-amber-300 rounded-xl transition-all duration-300 flex items-center group">
               <div className="p-1.5 rounded-lg mr-3 bg-gray-800 group-hover:bg-gray-700/50 transition-all duration-300">
                 <FiHeart className="text-lg" />
               </div>
@@ -189,7 +190,7 @@ const Navbar = () => {
               <span className="ml-auto bg-amber-500 text-gray-900 text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
                 2
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
