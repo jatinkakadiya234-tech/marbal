@@ -70,7 +70,7 @@ const Hero = () => {
 
   return (
     <>
-      <CustomCursor />
+      {/* <CustomCursor /> */}
 
       <section className="relative h-screen flex  items-center justify-center overflow-hidden">
         {/* Background Video */}
@@ -83,20 +83,7 @@ const Hero = () => {
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/hero.webm" type="video/mp4" />
-          {/* Fallback image if video cannot be played */}
-          <img
-            src="https://www.surreymarbleandgranite.co.uk/wp-content/uploads/2023/01/hero-01.jpg"
-            srcSet="
-      https://www.surreymarbleandgranite.co.uk/wp-content/uploads/2023/01/hero-01-300x167.jpg 300w,
-      https://www.surreymarbleandgranite.co.uk/wp-content/uploads/2023/01/hero-01-600x335.jpg 600w,
-      https://www.surreymarbleandgranite.co.uk/wp-content/uploads/2023/01/hero-01-768x429.jpg 768w,
-      https://www.surreymarbleandgranite.co.uk/wp-content/uploads/2023/01/hero-01-1024x571.jpg 1024w,
-      https://www.surreymarbleandgranite.co.uk/wp-content/uploads/2023/01/hero-01.jpg 1500w
-    "
-            sizes="100vw"
-            alt="Hero background"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+
         </video>
 
 

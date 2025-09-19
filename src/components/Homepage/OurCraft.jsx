@@ -130,7 +130,7 @@ const FeaturedCollections = () => {
   return (
     <section
       ref={ref}
-      className="relative py-32 bg-gradient-to-b from-gray-950 to-gray-900 overflow-hidden"
+      className="relative py-32 bg-[#F2E1C5] from-gray-950 to-gray-900 overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">

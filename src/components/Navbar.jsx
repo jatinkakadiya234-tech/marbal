@@ -1,7 +1,8 @@
 // components/Navbar.js
 import React, { useState, useEffect } from 'react';
-import { FiMenu, FiX, FiHome, FiInfo, FiBox, FiPhone, FiSearch, FiHeart } from 'react-icons/fi';
+import { FiMenu, FiX } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,87 +26,72 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-[#0E5543] backdrop-blur-md shadow-xl py-1' : 'bg-gradient-to-b from-gray-900 to-gray-850 py-2 border-b border-gray-700/30'}`}>
+      
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-around items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <span className="text-2xl font-serif font-semibold bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent tracking-wide flex items-center">
-              <div className="w-2 h-2 bg-amber-500 rounded-full mr-2 shadow-lg shadow-amber-500/30"></div>
-              Artisan Craft
-            </span>
+            <Link to="/" className="inline-flex items-center">
+              <img src={logo} alt="RGM" className="h-9 md:h-13 w-auto object-contain rounded-" />
+            </Link>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden block md:flex items-center space-x-6">
             <Link
               to="/"
-              className={`transition-all duration-300 flex items-center group ${activeItem === 'home' ? 'text-[#F2E1C5]' : 'text-[#F2E1C5] hover:text-[#F2E1C5]'}`}
+              className={`transition-all duration-300 group ${activeItem === 'home' ? 'text-white' : 'text-white hover:text-amber-300'}`}
               onClick={() => handleItemClick('home')}
             >
-              <div className={`p-1.5 rounded-lg mr-2 transition-all duration-300 ${activeItem === 'home' ? 'bg-[#F2E1C5]' : 'group-hover:bg-gray-700/50'}`}>
-                <FiHome className= {`text-lg ${activeItem === 'home' ? 'text-black' : 'text-[#F2E1C5]'}`} />
-              </div>
-              <span className="relative font-medium text-[#F2E1C5] after:absolute after:w-0 after:h-px after:bg-[#F2E1C5] after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
+              <span className="relative font-medium text-white after:absolute after:w-0 after:h-px after:bg-amber-300 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
                 Home
               </span>
             </Link>
             <Link
               to="/about"
-              className={`transition-all duration-300 flex items-center group ${activeItem === 'about' ? 'text-[#F2E1C5]' : 'text-[#F2E1C5] hover:text-[#F2E1C5]'}`}
+              className={`transition-all duration-300 group ${activeItem === 'about' ? 'text-white' : 'text-white hover:text-amber-300'}`}
               onClick={() => handleItemClick('about')}
             >
-              <div className={`p-1.5 rounded-lg mr-2 transition-all duration-300 ${activeItem === 'about' ? 'bg-[#F2E1C5]' : 'group-hover:bg-gray-700/50'}`}>
-                <FiInfo className={`text-lg ${activeItem === 'about' ? 'text-black' : 'text-[#F2E1C5]'}`} />
-              </div>
-              <span className="relative font-medium text-[#F2E1C5] after:absolute after:w-0 after:h-px after:bg-[#F2E1C5] after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
+              <span className="relative font-medium text-white after:absolute after:w-0 after:h-px after:bg-amber-300 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
                 About
               </span>
             </Link>
             <Link
-              to="/products"
-              className={`transition-all duration-300 flex items-center group ${activeItem === 'products' ? 'text-[#F2E1C5]' : 'text-[#F2E1C5] hover:text-[#F2E1C5]'}`}
-              onClick={() => handleItemClick('products')}
+              to="/OurStones"
+              className={`transition-all duration-300 group ${activeItem === 'Our Stones' ? 'text-white' : 'text-white hover:text-amber-300'}`}
+              onClick={() => handleItemClick('Our Stones')}
             >
-              <div className={`p-1.5 rounded-lg mr-2 transition-all duration-300 ${activeItem === 'products' ? 'bg-[#F2E1C5]' : 'group-hover:bg-gray-700/50'}`}>
-                <FiBox className={`text-lg ${activeItem === 'products' ? 'text-black' : 'text-[#F2E1C5]'}`} />
-              </div>
-              <span className="relative font-medium text-[#F2E1C5] after:absolute after:w-0 after:h-px after:bg-[#F2E1C5] after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
-                Products
+              <span className="relative font-medium text-white after:absolute after:w-0 after:h-px after:bg-amber-300 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
+              Our Stones
+              </span>
+            </Link>
+            <Link
+              to="/Services"
+              className={`transition-all duration-300 group ${activeItem === 'Services' ? 'text-white' : 'text-white hover:text-amber-300'}`}
+              onClick={() => handleItemClick('Services')}
+            >
+              <span className="relative font-medium text-white after:absolute after:w-0 after:h-px after:bg-amber-300 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
+              Services
               </span>
             </Link>
             <Link
               to="/contact"
-              className={`transition-all duration-300 flex items-center group ${activeItem === 'contact' ? 'text-[#F2E1C5]' : 'text-[#F2E1C5] hover:text-[#F2E1C5]'}`}
+              className={`transition-all duration-300 group ${activeItem === 'contact' ? 'text-white' : 'text-white hover:text-amber-300'}`}
               onClick={() => handleItemClick('contact')}
             >
-              <div className={`p-1.5 rounded-lg mr-2 transition-all duration-300 ${activeItem === 'contact' ? 'bg-[#F2E1C5]' : 'group-hover:bg-gray-700/50'}`}>
-                <FiPhone className={`text-lg ${activeItem === 'contact' ? 'text-black' : 'text-[#F2E1C5]'}`} />
-              </div>
               <span
-                    className="relative font-medium text-[#F2E1C5] after:absolute after:w-0 after:h-px after:bg-[#F2E1C5] after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
+                    className="relative font-medium text-white after:absolute after:w-0 after:h-px after:bg-amber-300 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
                 Contact
               </span>
             </Link>
 
             {/* Unique elements */}
-            <div className="flex items-center space-x-3 ml-4 pl-4 border-l border-gray-700">
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                  <FiSearch className="text-[#F2E1C5]" />
-                </div>
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="pl-10 pr-4 py-2 bg-[#F2E1C5] border border-[#F2E1C5] rounded-lg text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#F2E1C5]/30 focus:border-[#F2E1C5]/50 transition-all duration-300 w-40"
-                />
-              </div>
-
-              <button className="p-2.5 bg-gradient-to-br from-[#F2E1C5] to-[#F2E1C5] border border-[#F2E1C5] rounded-lg text-[#F2E1C5] hover:text-[#F2E1C5] transition-all duration-300 hover:shadow-lg hover:shadow-[#F2E1C5]/10 relative group">
-                <FiHeart className="text-lg" />
-                <span className="absolute -top-2 -right-2 bg-amber-500 text-gray-900 text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-md shadow-amber-500/20">
-                  2
-                </span>
-              </button>
+            <div className="flex items-center ml-4 pl-4 border-l border-gray-700">
+              <input
+                type="text"
+                placeholder="Search..."
+                className="px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500/50 transition-all duration-300 w-40"
+              />
             </div>
           </div>
 
@@ -149,9 +135,6 @@ const Navbar = () => {
             className={`block px-4 py-3 rounded-xl transition-all duration-300 flex items-center group ${activeItem === 'home' ? 'bg-[#F2E1C5]/10 text-[#F2E1C5]' : 'text-[#F2E1C5] hover:bg-[#F2E1C5]/50 hover:text-[#F2E1C5]'}`}
             onClick={() => handleItemClick('home')}
           >
-            <div className={`p-1.5 rounded-lg mr-3 transition-all duration-300 ${activeItem === 'home' ? 'bg-[#F2E1C5]/20' : 'group-hover:bg-gray-700/50'}`}>
-              <FiHome className={`text-lg ${activeItem === 'home' ? 'text-black' : 'text-[#F2E1C5]'}`} />
-            </div>
             <span className="font-medium">Home</span>
           </Link>
           <Link
@@ -159,9 +142,6 @@ const Navbar = () => {
             className={`block px-4 py-3 rounded-xl transition-all duration-300 flex items-center group ${activeItem === 'about' ? 'bg-[#F2E1C5]/10 text-[#F2E1C5]' : 'text-[#F2E1C5] hover:bg-[#F2E1C5]/50 hover:text-[#F2E1C5]'}`}
             onClick={() => handleItemClick('about')}
           >
-            <div className={`p-1.5 rounded-lg mr-3 transition-all duration-300 ${activeItem === 'about' ? 'bg-[#F2E1C5]/20' : 'group-hover:bg-gray-700/50'}`}>
-              <FiInfo className={`text-lg ${activeItem === 'about' ? 'text-black' : 'text-[#F2E1C5]'}`} />
-            </div>
             <span className="font-medium">About</span>
           </Link>
           <Link
@@ -169,19 +149,20 @@ const Navbar = () => {
             className={`block px-4 py-3 rounded-xl transition-all duration-300 flex items-center group ${activeItem === 'products' ? 'bg-[#F2E1C5]/10 text-[#F2E1C5]' : 'text-[#F2E1C5] hover:bg-[#F2E1C5]/50 hover:text-[#F2E1C5]'}`}
             onClick={() => handleItemClick('products')}
           >
-            <div className={`p-1.5 rounded-lg mr-3 transition-all duration-300 ${activeItem === 'products' ? 'bg-[#F2E1C5]/20' : 'group-hover:bg-gray-700/50'}`}>
-              <FiBox className={`text-lg ${activeItem === 'products' ? 'text-black' : 'text-[#F2E1C5]'}`} />
-            </div>
             <span className="font-medium">Products</span>
+          </Link>
+          <Link
+            to="/Services"
+            className={`block px-4 py-3 rounded-xl transition-all duration-300 flex items-center group ${activeItem === 'Services' ? 'bg-[#F2E1C5]/10 text-[#F2E1C5]' : 'text-[#F2E1C5] hover:bg-[#F2E1C5]/50 hover:text-[#F2E1C5]'}`}
+            onClick={() => handleItemClick('Services')}
+          >
+            <span className="font-medium">Services</span>
           </Link>
           <Link
             to="/contact"
             className={`block px-4 py-3 rounded-xl transition-all duration-300 flex items-center group ${activeItem === 'contact' ? 'bg-[#F2E1C5]/10 text-[#F2E1C5]' : 'text-[#F2E1C5] hover:bg-[#F2E1C5]/50 hover:text-[#F2E1C5]'}`}
             onClick={() => handleItemClick('contact')}
           >
-            <div className={`p-1.5 rounded-lg mr-3 transition-all duration-300 ${activeItem === 'contact' ? 'bg-[#F2E1C5]/20' : 'group-hover:bg-gray-700/50'}`}>
-              <FiPhone className={`text-lg ${activeItem === 'contact' ? 'text-black' : 'text-[#F2E1C5]'}`} />
-            </div>
             <span className="font-medium">Contact</span>
           </Link>
 
