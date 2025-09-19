@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FiArrowDown } from "react-icons/fi";
-import CustomCursor from "./CustomCursor";
+import CustomCursor from "../CustomCursor";
 
 const Hero = () => {
   const [isMuted, setIsMuted] = useState(true);
@@ -62,7 +62,7 @@ const Hero = () => {
 
   // Text sections
   const headlineWords = "Hand Crafted luxury Designs".split(" ");
-  const companyWords = "From Surrey Marble & Granite".split(" ");
+  const companyWords = "From Rishab Green Marbles".split(" ");
   const subheadingWords =
     "We are Surrey's leading supplier of marble, granite, limestone and quartz worktops, flooring and bathroom interiors for your home. Our craftsman will transform your interior to a room that you'll love and feel proud of and which will impress your family and friends.".split(
       " "
@@ -79,13 +79,29 @@ const Hero = () => {
           loop
           muted={isMuted}
           playsInline
+          poster="https://www.surreymarbleandgranite.co.uk/wp-content/uploads/2023/01/hero-01.jpg"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          {/* <source src="/hero.webm" type="video/mp4" /> */}
+          <source src="/hero.webm" type="video/mp4" />
+          {/* Fallback image if video cannot be played */}
+          <img
+            src="https://www.surreymarbleandgranite.co.uk/wp-content/uploads/2023/01/hero-01.jpg"
+            srcSet="
+      https://www.surreymarbleandgranite.co.uk/wp-content/uploads/2023/01/hero-01-300x167.jpg 300w,
+      https://www.surreymarbleandgranite.co.uk/wp-content/uploads/2023/01/hero-01-600x335.jpg 600w,
+      https://www.surreymarbleandgranite.co.uk/wp-content/uploads/2023/01/hero-01-768x429.jpg 768w,
+      https://www.surreymarbleandgranite.co.uk/wp-content/uploads/2023/01/hero-01-1024x571.jpg 1024w,
+      https://www.surreymarbleandgranite.co.uk/wp-content/uploads/2023/01/hero-01.jpg 1500w
+    "
+            sizes="100vw"
+            alt="Hero background"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
         </video>
 
+
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/70 via-gray-900/50 to-gray-900/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0E5543]/30 via-[#0E5543]/20 to-transparent" />
 
         {/* Pattern Overlay */}
         <div className="absolute inset-0 opacity-20 bg-[url(
@@ -140,9 +156,8 @@ const Hero = () => {
                   key={i}
                   variants={wordVariants}
                   custom={i + headlineWords.length}
-                  className={`text-lg md:text-xl lg:text-5xl font-light mr-2 ${
-                    i === 1 || i === 2 ? "text-[#0E5543]" : "text-gray-300"
-                  }`}
+                  className={`text-2xl md:text-4xl lg:text-5xl font-light mr-2 ${i === 1 || i === 2 ? "text-[#0E5543]" : "text-gray-300"
+                    }`}
                   style={{
                     fontFamily: "'Cormorant Garamond', serif",
                     fontWeight: i === 1 || i === 2 ? 500 : 300,
