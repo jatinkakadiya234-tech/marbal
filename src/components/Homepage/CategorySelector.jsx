@@ -3,16 +3,30 @@ import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 
 const categories = [
   {
-    name: "Furniture",
-    image: "furniture.jpg",
-    description: "Elegant pieces that transform your living space",
+    name: "Uni",
+    image: "https://www.aclassmarble.co.in/images/media_images/240826063842_blog_image.jpg",
+    description: "Trusted, everyday quality with clean design and great value",
     color: "from-amber-900/30 to-amber-700/20",
     accent: "amber"
   },
   {
-    name: "Kitchen",
-    image: "kitchen.jpg",
-    description: "Premium culinary tools and design solutions",
+    name: "Premium",
+    image: "https://www.aclassmarble.co.in/images/media_images/240730075202_blog_image.jpg",
+    description: "Luxury-grade craftsmanship with refined finishes and lasting durability",
+    color: "from-amber-800/30 to-amber-600/20",
+    accent: "amber"
+  },
+  {
+    name: "Bedroom",
+    image: "https://lifencolors.in/cdn/shop/products/81d868_98eaac6a5ff84298b9e0728109e46c67_mv2_4af1098c-41e8-4961-9e60-a2e76d62a28a.jpg?v=1753695316",
+    description: "Comfort-first designs to elevate your personal sanctuary",
+    color: "from-amber-900/30 to-amber-700/20",
+    accent: "amber"
+  },
+  {
+    name: "Kitchen+",
+    image: "https://www.ilpiccolodesign.it/wp-content/uploads/2022/08/kitchen-island-black-marble.jpg",
+    description: "Enhanced utility and style for modern cooking spaces",
     color: "from-amber-800/30 to-amber-600/20",
     accent: "amber"
   },
@@ -101,7 +115,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
         <div
           className="absolute inset-0 opacity-90"
           style={{
-            backgroundImage: "url('/cozyroom.jpg')",
+            backgroundImage: "url('https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=1600&q=80')",
             backgroundSize: 'cover',        // fills container
             backgroundPosition: 'center',   // centers image
             backgroundRepeat: 'no-repeat'   // no tiling
@@ -141,7 +155,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
           >
             <div className="w-1 h-1 bg-amber-500 rounded-full mr-2"></div>
             <span className="text-xs font-medium tracking-widest uppercase text-amber-400/90 letter-spacing-4">
-              Exclusive Collections
+              Top Product Categories
             </span>
           </motion.div>
 
@@ -151,7 +165,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            Curated <span className="italic font-light text-amber-300">Luxury</span> Selections
+            Top Product Categories
           </motion.h2>
 
           <motion.div
@@ -167,12 +181,12 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            Discover meticulously crafted pieces that redefine luxury and functionality
+            Explore Uni for smart essentials and Premium for exclusive, refined finishes
           </motion.p>
         </motion.div>
 
         {/* Enhanced 3D Cards Container */}
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-6 relative justify-center items-center">
+        <div className="flex flex-col lg:flex-row lg:flex-wrap gap-10 lg:gap-6 relative justify-center items-center">
           {categories.map((cat, index) => {
             const { x, y, rotateX, rotateY, handleMouseMove, handleMouseLeave } = use3dEffect(cardsRef[index]);
 

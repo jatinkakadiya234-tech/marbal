@@ -93,15 +93,15 @@ const About = () => {
           <div className="inline-flex items-center justify-center mb-4">
             <div className="w-2 h-2 bg-amber-500 rounded-full mr-2"></div>
             <span className={`text-sm font-semibold tracking-widest uppercase ${theme === 'dark' ? 'text-amber-400' : 'text-amber-600'}`}>
-              Our Legacy
+              Why Choose RGM?
             </span>
           </div>
           <h2 className={`text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-            Crafting <span className="italic font-light">Timeless</span> Excellence
+            Why Choose RGM?
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto mb-8"></div>
           <p className={`text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-            For over two decades, we've been transforming spaces with our exceptional craftsmanship and attention to detail.
+            Choose RGM for trusted quality, on-time delivery, and service that stands behind every product.
           </p>
         </motion.div>
         
