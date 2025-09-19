@@ -148,8 +148,9 @@ const Hero = () => {
         muted={isMuted}
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
+        
       >
-        <source src="/hero.mp4" type="video/mp4" />
+        <source src="/hero.webm" type="video/mp4" />
       </video>
 
       {/* Gradient Overlay */}
