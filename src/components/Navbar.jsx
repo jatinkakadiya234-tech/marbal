@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-gray-900/95 backdrop-blur-md shadow-xl py-1' : 'bg-gradient-to-b from-gray-900 to-gray-850 py-2 border-b border-gray-700/30'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-[#0E5543] backdrop-blur-md shadow-xl py-1' : 'bg-gradient-to-b from-gray-900 to-gray-850 py-2 border-b border-gray-700/30'}`}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -39,50 +39,50 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-6">
             <Link
               to="/"
-              className={`transition-all duration-300 flex items-center group ${activeItem === 'home' ? 'text-amber-400' : 'text-gray-300 hover:text-amber-300'}`}
+              className={`transition-all duration-300 flex items-center group ${activeItem === 'home' ? 'text-[#F2E1C5]' : 'text-[#F2E1C5] hover:text-[#F2E1C5]'}`}
               onClick={() => handleItemClick('home')}
             >
-              <div className={`p-1.5 rounded-lg mr-2 transition-all duration-300 ${activeItem === 'home' ? 'bg-amber-400/10' : 'group-hover:bg-gray-700/50'}`}>
-                <FiHome className="text-lg" />
+              <div className={`p-1.5 rounded-lg mr-2 transition-all duration-300 ${activeItem === 'home' ? 'bg-[#F2E1C5]' : 'group-hover:bg-gray-700/50'}`}>
+                <FiHome className= {`text-lg ${activeItem === 'home' ? 'text-black' : 'text-[#F2E1C5]'}`} />
               </div>
-              <span className="relative font-medium after:absolute after:w-0 after:h-px after:bg-amber-400 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
+              <span className="relative font-medium text-[#F2E1C5] after:absolute after:w-0 after:h-px after:bg-[#F2E1C5] after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
                 Home
               </span>
             </Link>
             <Link
               to="/about"
-              className={`transition-all duration-300 flex items-center group ${activeItem === 'about' ? 'text-amber-400' : 'text-gray-300 hover:text-amber-300'}`}
+              className={`transition-all duration-300 flex items-center group ${activeItem === 'about' ? 'text-[#F2E1C5]' : 'text-[#F2E1C5] hover:text-[#F2E1C5]'}`}
               onClick={() => handleItemClick('about')}
             >
-              <div className={`p-1.5 rounded-lg mr-2 transition-all duration-300 ${activeItem === 'about' ? 'bg-amber-400/10' : 'group-hover:bg-gray-700/50'}`}>
-                <FiInfo className="text-lg" />
+              <div className={`p-1.5 rounded-lg mr-2 transition-all duration-300 ${activeItem === 'about' ? 'bg-[#F2E1C5]' : 'group-hover:bg-gray-700/50'}`}>
+                <FiInfo className={`text-lg ${activeItem === 'about' ? 'text-black' : 'text-[#F2E1C5]'}`} />
               </div>
-              <span className="relative font-medium after:absolute after:w-0 after:h-px after:bg-amber-400 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
+              <span className="relative font-medium text-[#F2E1C5] after:absolute after:w-0 after:h-px after:bg-[#F2E1C5] after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
                 About
               </span>
             </Link>
             <Link
               to="/products"
-              className={`transition-all duration-300 flex items-center group ${activeItem === 'products' ? 'text-amber-400' : 'text-gray-300 hover:text-amber-300'}`}
+              className={`transition-all duration-300 flex items-center group ${activeItem === 'products' ? 'text-[#F2E1C5]' : 'text-[#F2E1C5] hover:text-[#F2E1C5]'}`}
               onClick={() => handleItemClick('products')}
             >
-              <div className={`p-1.5 rounded-lg mr-2 transition-all duration-300 ${activeItem === 'products' ? 'bg-amber-400/10' : 'group-hover:bg-gray-700/50'}`}>
-                <FiBox className="text-lg" />
+              <div className={`p-1.5 rounded-lg mr-2 transition-all duration-300 ${activeItem === 'products' ? 'bg-[#F2E1C5]' : 'group-hover:bg-gray-700/50'}`}>
+                <FiBox className={`text-lg ${activeItem === 'products' ? 'text-black' : 'text-[#F2E1C5]'}`} />
               </div>
-              <span className="relative font-medium after:absolute after:w-0 after:h-px after:bg-amber-400 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
+              <span className="relative font-medium text-[#F2E1C5] after:absolute after:w-0 after:h-px after:bg-[#F2E1C5] after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
                 Products
               </span>
             </Link>
             <Link
               to="/contact"
-              className={`transition-all duration-300 flex items-center group ${activeItem === 'contact' ? 'text-amber-400' : 'text-gray-300 hover:text-amber-300'}`}
+              className={`transition-all duration-300 flex items-center group ${activeItem === 'contact' ? 'text-[#F2E1C5]' : 'text-[#F2E1C5] hover:text-[#F2E1C5]'}`}
               onClick={() => handleItemClick('contact')}
             >
-              <div className={`p-1.5 rounded-lg mr-2 transition-all duration-300 ${activeItem === 'contact' ? 'bg-amber-400/10' : 'group-hover:bg-gray-700/50'}`}>
-                <FiPhone className="text-lg" />
+              <div className={`p-1.5 rounded-lg mr-2 transition-all duration-300 ${activeItem === 'contact' ? 'bg-[#F2E1C5]' : 'group-hover:bg-gray-700/50'}`}>
+                <FiPhone className={`text-lg ${activeItem === 'contact' ? 'text-black' : 'text-[#F2E1C5]'}`} />
               </div>
               <span
-                className="relative font-medium after:absolute after:w-0 after:h-px after:bg-amber-400 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
+                    className="relative font-medium text-[#F2E1C5] after:absolute after:w-0 after:h-px after:bg-[#F2E1C5] after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
                 Contact
               </span>
             </Link>
@@ -91,16 +91,16 @@ const Navbar = () => {
             <div className="flex items-center space-x-3 ml-4 pl-4 border-l border-gray-700">
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                  <FiSearch className="text-gray-400" />
+                  <FiSearch className="text-[#F2E1C5]" />
                 </div>
                 <input
                   type="text"
                   placeholder="Search..."
-                  className="pl-10 pr-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500/50 transition-all duration-300 w-40"
+                  className="pl-10 pr-4 py-2 bg-[#F2E1C5] border border-[#F2E1C5] rounded-lg text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#F2E1C5]/30 focus:border-[#F2E1C5]/50 transition-all duration-300 w-40"
                 />
               </div>
 
-              <button className="p-2.5 bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-lg text-amber-400 hover:text-amber-300 transition-all duration-300 hover:shadow-lg hover:shadow-amber-400/10 relative group">
+              <button className="p-2.5 bg-gradient-to-br from-[#F2E1C5] to-[#F2E1C5] border border-[#F2E1C5] rounded-lg text-[#F2E1C5] hover:text-[#F2E1C5] transition-all duration-300 hover:shadow-lg hover:shadow-[#F2E1C5]/10 relative group">
                 <FiHeart className="text-lg" />
                 <span className="absolute -top-2 -right-2 bg-amber-500 text-gray-900 text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-md shadow-amber-500/20">
                   2
@@ -111,12 +111,12 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-3">
-            <button className="p-2 text-amber-400 bg-gray-800 rounded-lg">
+            <button className="p-2 text-[#F2E1C5] bg-[#F2E1C5] rounded-lg">
               <FiSearch className="text-lg" />
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2.5 bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 text-amber-400 rounded-lg focus:outline-none transition-all duration-300 hover:shadow-lg hover:shadow-amber-400/10"
+              className="p-2.5 bg-gradient-to-br from-[#F2E1C5] to-[#F2E1C5] border border-[#F2E1C5] text-[#F2E1C5] rounded-lg focus:outline-none transition-all duration-300 hover:shadow-lg hover:shadow-[#F2E1C5]/10"
             >
               {isOpen ? <FiX size={20} /> : <FiMenu size={20} />}
             </button>
@@ -124,46 +124,63 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <div className={`md:hidden bg-gray-900/98 backdrop-blur-lg overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-        <div className="px-2 pt-2 pb-6 space-y-2 sm:px-4">
+      {/* Mobile Sidebar (Right Drawer) */}
+      {isOpen && (
+        <div
+          className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+      <div
+        className={`md:hidden fixed top-0 right-0 h-screen w-80 bg-gray-900/95 z-50 shadow-2xl transform transition-transform duration-500 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+      >
+        <div className="flex items-center justify-between px-4 h-16 border-b border-gray-800">
+          <span className="text-[#F2E1C5] font-semibold tracking-wide">Menu</span>
+          <button
+            onClick={() => setIsOpen(false)}
+            className="p-2 rounded-lg text-[#F2E1C5] hover:bg-gray-800/60 transition"
+          >
+            <FiX size={20} />
+          </button>
+        </div>
+        <div className="px-2 pt-2 pb-6 space-y-2 sm:px-4 overflow-y-auto h-[calc(100%-4rem)]">
           <Link
             to="/"
-            className={`block px-4 py-3 rounded-xl transition-all duration-300 flex items-center group ${activeItem === 'home' ? 'bg-amber-400/10 text-amber-400' : 'text-gray-300 hover:bg-gray-800/50 hover:text-amber-300'}`}
+            className={`block px-4 py-3 rounded-xl transition-all duration-300 flex items-center group ${activeItem === 'home' ? 'bg-[#F2E1C5]/10 text-[#F2E1C5]' : 'text-[#F2E1C5] hover:bg-[#F2E1C5]/50 hover:text-[#F2E1C5]'}`}
             onClick={() => handleItemClick('home')}
           >
-            <div className={`p-1.5 rounded-lg mr-3 transition-all duration-300 ${activeItem === 'home' ? 'bg-amber-400/20' : 'group-hover:bg-gray-700/50'}`}>
-              <FiHome className="text-lg" />
+            <div className={`p-1.5 rounded-lg mr-3 transition-all duration-300 ${activeItem === 'home' ? 'bg-[#F2E1C5]/20' : 'group-hover:bg-gray-700/50'}`}>
+              <FiHome className={`text-lg ${activeItem === 'home' ? 'text-black' : 'text-[#F2E1C5]'}`} />
             </div>
             <span className="font-medium">Home</span>
           </Link>
           <Link
             to="/about"
-            className={`block px-4 py-3 rounded-xl transition-all duration-300 flex items-center group ${activeItem === 'about' ? 'bg-amber-400/10 text-amber-400' : 'text-gray-300 hover:bg-gray-800/50 hover:text-amber-300'}`}
+            className={`block px-4 py-3 rounded-xl transition-all duration-300 flex items-center group ${activeItem === 'about' ? 'bg-[#F2E1C5]/10 text-[#F2E1C5]' : 'text-[#F2E1C5] hover:bg-[#F2E1C5]/50 hover:text-[#F2E1C5]'}`}
             onClick={() => handleItemClick('about')}
           >
-            <div className={`p-1.5 rounded-lg mr-3 transition-all duration-300 ${activeItem === 'about' ? 'bg-amber-400/20' : 'group-hover:bg-gray-700/50'}`}>
-              <FiInfo className="text-lg" />
+            <div className={`p-1.5 rounded-lg mr-3 transition-all duration-300 ${activeItem === 'about' ? 'bg-[#F2E1C5]/20' : 'group-hover:bg-gray-700/50'}`}>
+              <FiInfo className={`text-lg ${activeItem === 'about' ? 'text-black' : 'text-[#F2E1C5]'}`} />
             </div>
             <span className="font-medium">About</span>
           </Link>
           <Link
             to="/products"
-            className={`block px-4 py-3 rounded-xl transition-all duration-300 flex items-center group ${activeItem === 'products' ? 'bg-amber-400/10 text-amber-400' : 'text-gray-300 hover:bg-gray-800/50 hover:text-amber-300'}`}
+            className={`block px-4 py-3 rounded-xl transition-all duration-300 flex items-center group ${activeItem === 'products' ? 'bg-[#F2E1C5]/10 text-[#F2E1C5]' : 'text-[#F2E1C5] hover:bg-[#F2E1C5]/50 hover:text-[#F2E1C5]'}`}
             onClick={() => handleItemClick('products')}
           >
-            <div className={`p-1.5 rounded-lg mr-3 transition-all duration-300 ${activeItem === 'products' ? 'bg-amber-400/20' : 'group-hover:bg-gray-700/50'}`}>
-              <FiBox className="text-lg" />
+            <div className={`p-1.5 rounded-lg mr-3 transition-all duration-300 ${activeItem === 'products' ? 'bg-[#F2E1C5]/20' : 'group-hover:bg-gray-700/50'}`}>
+              <FiBox className={`text-lg ${activeItem === 'products' ? 'text-black' : 'text-[#F2E1C5]'}`} />
             </div>
             <span className="font-medium">Products</span>
           </Link>
           <Link
             to="/contact"
-            className={`block px-4 py-3 rounded-xl transition-all duration-300 flex items-center group ${activeItem === 'contact' ? 'bg-amber-400/10 text-amber-400' : 'text-gray-300 hover:bg-gray-800/50 hover:text-amber-300'}`}
+            className={`block px-4 py-3 rounded-xl transition-all duration-300 flex items-center group ${activeItem === 'contact' ? 'bg-[#F2E1C5]/10 text-[#F2E1C5]' : 'text-[#F2E1C5] hover:bg-[#F2E1C5]/50 hover:text-[#F2E1C5]'}`}
             onClick={() => handleItemClick('contact')}
           >
-            <div className={`p-1.5 rounded-lg mr-3 transition-all duration-300 ${activeItem === 'contact' ? 'bg-amber-400/20' : 'group-hover:bg-gray-700/50'}`}>
-              <FiPhone className="text-lg" />
+            <div className={`p-1.5 rounded-lg mr-3 transition-all duration-300 ${activeItem === 'contact' ? 'bg-[#F2E1C5]/20' : 'group-hover:bg-gray-700/50'}`}>
+              <FiPhone className={`text-lg ${activeItem === 'contact' ? 'text-black' : 'text-[#F2E1C5]'}`} />
             </div>
             <span className="font-medium">Contact</span>
           </Link>
@@ -172,7 +189,7 @@ const Navbar = () => {
             <div className="px-4 py-3">
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                  <FiSearch className="text-gray-400" />
+                  <FiSearch className="text-[#F2E1C5]" />
                 </div>
                 <input
                   type="text"

@@ -3,14 +3,8 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import CategorySelector from "./components/CategorySelector";
-import Products from "./components/Products";
-import Footer from "./components/Footer";
-import FeaturedCollections from "./components/OurCraft";
-import ContactUs from "./components/ContactUs"; // import contact page
-
+import Homepage from "./components/Homepage/Homepage";
+import Footer from "./components/Footer"
 function App() {
   const [activeCategory, setActiveCategory] = useState("furniture");
 
@@ -20,35 +14,9 @@ function App() {
         <Navbar />
 
         <Routes>
-          {/* Homepage */}
-          <Route
-            path="/"
-            element={
-              <>
-                <Hero />
-                <About />
-                <CategorySelector
-                  activeCategory={activeCategory}
-                  setActiveCategory={setActiveCategory}
-                />
-                <Products category={activeCategory} />
-                <FeaturedCollections />
-                <Footer />
-              </>
-            }
-          />
-
-          {/* Contact Page */}
-          <Route
-            path="/contact"
-            element={
-              <>
-                <ContactUs />
-                <Footer /> 
-              </>
-            }
-          />
+          <Route path="/" element={<Homepage />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
