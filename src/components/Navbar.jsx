@@ -1,6 +1,6 @@
 // components/Navbar.js
 import React, { useState, useEffect } from 'react';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiHeart, FiMenu, FiSearch, FiX } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 

@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import Homepage from "./components/Homepage/Homepage";
 import Footer from "./components/Footer"
 import ContactUs from "./components/Contact/ContactUs";
-import CustomCursor from "./components/CustomCursor";
+import About from "./components/About/Aboutpage";
 
 function App() {
   const [activeCategory, setActiveCategory] = useState("furniture");
@@ -20,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
       </div>
