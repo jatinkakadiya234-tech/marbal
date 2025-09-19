@@ -62,7 +62,7 @@ const Hero = () => {
 
   // Text sections
   const headlineWords = "Hand Crafted luxury Designs".split(" ");
-  const companyWords = "From Surrey Marble & Granite".split(" ");
+  const companyWords = "From Rishab Green Marbles".split(" ");
   const subheadingWords =
     "We are Surrey's leading supplier of marble, granite, limestone and quartz worktops, flooring and bathroom interiors for your home. Our craftsman will transform your interior to a room that you'll love and feel proud of and which will impress your family and friends.".split(
       " "
@@ -79,13 +79,16 @@ const Hero = () => {
           loop
           muted={isMuted}
           playsInline
+          poster="https://www.surreymarbleandgranite.co.uk/wp-content/uploads/2023/01/hero-01.jpg"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/hero.webm" type="video/mp4" />
+
         </video>
 
+
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/70 via-gray-900/50 to-gray-900/80" />
+   <div className="absolute inset-0 bg-gradient-to-b from-gray-900/70 via-gray-900/50 to-gray-900/80" />
 
         {/* Pattern Overlay */}
         <div className="absolute inset-0 opacity-20 bg-[url(
@@ -101,7 +104,7 @@ const Hero = () => {
         >
           {/* === Separator 1 (top line) === */}
           <motion.div
-            className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#0E5543]/60 to-transparent mb-6 mx-auto"
+            className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#F2E1C5]/60 to-transparent mb-6 mx-auto"
             variants={itemVariants}
           />
 
@@ -123,7 +126,7 @@ const Hero = () => {
                     fontStyle: i === 1 ? "italic" : "normal",
                     background:
                       i === 1
-                        ? "linear-gradient(135deg, #0E5543 0%, #0E5543 100%)"
+                        ? "linear-gradient(135deg, #F2E1C5 0%, #F2E1C5 100%)"
                         : "linear-gradient(135deg, #FFFFFF 0%, #F3F4F6 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
@@ -140,9 +143,8 @@ const Hero = () => {
                   key={i}
                   variants={wordVariants}
                   custom={i + headlineWords.length}
-                  className={`text-lg md:text-xl lg:text-5xl font-light mr-2 ${
-                    i === 1 || i === 2 ? "text-[#0E5543]" : "text-gray-300"
-                  }`}
+                  className={`text-2xl md:text-4xl lg:text-5xl font-light mr-2 ${i === 1 || i === 2 ? "text-[#F2E1C5]" : "text-gray-300"
+                    }`}
                   style={{
                     fontFamily: "'Cormorant Garamond', serif",
                     fontWeight: i === 1 || i === 2 ? 500 : 300,
@@ -156,7 +158,7 @@ const Hero = () => {
 
           {/* === Separator 2 (middle line) === */}
           <motion.div
-            className="w-32 h-0.5 bg-gradient-to-r from-[#0E5543]/80 to-transparent mx-auto my-6"
+            className="w-32 h-0.5 bg-gradient-to-r from-[#F2E1C5]/80 to-transparent mx-auto my-6"
             variants={itemVariants}
           />
 
@@ -180,7 +182,7 @@ const Hero = () => {
 
           {/* === Separator 3 (bottom line) === */}
           <motion.div
-            className="w-16 h-0.5 bg-gradient-to-r from-transparent via-[#0E5543]/60 to-transparent mx-auto mt-10"
+            className="w-16 h-0.5 bg-gradient-to-r from-transparent via-[#F2E1C5]/60 to-transparent mx-auto mt-10"
             variants={itemVariants}
           />
         </motion.div>
@@ -193,7 +195,7 @@ const Hero = () => {
             initial="hidden"
             animate={["visible", "bounce"]}
           >
-            <FiArrowDown className="text-[#0E5543] w-6 h-6" />
+            <FiArrowDown className="text-[#F2E1C5] w-6 h-6" />
           </motion.div>
         )}
       </section>
