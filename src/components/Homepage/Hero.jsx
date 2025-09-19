@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FiArrowDown } from "react-icons/fi";
-import CustomCursor from "./CustomCursor";
+import CustomCursor from "../CustomCursor";
 
 const Hero = () => {
   const [isMuted, setIsMuted] = useState(true);
@@ -70,7 +70,7 @@ const Hero = () => {
 
   return (
     <>
-      <CustomCursor />
+      {/* <CustomCursor /> */}
 
       <section className="relative h-screen flex  items-center justify-center overflow-hidden">
         {/* Background Video */}
@@ -81,7 +81,7 @@ const Hero = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          {/* <source src="/hero.webm" type="video/mp4" /> */}
+          <source src="/hero.webm" type="video/mp4" />
         </video>
 
         {/* Gradient Overlay */}

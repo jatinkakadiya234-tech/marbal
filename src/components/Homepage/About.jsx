@@ -80,7 +80,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className={`py-24 ${theme === 'dark' ? 'bg-gray-900' : 'bg-amber-50'} transition-colors duration-500 overflow-hidden`}>
+    <section id="about" className={`py-24 ${theme === 'dark' ? 'bg-[#F2E1C5]' : 'bg-[#F2E1C5]'} transition-colors duration-500 overflow-hidden`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div 
