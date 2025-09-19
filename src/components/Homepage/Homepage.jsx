@@ -3,6 +3,7 @@ import Hero from './Hero'
 import About from './About'
 import CategorySelector from './CategorySelector'
 import FeaturedCollections from './OurCraft'
+import Productcollection from './Productcollection'
 
 const Homepage = () => {
   return (
@@ -11,7 +12,7 @@ const Homepage = () => {
    <About/>
    <CategorySelector/>
    <FeaturedCollections/>
-   
+   <Productcollection />
    </>
   )
 }
