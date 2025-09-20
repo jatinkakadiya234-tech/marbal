@@ -4,6 +4,7 @@ import About from './About'
 import CategorySelector from './CategorySelector'
 import FeaturedCollections from './OurCraft'
 import Productcollection from './Productcollection'
+import Application from './Application'
 
 const Homepage = () => {
   return (
@@ -11,8 +12,9 @@ const Homepage = () => {
    <Hero />
    <About/>
    <CategorySelector/>
-   <FeaturedCollections/>
+   {/* <FeaturedCollections/> */}
    <Productcollection />
+   <Application/>
    </>
   )
 }
