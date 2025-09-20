@@ -1,6 +1,7 @@
 // components/Footer.js
 import React from 'react';
-import { FiPhone, FiMail, FiMapPin, FiFacebook, FiTwitter, FiInstagram, FiHeart, FiSend, FiArrowUp } from 'react-icons/fi';
+import { FiPhone, FiMail, FiMapPin, FiFacebook, FiTwitter, FiInstagram, 
+         FiHeart, FiSend, FiArrowUp, FiClock, FiAward } from 'react-icons/fi';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -8,47 +9,69 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="bg-gradient-to-b from-gray-900 to-gray-950 text-white pt-20 pb-10 relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600"></div>
-      <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-amber-400/5 blur-xl"></div>
-      <div className="absolute -bottom-20 -left-10 w-40 h-40 rounded-full bg-amber-600/5 blur-xl"></div>
+    <footer className="bg-[#0E5543] text-[#F2E1C5] relative overflow-hidden">
+      {/* Premium decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#F2E1C5] to-transparent"></div>
+      <div className="absolute top-10 left-1/4 w-48 h-48 rounded-full bg-[#F2E1C5]/5 blur-lg"></div>
+      <div className="absolute bottom-20 right-1/3 w-56 h-56 rounded-full bg-[#1A6B56]/30 blur-xl"></div>
+      
+      {/* Marble texture pattern */}
+      <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRjJFMUM1IiBzdHJva2Utd2lkdGg9IjEiIGQ9Ik0wIDBhNjAgNjAgMCAxIDAgNjAgNjBhNjAgNjAgMCAxIDAgLTYwIC02MHoiLz48L3N2Zz4=')]"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Company Info */}
-          <div className="lg:pr-6">
-            <div className="flex items-center mb-6">
-              <div className="w-2 h-2 bg-amber-500 rounded-full mr-2 shadow-lg shadow-amber-500/30"></div>
-              <h3 className="text-2xl font-serif font-bold bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">Artisan Craft</h3>
+        {/* Premium badge section */}
+        <div className="flex flex-wrap justify-center gap-6 py-8 border-b border-[#F2E1C5]/20">
+          {['Premium Quality', '25+ Years Experience', 'Worldwide Shipping'].map((item, index) => (
+            <div key={index} className="flex items-center text-sm bg-[#0E5543] border border-[#F2E1C5]/20 rounded-full px-4 py-2">
+              <FiAward className="text-[#F2E1C5] mr-2" size={14} />
+              <span className="text-[#F2E1C5]">{item}</span>
             </div>
-            <p className="text-gray-400 mb-6 leading-relaxed">
-              Creating beautiful spaces with our handcrafted ceramics, furniture, and kitchen designs since 1995. Each piece tells a story of craftsmanship and passion.
+          ))}
+        </div>
+
+        {/* Main footer content */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 py-16">
+          {/* Brand column */}
+          <div className="md:col-span-4">
+            <div className="flex items-center mb-6">
+              <div className="w-3 h-3 bg-[#F2E1C5] rounded-full mr-3 shadow-lg shadow-[#F2E1C5]/30"></div>
+              <h3 className="text-2xl font-serif font-bold text-[#F2E1C5]">Rishab Green Marbles</h3>
+            </div>
+            <p className="text-[#F2E1C5]/80 mb-6 leading-relaxed max-w-md">
+              Providing premium quality natural marbles and stones since 1995. Our products transform spaces with elegance and timeless beauty that lasts generations.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="p-2.5 bg-gray-800 hover:bg-amber-500 rounded-lg text-gray-300 hover:text-gray-900 transition-all duration-300 group">
-                <FiFacebook size={18} className="group-hover:scale-110 transition-transform" />
-              </a>
-              <a href="#" className="p-2.5 bg-gray-800 hover:bg-amber-500 rounded-lg text-gray-300 hover:text-gray-900 transition-all duration-300 group">
-                <FiTwitter size={18} className="group-hover:scale-110 transition-transform" />
-              </a>
-              <a href="#" className="p-2.5 bg-gray-800 hover:bg-amber-500 rounded-lg text-gray-300 hover:text-gray-900 transition-all duration-300 group">
-                <FiInstagram size={18} className="group-hover:scale-110 transition-transform" />
-              </a>
+            
+            {/* Social links */}
+            <div className="flex space-x-3 mb-8">
+              {[
+                { icon: <FiFacebook size={18} />, color: 'hover:bg-[#F2E1C5] hover:text-[#0E5543]' },
+                { icon: <FiTwitter size={18} />, color: 'hover:bg-[#F2E1C5] hover:text-[#0E5543]' },
+                { icon: <FiInstagram size={18} />, color: 'hover:bg-[#F2E1C5] hover:text-[#0E5543]' }
+              ].map((item, index) => (
+                <a key={index} href="#" className={`p-3 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg text-[#F2E1C5] transition-all duration-300 group ${item.color}`}>
+                  {item.icon}
+                </a>
+              ))}
+            </div>
+            
+            {/* Certificate badge */}
+            <div className="inline-flex items-center bg-[#1A6B56] border border-[#F2E1C5]/30 rounded-lg px-4 py-3">
+              <FiAward className="text-[#F2E1C5] mr-2" size={16} />
+              <span className="text-sm text-[#F2E1C5]">Certified Premium Quality</span>
             </div>
           </div>
           
           {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-amber-500">Quick Links</h3>
-            <ul className="space-y-3">
-              {['Home', 'About Us', 'Products', 'Gallery', 'Blog'].map((item, index) => (
+          <div className="md:col-span-2">
+            <h3 className="text-lg font-semibold mb-6 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-[#F2E1C5]">Explore</h3>
+            <ul className="space-y-4">
+              {['Home', 'About Us', 'Products', 'Gallery', 'Projects'].map((item, index) => (
                 <li key={index}>
                   <a 
-                    href={item === 'Home' ? '#' : `#${item.toLowerCase().replace(' ', '-')}`} 
-                    className="text-gray-400 hover:text-amber-400 transition-all duration-300 flex items-center group"
+                    href="#" 
+                    className="text-[#F2E1C5]/80 hover:text-[#F2E1C5] transition-all duration-300 flex items-center group"
                   >
-                    <span className="w-1.5 h-1.5 bg-amber-500/0 rounded-full mr-3 group-hover:bg-amber-500 transition-all duration-300"></span>
+                    <span className="w-2 h-2 bg-[#F2E1C5]/0 rounded-full mr-3 group-hover:bg-[#F2E1C5] transition-all duration-300"></span>
                     {item}
                   </a>
                 </li>
@@ -57,16 +80,16 @@ const Footer = () => {
           </div>
           
           {/* Products */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-amber-500">Our Products</h3>
-            <ul className="space-y-3">
-              {['Ceramics', 'Furniture', 'Kitchenware', 'Custom Orders', 'New Arrivals'].map((item, index) => (
+          <div className="md:col-span-2">
+            <h3 className="text-lg font-semibold mb-6 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-[#F2E1C5]">Products</h3>
+            <ul className="space-y-4">
+              {['Green Marble', 'White Marble', 'Granite', 'Sandstone', 'Custom Designs'].map((item, index) => (
                 <li key={index}>
                   <a 
                     href="#" 
-                    className="text-gray-400 hover:text-amber-400 transition-all duration-300 flex items-center group"
+                    className="text-[#F2E1C5]/80 hover:text-[#F2E1C5] transition-all duration-300 flex items-center group"
                   >
-                    <span className="w-1.5 h-1.5 bg-amber-500/0 rounded-full mr-3 group-hover:bg-amber-500 transition-all duration-300"></span>
+                    <span className="w-2 h-2 bg-[#F2E1C5]/0 rounded-full mr-3 group-hover:bg-[#F2E1C5] transition-all duration-300"></span>
                     {item}
                   </a>
                 </li>
@@ -74,68 +97,74 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Contact Info & Newsletter */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-amber-500">Stay Updated</h3>
+          {/* Contact Info */}
+          <div className="md:col-span-4">
+            <h3 className="text-lg font-semibold mb-6 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-[#F2E1C5]">Contact Us</h3>
+            
+            <div className="bg-[#1A6B56]/30 border border-[#F2E1C5]/10 rounded-xl p-6 mb-8">
+              <ul className="space-y-5">
+                <li className="flex items-start">
+                  <div className="p-2 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg mr-4 flex-shrink-0">
+                    <FiMapPin className="text-[#F2E1C5]" size={16} />
+                  </div>
+                  <span className="text-[#F2E1C5]/80">123 Marble Street, Stone City, 10001</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="p-2 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg mr-4 flex-shrink-0">
+                    <FiPhone className="text-[#F2E1C5]" size={16} />
+                  </div>
+                  <span className="text-[#F2E1C5]/80">+1 (555) 123-4567</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="p-2 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg mr-4 flex-shrink-0">
+                    <FiMail className="text-[#F2E1C5]" size={16} />
+                  </div>
+                  <span className="text-[#F2E1C5]/80">info@rishabgreenmarbles.com</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="p-2 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg mr-4 flex-shrink-0">
+                    <FiClock className="text-[#F2E1C5]" size={16} />
+                  </div>
+                  <span className="text-[#F2E1C5]/80">Mon-Sat: 9AM - 6PM</span>
+                </li>
+              </ul>
+            </div>
             
             {/* Newsletter Subscription */}
-            <div className="mb-8">
-              <p className="text-gray-400 mb-4">Subscribe to our newsletter for exclusive updates</p>
+            <div>
+              <h3 className="text-lg font-semibold mb-4 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-[#F2E1C5]">Newsletter</h3>
               <div className="flex">
                 <input 
                   type="email" 
                   placeholder="Your email address" 
-                  className="flex-grow px-4 py-3 bg-gray-800 border border-gray-700 rounded-l-lg text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500/50 transition-all duration-300"
+                  className="flex-grow px-4 py-3 bg-[#0E5543] border border-[#F2E1C5]/30 rounded-l-lg text-sm text-[#F2E1C5] focus:outline-none focus:ring-2 focus:ring-[#F2E1C5]/30 focus:border-[#F2E1C5]/50 transition-all duration-300 placeholder-[#F2E1C5]/50"
                 />
-                <button className="px-4 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 font-medium rounded-r-lg hover:shadow-lg hover:shadow-amber-500/20 transition-all duration-300 flex items-center">
+                <button className="px-4 bg-[#F2E1C5] text-[#0E5543] font-medium rounded-r-lg hover:opacity-90 transition-all duration-300 flex items-center">
                   <FiSend size={16} />
                 </button>
               </div>
             </div>
-            
-            {/* Contact Info */}
-            <h3 className="text-lg font-semibold mb-4 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-amber-500">Contact Us</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <div className="p-2 bg-gray-800 rounded-lg mr-3 mt-0.5">
-                  <FiMapPin className="text-amber-500" size={16} />
-                </div>
-                <span className="text-gray-400">123 Design Street, Creative City, 10001</span>
-              </li>
-              <li className="flex items-start">
-                <div className="p-2 bg-gray-800 rounded-lg mr-3 mt-0.5">
-                  <FiPhone className="text-amber-500" size={16} />
-                </div>
-                <span className="text-gray-400">+1 (555) 123-4567</span>
-              </li>
-              <li className="flex items-start">
-                <div className="p-2 bg-gray-800 rounded-lg mr-3 mt-0.5">
-                  <FiMail className="text-amber-500" size={16} />
-                </div>
-                <span className="text-gray-400">info@artisancraft.com</span>
-              </li>
-            </ul>
           </div>
         </div>
         
         {/* Bottom section */}
-        <div className="border-t border-gray-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm flex items-center">
-            © {new Date().getFullYear()} Artisan Craft. Crafted with <FiHeart className="text-amber-500 mx-1" /> in New York.
+        <div className="border-t border-[#F2E1C5]/20 pt-8 pb-10 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-[#F2E1C5]/60 text-sm flex items-center">
+            © {new Date().getFullYear()} Rishab Green Marbles. Crafted with <FiHeart className="text-[#F2E1C5] mx-1" /> in India.
           </p>
           
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-500 hover:text-amber-400 transition-colors duration-300 text-sm">Privacy Policy</a>
-            <a href="#" className="text-gray-500 hover:text-amber-400 transition-colors duration-300 text-sm">Terms of Service</a>
-            <a href="#" className="text-gray-500 hover:text-amber-400 transition-colors duration-300 text-sm">Shipping Info</a>
+            <a href="#" className="text-[#F2E1C5]/60 hover:text-[#F2E1C5] transition-colors duration-300 text-sm">Privacy Policy</a>
+            <a href="#" className="text-[#F2E1C5]/60 hover:text-[#F2E1C5] transition-colors duration-300 text-sm">Terms of Service</a>
+            <a href="#" className="text-[#F2E1C5]/60 hover:text-[#F2E1C5] transition-colors duration-300 text-sm">Shipping Info</a>
           </div>
         </div>
       </div>
       
-      {/* Scroll to top button */}
+      {/* Premium scroll to top button */}
       <button 
         onClick={scrollToTop}
-        className="fixed bottom-6 right-6 p-3 bg-gradient-to-br from-amber-500 to-amber-600 text-gray-900 rounded-lg shadow-lg hover:shadow-xl hover:shadow-amber-500/30 transition-all duration-300 z-40 group"
+        className="fixed bottom-6 right-6 p-3 bg-[#F2E1C5] text-[#0E5543] rounded-lg shadow-lg hover:shadow-xl hover:shadow-[#F2E1C5]/30 transition-all duration-300 z-40 group border border-[#F2E1C5]/30"
         aria-label="Scroll to top"
       >
         <FiArrowUp size={20} className="group-hover:-translate-y-0.5 transition-transform" />
