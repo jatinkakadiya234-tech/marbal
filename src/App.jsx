@@ -10,14 +10,20 @@ import About from "./components/About/Aboutpage";
 import ServicesShowcase from "./components/Services/ServicesPage";
 import ProjectsGallery from "./components/Gallery/GalleryPage";
 import TechnologyShowcase from "./components/StateOfArt/StateOfArtPage";
+import NotFoundPage from "./components/Errors/NotFoundPage";
+import ScrollToTop from "./components/Helper/NavigateScrolletop";
 
 function App() {
   const [activeCategory, setActiveCategory] = useState("furniture");
 
+
+
   return (
     <Router>
-           
+
       <div className="App bg-red-300">
+        <ScrollToTop />
+
         <Navbar />
 
         <Routes>
@@ -27,6 +33,11 @@ function App() {
           <Route path="/services" element={<ServicesShowcase />} />
           <Route path="/gallery" element={<ProjectsGallery />} />
           <Route path="/state-of-the-art" element={<TechnologyShowcase />} />
+
+
+
+          {/* Catch-All 404 Route */}
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer />
       </div>
