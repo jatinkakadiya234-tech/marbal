@@ -69,7 +69,7 @@ export default function ShowcasingTimeline() {
   }, [isInView]);
 
   return (
-    <section ref={ref} className="relative min-h-screen py-24 overflow-hidden bg-[#F2E1C5]">
+    <section ref={ref} className="relative min-h-screen py-36 overflow-hidden bg-[#F2E1C5]">
       {/* Animated background elements */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-b from-[#F2E1C5] to-[#e8d5b5]"

@@ -102,7 +102,7 @@ export default function ServicesShowcase() {
     : services.filter(service => service.category === activeCategory);
 
   return (
-    <section className="relative min-h-screen py-20 bg-[#F2E1C5] overflow-hidden">
+    <section className="relative min-h-screen py-36a bg-[#F2E1C5] overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#0E5543]/5 rounded-full"></div>
