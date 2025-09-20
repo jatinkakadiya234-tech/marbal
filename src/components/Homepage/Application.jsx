@@ -87,9 +87,7 @@ export default function Application() {
                 </p>
 
                 {/* Connector for mobile */}
-                {index !== steps.length - 1 && (
-                  <div className="lg:hidden absolute -bottom-4 w-1 h-8 bg-[#0E5543]"></div>
-                )}
+               
               </div>
             ))}
           </div>
