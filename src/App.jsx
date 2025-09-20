@@ -8,6 +8,8 @@ import Footer from "./components/Footer"
 import ContactUs from "./components/Contact/ContactUs";
 import About from "./components/About/Aboutpage";
 import ServicesShowcase from "./components/Services/ServicesPage";
+import ProjectsGallery from "./components/Gallery/GalleryPage";
+import TechnologyShowcase from "./components/StateOfArt/StateOfArtPage";
 
 function App() {
   const [activeCategory, setActiveCategory] = useState("furniture");
@@ -23,7 +25,8 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<ServicesShowcase />} />
-
+          <Route path="/gallery" element={<ProjectsGallery />} />
+          <Route path="/state-of-the-art" element={<TechnologyShowcase />} />
         </Routes>
         <Footer />
       </div>
