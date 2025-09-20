@@ -60,23 +60,20 @@ const About = () => {
   };
 
   return (
-
-    <section id="about" className={`py-24 ${theme === 'dark' ? 'bg-[#F2E1C5]' : 'bg-[#F2E1C5]'} transition-colors duration-500 overflow-hidden`}>
-
-
+    <section id="about" className={`py-12 md:py-16 lg:py-24 ${theme === 'dark' ? 'bg-[#F2E1C5]' : 'bg-[#F2E1C5]'} transition-colors duration-500 overflow-hidden`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-16 lg:mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center justify-center mb-4">
+          <div className="inline-flex items-center justify-center mb-3 md:mb-4">
             <div className="w-2 h-2 bg-[#0E5543] rounded-full mr-2"></div>
             <span
-              className={`text-sm font-semibold tracking-widest uppercase ${
+              className={`text-xs md:text-sm font-semibold tracking-widest uppercase ${
                 theme === "dark" ? "text-[#8DB596]" : "text-[#0E5543]"
               }`}
             >
@@ -84,15 +81,15 @@ const About = () => {
             </span>
           </div>
           <h2
-            className={`text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 ${
+            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold mb-4 md:mb-6 ${
               theme === "dark" ? "text-white" : "text-gray-900"
             }`}
           >
            Rishab Green Marbles
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#0E5543] to-[#8DB596] mx-auto mb-8"></div>
+          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-[#0E5543] to-[#8DB596] mx-auto mb-6 md:mb-8"></div>
           <p
-            className={`text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${
+            className={`text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed ${
               theme === "dark" ? "text-gray-300" : "text-gray-700"
             }`}
           >
@@ -102,66 +99,66 @@ const About = () => {
         </motion.div>
 
         {/* Content */}
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+        <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16">
           {/* Images Grid */}
           <motion.div
-            className="lg:w-1/2"
+            className="lg:w-1/2 w-full"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-4 md:gap-6">
               <motion.div
-                className="relative rounded-2xl overflow-hidden group"
+                className="relative rounded-xl md:rounded-2xl overflow-hidden group"
                 variants={imageVariants}
                 whileHover="hover"
               >
                 <img
                   src={about1}
                   alt="Marble Installation"
-                  className="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0E5543]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </motion.div>
 
               <motion.div
-                className="relative rounded-2xl overflow-hidden group mt-12"
+                className="relative rounded-xl md:rounded-2xl overflow-hidden group mt-8 md:mt-12"
                 variants={imageVariants}
                 whileHover="hover"
               >
                 <img
                   src={about2}
                   alt="Granite Worktop"
-                  className="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0E5543]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </motion.div>
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-4 md:gap-6 mt-4 md:mt-6">
               <motion.div
-                className="relative rounded-2xl overflow-hidden group"
+                className="relative rounded-xl md:rounded-2xl overflow-hidden group"
                 variants={imageVariants}
                 whileHover="hover"
               >
                 <img
                   src={about3}
                   alt="Bathroom Interior"
-                  className="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0E5543]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </motion.div>
 
               <motion.div
-                className="relative rounded-2xl overflow-hidden group mt-12"
+                className="relative rounded-xl md:rounded-2xl overflow-hidden group mt-8 md:mt-12"
                 variants={imageVariants}
                 whileHover="hover"
               >
                 <img
                   src={about4}
                   alt="Flooring Design"
-                  className="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0E5543]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </motion.div>
@@ -170,15 +167,15 @@ const About = () => {
 
           {/* Text Content */}
           <motion.div
-            className="lg:w-1/2"
+            className="lg:w-1/2 w-full"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="mb-10">
+            <div className="mb-8 md:mb-10">
               <h3
-                className={`text-2xl md:text-3xl font-serif font-semibold mb-8 ${
+                className={`text-xl md:text-2xl lg:text-3xl font-serif font-semibold mb-6 md:mb-8 ${
                   theme === "dark" ? "text-white" : "text-gray-900"
                 }`}
               >
@@ -187,9 +184,9 @@ const About = () => {
               </h3>
 
               <p
-                className={`text-lg leading-relaxed ${
+                className={`text-base md:text-lg leading-relaxed ${
                   theme === "dark" ? "text-gray-300" : "text-gray-700"
-                } mb-6`}
+                } mb-4 md:mb-6`}
               >
                 At Surrey Marble & Granite, we believe that your living spaces should
                 reflect your personality and provide both beauty and functionality.
@@ -198,7 +195,7 @@ const About = () => {
               </p>
 
               <p
-                className={`text-lg leading-relaxed ${
+                className={`text-base md:text-lg leading-relaxed ${
                   theme === "dark" ? "text-gray-300" : "text-gray-700"
                 }`}
               >
@@ -211,13 +208,13 @@ const About = () => {
 
             {/* Features List */}
             <motion.div
-              className="mb-12"
+              className="mb-8 md:mb-10 lg:mb-12"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <div className="grid gap-4">
+              <div className="grid gap-3 md:gap-4">
                 {[
                   "Premium quality marble, granite & quartz",
                   "Expert measurement & installation",
@@ -231,15 +228,15 @@ const About = () => {
                     custom={i}
                   >
                     <FiCheckCircle
-                      className={`mr-3 ${
+                      className={`mr-3 flex-shrink-0 ${
                         theme === "dark" ? "text-[#8DB596]" : "text-[#0E5543]"
                       }`}
-                      size={20}
+                      size={18}
                     />
                     <span
-                      className={
+                      className={`text-sm md:text-base ${
                         theme === "dark" ? "text-gray-300" : "text-gray-700"
-                      }
+                      }`}
                     >
                       {feature}
                     </span>
@@ -250,7 +247,7 @@ const About = () => {
 
             {/* Stats */}
             <motion.div
-              className="grid grid-cols-3 gap-8 text-center"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 lg:gap-8 text-center"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -263,7 +260,7 @@ const About = () => {
               ].map((stat, i) => (
                 <motion.div
                   key={i}
-                  className={`p-6 rounded-2xl ${
+                  className={`p-4 md:p-5 lg:p-6 rounded-xl md:rounded-2xl ${
                     theme === "dark" ? "bg-gray-800" : "bg-white"
                   } shadow-lg border border-[#0E5543]/10`}
                   variants={statVariants}
@@ -271,20 +268,20 @@ const About = () => {
                   whileHover={{ y: -5, transition: { duration: 0.3 } }}
                 >
                   <stat.icon
-                    className={`mx-auto mb-4 ${
+                    className={`mx-auto mb-2 md:mb-3 lg:mb-4 ${
                       theme === "dark" ? "text-[#8DB596]" : "text-[#0E5543]"
                     }`}
-                    size={32}
+                    size={24}
                   />
                   <div
-                    className={`text-2xl md:text-3xl font-bold mb-2 ${
+                    className={`text-xl md:text-2xl lg:text-3xl font-bold mb-1 md:mb-2 ${
                       theme === "dark" ? "text-white" : "text-[#0E5543]"
                     }`}
                   >
                     {stat.value}
                   </div>
                   <div
-                    className={`text-sm font-medium ${
+                    className={`text-xs md:text-sm font-medium ${
                       theme === "dark" ? "text-gray-400" : "text-gray-600"
                     }`}
                   >
