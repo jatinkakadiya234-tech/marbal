@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+"use client"
+
+import { useState, useEffect } from "react"
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi"
 
 const ProductCollection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [direction, setDirection] = useState('next'); // Track slide direction for animation
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [direction, setDirection] = useState("next")
+  const [itemsPerView, setItemsPerView] = useState(1)
 
   const products = [
     {
@@ -12,230 +15,172 @@ const ProductCollection = () => {
       name: "Carrara Bianco",
       size: "60x60 cm",
       price: "£89.99",
-      image: "https://images.unsplash.com/photo-1588206471333-b52336b439e6?auto=format&fit=crop&w=500&q=60"
+      image: "https://images.unsplash.com/photo-1588206471333-b52336b439e6?auto=format&fit=crop&w=500&q=60",
     },
     {
       id: 2,
       name: "Calacatta Gold",
       size: "60x120 cm",
       price: "£129.99",
-      image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=500&q=60"
+      image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=500&q=60",
     },
     {
       id: 3,
       name: "Statuario Venato",
       size: "75x150 cm",
       price: "£149.99",
-      image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=500&q=60"
+      image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=500&q=60",
     },
     {
       id: 4,
       name: "Emperador Dark",
       size: "60x60 cm",
       price: "£79.99",
-      image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=500&q=60"
+      image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=500&q=60",
     },
-  ];
+  ]
+
+  // Responsive itemsPerView
+  useEffect(() => {
+    const updateItems = () => {
+      if (window.innerWidth < 768) {
+        setItemsPerView(1) // mobile
+      } else if (window.innerWidth < 1024) {
+        setItemsPerView(2) // tablet
+      } else {
+        setItemsPerView(4) // desktop
+      }
+    }
+    updateItems()
+    window.addEventListener("resize", updateItems)
+    return () => window.removeEventListener("resize", updateItems)
+  }, [])
 
   // Autoplay
   useEffect(() => {
-    let interval;
+    let interval
     if (isAutoPlaying) {
       interval = setInterval(() => {
-        handleNextSlide();
-      }, 4000);
+        handleNextSlide()
+      }, 4000)
     }
-    return () => interval && clearInterval(interval);
-  }, [isAutoPlaying, currentIndex]);
+    return () => interval && clearInterval(interval)
+  }, [isAutoPlaying, currentIndex])
 
   const handleNextSlide = () => {
-    setDirection('next');
-    setCurrentIndex((prev) =>
-      prev === products.length - 1 ? 0 : prev + 1
-    );
-  };
+    setDirection("next")
+    setCurrentIndex((prev) => (prev + itemsPerView) % products.length)
+  }
 
   const handlePrevSlide = () => {
-    setDirection('prev');
-    setCurrentIndex((prev) =>
-      prev === 0 ? products.length - 1 : prev - 1
-    );
-  };
+    setDirection("prev")
+    setCurrentIndex((prev) => (prev - itemsPerView + products.length) % products.length)
+  }
 
-  const itemsPerView = 4;
-  const total = products.length;
-  const windowItems = Array.from({ length: itemsPerView }, (_, i) =>
-    products[(currentIndex + i) % total]
-  );
+  const total = products.length
+  const windowItems = Array.from({ length: itemsPerView }, (_, i) => products[(currentIndex + i) % total])
 
   return (
-    <section className="py-10 bg-[#F2E1C5]">
+    <section className="py-16 bg-[#F2E1C5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="relative">
-          {/* --- MOBILE (1 product only, no bg on arrows) --- */}
-          <div className="block md:hidden relative flex items-center justify-between px-2 sm:px-4">
-            <button
-              onClick={handlePrevSlide}
-              style={{backgroundColor:"transparent",borderColor:"transparent"}}
-              className="p-1 sm:p-2 text-gray-600 hover:text-black z-10 mb-20 transition-transform duration-300 hover:scale-110"
-            >
-              <FiChevronLeft className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
-            </button>
-
-            <div className="text-center mx-2 sm:mx-4 flex-1 overflow-hidden">
-              <div 
-                className="w-full aspect-square overflow-hidden rounded-lg shadow-sm relative"
-                key={currentIndex}
-              >
-                <img
-                  src={products[currentIndex].image}
-                  alt={products[currentIndex].name}
-                  className={`w-full h-full object-cover transition-all duration-500 ease-in-out ${
-                    direction === 'next' 
-                      ? 'animate-fade-in-right' 
-                      : 'animate-fade-in-left'
-                  }`}
-                />
-              </div>
-              <div className="mt-3 sm:mt-4 space-y-1">
-                <div className="text-sm sm:text-base font-medium text-gray-800 transition-all duration-300">
-                  {products[currentIndex].name}
-                </div>
-                <div className="text-xs sm:text-sm text-gray-600 transition-all duration-300">
-                  {products[currentIndex].size}
-                </div>
-              </div>
-              <div className="mt-2 sm:mt-3">
-                <div className="text-sm sm:text-base text-gray-800 font-semibold transition-all duration-300">
-                  {products[currentIndex].price} / Job Lot
-                </div>
-                <div className="text-[10px] sm:text-[11px] text-gray-500 mt-0.5 sm:mt-1 transition-all duration-300">
-                  (including VAT)
-                </div>
-              </div>
-            </div>
-
-            <button
-              onClick={handleNextSlide}
-              style={{borderColor:"transparent",backgroundColor:"transparent"}}
-              className="p-1 sm:p-2 text-gray-600 hover:text-black z-10 mb-20 transition-transform duration-300 hover:scale-110"
-            >
-              <FiChevronRight className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
-            </button>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Premium Marble Collection</h2>
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
+            Discover our exquisite range of premium marble tiles, carefully selected for their exceptional quality and
+            timeless elegance. Perfect for creating sophisticated spaces.
+          </p>
+          <div className="mt-6 flex items-center justify-center gap-2 text-sm text-gray-600">
+            <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
+            <span>Free UK Delivery on Orders Over £200</span>
+            <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
+            <span>Professional Installation Available</span>
+            <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
           </div>
+        </div>
 
-          {/* --- DESKTOP GRID (4 products) --- */}
-          <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="relative flex items-center justify-center">
+          {/* left arrow */}
+          <button
+            onClick={handlePrevSlide}
+            style={{ backgroundColor: "transparent", borderColor: "transparent" }}
+            className="p-2 text-gray-600 hover:text-black z-10 mb-20 transition-transform duration-300 hover:scale-110"
+          >
+            <FiChevronLeft className="w-7 h-7 md:w-9 md:h-9" />
+          </button>
+
+          {/* products grid */}
+          <div
+            className={`grid gap-6 sm:gap-8 flex-1 px-4`}
+            style={{ gridTemplateColumns: `repeat(${itemsPerView}, minmax(0, 1fr))` }}
+          >
             {windowItems.map((p, index) => (
-              <div 
-                key={`${p.id}-${currentIndex}`} 
-                className="text-center transition-all duration-500 ease-in-out transform"
+              <div
+                key={`${p.id}-${currentIndex}`}
+                className="text-center transition-all duration-500 ease-in-out"
                 style={{
-                  animation: `${direction === 'next' ? 'fade-in-up' : 'fade-in-down'} 0.5s ease-out`,
+                  animation: `${direction === "next" ? "fade-in-up" : "fade-in-down"} 0.5s ease-out`,
                   animationDelay: `${index * 0.1}s`,
-                  animationFillMode: 'both'
+                  animationFillMode: "both",
                 }}
               >
                 <div className="w-full aspect-square overflow-hidden rounded-lg shadow-sm">
                   <img
-                    src={p.image}
+                    src={p.image || "/placeholder.svg"}
                     alt={p.name}
                     className="w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-110"
                   />
                 </div>
-                <div className="mt-4 space-y-1">
-                  <div className="text-sm md:text-base text-gray-800 font-medium transition-colors duration-300">
-                    {p.name}
-                  </div>
-                  <div className="text-xs text-gray-600 transition-colors duration-300">{p.size}</div>
+                <div className="mt-3 space-y-1">
+                  <div className="text-sm md:text-base font-medium text-gray-800">{p.name}</div>
+                  <div className="text-xs text-gray-600">{p.size}</div>
                 </div>
-                <div className="mt-3">
-                  <div className="text-gray-800 font-semibold transition-colors duration-300">
-                    {p.price} / Job Lot
-                  </div>
-                  <div className="text-[11px] text-gray-500 mt-1 transition-colors duration-300">
-                    (including VAT)
-                  </div>
+                <div className="mt-2">
+                  <div className="text-sm md:text-base font-semibold text-gray-800">{p.price}</div>
+                  <div className="text-[11px] text-gray-500">(including VAT)</div>
                 </div>
+               
               </div>
             ))}
           </div>
 
-          {/* desktop arrows */}
-          <button
-            onClick={handlePrevSlide}
-            style={{backgroundColor:"transparent", color:"GrayText"}}
-            className="hidden md:flex absolute -left-16 top-40 -translate-y-1/2 p-1 transition-all duration-300 hover:scale-110 hover:text-gray-800"
-          >
-            <FiChevronLeft className="w-9 h-9" />
-          </button>
-
+          {/* right arrow */}
           <button
             onClick={handleNextSlide}
-            style={{backgroundColor:"transparent", color:"GrayText"}}
-            className="hidden md:flex absolute -right-16 top-40 -translate-y-1/2 p-1 transition-all duration-300 hover:scale-110 hover:text-gray-800"
+            style={{ backgroundColor: "transparent", borderColor: "transparent" }}
+            className="p-2 text-gray-600 hover:text-black z-10 mb-20 transition-transform duration-300 hover:scale-110"
           >
-            <FiChevronRight className="w-9 h-9" />
+            <FiChevronRight className="w-7 h-7 md:w-9 md:h-9" />
           </button>
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-sm text-gray-600 mb-4">
+            Need help choosing the perfect marble? Our design consultants are here to assist you.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button className="px-6 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors duration-200">
+              View Full Collection
+            </button>
+            <button className="px-6 py-3 border-2 border-gray-900 text-white font-medium rounded-lg hover:bg-gray-900 hover:text-white transition-colors duration-200">
+              Book Consultation
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Add CSS animations */}
+      {/* animations */}
       <style jsx>{`
-        @keyframes fade-in-right {
-          from {
-            opacity: 0;
-            transform: translateX(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        
-        @keyframes fade-in-left {
-          from {
-            opacity: 0;
-            transform: translateX(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        
         @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
         }
-        
         @keyframes fade-in-down {
-          from {
-            opacity: 0;
-            transform: translateY(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .animate-fade-in-right {
-          animation: fade-in-right 0.5s ease-out forwards;
-        }
-        
-        .animate-fade-in-left {
-          animation: fade-in-left 0.5s ease-out forwards;
+          from { opacity: 0; transform: translateY(-20px); }
+          to { opacity: 1; transform: translateY(0); }
         }
       `}</style>
     </section>
-  );
-};
+  )
+}
 
-export default ProductCollection;
+export default ProductCollection
