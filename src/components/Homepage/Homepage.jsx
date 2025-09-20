@@ -5,6 +5,8 @@ import CategorySelector from './CategorySelector'
 import FeaturedCollections from './OurCraft'
 import Productcollection from './Productcollection'
 import Application from './Application'
+import CuttingProcessSection from './CuttingProcessSection'
+import Testimonials from './Testimonials'
 
 const Homepage = () => {
   return (
@@ -15,6 +17,8 @@ const Homepage = () => {
    {/* <FeaturedCollections/> */}
    <Productcollection />
    <Application/>
+   <CuttingProcessSection/>
+   <Testimonials/>
    </>
   )
 }
