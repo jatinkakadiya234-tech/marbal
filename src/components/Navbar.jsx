@@ -46,16 +46,17 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="inline-flex items-center">
-              <img
-                src={logo}
-                alt="RGM"
-                className="h-10 sm:h-12 w-auto object-contain"
-                style={{ borderRadius: "30%" }}
-              />
-            </Link>
-          </div>
+         <div className="flex-shrink-0 flex items-center">
+  <Link to="/" className="inline-flex items-center">
+    <img
+      src={logo}
+      alt="RGM"
+      className="h-10 sm:h-12 w-10 sm:w-12 object-cover"
+      style={{ borderRadius: "50%" }}
+    />
+  </Link>
+</div>
+
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
