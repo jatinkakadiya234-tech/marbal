@@ -91,15 +91,7 @@ const Navbar = () => {
                 />
               </div>
 
-              <Link
-                to="/cart"
-                className="relative p-2 text-white hover:text-amber-300 transition-colors duration-300"
-              >
-                <FiShoppingCart size={20} />
-                <span className="absolute -top-1 -right-1 bg-amber-500 text-gray-900 text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-                  2
-                </span>
-              </Link>
+             
             </div>
           </div>
 

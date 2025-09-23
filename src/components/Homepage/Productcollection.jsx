@@ -1,186 +1,134 @@
-"use client"
+import React from 'react'
+import { useKeenSlider } from "keen-slider/react"
+import "keen-slider/keen-slider.min.css"
+import { FaRupeeSign, FaCheckCircle, FaGlobe, FaLeaf } from "react-icons/fa"
 
-import { useState, useEffect } from "react"
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi"
-
-const ProductCollection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-  const [direction, setDirection] = useState("next")
-  const [itemsPerView, setItemsPerView] = useState(1)
-
-  const products = [
+export default function ProductCollection() {
+  const [sliderRef] = useKeenSlider(
     {
-      id: 1,
-      name: "Carrara Bianco",
-      size: "60x60 cm",
-      price: "£89.99",
-      image: "https://images.unsplash.com/photo-1588206471333-b52336b439e6?auto=format&fit=crop&w=500&q=60",
+      loop: true,
+      mode: "free",
+      slides: { origin: "center", perView: 1.2, spacing: 15 },
+      breakpoints: {
+        "(min-width: 640px)": { slides: { perView: 2, spacing: 20 } },
+        "(min-width: 1024px)": { slides: { perView: 2.5, spacing: 30 } }
+      },
+    },
+    [
+      (slider) => {
+        let timeout;
+        let mouseOver = false;
+        function clearNextTimeout() { clearTimeout(timeout) }
+        function nextTimeout() {
+          clearTimeout(timeout)
+          if (mouseOver) return
+          timeout = setTimeout(() => { slider.next() }, 3500) // autoplay 3.5s
+        }
+        slider.on("created", () => {
+          slider.container.addEventListener("mouseover", () => { mouseOver = true; clearNextTimeout() })
+          slider.container.addEventListener("mouseout", () => { mouseOver = false; nextTimeout() })
+          nextTimeout()
+        })
+        slider.on("dragStarted", clearNextTimeout)
+        slider.on("animationEnded", nextTimeout)
+        slider.on("updated", nextTimeout)
+      },
+    ]
+  )
+
+  const marbleProducts = [
+    {
+      image: "https://www.aclassmarble.co.in/images/media_images/240826063842_blog_image.jpg",
+      title: "Carrara White Marble",
+      description: "Premium Italian marble with elegant grey veins",
+      price: "₹2,500/sq.ft",
+      category: "Premium"
     },
     {
-      id: 2,
-      name: "Calacatta Gold",
-      size: "60x120 cm",
-      price: "£129.99",
-      image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=500&q=60",
+      image: "https://www.aclassmarble.co.in/images/media_images/240826063842_blog_image.jpg",
+      title: "Calacatta Gold",
+      description: "Luxurious marble with golden golden touch",
+      price: "₹3,200/sq.ft",
+      category: "Luxury"
     },
     {
-      id: 3,
-      name: "Statuario Venato",
-      size: "75x150 cm",
-      price: "£149.99",
-      image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=500&q=60",
+      image: "https://www.aclassmarble.co.in/images/media_images/240826063842_blog_image.jpg",
+      title: "Statuario Marble",
+      description: "Pure white with dramatic grey veins",
+      price: "₹4,500/sq.ft",
+      category: "Elite"
     },
     {
-      id: 4,
-      name: "Emperador Dark",
-      size: "60x60 cm",
-      price: "£79.99",
-      image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=500&q=60",
+      image: "https://www.aclassmarble.co.in/images/media_images/240826063842_blog_image.jpg",
+      title: "Emperador Dark",
+      description: "Rich brown marble with light veins",
+      price: "₹2,800/sq.ft",
+      category: "Premium"
     },
   ]
 
-  // Responsive itemsPerView
-  useEffect(() => {
-    const updateItems = () => {
-      if (window.innerWidth < 768) {
-        setItemsPerView(1) // mobile
-      } else if (window.innerWidth < 1024) {
-        setItemsPerView(2) // tablet
-      } else {
-        setItemsPerView(4) // desktop
-      }
-    }
-    updateItems()
-    window.addEventListener("resize", updateItems)
-    return () => window.removeEventListener("resize", updateItems)
-  }, [])
-
-  // Autoplay
-  useEffect(() => {
-    let interval
-    if (isAutoPlaying) {
-      interval = setInterval(() => {
-        handleNextSlide()
-      }, 4000)
-    }
-    return () => interval && clearInterval(interval)
-  }, [isAutoPlaying, currentIndex])
-
-  const handleNextSlide = () => {
-    setDirection("next")
-    setCurrentIndex((prev) => (prev + itemsPerView) % products.length)
-  }
-
-  const handlePrevSlide = () => {
-    setDirection("prev")
-    setCurrentIndex((prev) => (prev - itemsPerView + products.length) % products.length)
-  }
-
-  const total = products.length
-  const windowItems = Array.from({ length: itemsPerView }, (_, i) => products[(currentIndex + i) % total])
-
   return (
-    <section className="py-16 bg-[#F2E1C5]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Premium Marble Collection</h2>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
-            Discover our exquisite range of premium marble tiles, carefully selected for their exceptional quality and
-            timeless elegance. Perfect for creating sophisticated spaces.
-          </p>
-          <div className="mt-6 flex items-center justify-center gap-2 text-sm text-gray-600">
-            <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
-            <span>Free UK Delivery on Orders Over £200</span>
-            <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
-            <span>Professional Installation Available</span>
-            <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
-          </div>
-        </div>
+    <div className="bg-gradient-to-br from-[#0E5543] to-[#1a7a5e] py-12 md:py-20 px-4 sm:px-6 lg:px-12">
+      {/* Header Section */}
+      <div className="text-center mb-12">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">
+          ✨ Premium Marble Collection
+        </h2>
+        <p className="text-[#c6f6d5] text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
+          Transform your space with timeless elegance. Imported from <span className="font-semibold">Italy, Spain & India</span>, 
+          our curated marble collection is designed for luxury interiors and modern architecture.
+        </p>
+      </div>
 
-        <div className="relative flex items-center justify-center">
-          {/* left arrow */}
-          <button
-            onClick={handlePrevSlide}
-            style={{ backgroundColor: "transparent", borderColor: "transparent" }}
-            className="p-2 text-gray-600 hover:text-black z-10 mb-20 transition-transform duration-300 hover:scale-110"
-          >
-            <FiChevronLeft className="w-7 h-7 md:w-9 md:h-9" />
-          </button>
-
-          {/* products grid */}
-          <div
-            className={`grid gap-6 sm:gap-8 flex-1 px-4`}
-            style={{ gridTemplateColumns: `repeat(${itemsPerView}, minmax(0, 1fr))` }}
-          >
-            {windowItems.map((p, index) => (
-              <div
-                key={`${p.id}-${currentIndex}`}
-                className="text-center transition-all duration-500 ease-in-out"
-                style={{
-                  animation: `${direction === "next" ? "fade-in-up" : "fade-in-down"} 0.5s ease-out`,
-                  animationDelay: `${index * 0.1}s`,
-                  animationFillMode: "both",
-                }}
-              >
-                <div className="w-full aspect-square overflow-hidden rounded-lg shadow-sm">
-                  <img
-                    src={p.image || "/placeholder.svg"}
-                    alt={p.name}
-                    className="w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-110"
-                  />
+      {/* Slider Section */}
+      <div ref={sliderRef} className="keen-slider pb-10">
+        {marbleProducts.map((product, index) => (
+          <div key={index} className="keen-slider__slide flex items-center justify-center p-3">
+            <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden transform hover:scale-[1.03] transition-transform duration-300 w-full">
+              <div className="relative group">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                {/* Category Tag */}
+                <span className="absolute top-3 left-3 bg-gradient-to-r from-[#0E5543] to-[#2d9c7c] text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
+                  {product.category}
+                </span>
+                {/* Overlay on Hover */}
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                  <button className="bg-white text-[#0E5543] font-semibold px-4 py-2 rounded-full shadow hover:bg-[#0E5543] hover:text-white transition">
+                    View Details
+                  </button>
                 </div>
-                <div className="mt-3 space-y-1">
-                  <div className="text-sm md:text-base font-medium text-gray-800">{p.name}</div>
-                  <div className="text-xs text-gray-600">{p.size}</div>
-                </div>
-                <div className="mt-2">
-                  <div className="text-sm md:text-base font-semibold text-gray-800">{p.price}</div>
-                  <div className="text-[11px] text-gray-500">(including VAT)</div>
-                </div>
+              </div>
+              <div className="p-5">
+                <h3 className="text-xl font-bold text-gray-800 mb-2">{product.title}</h3>
+                <p className="text-gray-600 text-sm mb-3 leading-relaxed">{product.description}</p>
                
               </div>
-            ))}
+            </div>
           </div>
+        ))}
+      </div>
 
-          {/* right arrow */}
-          <button
-            onClick={handleNextSlide}
-            style={{ backgroundColor: "transparent", borderColor: "transparent" }}
-            className="p-2 text-gray-600 hover:text-black z-10 mb-20 transition-transform duration-300 hover:scale-110"
-          >
-            <FiChevronRight className="w-7 h-7 md:w-9 md:h-9" />
-          </button>
-        </div>
-
-        <div className="mt-12 text-center">
-          <p className="text-sm text-gray-600 mb-4">
-            Need help choosing the perfect marble? Our design consultants are here to assist you.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="px-6 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors duration-200">
-              View Full Collection
-            </button>
-            <button className="px-6 py-3 border-2 border-gray-900 text-white font-medium rounded-lg hover:bg-gray-900 hover:text-white transition-colors duration-200">
-              Book Consultation
-            </button>
+      {/* Trust Badges */}
+      <div className="text-center mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-white">
+          <div className="flex flex-col items-center">
+            <FaCheckCircle className="text-2xl mb-2 text-green-300" />
+            <p className="font-semibold">ISO Certified Quality</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <FaGlobe className="text-2xl mb-2 text-blue-300" />
+            <p className="font-semibold">Imported Worldwide</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <FaLeaf className="text-2xl mb-2 text-emerald-300" />
+            <p className="font-semibold">Eco-Friendly Processing</p>
           </div>
         </div>
       </div>
-
-      {/* animations */}
-      <style jsx>{`
-        @keyframes fade-in-up {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fade-in-down {
-          from { opacity: 0; transform: translateY(-20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-      `}</style>
-    </section>
+    </div>
   )
 }
-
-export default ProductCollection

@@ -1,26 +1,57 @@
-import React from 'react'
-import Hero from './Hero'
-import About from './About'
-import CategorySelector from './CategorySelector'
-import FeaturedCollections from './OurCraft'
-import Productcollection from './Productcollection'
-import Application from './Application'
-import CuttingProcessSection from './CuttingProcessSection'
-import Testimonials from './Testimonials'
+import React, { Suspense, lazy } from "react";
+import WorldMap from "./WorldMap";
+
+// Lazy load components
+const Hero = lazy(() => import("./Hero"));
+const About = lazy(() => import("./About"));
+const CategorySelector = lazy(() => import("./CategorySelector"));
+const FeaturedCollections = lazy(() => import("./OurCraft"));
+const Productcollection = lazy(() => import("./Productcollection"));
+const Application = lazy(() => import("./Application"));
+const CuttingProcessSection = lazy(() => import("./CuttingProcessSection"));
+const Testimonials = lazy(() => import("./Testimonials"));
 
 const Homepage = () => {
   return (
-   <>
-   <Hero />
-   <About/>
-   <CategorySelector/>
-   {/* <FeaturedCollections/> */}
-   <Productcollection />
-   <Application/>
-   <CuttingProcessSection/>
-   <Testimonials/>
-   </>
-  )
-}
+    <>
+      <Suspense fallback={<div>Loading Hero...</div>}>
+        <Hero />
+      </Suspense>
 
-export default Homepage
+      <Suspense fallback={<div>Loading About...</div>}>
+        <About />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Categories...</div>}>
+        <CategorySelector />
+      </Suspense>
+
+      {/* Uncomment if needed */}
+      {/* <Suspense fallback={<div>Loading Featured Collections...</div>}>
+        <FeaturedCollections />
+      </Suspense> */}
+
+      <Suspense fallback={<div>Loading Products...</div>}>
+        <Productcollection />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Application...</div>}>
+        <Application />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Cutting Process...</div>}>
+        <CuttingProcessSection />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Testimonials...</div>}>
+        <Testimonials />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Map...</div>}>
+        <WorldMap/>
+      </Suspense>
+    </>
+  );
+};
+
+export default Homepage;
