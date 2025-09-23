@@ -35,17 +35,17 @@ const Homepage = () => {
         <Productcollection />
       </Suspense>
 
-      <Suspense fallback={<div>Loading Application...</div>}>
+      {/* <Suspense fallback={<div>Loading Application...</div>}>
         <Application />
-      </Suspense>
+      </Suspense> */}
 
       <Suspense fallback={<div>Loading Cutting Process...</div>}>
         <CuttingProcessSection />
       </Suspense>
 
-      <Suspense fallback={<div>Loading Testimonials...</div>}>
+      {/* <Suspense fallback={<div>Loading Testimonials...</div>}>
         <Testimonials />
-      </Suspense>
+      </Suspense> */}
 
       <Suspense fallback={<div>Loading Map...</div>}>
         <WorldMap/>
