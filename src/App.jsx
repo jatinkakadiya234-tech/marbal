@@ -14,14 +14,13 @@ import NotFoundPage from "./components/Errors/NotFoundPage";
 import ScrollToTop from "./components/Helper/NavigateScrolletop";
 
 function App() {
-  const [activeCategory, setActiveCategory] = useState("furniture");
 
 
 
   return (
     <Router>
 
-      <div className="App bg-red-300">
+      <div className="App ">
         <ScrollToTop />
 
         <Navbar />
