@@ -16,11 +16,13 @@ const Homepage = () => {
    <CategorySelector/>
    {/* <FeaturedCollections/> */}
    <Productcollection />
-   <Application/>
+   {/* <Application/> */}
    <CuttingProcessSection/>
-   <Testimonials/>
+   {/* <Testimonials/> */}
+
+ 
    </>
   )
 }
 
-export default Homepage
+export default Homepage   

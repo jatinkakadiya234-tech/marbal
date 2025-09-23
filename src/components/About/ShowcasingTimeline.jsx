@@ -97,7 +97,7 @@ export default function ShowcasingTimeline() {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-          >
+          >   
             <div className="w-2 h-2 bg-[#0E5543] rounded-full mr-3"></div>
             <span className="text-sm font-medium tracking-widest uppercase text-[#0E5543]">
               Our Journey Through Time
