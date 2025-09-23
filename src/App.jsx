@@ -12,7 +12,6 @@ import ProjectsGallery from "./components/Gallery/GalleryPage";
 import TechnologyShowcase from "./components/StateOfArt/StateOfArtPage";
 import NotFoundPage from "./components/Errors/NotFoundPage";
 import ScrollToTop from "./components/Helper/NavigateScrolletop";
-import OurStones from "./components/OurStones/OurStones";
 
 function App() {
   const [activeCategory, setActiveCategory] = useState("furniture");
@@ -34,7 +33,6 @@ function App() {
           <Route path="/services" element={<ServicesShowcase />} />
           <Route path="/gallery" element={<ProjectsGallery />} />
           <Route path="/state-of-the-art" element={<TechnologyShowcase />} />
-          <Route path="/OurStones" element={<OurStones />} />
 
 
 
