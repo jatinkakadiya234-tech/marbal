@@ -43,14 +43,14 @@ const ContactUs = () => {
         </motion.div>
       </section>
 
-      {/* Info + Form Section */}
-      <section className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-        {/* Contact Information */}
-        <div className="px-2 md:px-0">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-[#0E5543] mb-6 sm:mb-8">
-            Contact Information
-          </h2>
-          <ul className="space-y-6">
+        {/* Info + Form Section */}
+        <section className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+          {/* Contact Information */}
+          <div className="px-2 md:px-0">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-[#0E5543] mb-6 sm:mb-8">
+              Contact Information
+            </h2>
+            <ul className="space-y-6">
             <li className="flex items-center space-x-4">
               <div className="bg-[#0E5543]/20 p-3 sm:p-4 rounded-full">
                 <FaPhoneAlt className="w-5 h-5 sm:w-6 sm:h-6 text-[#0E5543]" />
