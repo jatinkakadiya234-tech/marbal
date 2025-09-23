@@ -11,40 +11,45 @@ const GalleryNavbar = ({ selectedCategory, setSelectedCategory, searchQuery, set
   ];
 
   return (
-    <section className="py-10 bg-[#e8d5b5]">
+    <section className="py-12 bg-gradient-to-b from-[#0E5543] to-[#0a3d2f] shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-col md:flex-row justify-between items-center gap-6"
+          className="flex flex-col md:flex-row justify-between items-center gap-8"
         >
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap justify-center gap-3">
             {categories.map((category) => (
-              <button
+              <motion.button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-5 py-2 rounded-full border transition-all duration-300 ${
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-6 py-3 rounded-full border-2 font-medium transition-all duration-300 ${
                   selectedCategory === category.id
-                    ? 'bg-[#0E5543] text-[#F2E1C5] border-[#0E5543]'
-                    : 'bg-transparent text-[#0E5543] border-[#0E5543]/30 hover:border-[#0E5543]'
+                    ? 'bg-[#F2E1C5] text-[#0E5543] border-[#F2E1C5] shadow-lg'
+                    : 'bg-transparent text-[#F2E1C5] border-[#F2E1C5]/40 hover:border-[#F2E1C5] hover:bg-[#F2E1C5]/10'
                 }`}
               >
                 {category.name}
-              </button>
+              </motion.button>
             ))}
           </div>
 
-          <div className="relative">
-            <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#0E5543]/70" />
+          <motion.div 
+            className="relative"
+            whileFocus={{ scale: 1.02 }}
+          >
+            <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#0E5543]/80" size={18} />
             <input
               type="text"
               placeholder="Search projects..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 pr-4 py-2 bg-[#F2E1C5] border border-[#0E5543]/30 rounded-full text-[#0E5543] placeholder-[#0E5543]/70 focus:outline-none focus:ring-2 focus:ring-[#0E5543]/50 focus:border-[#0E5543]/50"
+              className="pl-12 pr-6 py-3 w-full md:w-72 bg-[#F2E1C5] border-2 border-[#F2E1C5] rounded-full text-[#0E5543] placeholder-[#0E5543]/70 focus:outline-none focus:ring-4 focus:ring-[#F2E1C5]/50 shadow-lg transition-all duration-300"
             />
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight, FiAward, FiClock, FiSquare } from 'react-icons/fi';
 
 const Projects = ({ selectedCategory, searchQuery, setSelectedProject }) => {
   const projects = [
@@ -14,6 +14,8 @@ const Projects = ({ selectedCategory, searchQuery, setSelectedProject }) => {
         "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80",
       details:
         "Over 2,000 sq ft of Emerald Green marble installed with precision cutting technology for seamless patterns.",
+      features: ["Premium Materials", "6 Month Project", "2,000+ sq ft"],
+      accentColor: "#0E5543"
     },
     {
       id: 2,
@@ -25,6 +27,8 @@ const Projects = ({ selectedCategory, searchQuery, setSelectedProject }) => {
         "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80",
       details:
         "Custom-cut marble countertops with integrated sink and waterfall edges for a continuous flow.",
+      features: ["Custom Design", "3 Month Project", "Premium Finishing"],
+      accentColor: "#B8860B"
     },
     {
       id: 8,
@@ -36,21 +40,30 @@ const Projects = ({ selectedCategory, searchQuery, setSelectedProject }) => {
         "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&w=800&q=80",
       details:
         "Specialty treated marble with non-porous finish to withstand weather elements and pool chemicals.",
+      features: ["Weather Resistant", "Specialty Treatment", "Non-Porous Finish"],
+      accentColor: "#1E90FF"
     },
-    // ... add the rest of your projects here
   ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 },
+      transition: { staggerChildren: 0.15 },
     },
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
+    hidden: { y: 30, opacity: 0, scale: 0.95 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
+    },
   };
 
   const filteredProjects = projects.filter((project) => {
@@ -62,8 +75,14 @@ const Projects = ({ selectedCategory, searchQuery, setSelectedProject }) => {
     return matchesCategory && matchesSearch;
   });
 
+  const categoryIcons = {
+    commercial: <FiAward className="text-[#0E5543]" />,
+    residential: <FiSquare className="text-[#0E5543]" />,
+    outdoor: <FiClock className="text-[#0E5543]" />,
+  };
+
   return (
-    <section className="py-16">
+    <section className="py-16 bg-gradient-to-b from-[#F2E1C5]/2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {filteredProjects.length === 0 ? (
           <motion.div
@@ -71,7 +90,7 @@ const Projects = ({ selectedCategory, searchQuery, setSelectedProject }) => {
             animate={{ opacity: 1 }}
             className="text-center py-20"
           >
-            <h3 className="text-2xl font-serif">No projects found</h3>
+            <h3 className="text-2xl font-serif text-[#0E5543]">No projects found</h3>
             <p className="mt-2 text-[#0E5543]/80">
               Try adjusting your search or filter criteria
             </p>
@@ -81,36 +100,71 @@ const Projects = ({ selectedCategory, searchQuery, setSelectedProject }) => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
           >
             {filteredProjects.map((project) => (
               <motion.div
                 key={project.id}
                 variants={itemVariants}
-                className="bg-[#e8d5b5] rounded-xl overflow-hidden border border-[#0E5543]/10 hover:border-[#0E5543]/30 transition-all duration-300 group cursor-pointer"
+                className="bg-white rounded-2xl overflow-hidden border border-[#0E5543]/15 hover:border-[#0E5543]/30 transition-all duration-500 group cursor-pointer shadow-lg hover:shadow-xl flex flex-col"
                 onClick={() => setSelectedProject(project)}
+                whileHover={{ y: -8 }}
               >
-                <div className="overflow-hidden">
+                {/* Image Section */}
+                <div className="overflow-hidden relative">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
                   <motion.img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
                     whileHover={{ scale: 1.05 }}
                   />
+                  <div className="absolute top-4 right-4 z-20 bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-md">
+                    {categoryIcons[project.category] || <FiSquare className="text-[#0E5543]" />}
+                  </div>
                 </div>
-                <div className="p-6">
-                  <span className="text-xs uppercase tracking-wider text-[#0E5543]/70 bg-[#0E5543]/10 px-2 py-1 rounded-full">
+
+                {/* Content Section */}
+                <div className="p-6 flex flex-col flex-1">
+                  <div
+                    className="absolute -top-3 left-6 h-1 w-12 rounded-full bg-[#0E5543] group-hover:w-16 transition-all duration-500"
+                    style={{ backgroundColor: project.accentColor }}
+                  />
+
+                  <span className="text-xs uppercase tracking-wider text-[#0E5543] font-semibold bg-[#F2E1C5]/60 px-3 py-1.5 rounded-full inline-flex items-center gap-1.5">
+                    {categoryIcons[project.category] || <FiSquare />}
                     {project.category}
                   </span>
-                  <h3 className="text-xl font-serif mt-3 mb-2">
+
+                  <h3 className="text-xl font-serif mt-4 mb-3 text-[#0E5543] group-hover:text-[#0E5543]/90 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-[#0E5543]/80 text-sm mb-4">
+
+                  <p className="text-[#0E5543]/80 text-sm mb-5 leading-relaxed">
                     {project.description}
                   </p>
-                  <div className="flex items-center text-[#0E5543] font-medium">
-                    View Details
-                    <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+
+                  <div className="mb-5">
+                    {project.features &&
+                      project.features.map((feature, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center text-xs text-[#0E5543]/70 mb-2 last:mb-0"
+                        >
+                          <div className="w-1.5 h-1.5 rounded-full bg-[#0E5543]/40 mr-2" />
+                          {feature}
+                        </div>
+                      ))}
+                  </div>
+
+                  {/* Stick to Bottom */}
+                  <div className="mt-auto pt-3 border-t border-[#0E5543]/10 flex items-center justify-between">
+                    <span className="text-[#0E5543] font-medium text-sm group-hover:underline">
+                      View Details
+                    </span>
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[#F2E1C5] group-hover:bg-[#0E5543] group-hover:text-white transition-colors duration-300">
+                      <FiArrowRight className="transition-transform group-hover:translate-x-0.5" />
+                    </div>
                   </div>
                 </div>
               </motion.div>
