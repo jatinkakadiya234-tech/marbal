@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { FiMenu, FiSearch, FiX, FiShoppingCart } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +29,7 @@ const Navbar = () => {
     { name: "About Us", path: "/about" },
     { name: "Our Stones", path: "/OurStones" },
     { name: "Services", path: "/services" },
-    { name: " art", path: "/state-of-the-art" },
+    { name: "Art", path: "/state-of-the-art" },
     { name: "Gallery", path: "/gallery" },
     { name: "Help & Advice", path: "/help" },
     { name: "Contact Us", path: "/contact" },
@@ -97,15 +97,7 @@ const Navbar = () => {
 
           {/* Mobile Buttons */}
           <div className="lg:hidden flex items-center space-x-4">
-            <Link
-              to="/cart"
-              className="relative p-2 text-[#F2E1C5] hover:text-amber-300"
-            >
-              <FiShoppingCart size={22} />
-              <span className="absolute -top-1 -right-1 bg-amber-500 text-gray-900 text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-                2
-              </span>
-            </Link>
+           
             <button
               style={{ backgroundColor: "transparent" }}
               onClick={() => setIsOpen(!isOpen)}

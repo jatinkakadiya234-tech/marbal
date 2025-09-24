@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FiArrowDown } from "react-icons/fi";
-import CustomCursor from "../CustomCursor";
+import CustomCursor from "../Helper/CustomCursor";
 
 const Hero = () => {
   const [isMuted, setIsMuted] = useState(true);
