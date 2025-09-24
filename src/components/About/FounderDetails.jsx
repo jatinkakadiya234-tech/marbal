@@ -1,6 +1,7 @@
 // components/About/FounderDetails.jsx
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import HeaderContent from '../Helper/HeaderContent';
 
 const founders = [
   {
@@ -35,24 +36,24 @@ const founders = [
 
 const container = {
   hidden: { opacity: 0 },
-  visible: { 
-    opacity: 1, 
-    transition: { 
+  visible: {
+    opacity: 1,
+    transition: {
       staggerChildren: 0.1,
       delayChildren: 0.2
-    } 
+    }
   },
 };
 
 const item = {
   hidden: { y: 30, opacity: 0 },
-  visible: { 
-    y: 0, 
-    opacity: 1, 
-    transition: { 
-      duration: 0.5, 
-      ease: "easeOut" 
-    } 
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
   },
 };
 
@@ -65,7 +66,7 @@ export default function FounderDetails() {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-20 -right-20 w-48 h-48 bg-[#0E5543]/5 rounded-full"></div>
         <div className="absolute -bottom-24 -left-24 w-60 h-60 bg-[#0E5543]/5 rounded-full"></div>
-        
+
         {/* Pattern overlay */}
         <div className="absolute inset-0 opacity-[0.03]"
           style={{
@@ -77,55 +78,11 @@ export default function FounderDetails() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.7 }}
-        >
-          <motion.div 
-            className="inline-flex items-center justify-center mb-4"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-          >
-            <div className="w-2 h-2 bg-[#0E5543] rounded-full mr-2"></div>
-            <span className="text-xs font-semibold tracking-widest uppercase text-[#0E5543] font-sans">
-              Our Leadership
-            </span>
-          </motion.div>
-          
-          <motion.h2 
-            className="text-3xl md:text-4xl font-serif text-[#0E5543] mb-5 tracking-tight"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            Visionaries Behind the Brand
-          </motion.h2>
-          
-          <motion.div 
-            className="w-24 h-0.5 bg-gradient-to-r from-[#0E5543]/40 via-[#0E5543] to-[#0E5543]/40 mx-auto"
-            initial={{ width: 0 }}
-            whileInView={{ width: 96 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          ></motion.div>
-          
-          <motion.p 
-            className="mt-6 max-w-2xl mx-auto text-[#0E5543]/80 text-base font-sans"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.7, duration: 0.5 }}
-          >
-            Meet the passionate individuals who have revolutionized the stone industry with innovation and artistry.
-          </motion.p>
-        </motion.div>
+        <HeaderContent
+          tagline='Meet the Team'
+          title='Visionaries Behind The Brand'
+          subtitle='Meet the passionate individuals who have revolutionized the stone industry with innovation and artistry.'
+        />
 
         {/* Founder Cards */}
         <motion.div
@@ -155,26 +112,26 @@ export default function FounderDetails() {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.5 }}
                   />
-                  
+
                   {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0E5543]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
+
                   {/* Role badge */}
                   <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-full bg-[#0E5543] text-white text-xs font-medium backdrop-blur-sm font-sans">
                     {founder.role}
                   </div>
                 </div>
-                
+
                 {/* Text content */}
                 <div className="p-5 flex-1 flex flex-col">
                   <h3 className="text-lg font-serif text-[#0E5543] mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
                     {founder.name}
                   </h3>
                   <p className="text-[#0E5543]/80 text-sm mb-3 flex-1 font-sans">{founder.bio}</p>
-                  
+
                   <AnimatePresence>
                     {expandedCard === index && (
-                      <motion.p 
+                      <motion.p
                         className="text-[#0E5543]/70 text-xs mt-2 pt-2 border-t border-[#0E5543]/10 font-sans"
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
@@ -185,18 +142,18 @@ export default function FounderDetails() {
                       </motion.p>
                     )}
                   </AnimatePresence>
-            
+
                   {/* Expand indicator */}
-                  <motion.div 
+                  <motion.div
                     className="flex items-center text-[#0E5543] text-xs font-medium mt-3 font-sans"
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.2 }}
                   >
                     <span className="mr-1">{expandedCard === index ? 'Show less' : 'Read more'}</span>
-                    <motion.svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      className="h-3 w-3" 
-                      viewBox="0 0 20 20" 
+                    <motion.svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-3 w-3"
+                      viewBox="0 0 20 20"
                       fill="currentColor"
                       animate={{ rotate: expandedCard === index ? 180 : 0 }}
                     >
@@ -208,7 +165,7 @@ export default function FounderDetails() {
 
               {/* Active indicator ring */}
               {expandedCard === index && (
-                <motion.div 
+                <motion.div
                   className="absolute inset-0 rounded-xl ring-2 ring-[#0E5543]/30 pointer-events-none"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -218,9 +175,9 @@ export default function FounderDetails() {
             </motion.div>
           ))}
         </motion.div>
-        
+
         {/* Bottom decorative element */}
-        <motion.div 
+        <motion.div
           className="mt-12 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

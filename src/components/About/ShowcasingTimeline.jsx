@@ -1,6 +1,7 @@
 // components/ShowcasingTimeline.jsx
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
+import HeaderContent from '../Helper/HeaderContent';
 
 const milestones = [
   { year: '1995', title: 'Founded', desc: 'RGM began its journey in premium stone craftsmanship.' },
@@ -86,42 +87,14 @@ export default function ShowcasingTimeline() {
       />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <motion.div
-            className="inline-flex items-center justify-center mb-4"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <div className="w-2 h-2 bg-[#0E5543] rounded-full mr-3"></div>
-            <span className="text-sm font-medium tracking-widest uppercase text-[#0E5543]">
-              Our Journey Through Time
-            </span>
-          </motion.div>
 
-          <motion.h1
-            className="text-5xl md:text-6xl font-serif text-[#0E5543] mb-6 tracking-tight"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            Legacy of Excellence
-          </motion.h1>
+        <HeaderContent
+          tagline='Our Journey Through Time'
+          title='Legacy of  Excellence'
+          subtitle='  From our founding in 1995 to today, RGM has been dedicated to delivering premium stone craftsmanship and innovative design solutions.'
+        />
 
-          <motion.div
-            className="w-32 h-1 bg-gradient-to-r from-[#0E5543] to-[#0E5543]/70 mx-auto rounded-full"
-            initial={{ width: 0 }}
-            animate={isInView ? { width: 128 } : { width: 0 }}
-            transition={{ duration: 1, delay: 0.6 }}
-          />
-        </motion.div>
-
-        <div className="relative">
+        <div className="relative pt-5">
           {/* Curved timeline */}
           <motion.div
             className="absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-gradient-to-b from-[#0E5543] via-[#0E5543]/70 to-[#0E5543]"
