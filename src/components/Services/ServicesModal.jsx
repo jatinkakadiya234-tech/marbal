@@ -10,7 +10,7 @@ export default function ServiceModal({ selectedService, setSelectedService }) {
       exit={{ opacity: 0 }}
     >
       <motion.div
-        className="absolute inset-0 bg-[#0E5543]/90 backdrop-blur-md"
+        className="absolute inset-0 bg-[#0E5543]/10 backdrop-blur-sm"
         onClick={() => setSelectedService(null)}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

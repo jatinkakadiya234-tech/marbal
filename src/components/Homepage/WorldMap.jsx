@@ -1,57 +1,65 @@
 import React, { useState } from "react";
-import { FaMapMarkerAlt, FaGlobeAmericas, FaHandshake } from "react-icons/fa";
+import { FaMapMarkerAlt, FaGlobeAmericas, FaHandshake, FaUsers, FaRocket, FaAward } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import mapImage from "../../assets/map_img.png";
+import HeaderContent from "../Helper/HeaderContent";
 
 const locations = [
-  { 
-    name: "India", 
-    top: "55%", 
+  {
+    name: "India",
+    top: "55%",
     left: "65%",
-    description: "Our largest development center with 200+ experts",
-    clients: "150+ clients"
+    description: "Our largest development center with 200+ marble experts",
+    clients: "150+ premium projects",
+    projects: ["Taj Hotel", "Infosys Campus", "Reliance Towers"]
   },
-  { 
-    name: "Canada", 
-    top: "38%", 
+  {
+    name: "Canada",
+    top: "38%",
     left: "20%",
-    description: "North American headquarters serving 50+ enterprises",
-    clients: "50+ clients"
+    description: "North American headquarters serving luxury real estate",
+    clients: "50+ luxury villas",
+    projects: ["Toronto Skyscraper", "Vancouver Estates", "Montreal Museum"]
   },
-  { 
-    name: "Germany", 
-    top: "45%", 
+  {
+    name: "Germany",
+    top: "45%",
     left: "50%",
-    description: "European innovation hub with cutting-edge solutions",
-    clients: "80+ clients"
+    description: "European innovation hub with architectural marvels",
+    clients: "80+ commercial projects",
+    projects: ["Berlin Airport", "Munich Mall", "Frankfurt Towers"]
   },
-  { 
-    name: "Australia", 
-    top: "78%", 
+  {
+    name: "Australia",
+    top: "78%",
     left: "78%",
-    description: "APAC regional center driving digital transformation",
-    clients: "45+ clients"
+    description: "APAC regional center driving premium constructions",
+    clients: "45+ landmark projects",
+    projects: ["Sydney Opera House", "Melbourne Towers", "Perth Resort"]
   },
-  { 
-    name: "London", 
-    top: "40%", 
+  {
+    name: "London",
+    top: "40%",
     left: "45%",
-    description: "UK operations center with financial technology focus",
-    clients: "60+ clients"
+    description: "UK operations with heritage restoration expertise",
+    clients: "60+ heritage projects",
+    projects: ["Buckingham Palace", "London Bridge", "The Shard"]
   },
-  { 
-    name: "Dubai", 
-    top: "54.5%", 
+  {
+    name: "Dubai",
+    top: "54.5%",
     left: "57.5%",
-    description: "Middle East hub connecting East and West markets",
-    clients: "35+ clients"
+    description: "Middle East hub for ultra-luxury developments",
+    clients: "35+ iconic projects",
+    projects: ["Burj Khalifa", "Palm Jumeirah", "Dubai Mall"]
   },
-  { 
-    name: "Russia", 
-    top: "39%", 
+  {
+    name: "Russia",
+    top: "39%",
     left: "66%",
-    description: "Eastern European technology and research center",
-    clients: "40+ clients"
+    description: "Eastern European luxury marble specialist",
+    clients: "40+ premium installations",
+    projects: ["Moscow Metro", "St. Petersburg Palace", "Kremlin"]
   },
 ];
 
@@ -60,55 +68,85 @@ export default function WorldMap() {
   const [hoveredLocation, setHoveredLocation] = useState(null);
 
   return (
-    <div className="relative w-full max-w-6xl mx-auto p-6 rounded-2xl bg-gradient-to-br from-[#F2E1C5] to-[#E8D4B5] shadow-2xl my-12 border border-[#D4C1A3]">
-      {/* Enhanced Heading */}
-      <div className="text-center mb-8">
+    <div className="relative w-full max-w-full  p-8  bg-gradient-to-br from-[#0E5543] via-[#1A7A62] to-[#2D8C6E] shadow-2xl border border-[#1A7A62]">
+      {/* Enhanced Header Section */}
+      <div className="text-center mb-12">
+        <HeaderContent
+          tagline=""
+          title=" Global Marble Excellence"
+          subtitle="Serving premium clients across 7 countries with 500+ luxury marble installations.
+          From royal palaces to corporate headquarters, we bring world-class marble excellence to your doorstep."
+          theme="dark"
+        />
+
+        {/* Enhanced Stats Grid */}
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.5, duration: 0.8 }}
+  className="grid grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto"
+>
+  {[
+    { icon: FaGlobeAmericas, number: "7+", label: "Countries", accent: "#F2E1C5" },
+    { icon: FaAward, number: "500+", label: "Projects", accent: "#F2E1C5" },
+    { icon: FaUsers, number: "200+", label: "Experts", accent: "#F2E1C5" },
+    { icon: FaRocket, number: "15+", label: "Years", accent: "#F2E1C5" }
+  ].map((stat, index) => (
+    <motion.div
+      key={index}
+      whileHover={{ scale: 1.08, y: -8 }}
+      whileTap={{ scale: 0.95 }}
+      className="relative group cursor-pointer"
+    >
+      {/* Background Glow Effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0E5543] to-[#1A7A62] rounded-3xl blur-md opacity-50 group-hover:opacity-70 transition-all duration-300"></div>
+      
+      {/* Main Card */}
+      <div className="relative bg-gradient-to-br from-[#0E5543] to-[#1A7A62] rounded-3xl p-8 shadow-2xl border border-[#F2E1C5]/20 backdrop-blur-sm">
+        
+        {/* Top Accent Line */}
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-[#F2E1C5] to-transparent rounded-full"></div>
+        
+        {/* Icon Container */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-3 mb-4"
+          whileHover={{ rotate: 5, scale: 1.1 }}
+          className="relative mb-6"
         >
-          <FaGlobeAmericas className="text-4xl text-[#0E5543]" />
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-[#0E5543] to-[#1A7A62] bg-clip-text text-transparent">
-            Our Global Presence
-          </h2>
+          <div className="absolute inset-0 bg-[#F2E1C5] rounded-full blur-lg opacity-20"></div>
+          <stat.icon className="text-4xl mx-auto relative z-10" style={{ color: stat.accent }} />
         </motion.div>
-        
-        <motion.p 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-[#0E5543] text-lg mt-3 max-w-3xl mx-auto leading-relaxed"
+
+        {/* Number */}
+        <motion.div
+          initial={{ scale: 0.8 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: index * 0.1 + 0.8 }}
+          className="text-5xl font-bold text-white mb-2 font-['Playfair_Display'] leading-none"
         >
-          Serving clients across 7 countries with 500+ successful projects delivered. 
-          From startups to Fortune 500 companies, we bring world-class solutions to your doorstep.
-        </motion.p>
-        
-        {/* Stats */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="grid grid-cols-3 gap-6 mt-6 max-w-2xl mx-auto"
-        >
-          <div className="text-center p-4 bg-white/90 rounded-xl shadow-sm border border-[#D4C1A3]">
-            <div className="text-2xl font-bold text-[#0E5543]">7+</div>
-            <div className="text-sm text-[#1A7A62]">Countries</div>
-          </div>
-          <div className="text-center p-4 bg-white/90 rounded-xl shadow-sm border border-[#D4C1A3]">
-            <div className="text-2xl font-bold text-[#1A7A62]">500+</div>
-            <div className="text-sm text-[#1A7A62]">Projects</div>
-          </div>
-          <div className="text-center p-4 bg-white/90 rounded-xl shadow-sm border border-[#D4C1A3]">
-            <div className="text-2xl font-bold text-[#0E5543]">50+</div>
-            <div className="text-sm text-[#1A7A62]">Experts</div>
-          </div>
+          {stat.number}
         </motion.div>
+
+        {/* Label */}
+        <div className="text-[#F2E1C5] text-sm font-medium uppercase tracking-wider font-['Inter']">
+          {stat.label}
+        </div>
+
+        {/* Hover Effect Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#F2E1C5]/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+        
+        {/* Corner Accents */}
+        <div className="absolute top-3 left-3 w-3 h-3 border-t-2 border-l-2 border-[#F2E1C5]/30 rounded-tl-lg"></div>
+        <div className="absolute top-3 right-3 w-3 h-3 border-t-2 border-r-2 border-[#F2E1C5]/30 rounded-tr-lg"></div>
+        <div className="absolute bottom-3 left-3 w-3 h-3 border-b-2 border-l-2 border-[#F2E1C5]/30 rounded-bl-lg"></div>
+        <div className="absolute bottom-3 right-3 w-3 h-3 border-b-2 border-r-2 border-[#F2E1C5]/30 rounded-br-lg"></div>
+      </div>
+    </motion.div>
+  ))}
+</motion.div>
       </div>
 
       {/* Map Container */}
-      <div className="relative bg-white rounded-2xl shadow-xl p-4 border border-[#D4C1A3]">
+      <div className="relative bg-white rounded-2xl shadow-xl p-4 border border-[#D4C1A3] max-w-7xl mx-auto">
         {/* Map Image with Enhanced Styling */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -116,6 +154,7 @@ export default function WorldMap() {
           transition={{ duration: 0.8 }}
           className="relative"
         >
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0E5543]/20 to-[#1A7A62]/20 rounded-2xl z-0"></div>
           <img
             src={mapImage}
             alt="World Map"
@@ -140,13 +179,13 @@ export default function WorldMap() {
               <div className="relative flex flex-col items-center">
                 {/* Pulsing Animation Container */}
                 <motion.div
-                  animate={{ 
+                  animate={{
                     scale: [1, 1.2, 1],
                   }}
-                  transition={{ 
-                    duration: 2, 
+                  transition={{
+                    duration: 2,
                     repeat: Infinity,
-                    delay: index * 0.2 
+                    delay: index * 0.2
                   }}
                   className="relative"
                 >
@@ -155,18 +194,17 @@ export default function WorldMap() {
                     whileHover={{ scale: 1.3, y: -8 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <FaMapMarkerAlt 
-                      size={28} 
-                      className={`drop-shadow-lg transition-colors duration-200 ${
-                        selectedLocation?.name === loc.name 
-                          ? 'text-[#D35400]' 
-                          : hoveredLocation === loc.name 
-                            ? 'text-[#E67E22]' 
-                            : 'text-[#1A7A62]'
-                      }`} 
+                    <FaMapMarkerAlt
+                      size={28}
+                      className={`drop-shadow-lg transition-colors duration-200 ${selectedLocation?.name === loc.name
+                        ? 'text-[#D35400]'
+                        : hoveredLocation === loc.name
+                          ? 'text-[#E67E22]'
+                          : 'text-[#1A7A62]'
+                        }`}
                     />
                   </motion.div>
-                  
+
                   {/* Pulsing Ring Effect */}
                   <motion.div
                     animate={{ scale: [0, 1.4, 0], opacity: [0.5, 0.3, 0] }}
@@ -174,9 +212,9 @@ export default function WorldMap() {
                     className="absolute inset-0 bg-[#1A7A62] rounded-full -z-10"
                   />
                 </motion.div>
-                
+
                 {/* Location Name Label */}
-                <motion.span 
+                <motion.span
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   whileHover={{ y: -2 }}
@@ -203,6 +241,8 @@ export default function WorldMap() {
             </motion.div>
           ))}
         </motion.div>
+
+
 
         {/* Location Details Card */}
         <AnimatePresence>
@@ -231,41 +271,72 @@ export default function WorldMap() {
         </AnimatePresence>
       </div>
 
-      {/* Enhanced CTA Section */}
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
+      {/* Premium CTA Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.6 }}
-        className="text-center mt-8 bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-2xl p-8 text-white shadow-2xl"
+        transition={{ delay: 0.8, duration: 0.8 }}
+        className="text-center max-w-7xl  mx-auto mt-12 bg-gradient-to-r from-[#F2E1C5] to-[#E8D4B5] rounded-xl p-10 shadow-2xl border border-[#D4AF37]/30"
       >
-        <FaHandshake className="text-4xl mx-auto mb-4 opacity-90" />
-        <h3 className="text-2xl font-bold mb-2">Ready to Go Global with Us?</h3>
-        <p className="text-[#F2E1C5] mb-6 max-w-2xl mx-auto">
-          Join 500+ successful businesses that trust us with their international expansion. 
-          Let's build something amazing together!
-        </p>
-        
-        <div className="flex gap-4 justify-center flex-wrap">
-          <motion.button 
+        {/* Elegant Icon */}
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          className="inline-flex mb-5 items-center justify-center w-16 h-16 bg-gradient-to-br from-[#0E5543] to-[#1A7A62] rounded-full shadow-lg"
+        >
+          <FaHandshake className="text-2xl text-[#F2E1C5]" />
+        </motion.div>
+
+        {/* Premium Headline Section */}
+        {/* Luxury Headline Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          className="text-center mb-3 space-y-6"
+        >
+          {/* Premium Serif Font */}
+          <h3 className="text-5xl font-normal text-[#0E5543] font-['Cormorant_Garamond'] leading-tight">
+            Elevate Your Space with<br />
+            <span className="italic font-light text-[#1A7A62]">Exquisite Marble</span>
+          </h3>
+
+          {/* Elegant Description */}
+          <p className="text-[#1A7A62] text-lg max-w-2xl mx-auto leading-relaxed font-['Source_Serif_Pro'] font-light italic">
+            Chosen by 500+ luxury projects globally. Where artistry meets architecture
+            in perfect harmony.
+          </p>
+        </motion.div>
+
+
+        <div className="flex gap-6 justify-center  flex-wrap">
+          <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-[#F2E1C5] text-[#0E5543] font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+            className="px-10 py-4 bg-gradient-to-r from-[#0E5543] to-[#1A7A62] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg"
           >
-            Schedule a Call
+            Request Consultation
           </motion.button>
-          <motion.button 
+          <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-transparent border-2 border-[#F2E1C5] text-[#F2E1C5] font-semibold rounded-lg hover:bg-[#F2E1C5]/10 transition-all duration-300"
+            className="px-10 py-4 bg-transparent border-2 border-[#0E5543] text-[#189173] font-semibold rounded-xl hover:bg-[#0E5543]/10 transition-all duration-300 text-lg"
           >
-            Download Brochure
+            View Catalog
           </motion.button>
         </div>
-        
-        <div className="mt-4 text-[#F2E1C5] text-sm">
-          ✨ 24/7 Support Available • Free Consultation • No Commitment
+
+        <div className="mt-6 text-[#1A7A62] text-sm flex items-center justify-center gap-4 flex-wrap">
+          <span className="flex items-center gap-2">⭐ Premium Quality Guarantee</span>
+          <span className="flex items-center gap-2">🌍 Global Shipping</span>
+          <span className="flex items-center gap-2">💎 Custom Solutions</span>
         </div>
       </motion.div>
+
+      {/* Background Decorative Elements */}
+      <div className="absolute inset-0 overflow-hidden rounded-3xl pointer-events-none z-0">
+        <div className="absolute -top-20 -left-20 w-80 h-80 bg-[#F2E1C5] rounded-full opacity-5 blur-3xl"></div>
+        <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-[#D4AF37] rounded-full opacity-5 blur-3xl"></div>
+      </div>
     </div>
   );
 }
