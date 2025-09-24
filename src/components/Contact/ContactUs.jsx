@@ -17,9 +17,9 @@ const ContactUs = () => {
     <div className="bg-[#0d0d0d] text-[#F2E1C5] min-h-screen overflow-x-hidden">
       {/* Enhanced Hero Section */}
       <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
-        {/* Enhanced Background with Brand Color */}
+        {/* Enhanced Background with Improved Color Harmony */}
         <div className="absolute inset-0">
-          {/* Primary Color Background */}
+          {/* Primary Color Background with Better Gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#0E5543] via-[#0d0d0d] to-[#0d0d0d]"></div>
 
           {/* Animated Texture Overlay */}
@@ -27,12 +27,12 @@ const ContactUs = () => {
             <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(14,85,67,0.1)_50%,transparent_75%)] bg-[length:250px_250px] animate-pulse-slow"></div>
           </div>
 
-          {/* Accent Elements */}
+          {/* Accent Elements with Better Color Balance */}
           <div className="absolute top-1/4 -left-10 w-32 h-32 bg-[#0E5543]/20 rounded-full blur-xl"></div>
           <div className="absolute bottom-1/4 -right-10 w-40 h-40 bg-[#0E5543]/15 rounded-full blur-2xl"></div>
-          <div className="absolute top-1/2 left-1/4 w-20 h-20 bg-[#F2E1C5]/5 rounded-full blur-lg"></div>
+          <div className="absolute top-1/2 left-1/4 w-20 h-20 bg-[#F2E1C5]/10 rounded-full blur-lg"></div>
 
-          {/* Subtle Pattern */}
+          {/* Subtle Pattern with Improved Contrast */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,#0E5543/5,transparent_50%)]"></div>
         </div>
 
@@ -44,6 +44,7 @@ const ContactUs = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0E5543]/30 via-[#0E5543]/50 to-[#0d0d0d]"></div>
         </div>
+        
         {/* Enhanced Content */}
         <motion.div
           className="relative z-10 text-center max-w-4xl px-4 sm:px-6"
@@ -59,13 +60,13 @@ const ContactUs = () => {
             className="flex items-center justify-center mb-8"
           >
             <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-[#F2E1C5] to-transparent mr-4"></div>
-            <div className="w-2 h-2 bg-[#e7bf7e] rounded-full"></div>
+            <div className="w-2 h-2 bg-[#F2E1C5] rounded-full"></div>
             <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-[#F2E1C5] to-transparent ml-4"></div>
           </motion.div>
 
           {/* Main Heading */}
           <motion.h1
-            className="text-4xl sm:text-6xl md:text-7xl font-light text-[#efcd95] mb-6 tracking-tight"
+            className="text-4xl sm:text-6xl md:text-7xl font-light text-[#F2E1C5] mb-6 tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}      
             transition={{ duration: 1, delay: 0.3 }}
@@ -79,7 +80,7 @@ const ContactUs = () => {
 
           {/* Subtitle */}
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl text-[#efcd95 ]/90 font-light leading-relaxed max-w-2xl mx-auto"
+            className="text-lg sm:text-xl md:text-2xl text-[#F2E1C5]/90 font-light leading-relaxed max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
@@ -95,9 +96,14 @@ const ContactUs = () => {
             className="mt-8"
           >
             <motion.button
-              whileHover={{ scale: 1.05, y: -2 }}
+              whileHover={{ 
+                scale: 1.05, 
+                y: -2,
+                backgroundColor: "#1a7a62",
+                boxShadow: "0 10px 25px rgba(14, 85, 67, 0.3)"
+              }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-[#0E5543] text-[#F2E1C5] rounded-lg border border-[#0E5543]/50 hover:bg-[#0E5543]/90 hover:shadow-lg transition-all duration-300 font-medium"
+              className="px-8 py-3 bg-[#0E5543] text-[#F2E1C5] rounded-lg border border-[#0E5543]/50 transition-all duration-300 font-medium"
             >
               Start Conversation
             </motion.button>
@@ -123,16 +129,16 @@ const ContactUs = () => {
         </div>
       </section>
 
-      {/* Premium Contact Section */}
-      <section className="relative py-20 px-4 sm:px-6 max-w-7xl mx-auto w-full bg-[##F2E1C5] ">
+      {/* Premium Contact Section with #F2E1C5 Background */}
+      <section className="relative py-20 px-4 sm:px-6 max-w-full mx-auto w-full bg-[#F2E1C5]">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-20 w-80 h-80 bg-[#0E5543]/5 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-20 w-80 h-80 bg-[#F2E1C5]/5 rounded-full blur-3xl"></div>
+          <div className="absolute -top-40 -right-20 w-80 h-80 bg-[#0E5543]/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-20 w-80 h-80 bg-[#0E5543]/5 rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Enhanced Contact Information */}
+          {/* Enhanced Contact Information - Adjusted for light background */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -140,16 +146,16 @@ const ContactUs = () => {
             className="space-y-8"
           >
             <div>
-              <h2 className="text-3xl sm:text-4xl font-light mb-4">
+              <h2 className="text-3xl sm:text-4xl font-light mb-4 text-[#0d0d0d]">
                 Let's Start a <span className="text-[#0E5543]">Conversation</span>
               </h2>
-              <p className="text-[#F2E1C5]/70 text-lg leading-relaxed">
+              <p className="text-[#0d0d0d]/80 text-lg leading-relaxed">
                 We're here to provide you with exceptional service and bring your
                 vision to life with our premium ceramic solutions.
               </p>
             </div>
 
-            {/* Enhanced Contact Items */}
+            {/* Enhanced Contact Items - Adjusted for light background */}
             <div className="space-y-6">
               {[
                 {
@@ -182,29 +188,29 @@ const ContactUs = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: item.delay, duration: 0.6 }}
-                  className="group flex items-start space-x-4 p-4 rounded-xl hover:bg-[#0E5543]/5 transition-all duration-300"
+                  className="group flex items-start space-x-4 p-4 rounded-xl hover:bg-[#0E5543]/10 transition-all duration-300 border border-transparent hover:border-[#0E5543]/20 bg-white/80 backdrop-blur-sm"
                 >
                   <div className="relative">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#0E5543] to-[#1a7a62] rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#0E5543] to-[#1a7a62] rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
                       <item.icon className="w-5 h-5 text-[#F2E1C5]" />
                     </div>
                   </div>
                   <div>
                     <h3 className="text-[#0E5543] font-medium text-lg">{item.title}</h3>
-                    <p className="text-[#F2E1C5]/80">{item.content}</p>
+                    <p className="text-[#0d0d0d]/80">{item.content}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            {/* Enhanced Social Links */}
+            {/* Enhanced Social Links - Adjusted for light background */}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
               className="pt-6"
             >
-              <h3 className="text-xl font-light mb-4">Follow Our Journey</h3>
+              <h3 className="text-xl font-light mb-4 text-[#0d0d0d]">Follow Our Journey</h3>
               <div className="flex space-x-3">
                 {[FaInstagram, FaFacebookF, FaLinkedinIn].map((Icon, index) => (
                   <motion.a
@@ -212,27 +218,27 @@ const ContactUs = () => {
                     href="#"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-12 h-12 bg-[#0E5543]/10 rounded-lg flex items-center justify-center hover:bg-[#0E5543]/20 transition-all duration-300 group"
+                    className="w-12 h-12 bg-gradient-to-br from-[#0E5543] to-[#1a7a62] rounded-lg flex items-center justify-center hover:shadow-lg transition-all duration-300 group shadow-md"
                   >
-                    <Icon className="w-5 h-5 text-[#0E5543] group-hover:text-[#F2E1C5] transition-colors duration-300" />
+                    <Icon className="w-5 h-5 text-[#F2E1C5] group-hover:scale-110 transition-transform duration-300" />
                   </motion.a>
                 ))}
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Premium Contact Form */}
+          {/* Premium Contact Form with #F2E1C5 Background */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             className="relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#0E5543]/10 to-[#F2E1C5]/5 rounded-3xl"></div>
-            <div className="relative bg-[#0d0d0d]/80 backdrop-blur-xl rounded-3xl border border-[#0E5543]/30 p-8 sm:p-10 shadow-2xl">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0E5543]/10 to-[#F2E1C5]/20 rounded-3xl m-w-screen"></div>
+            <div className="relative bg-[#F2E1C5] backdrop-blur-xl rounded-3xl border border-[#0E5543]/30 p-8 sm:p-10 shadow-2xl">
               <div className="mb-8">
-                <h2 className="text-3xl font-light mb-2">Send Us a Message</h2>
-                <div className="w-16 h-0.5 bg-gradient-to-r from-[#0E5543] to-[#F2E1C5]"></div>
+                <h2 className="text-3xl font-light mb-2 text-[#0d0d0d]">Send Us a Message</h2>
+                <div className="w-16 h-0.5 bg-gradient-to-r from-[#0E5543] to-[#1a7a62]"></div>
               </div>
 
               <form className="space-y-6">
@@ -241,12 +247,12 @@ const ContactUs = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
                 >
-                  <label className="block text-sm font-medium text-[#F2E1C5]/80 mb-2">
+                  <label className="block text-sm font-medium text-[#0d0d0d]/80 mb-2">
                     Full Name *
                   </label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 bg-[#0E5543]/5 border border-[#0E5543]/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0E5543]/50 focus:border-transparent text-[#F2E1C5] placeholder-[#F2E1C5]/30 transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white/80 border border-[#0E5543]/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0E5543]/50 focus:border-transparent text-[#0d0d0d] placeholder-[#0d0d0d]/50 transition-all duration-300 backdrop-blur-sm"
                     placeholder="Enter your full name"
                   />
                 </motion.div>
@@ -256,12 +262,12 @@ const ContactUs = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <label className="block text-sm font-medium text-[#F2E1C5]/80 mb-2">
+                  <label className="block text-sm font-medium text-[#0d0d0d]/80 mb-2">
                     Email Address *
                   </label>
                   <input
                     type="email"
-                    className="w-full px-4 py-3 bg-[#0E5543]/5 border border-[#0E5543]/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0E5543]/50 focus:border-transparent text-[#F2E1C5] placeholder-[#F2E1C5]/30 transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white/80 border border-[#0E5543]/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0E5543]/50 focus:border-transparent text-[#0d0d0d] placeholder-[#0d0d0d]/50 transition-all duration-300 backdrop-blur-sm"
                     placeholder="Enter your email"
                   />
                 </motion.div>
@@ -271,21 +277,25 @@ const ContactUs = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
                 >
-                  <label className="block text-sm font-medium text-[#F2E1C5]/80 mb-2">
+                  <label className="block text-sm font-medium text-[#0d0d0d]/80 mb-2">
                     Message *
                   </label>
                   <textarea
                     rows="5"
-                    className="w-full px-4 py-3 bg-[#0E5543]/5 border border-[#0E5543]/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0E5543]/50 focus:border-transparent text-[#F2E1C5] placeholder-[#F2E1C5]/30 resize-none transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white/80 border border-[#0E5543]/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0E5543]/50 focus:border-transparent text-[#0d0d0d] placeholder-[#0d0d0d]/50 resize-none transition-all duration-300 backdrop-blur-sm"
                     placeholder="Tell us about your project..."
                   ></textarea>
                 </motion.div>
 
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ 
+                    scale: 1.02,
+                    background: "linear-gradient(to right, #1a7a62, #0E5543)",
+                    boxShadow: "0 10px 25px rgba(14, 85, 67, 0.4)"
+                  }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full py-4 bg-gradient-to-r from-[#0E5543] to-[#1a7a62] text-[#F2E1C5] font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group flex items-center justify-center space-x-2"
+                  className="w-full py-4 bg-gradient-to-r from-[#0E5543] to-[#1a7a62] text-[#F2E1C5] font-medium rounded-xl shadow-lg transition-all duration-300 group flex items-center justify-center space-x-2"
                 >
                   <span>Send Message</span>
                   <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -297,7 +307,7 @@ const ContactUs = () => {
       </section>
 
       {/* Enhanced Map Section */}
-      <section className="relative py-20 px-4 sm:px-6">
+      <section className="relative py-20 px-4 sm:px-6 bg-[#0E5543]">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -305,15 +315,15 @@ const ContactUs = () => {
           className="max-w-7xl mx-auto"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-light mb-4">
-              Visit Our <span className="text-[#0E5543]">Showroom</span>
+            <h2 className="text-3xl sm:text-4xl font-light mb-4 text-[#F2E1C5]">
+              Visit Our <span className="text-[#F2E1C5]">Showroom</span>
             </h2>
             <p className="text-[#F2E1C5]/70 text-lg max-w-2xl mx-auto">
               Experience our premium ceramic collections in person at our luxurious showroom
             </p>
           </div>
 
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#0E5543]/30">
             <div className="absolute inset-0 bg-gradient-to-br from-[#0E5543]/20 to-[#F2E1C5]/10 z-10"></div>
             <iframe
               title="Google Map"
@@ -322,6 +332,12 @@ const ContactUs = () => {
               allowFullScreen=""
               loading="lazy"
             ></iframe>
+            
+            {/* Map Overlay Info */}
+            <div className="absolute bottom-6 left-6 z-20 bg-[#0d0d0d]/90 backdrop-blur-sm p-4 rounded-xl border border-[#0E5543]/30 max-w-xs">
+              <h3 className="text-[#F2E1C5] font-medium mb-1">Ceramic Luxury Showroom</h3>
+              <p className="text-[#F2E1C5]/70 text-sm">21, Premium Avenue, Mumbai, India</p>
+            </div>
           </div>
         </motion.div>
       </section>
