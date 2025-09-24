@@ -10,11 +10,14 @@ import {
   FaFacebookF,
   FaLinkedinIn,
   FaArrowRight,
+  FaGem,
+  FaStar
 } from "react-icons/fa";
+import HeaderContent from "../Helper/HeaderContent";
 
 const ContactUs = () => {
   return (
-    <div className="bg-[#0d0d0d] text-[#F2E1C5] min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden bg-gradient-to-br from-[#F2E1C5] via-[#F8EDDC] to-[#F2E1C5]">
       {/* Enhanced Hero Section */}
       <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
         {/* Enhanced Background with Improved Color Harmony */}
@@ -44,263 +47,191 @@ const ContactUs = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0E5543]/30 via-[#0E5543]/50 to-[#0d0d0d]"></div>
         </div>
-        
-        {/* Enhanced Content */}
-        <motion.div
-          className="relative z-10 text-center max-w-4xl px-4 sm:px-6"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-        >
-          {/* Decorative Elements */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="flex items-center justify-center mb-8"
-          >
-            <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-[#F2E1C5] to-transparent mr-4"></div>
-            <div className="w-2 h-2 bg-[#F2E1C5] rounded-full"></div>
-            <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-[#F2E1C5] to-transparent ml-4"></div>
-          </motion.div>
 
-          {/* Main Heading */}
-          <motion.h1
-            className="text-4xl sm:text-6xl md:text-7xl font-light text-[#F2E1C5] mb-6 tracking-tight"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}      
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            Let's{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10">Connect</span>
-              <span className="absolute bottom-2 left-0 w-full h-3 bg-[#0E5543]/40 -rotate-1 z-0"></span>
-            </span>
-          </motion.h1>
+        <HeaderContent
+          tagline="Get in Touch"
+          title="Connect With Us"
+          subtitle="Our team is ready to assist you with your marble projects. Experience personalized guidance and premium service every step of the way."
+          theme="dark"
+        />
 
-          {/* Subtitle */}
-          <motion.p
-            className="text-lg sm:text-xl md:text-2xl text-[#F2E1C5]/90 font-light leading-relaxed max-w-2xl mx-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-          >
-            We're here to help you. Get in touch and experience premium customer service.
-          </motion.p>
-
-          {/* CTA Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="mt-8"
-          >
-            <motion.button
-              whileHover={{ 
-                scale: 1.05, 
-                y: -2,
-                backgroundColor: "#1a7a62",
-                boxShadow: "0 10px 25px rgba(14, 85, 67, 0.3)"
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-[#0E5543] text-[#F2E1C5] rounded-lg border border-[#0E5543]/50 transition-all duration-300 font-medium"
-            >
-              Start Conversation
-            </motion.button>
-          </motion.div>
-
-          {/* Bottom Decorative Element */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 1, delay: 1 }}
-            className="mt-12"
-          >
-            <div className="w-24 h-0.5 bg-gradient-to-r from-[#0E5543] to-[#F2E1C5] mx-auto"></div>
-          </motion.div>
-        </motion.div>
-
-        {/* Floating Elements */}
-        <div className="absolute bottom-10 left-10 opacity-10">
-          <div className="w-8 h-8 border-2 border-[#F2E1C5] rounded-full animate-bounce"></div>
-        </div>
-        <div className="absolute top-10 right-10 opacity-10">
-          <div className="w-6 h-6 border border-[#F2E1C5] rounded-full animate-pulse"></div>
-        </div>
       </section>
 
-      {/* Premium Contact Section with #F2E1C5 Background */}
-      <section className="relative py-20 px-4 sm:px-6 max-w-full mx-auto w-full bg-[#F2E1C5]">
-        {/* Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-20 w-80 h-80 bg-[#0E5543]/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-20 w-80 h-80 bg-[#0E5543]/5 rounded-full blur-3xl"></div>
-        </div>
+      {/* Main Contact Section */}
+      <section className="relative py-16 px-4 max-w-7xl mx-auto">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-[#F2E1C5]/20"></div>
 
-        <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Enhanced Contact Information - Adjusted for light background */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 relative z-10">
+          {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.8 }}
             className="space-y-8"
           >
+            {/* Header */}
             <div>
-              <h2 className="text-3xl sm:text-4xl font-light mb-4 text-[#0d0d0d]">
-                Let's Start a <span className="text-[#0E5543]">Conversation</span>
+              <h2 className="text-3xl md:text-4xl font-['Cormorant_Garamond'] font-bold text-[#0E5543] mb-4">
+                Get In Touch
               </h2>
-              <p className="text-[#0d0d0d]/80 text-lg leading-relaxed">
-                We're here to provide you with exceptional service and bring your
-                vision to life with our premium ceramic solutions.
+              <div className="w-16 h-1 bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-full mb-4"></div>
+              <p className="text-[#0E5543]/80 font-['Source_Serif_Pro'] text-lg leading-relaxed">
+                Our team of marble specialists is ready to bring your vision to life with premium craftsmanship and exceptional service.
               </p>
             </div>
 
-            {/* Enhanced Contact Items - Adjusted for light background */}
+            {/* Contact Items */}
             <div className="space-y-6">
               {[
                 {
                   icon: FaPhoneAlt,
                   title: "Phone",
-                  content: "+91 98765 43210",
-                  delay: 0.1
+                  content: "+1 (555) 123-4567",
+                  subtext: "Mon-Sun: 6:00 AM - 9:00 PM",
+                  color: "from-[#0E5543] to-[#1A7A62]"
                 },
                 {
                   icon: FaEnvelope,
                   title: "Email",
-                  content: "support@ceramicluxury.com",
-                  delay: 0.2
+                  content: "hello@premiummarble.com",
+                  subtext: "Response within 4 hours",
+                  color: "from-[#1A7A62] to-[#2D8C6E]"
                 },
                 {
                   icon: FaMapMarkerAlt,
-                  title: "Address",
-                  content: "21, Premium Avenue, Mumbai, India",
-                  delay: 0.3
+                  title: "Showroom",
+                  content: "123 Luxury Avenue",
+                  subtext: "Mumbai, India 400001",
+                  color: "from-[#0E5543] to-[#1A7A62]"
                 },
                 {
                   icon: FaClock,
                   title: "Business Hours",
-                  content: "Mon – Sat: 9:00 AM – 7:00 PM",
-                  delay: 0.4
+                  content: "Monday - Saturday",
+                  subtext: "9:00 AM - 7:00 PM",
+                  color: "from-[#1A7A62] to-[#2D8C6E]"
                 }
               ].map((item, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: item.delay, duration: 0.6 }}
-                  className="group flex items-start space-x-4 p-4 rounded-xl hover:bg-[#0E5543]/10 transition-all duration-300 border border-transparent hover:border-[#0E5543]/20 bg-white/80 backdrop-blur-sm"
+                  transition={{ delay: index * 0.1 }}
+                  className="flex items-start gap-4 p-4 rounded-xl bg-white/80 backdrop-blur-sm border border-[#0E5543]/10 hover:border-[#0E5543]/30 transition-all duration-300 group"
                 >
-                  <div className="relative">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#0E5543] to-[#1a7a62] rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      <item.icon className="w-5 h-5 text-[#F2E1C5]" />
-                    </div>
+                  <div className={`w-12 h-12 bg-gradient-to-r ${item.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <item.icon className="text-lg text-[#F2E1C5]" />
                   </div>
                   <div>
-                    <h3 className="text-[#0E5543] font-medium text-lg">{item.title}</h3>
-                    <p className="text-[#0d0d0d]/80">{item.content}</p>
+                    <h3 className="font-['Inter'] font-semibold text-[#0E5543]">{item.title}</h3>
+                    <p className="text-[#0E5543] font-medium">{item.content}</p>
+                    <p className="text-[#0E5543]/70 text-sm">{item.subtext}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            {/* Enhanced Social Links - Adjusted for light background */}
+            {/* Social Links */}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="pt-6"
+              transition={{ delay: 0.4 }}
+              className="pt-4"
             >
-              <h3 className="text-xl font-light mb-4 text-[#0d0d0d]">Follow Our Journey</h3>
-              <div className="flex space-x-3">
+              <h3 className="font-['Inter'] font-semibold text-[#0E5543] mb-4">Follow Our Journey</h3>
+              <div className="flex gap-3">
                 {[FaInstagram, FaFacebookF, FaLinkedinIn].map((Icon, index) => (
                   <motion.a
                     key={index}
                     href="#"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-12 h-12 bg-gradient-to-br from-[#0E5543] to-[#1a7a62] rounded-lg flex items-center justify-center hover:shadow-lg transition-all duration-300 group shadow-md"
+                    className="w-10 h-10 bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-lg flex items-center justify-center text-[#F2E1C5] hover:shadow-lg transition-all duration-300"
                   >
-                    <Icon className="w-5 h-5 text-[#F2E1C5] group-hover:scale-110 transition-transform duration-300" />
+                    <Icon className="text-sm" />
                   </motion.a>
                 ))}
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Premium Contact Form with #F2E1C5 Background */}
+          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#0E5543]/10 to-[#F2E1C5]/20 rounded-3xl m-w-screen"></div>
-            <div className="relative bg-[#F2E1C5] backdrop-blur-xl rounded-3xl border border-[#0E5543]/30 p-8 sm:p-10 shadow-2xl">
-              <div className="mb-8">
-                <h2 className="text-3xl font-light mb-2 text-[#0d0d0d]">Send Us a Message</h2>
-                <div className="w-16 h-0.5 bg-gradient-to-r from-[#0E5543] to-[#1a7a62]"></div>
+            <div className="bg-white rounded-2xl shadow-xl border border-[#0E5543]/10 overflow-hidden">
+              {/* Form Header */}
+              <div className="bg-gradient-to-r from-[#0E5543] to-[#1A7A62] p-6 text-center">
+                <h3 className="text-2xl font-['Cormorant_Garamond'] font-bold text-[#F2E1C5]">
+                  Send Us a Message
+                </h3>
+                <p className="text-[#F2E1C5]/80 font-['Source_Serif_Pro']">We'll respond within 24 hours</p>
               </div>
 
-              <form className="space-y-6">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 }}
-                >
-                  <label className="block text-sm font-medium text-[#0d0d0d]/80 mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 bg-white/80 border border-[#0E5543]/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0E5543]/50 focus:border-transparent text-[#0d0d0d] placeholder-[#0d0d0d]/50 transition-all duration-300 backdrop-blur-sm"
-                    placeholder="Enter your full name"
-                  />
-                </motion.div>
+              {/* Form Content */}
+              <div className="p-6 md:p-8">
+                <form className="space-y-6">
+                  <div>
+                    <label className="block text-sm font-['Inter'] font-medium text-[#0E5543] mb-2">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-3 bg-[#F2E1C5]/10 border border-[#0E5543]/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0E5543]/30 focus:border-[#0E5543] text-[#0E5543] placeholder-[#0E5543]/50 transition-all duration-300"
+                      placeholder="Your full name"
+                    />
+                  </div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  <label className="block text-sm font-medium text-[#0d0d0d]/80 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-3 bg-white/80 border border-[#0E5543]/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0E5543]/50 focus:border-transparent text-[#0d0d0d] placeholder-[#0d0d0d]/50 transition-all duration-300 backdrop-blur-sm"
-                    placeholder="Enter your email"
-                  />
-                </motion.div>
+                  <div>
+                    <label className="block text-sm font-['Inter'] font-medium text-[#0E5543] mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      className="w-full px-4 py-3 bg-[#F2E1C5]/10 border border-[#0E5543]/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0E5543]/30 focus:border-[#0E5543] text-[#0E5543] placeholder-[#0E5543]/50 transition-all duration-300"
+                      placeholder="your@email.com"
+                    />
+                  </div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                >
-                  <label className="block text-sm font-medium text-[#0d0d0d]/80 mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    rows="5"
-                    className="w-full px-4 py-3 bg-white/80 border border-[#0E5543]/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0E5543]/50 focus:border-transparent text-[#0d0d0d] placeholder-[#0d0d0d]/50 resize-none transition-all duration-300 backdrop-blur-sm"
-                    placeholder="Tell us about your project..."
-                  ></textarea>
-                </motion.div>
+                  <div>
+                    <label className="block text-sm font-['Inter'] font-medium text-[#0E5543] mb-2">
+                      Project Type
+                    </label>
+                    <select className="w-full px-4 py-3 bg-[#F2E1C5]/10 border border-[#0E5543]/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0E5543]/30 focus:border-[#0E5543] text-[#0E5543] transition-all duration-300">
+                      <option>Select project type</option>
+                      <option>Residential Marble</option>
+                      <option>Commercial Project</option>
+                      <option>Marble Restoration</option>
+                      <option>Consultation</option>
+                    </select>
+                  </div>
 
-                <motion.button
-                  type="submit"
-                  whileHover={{ 
-                    scale: 1.02,
-                    background: "linear-gradient(to right, #1a7a62, #0E5543)",
-                    boxShadow: "0 10px 25px rgba(14, 85, 67, 0.4)"
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full py-4 bg-gradient-to-r from-[#0E5543] to-[#1a7a62] text-[#F2E1C5] font-medium rounded-xl shadow-lg transition-all duration-300 group flex items-center justify-center space-x-2"
-                >
-                  <span>Send Message</span>
-                  <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </motion.button>
-              </form>
+                  <div>
+                    <label className="block text-sm font-['Inter'] font-medium text-[#0E5543] mb-2">
+                      Message *
+                    </label>
+                    <textarea
+                      rows="4"
+                      className="w-full px-4 py-3 bg-[#F2E1C5]/10 border border-[#0E5543]/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0E5543]/30 focus:border-[#0E5543] text-[#0E5543] placeholder-[#0E5543]/50 resize-none transition-all duration-300"
+                      placeholder="Tell us about your project..."
+                    ></textarea>
+                  </div>
+
+                  <motion.button
+                    type="submit"
+                    whileHover={{ scale: 1.02, y: -1 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full py-4 bg-gradient-to-r from-[#0E5543] to-[#1A7A62] text-[#F2E1C5] font-['Inter'] font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
+                  >
+                    Send Message
+                    <FaArrowRight className="text-sm" />
+                  </motion.button>
+                </form>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -332,12 +263,33 @@ const ContactUs = () => {
               allowFullScreen=""
               loading="lazy"
             ></iframe>
-            
+
             {/* Map Overlay Info */}
             <div className="absolute bottom-6 left-6 z-20 bg-[#0d0d0d]/90 backdrop-blur-sm p-4 rounded-xl border border-[#0E5543]/30 max-w-xs">
               <h3 className="text-[#F2E1C5] font-medium mb-1">Ceramic Luxury Showroom</h3>
               <p className="text-[#F2E1C5]/70 text-sm">21, Premium Avenue, Mumbai, India</p>
             </div>
+          </div>
+
+          {/* Info Cards */}
+          <div className="grid md:grid-cols-3 gap-6 mt-8">
+            {[
+              { icon: FaClock, title: "Visit Us", text: "Mon-Sat: 9AM-7PM" },
+              { icon: FaPhoneAlt, title: "Call Ahead", text: "+1 (555) 123-4567" },
+              { icon: FaStar, title: "Premium Service", text: "By appointment only" }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-[#F2E1C5]/10 backdrop-blur-sm rounded-xl p-6 text-center border border-[#F2E1C5]/20"
+              >
+                <item.icon className="text-2xl text-[#F2E1C5] mx-auto mb-3" />
+                <h4 className="font-['Inter'] font-semibold text-[#F2E1C5]">{item.title}</h4>
+                <p className="text-[#F2E1C5]/80 text-sm">{item.text}</p>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </section>

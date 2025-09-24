@@ -20,28 +20,43 @@ export default function AdvicePage() {
         </div>
 
         {/* Premium Hero Section */}
-        <section className="relative mb-28">
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#F2E1C5]/20 bg-gradient-to-br from-[#0A3D2F] via-[#0E5543] to-[#1A7A5E]">
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A3D2F]/80 via-[#0E5543]/60 to-transparent z-10"></div>
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#F2E1C5]/15 via-transparent to-transparent z-0"></div>
+      <section className="relative mb-20">
+  <div className="relative rounded-2xl overflow-hidden bg-[#F2E1C5] border border-[#0E5543]/20">
+    
+    <div className="grid md:grid-cols-2 min-h-[500px]">
+      {/* Image Side */}
+      <div className="relative">
+        <img
+          src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+          alt="Luxury marble interior"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-[#0E5543]/10"></div>
+      </div>
 
-            <img
-              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-              alt="Luxury marble interior"
-              className="w-full h-[600px] object-cover transform hover:scale-105 transition-transform duration-1000"
-            />
+      {/* Content Side */}
+      <div className="flex items-center p-8 md:p-12">
+        <div>
+          <span className="text-[#0E5543]/70 text-sm font-['Inter'] uppercase tracking-widest mb-4 block">
+            Expert Marble Care
+          </span>
+          
+          <h1 className="text-3xl md:text-4xl font-['Cormorant_Garamond'] font-bold text-[#0E5543] mb-4 leading-tight">
+            Preserve Your Marble's Natural Beauty
+          </h1>
+          
+          <p className="text-[#0E5543]/80 font-['Source_Serif_Pro'] leading-relaxed mb-6">
+            Professional care solutions to maintain your marble's elegance for generations to come.
+          </p>
 
-            <div className="absolute bottom-12 left-12 z-20 max-w-2xl">
-              <span className="text-[#F2E1C5]/80 text-lg font-light tracking-widest mb-4 block">MARBLE CARE EXPERTISE</span>
-              <h1 className="text-6xl font-playfair font-bold text-[#F2E1C5] mb-6 leading-tight">
-                Timeless Elegance,<br />Preserved Forever
-              </h1>
-              <p className="text-[#F2E1C5]/90 text-xl font-light leading-relaxed">
-                Master the art of marble preservation with our exclusive care protocols designed to maintain your stone's natural brilliance for generations.
-              </p>
-            </div>
-          </div>
-        </section>
+          <button className="px-6 py-2.5 bg-[#0E5543] text-[#F2E1C5] rounded-full font-['Inter'] font-medium text-sm hover:bg-[#1A7A62] transition-colors duration-300">
+            Learn More
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Premium Features Grid */}
         <section className="relative mb-28 z-10">

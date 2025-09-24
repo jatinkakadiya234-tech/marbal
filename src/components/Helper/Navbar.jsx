@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { FiMenu, FiSearch, FiX, FiShoppingCart } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import logo from "../../../public/logo.png"; // Adjust the path as necessary
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,25 +37,24 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-500 ${
-        scrolled
+      className={`fixed w-full z-50 transition-all duration-500 ${scrolled
           ? "bg-[#0E5543] backdrop-blur-md shadow-xl py-1"
           : "bg-gradient-to-b from-gray-900 to-gray-850 py-2 border-b border-gray-700/30"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-         <div className="flex-shrink-0 flex items-center">
-  <Link to="/" className="inline-flex items-center">
-    <img
-      src={logo}
-      alt="RGM"
-      className="h-10 sm:h-12 w-10 sm:w-12 object-cover"
-      style={{ borderRadius: "50%" }}
-    />
-  </Link>
-</div>
+          <div className="flex items-center">
+            <Link to="/" className="inline-flex items-center">
+              <img
+                src={logo}
+                alt="RGM"
+                className="h-38 w-38 object-contain"
+              />
+            </Link>
+          </div>
+
 
 
           {/* Desktop Menu */}
@@ -64,11 +63,10 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`transition-all duration-300 group ${
-                  activeItem === item.name.toLowerCase()
+                className={`transition-all duration-300 group ${activeItem === item.name.toLowerCase()
                     ? "text-white"
                     : "text-white hover:text-amber-300"
-                }`}
+                  }`}
                 onClick={() => handleItemClick(item.name.toLowerCase())}
               >
                 <span className="relative font-medium text-white after:absolute after:w-0 after:h-px after:bg-amber-300 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
@@ -91,13 +89,13 @@ const Navbar = () => {
                 />
               </div>
 
-             
+
             </div>
           </div>
 
           {/* Mobile Buttons */}
           <div className="lg:hidden flex items-center space-x-4">
-           
+
             <button
               style={{ backgroundColor: "transparent" }}
               onClick={() => setIsOpen(!isOpen)}
@@ -119,9 +117,8 @@ const Navbar = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`lg:hidden fixed top-0 right-0 h-screen w-72 sm:w-80 bg-gray-900/95 z-50 shadow-2xl transform transition-transform duration-500 ease-in-out ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`lg:hidden fixed top-0 right-0 h-screen w-72 sm:w-80 bg-gray-900/95 z-50 shadow-2xl transform transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="flex items-center justify-between px-4 h-16 border-b border-gray-800">
           <span className="text-[#F2E1C5] font-semibold tracking-wide">
@@ -139,11 +136,10 @@ const Navbar = () => {
             <Link
               key={item.name}
               to={item.path}
-              className={`block px-4 py-3 rounded-xl transition-all duration-300 flex items-center group ${
-                activeItem === item.name.toLowerCase()
+              className={`block px-4 py-3 rounded-xl transition-all duration-300 flex items-center group ${activeItem === item.name.toLowerCase()
                   ? "bg-[#F2E1C5]/10 text-[#F2E1C5]"
                   : "text-[#F2E1C5] hover:bg-[#F2E1C5]/50 hover:text-[#F2E1C5]"
-              }`}
+                }`}
               onClick={() => handleItemClick(item.name.toLowerCase())}
             >
               <span className="font-medium">{item.name}</span>
