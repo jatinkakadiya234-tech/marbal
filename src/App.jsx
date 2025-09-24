@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Helper/Navbar";
 import Homepage from "./components/Homepage/Homepage";
-import Footer from "./components/Footer"
+import Footer from "./components/Helper/Footer"
 import ContactUs from "./components/Contact/ContactUs";
 import About from "./components/About/Aboutpage";
 import ServicesShowcase from "./components/Services/ServicesPage";
@@ -13,6 +13,7 @@ import TechnologyShowcase from "./components/StateOfArt/StateOfArtPage";
 import NotFoundPage from "./components/Errors/NotFoundPage";
 import ScrollToTop from "./components/Helper/NavigateScrolletop";
 import OurStones from "./components/OurStones/OurStones";
+import HelpandAddvaice from "./components/Addvice/HelpandAddvaice";
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/gallery" element={<ProjectsGallery />} />
           <Route path="/state-of-the-art" element={<TechnologyShowcase />} />
           <Route path="/OurStones" element={<OurStones />} />
+          <Route path="/help" element={<HelpandAddvaice />} />
 
 
 
