@@ -23,7 +23,7 @@ const ServiceNav = ({ categories, activeCategory, setActiveCategory }) => {
                         whileTap={{ scale: 0.95 }}
                         className={`px-5 py-2.5 rounded-full text-sm font-medium border transition-all font-sans ${activeCategory === category
                             ? "bg-[#0E5543] text-[#F2E1C5] border-[#0E5543] shadow-md"
-                            : "bg-transparent text-[#0E5543] border-[#0E5543]/40 hover:bg-[#0E5543]/10"
+                            : "bg-transparent text-[#1a9778] border-[#0E5543]/40 hover:bg-[#0E5543]/10"
                             }`}
                         onClick={() => setActiveCategory(category)}
                     >

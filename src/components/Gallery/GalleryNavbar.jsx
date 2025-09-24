@@ -28,7 +28,7 @@ const GalleryNavbar = ({ selectedCategory, setSelectedCategory, searchQuery, set
                 whileTap={{ scale: 0.95 }}
                 className={`px-6 py-3 rounded-full border-2 font-medium transition-all duration-300 ${
                   selectedCategory === category.id
-                    ? 'bg-[#F2E1C5] text-[#0E5543] border-[#F2E1C5] shadow-lg'
+                    ? 'bg-[#F2E1C5] text-[#1b9275] border-[#F2E1C5] shadow-lg'
                     : 'bg-transparent text-[#F2E1C5] border-[#F2E1C5]/40 hover:border-[#F2E1C5] hover:bg-[#F2E1C5]/10'
                 }`}
               >

@@ -67,6 +67,7 @@ export default function GalleryBottomSections() {
                             <div className="w-24 h-0.5 bg-gradient-to-r from-[#F2E1C5] to-transparent mx-auto"></div>
                         </div>
 
+
                         {/* Description */}
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}

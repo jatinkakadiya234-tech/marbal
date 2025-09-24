@@ -8,6 +8,8 @@ import about1 from "../../assets/about1.jpg";
 import about2 from "../../assets/about2.jpg";
 import about3 from "../../assets/about3.jpg";
 import about4 from "../../assets/about4.jpg";
+import HeaderContent from "../Helper/HeaderContent";
+
 
 const About = () => {
   const [theme, setTheme] = useState("light");
@@ -63,40 +65,7 @@ const About = () => {
     <section id="about" className={`py-12 md:py-16 lg:py-24 ${theme === 'dark' ? 'bg-[#F2E1C5]' : 'bg-[#F2E1C5]'} transition-colors duration-500 overflow-hidden`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <motion.div
-          className="text-center mb-12 md:mb-16 lg:mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="inline-flex items-center justify-center mb-3 md:mb-4">
-            <div className="w-2 h-2 bg-[#0E5543] rounded-full mr-2"></div>
-            <span
-              className={`text-xs md:text-sm font-semibold tracking-widest uppercase ${
-                theme === "dark" ? "text-[#8DB596]" : "text-[#0E5543]"
-              }`}
-            >
-              Why Choose Us
-            </span>
-          </div>
-          <h2
-            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold mb-4 md:mb-6 ${
-              theme === "dark" ? "text-white" : "text-gray-900"
-            }`}
-          >
-           Rishab Green Marbles
-          </h2>
-          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-[#0E5543] to-[#8DB596] mx-auto mb-6 md:mb-8"></div>
-          <p
-            className={`text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed ${
-              theme === "dark" ? "text-gray-300" : "text-gray-700"
-            }`}
-          >
-            Choose us for trusted quality, on-time delivery, and service that
-            stands behind every installation.
-          </p>
-        </motion.div>
+       <HeaderContent />
 
         {/* Content */}
         <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16">
@@ -175,18 +144,16 @@ const About = () => {
           >
             <div className="mb-8 md:mb-10">
               <h3
-                className={`text-xl md:text-2xl lg:text-3xl font-serif font-semibold mb-6 md:mb-8 ${
-                  theme === "dark" ? "text-white" : "text-gray-900"
-                }`}
+                className={`text-xl md:text-2xl lg:text-3xl font-serif font-semibold mb-6 md:mb-8 ${theme === "dark" ? "text-white" : "text-gray-900"
+                  }`}
               >
                 Excellence Crafted with Passion Since{" "}
                 <span className="text-[#0E5543]">1995</span>
               </h3>
 
               <p
-                className={`text-base md:text-lg leading-relaxed ${
-                  theme === "dark" ? "text-gray-300" : "text-gray-700"
-                } mb-4 md:mb-6`}
+                className={`text-base md:text-lg leading-relaxed ${theme === "dark" ? "text-gray-300" : "text-gray-700"
+                  } mb-4 md:mb-6`}
               >
                 At Surrey Marble & Granite, we believe that your living spaces should
                 reflect your personality and provide both beauty and functionality.
@@ -195,9 +162,8 @@ const About = () => {
               </p>
 
               <p
-                className={`text-base md:text-lg leading-relaxed ${
-                  theme === "dark" ? "text-gray-300" : "text-gray-700"
-                }`}
+                className={`text-base md:text-lg leading-relaxed ${theme === "dark" ? "text-gray-300" : "text-gray-700"
+                  }`}
               >
                 Our team of skilled craftsmen combines traditional techniques
                 with modern precision to create installations that are not only
@@ -228,15 +194,13 @@ const About = () => {
                     custom={i}
                   >
                     <FiCheckCircle
-                      className={`mr-3 flex-shrink-0 ${
-                        theme === "dark" ? "text-[#8DB596]" : "text-[#0E5543]"
-                      }`}
+                      className={`mr-3 flex-shrink-0 ${theme === "dark" ? "text-[#8DB596]" : "text-[#0E5543]"
+                        }`}
                       size={18}
                     />
                     <span
-                      className={`text-sm md:text-base ${
-                        theme === "dark" ? "text-gray-300" : "text-gray-700"
-                      }`}
+                      className={`text-sm md:text-base ${theme === "dark" ? "text-gray-300" : "text-gray-700"
+                        }`}
                     >
                       {feature}
                     </span>
@@ -260,30 +224,26 @@ const About = () => {
               ].map((stat, i) => (
                 <motion.div
                   key={i}
-                  className={`p-4 md:p-5 lg:p-6 rounded-xl md:rounded-2xl ${
-                    theme === "dark" ? "bg-gray-800" : "bg-white"
-                  } shadow-lg border border-[#0E5543]/10`}
+                  className={`p-4 md:p-5 lg:p-6 rounded-xl md:rounded-2xl ${theme === "dark" ? "bg-gray-800" : "bg-white"
+                    } shadow-lg border border-[#0E5543]/10`}
                   variants={statVariants}
                   custom={i}
                   whileHover={{ y: -5, transition: { duration: 0.3 } }}
                 >
                   <stat.icon
-                    className={`mx-auto mb-2 md:mb-3 lg:mb-4 ${
-                      theme === "dark" ? "text-[#8DB596]" : "text-[#0E5543]"
-                    }`}
+                    className={`mx-auto mb-2 md:mb-3 lg:mb-4 ${theme === "dark" ? "text-[#8DB596]" : "text-[#0E5543]"
+                      }`}
                     size={24}
                   />
                   <div
-                    className={`text-xl md:text-2xl lg:text-3xl font-bold mb-1 md:mb-2 ${
-                      theme === "dark" ? "text-white" : "text-[#0E5543]"
-                    }`}
+                    className={`text-xl md:text-2xl lg:text-3xl font-bold mb-1 md:mb-2 ${theme === "dark" ? "text-white" : "text-[#0E5543]"
+                      }`}
                   >
                     {stat.value}
                   </div>
                   <div
-                    className={`text-xs md:text-sm font-medium ${
-                      theme === "dark" ? "text-gray-400" : "text-gray-600"
-                    }`}
+                    className={`text-xs md:text-sm font-medium ${theme === "dark" ? "text-gray-400" : "text-gray-600"
+                      }`}
                   >
                     {stat.label}
                   </div>

@@ -1,55 +1,56 @@
 // components/About/VideoShot.jsx
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import HeaderContent from '../Helper/HeaderContent';
 
 const categories = ['All', 'Marble', 'Granite', 'Quartz'];
 
 const videos = [
-  { 
-    src: '/hero.webm', 
-    thumb: '/kitchen.jpg', 
-    title: 'Signature Marble Cuts', 
-    desc: 'Elegant veins with cinematic lighting.', 
+  {
+    src: '/hero.webm',
+    thumb: '/kitchen.jpg',
+    title: 'Signature Marble Cuts',
+    desc: 'Elegant veins with cinematic lighting.',
     category: 'Marble',
     duration: '2:15'
   },
-  { 
-    src: '/hero.webm', 
-    thumb: '/furniture.jpg', 
-    title: 'Premium Countertops', 
-    desc: 'Refined edges and polished surfaces.', 
+  {
+    src: '/hero.webm',
+    thumb: '/furniture.jpg',
+    title: 'Premium Countertops',
+    desc: 'Refined edges and polished surfaces.',
     category: 'Granite',
     duration: '1:45'
   },
-  { 
-    src: '/hero.webm', 
-    thumb: '/cozyroom.jpg', 
-    title: 'Flooring Showcase', 
-    desc: 'Durable, luxurious floors in motion.', 
+  {
+    src: '/hero.webm',
+    thumb: '/cozyroom.jpg',
+    title: 'Flooring Showcase',
+    desc: 'Durable, luxurious floors in motion.',
     category: 'Marble',
     duration: '3:20'
   },
-  { 
-    src: '/hero.webm', 
-    thumb: '/livingrooom.jpg', 
-    title: 'Bathroom Finishes', 
-    desc: 'Moody textures and water resistance.', 
+  {
+    src: '/hero.webm',
+    thumb: '/livingrooom.jpg',
+    title: 'Bathroom Finishes',
+    desc: 'Moody textures and water resistance.',
     category: 'Quartz',
     duration: '2:50'
   },
-  { 
-    src: '/hero.webm', 
-    thumb: '/kitchen2.jpg', 
-    title: 'Kitchen Islands', 
-    desc: 'Bold slabs, seamless joints.', 
+  {
+    src: '/hero.webm',
+    thumb: '/kitchen2.jpg',
+    title: 'Kitchen Islands',
+    desc: 'Bold slabs, seamless joints.',
     category: 'Granite',
     duration: '2:30'
   },
-  { 
-    src: '/hero.webm', 
-    thumb: '/bedroom.jpg', 
-    title: 'Feature Walls', 
-    desc: 'Texture, depth, and natural character.', 
+  {
+    src: '/hero.webm',
+    thumb: '/bedroom.jpg',
+    title: 'Feature Walls',
+    desc: 'Texture, depth, and natural character.',
     category: 'Quartz',
     duration: '1:55'
   },
@@ -80,12 +81,12 @@ const itemVariants = {
 };
 
 const modalVariants = {
-  hidden: { 
+  hidden: {
     opacity: 0,
     scale: 0.95,
     y: 20
   },
-  visible: { 
+  visible: {
     opacity: 1,
     scale: 1,
     y: 0,
@@ -134,7 +135,7 @@ export default function VideoShot() {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-20 -right-20 w-60 h-60 bg-[#F2E1C5]/5 rounded-full"></div>
         <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#F2E1C5]/5 rounded-full"></div>
-        
+
         {/* Pattern overlay */}
         <div className="absolute inset-0 opacity-[0.03]"
           style={{
@@ -143,61 +144,19 @@ export default function VideoShot() {
           }}
         ></div>
       </div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-        >
-          <motion.div 
-            className="inline-flex items-center justify-center mb-4"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-          >
-            <div className="w-2 h-2 bg-[#F2E1C5] rounded-full mr-2"></div>
-            <span className="text-sm font-semibold tracking-widest uppercase text-[#F2E1C5] font-sans">
-              Video Gallery
-            </span>
-          </motion.div>
-          
-          <motion.h1 
-            className="text-4xl md:text-5xl font-serif text-[#F2E1C5] mb-4 tracking-tight"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            Our Marble <span className="text-white">Showcase</span>
-          </motion.h1>
-          
-          <motion.div 
-            className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#F2E1C5] to-transparent mx-auto"
-            initial={{ width: 0 }}
-            whileInView={{ width: 96 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          ></motion.div>
-          
-          <motion.p 
-            className="mt-6 max-w-2xl mx-auto text-[#F2E1C5]/80 text-lg font-sans"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.7, duration: 0.5 }}
-          >
-            Discover the elegance and durability of our premium stone collection
-          </motion.p>
-        </motion.div>
+
+        <HeaderContent
+          tagline=' Video Gallery'
+          title='Our Marble Showcase'
+          subtitle='Discover the elegance and durability of our premium stone collection'
+          theme='dark'
+        />
 
         {/* Category selector */}
-        <motion.div 
+        <motion.div
           className="flex flex-wrap gap-3 justify-center mb-12"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -207,7 +166,7 @@ export default function VideoShot() {
           {categories.map((c) => (
             <motion.button
               key={c}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
                 backgroundColor: "#F2E1C5",
                 color: "#0E5543"
@@ -222,7 +181,7 @@ export default function VideoShot() {
         </motion.div>
 
         {/* Video gallery */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
           variants={containerVariants}
           initial="hidden"
@@ -231,7 +190,7 @@ export default function VideoShot() {
         >
           {visibleVideos.map((v, idx) => {
             const globalIdx = videos.indexOf(v);
-            
+
             return (
               <motion.div
                 key={globalIdx}
@@ -242,28 +201,28 @@ export default function VideoShot() {
                 onClick={() => setModalIdx(globalIdx)}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a3a2d]/90 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
+
                 {/* Shine effect on hover */}
                 <div className="absolute inset-0 overflow-hidden z-20">
                   <div className="absolute -inset-full group-hover:inset-0 transition-all duration-700 bg-gradient-to-r from-transparent via-[#F2E1C5]/10 to-transparent transform rotate-12"></div>
                 </div>
-                
+
                 <div className="aspect-video w-full relative overflow-hidden">
-                  <motion.img 
-                    src={v.thumb} 
-                    alt={v.title} 
+                  <motion.img
+                    src={v.thumb}
+                    alt={v.title}
                     className="absolute inset-0 w-full h-full object-cover"
                     whileHover={{ scale: 1.08 }}
                     transition={{ duration: 0.7 }}
                   />
-                  
+
                   {/* Duration badge */}
                   <div className="absolute top-3 right-3 px-2 py-1 rounded-md bg-[#0a3a2d]/90 text-[#F2E1C5] text-xs font-medium z-20 font-sans">
                     {v.duration}
                   </div>
-                  
+
                   {/* Play button */}
-                  <motion.div 
+                  <motion.div
                     className="absolute inset-0 flex items-center justify-center z-30"
                     initial={{ opacity: 0.8, scale: 1 }}
                     whileHover={{ opacity: 1, scale: 1.1 }}
@@ -273,9 +232,9 @@ export default function VideoShot() {
                     </div>
                   </motion.div>
                 </div>
-                
+
                 {/* Content overlay */}
-                <motion.div 
+                <motion.div
                   className="absolute left-0 right-0 bottom-0 p-4 z-30"
                   initial={{ y: 10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -297,21 +256,21 @@ export default function VideoShot() {
         {/* Modal player */}
         <AnimatePresence>
           {modalIdx !== null && (
-            <motion.div 
+            <motion.div
               className="fixed inset-0 z-50 flex items-center justify-center p-4  "
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <motion.div 
+              <motion.div
                 className="absolute inset-0 bg-[#0a3a2d]/25 backdrop-blur-sm "
                 onClick={closeModal}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               ></motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 className="relative w-full max-w-7xl rounded-xl overflow-hidden bg-[#0E5543] border border-[#F2E1C5]/20 shadow-2xl z-10"
                 variants={modalVariants}
                 initial="hidden"
@@ -329,7 +288,7 @@ export default function VideoShot() {
                     playsInline
                     onLoadedData={() => setIsVideoLoaded(true)}
                   />
-                  
+
                   {/* Loading spinner */}
                   {!isVideoLoaded && (
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -337,9 +296,9 @@ export default function VideoShot() {
                     </div>
                   )}
                 </div>
-                
-         
-                
+
+
+
                 <motion.button
                   whileHover={{ scale: 1.1, backgroundColor: "#F2E1C5", color: "#0E5543" }}
                   whileTap={{ scale: 0.95 }}

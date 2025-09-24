@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import HeaderContent from "../Helper/HeaderContent";
 
 const categories = [
   {
@@ -120,20 +121,12 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <motion.div
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <h2 className="text-5xl md:text-6xl font-serif text-white mb-6">
-            Top Product Categories
-          </h2>
-          <p className="text-lg text-gray-300/90 max-w-2xl mx-auto">
-            Explore Uni for smart essentials and Premium for exclusive, refined finishes
-          </p>
-        </motion.div>
+        <HeaderContent
+          tagline=""
+          title="Top Product Categories"
+          subtitle=" Explore Uni for smart essentials and Premium for exclusive, refined finishes"
+          theme="dark"
+        />
 
         {/* Responsive Grid Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
