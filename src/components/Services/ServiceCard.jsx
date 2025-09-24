@@ -76,7 +76,7 @@ export default function ServiceCard({ service, setSelectedService }) {
             color: "#F2E1C5",
           }}
           whileTap={{ scale: 0.95 }}
-          className="w-full mt-5 py-2.5 rounded-lg bg-[#0E5543]/10 text-[#0E5543] text-sm font-medium border border-[#0E5543]/20 transition-colors font-sans"
+          className="w-full mt-5 py-2.5 rounded-lg bg-[#0E5543]/10 text-[#1b9778] text-sm font-medium border border-[#0E5543]/20 transition-colors font-sans"
         >
           View Details
         </motion.button>

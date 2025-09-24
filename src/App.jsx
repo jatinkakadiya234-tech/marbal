@@ -13,7 +13,7 @@ import TechnologyShowcase from "./components/StateOfArt/StateOfArtPage";
 import NotFoundPage from "./components/Errors/NotFoundPage";
 import ScrollToTop from "./components/Helper/NavigateScrolletop";
 import OurStones from "./components/OurStones/OurStones";
-import HelpandAddvaice from "./components/Addvice/HelpandAddvaice";
+import HelpandAddvaice from "./components/Advice/HelpandAddvaice";
 
 function App() {
 
