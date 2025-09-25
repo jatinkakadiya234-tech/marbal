@@ -55,8 +55,7 @@ const MarbleQuarryHome = () => {
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
-      opacity: 1,
-      y: 0,
+      opacity: 1, y: 0,
       transition: {
         duration: 0.6,
         ease: [0.25, 0.46, 0.45, 0.94]
@@ -67,8 +66,7 @@ const MarbleQuarryHome = () => {
   const imageVariants = {
     hidden: { opacity: 0, scale: 0.9 },
     visible: {
-      opacity: 1,
-      scale: 1,
+      opacity: 1, scale: 1,
       transition: {
         duration: 0.5,
         ease: "easeOut"
@@ -83,15 +81,16 @@ const MarbleQuarryHome = () => {
       }
     }
   };
+
   return (
     <div className="bg-[#F2E1C5] font-['Inter'] overflow-hidden">
       <style jsx global>{`
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
-    `}</style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
+      `}</style>
 
       {/* Hero Section */}
-      <section ref={sectionRef} className="relative flex items-center py-12 lg:py-0">
+      <section ref={sectionRef} className="relative flex items-center py-12  lg:py-0 min-h-screen">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0E5543]/5 via-[#F2E1C5] to-[#0E5543]/10"></div>
 
@@ -106,50 +105,176 @@ const MarbleQuarryHome = () => {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
-            {/* Left Content */}
-            <motion.div className="space-y-10 lg:space-y-12" variants={itemVariants}>
-              {/* Main Heading */}
-              <motion.div className="space-y-6 lg:space-y-8" variants={itemVariants}>
-                <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-[#0E5543] leading-tight">
-                  Where <span className="font-['Cormorant+Garamond'] italic font-light">Artistry</span> Meets<br />
-                  <span className="font-['Cormorant+Garamond'] italic font-light">Precision</span> Engineering
-                </h1>
-                <p className="text-xl lg:text-2xl text-[#0E5543]/80 leading-relaxed font-light max-w-2xl">
-                  Experience the perfect blend of <span className="font-['Cormorant+Garamond'] italic">traditional craftsmanship</span>
-                  and <span className="font-['Cormorant+Garamond'] italic">cutting-edge technology</span> in marble processing.
-                  Our state-of-the-art machinery ensures <span className="font-semibold">unparalleled quality</span>.
-                </p>
-              </motion.div>
+       {/* Left Content - Enhanced */}
+<motion.div className="space-y-12 lg:space-y-16" variants={itemVariants}>
+  {/* Main Heading */}
+  <motion.div className="space-y-8 lg:space-y-10" variants={itemVariants}>
+    <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-[#0E5543] leading-tight font-['Playfair_Display']">
+      Where <span className="font-['Cormorant_Garamond'] italic font-light text-[#1a7f66] drop-shadow-sm">Artistry</span> Meets<br />
+      <span className="font-['Cormorant_Garamond'] italic font-light text-[#1a7f66] drop-shadow-sm">Precision</span> Engineering
+    </h1>
+    <p className="text-xl lg:text-2xl text-[#0E5543]/90 leading-relaxed font-light max-w-2xl font-['Source_Serif_Pro']">
+      Experience the perfect symphony of <span className="font-['Cormorant_Garamond'] italic font-medium text-[#0E5543]">time-honored craftsmanship</span>
+      and <span className="font-['Cormorant_Garamond'] italic font-medium text-[#0E5543]">cutting-edge innovation</span> in marble excellence.
+      Our state-of-the-art technology ensures <span className="font-semibold text-[#1a7f66]">unmatched perfection</span> in every slab.
+    </p>
+  </motion.div>
 
-              {/* CTA Buttons */}
-              <motion.div className="flex flex-col sm:flex-row gap-5 lg:gap-6" variants={itemVariants}>
-                <motion.button
-                  className="group bg-[#0E5543] text-white hover:bg-[#0E5543]/90 px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 flex items-center gap-3 shadow-2xl hover:shadow-3xl"
-                  whileHover={{ scale: 1.03, y: -3 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Discover Our Process
-                  <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
-                </motion.button>
-                <motion.button
-                  className="group border-2 border-[#0E5543] text-[#1a7f66] hover:bg-[#0E5543] hover:text-white px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 flex items-center gap-3 backdrop-blur-sm"
-                  whileHover={{ scale: 1.03, y: -3 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  View Gallery
-                  <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
-                </motion.button>
-              </motion.div>
+  {/* Enhanced Stats Section */}
+  <motion.div className="space-y-6" variants={itemVariants}>
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-2xl">
+      <div className="space-y-3 p-4 bg-white/40 rounded-2xl backdrop-blur-sm border border-white/60">
+        <div className="flex items-center gap-3">
+          <div className="w-4 h-4 bg-gradient-to-br from-[#0E5543] to-[#1a7f66] rounded-full shadow-lg"></div>
+          <span className="font-bold text-[#0E5543] text-lg font-['Inter']">50+</span>
+        </div>
+        <p className="text-[#0E5543]/80 text-sm font-['Source_Sans_3']">Years of Excellence</p>
+      </div>
+      <div className="space-y-3 p-4 bg-white/40 rounded-2xl backdrop-blur-sm border border-white/60">
+        <div className="flex items-center gap-3">
+          <div className="w-4 h-4 bg-gradient-to-br from-[#0E5543] to-[#1a7f66] rounded-full shadow-lg"></div>
+          <span className="font-bold text-[#0E5543] text-lg font-['Inter']">ISO 9001</span>
+        </div>
+        <p className="text-[#0E5543]/80 text-sm font-['Source_Sans_3']">Quality Certified</p>
+      </div>
+      <div className="space-y-3 p-4 bg-white/40 rounded-2xl backdrop-blur-sm border border-white/60">
+        <div className="flex items-center gap-3">
+          <div className="w-4 h-4 bg-gradient-to-br from-[#0E5543] to-[#1a7f66] rounded-full shadow-lg"></div>
+          <span className="font-bold text-[#0E5543] text-lg font-['Inter']">1000+</span>
+        </div>
+        <p className="text-[#0E5543]/80 text-sm font-['Source_Sans_3']">Projects Completed</p>
+      </div>
+      <div className="space-y-3 p-4 bg-white/40 rounded-2xl backdrop-blur-sm border border-white/60">
+        <div className="flex items-center gap-3">
+          <div className="w-4 h-4 bg-gradient-to-br from-[#0E5543] to-[#1a7f66] rounded-full shadow-lg"></div>
+          <span className="font-bold text-[#0E5543] text-lg font-['Inter']">24/7</span>
+        </div>
+        <p className="text-[#0E5543]/80 text-sm font-['Source_Sans_3']">Expert Support</p>
+      </div>
+    </div>
+    
+    {/* Enhanced Description */}
+    <div className="space-y-4 max-w-2xl">
+      <p className="text-lg text-[#0E5543]/90 leading-relaxed font-['Source_Serif_Pro']">
+        For over half a century, our family-owned quarry has been transforming raw marble into 
+        <span className="font-semibold text-[#1a7f66]"> breathtaking masterpieces</span> that grace the world's most prestigious spaces. 
+        We blend <span className="italic">generations of artisan wisdom</span> with <span className="italic">precision engineering</span> to create marble that tells a story.
+      </p>
+      <div className="flex items-center gap-4 text-sm text-[#0E5543]/80 font-['Source_Sans_3']">
+        <span className="flex items-center gap-2">
+          <div className="w-2 h-2 bg-[#0E5543] rounded-full"></div>
+          Global shipping available
+        </span>
+        <span className="flex items-center gap-2">
+          <div className="w-2 h-2 bg-[#0E5543] rounded-full"></div>
+          Custom designs welcome
+        </span>
+        <span className="flex items-center gap-2">
+          <div className="w-2 h-2 bg-[#0E5543] rounded-full"></div>
+          Eco-friendly practices
+        </span>
+      </div>
+    </div>
+  </motion.div>
 
-              {/* Unique Image Gallery Layout */}
+  {/* Enhanced CTA Buttons */}
+  <motion.div className="flex flex-col sm:flex-row gap-5 lg:gap-6" variants={itemVariants}>
+    <motion.button
+      className="group relative bg-gradient-to-r from-[#0E5543] to-[#1a7f66] text-white hover:from-[#1a7f66] hover:to-[#0E5543] px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 flex items-center gap-3 shadow-2xl hover:shadow-3xl overflow-hidden font-['Inter']"
+      whileHover={{ scale: 1.03, y: -3 }}
+      whileTap={{ scale: 0.98 }}
+    >
+      <span className="relative z-10">Discover Our Process</span>
+      <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+    </motion.button>
+    
+    <motion.button
+      className="group relative border-2 border-[#0E5543] text-[#0E5543] hover:bg-[#0E5543] hover:text-white px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 flex items-center gap-3 backdrop-blur-sm overflow-hidden font-['Inter']"
+      whileHover={{ scale: 1.03, y: -3 }}
+      whileTap={{ scale: 0.98 }}
+    >
+      <span className="relative z-10">View Gallery</span>
+      <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
+      <div className="absolute inset-0 bg-[#0E5543] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+    </motion.button>
+  </motion.div>
+
+  {/* Trust Badges */}
+  <motion.div className="flex flex-wrap items-center gap-6 pt-4" variants={itemVariants}>
+    <div className="text-center">
+      <div className="text-2xl font-bold text-[#0E5543] font-['Playfair_Display']">98%</div>
+      <div className="text-xs text-[#0E5543]/80 font-['Source_Sans_3']">Client Satisfaction</div>
+    </div>
+    <div className="w-px h-8 bg-[#0E5543]/30"></div>
+    <div className="text-center">
+      <div className="text-2xl font-bold text-[#0E5543] font-['Playfair_Display']">15+</div>
+      <div className="text-xs text-[#0E5543]/80 font-['Source_Sans_3']">Countries Served</div>
+    </div>
+    <div className="w-px h-8 bg-[#0E5543]/30"></div>
+    <div className="text-center">
+      <div className="text-2xl font-bold text-[#0E5543] font-['Playfair_Display']">5★</div>
+      <div className="text-xs text-[#0E5543]/80 font-['Source_Sans_3']">Rated Quality</div>
+    </div>
+  </motion.div>
+</motion.div>
+
+            {/* Right Section - Combined Video and Original Image Grid */}
+            <motion.div className="space-y-8" variants={itemVariants}>
+              {/* Video Section */}
               <motion.div
-                className="relative pt-8 lg:pt-12"
+                className="relative rounded-3xl overflow-hidden shadow-3xl border-4 border-white/90 bg-white/30 backdrop-blur-lg"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.4 }}
+              >
+                <div className="relative aspect-video">
+                  <video
+                    ref={videoRef}
+                    autoPlay
+                    muted
+                    loop
+                    className="w-full h-full object-cover"
+                    poster="https://images.unsplash.com/photo-1581094794329-cd525614faec?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  >
+                    <source src="/marbel_cutting_process.mp4" type="video/mp4" />
+                  </video>
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+
+                  <div className="absolute top-6 left-6">
+                    <span className="bg-[#0E5543] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-2xl border-2 border-white/20">
+                      🎬 Live Process Showcase
+                    </span>
+                  </div>
+
+                  <div className="absolute bottom-6 left-6 max-w-md">
+                    <h3 className="text-white text-xl lg:text-2xl font-bold mb-2 drop-shadow-2xl">Advanced CNC Cutting</h3>
+                    <p className="text-white/90 text-base drop-shadow-lg">Witness our precision machinery in action</p>
+                  </div>
+
+                  <motion.div
+                    className="absolute inset-0 rounded-3xl border-2 border-white/30 pointer-events-none"
+                    animate={{
+                      opacity: [0.3, 0.6, 0.3],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                </div>
+              </motion.div>
+
+              {/* Original Unique Image Gallery Layout */}
+              <motion.div
+                className="relative"
                 variants={containerVariants}
               >
                 {/* Background Pattern */}
                 <div className="absolute -inset-4 bg-[#0E5543]/5 rounded-3xl -z-10"></div>
 
-                <div className="grid grid-cols-8 grid-rows-5c gap-3 lg:gap-4 h-64 lg:h-80">
+                <div className="grid grid-cols-8 grid-rows-5 gap-3 lg:gap-4 h-64 lg:h-72">
                   {/* Large Main Image */}
                   <motion.div
                     className="col-span-4 row-span-4 relative group cursor-pointer rounded-2xl overflow-hidden shadow-2xl"
@@ -232,76 +357,21 @@ const MarbleQuarryHome = () => {
                   />
                 </div>
               </motion.div>
-            </motion.div>
 
-            {/* Right Video Section */}
-            <motion.div
-              className="relative"
-              variants={itemVariants}
-            >
-              <motion.div
-                className="relative rounded-3xl overflow-hidden shadow-3xl border-4 border-white/90 bg-white/30 backdrop-blur-lg"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.4 }}
+              {/* Additional Info Card */}
+              {/* <motion.div 
+                className="bg-white/80 backdrop-blur-md rounded-2xl p-6 border border-white/40 shadow-xl"
+                variants={itemVariants}
               >
-                {/* Video Container */}
-                <div className="relative aspect-[5/6] lg:aspect-video">
-                  <video
-                    ref={videoRef}
-                    autoPlay
-                    muted
-                    loop
-                    className="w-full h-full object-cover"
-                    poster="https://images.unsplash.com/photo-1581094794329-cd525614faec?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  >
-                    <source src="/marbel_cutting_process.mp4" type="video/mp4" />
-                  </video>
-
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-
-                  {/* Play/Pause Button */}
-                  {/* <motion.button
-                  onClick={toggleVideo}
-                  className="absolute bottom-8 right-8 bg-white/95 backdrop-blur-md hover:bg-white rounded-full p-4 transition-all duration-300 border-2 border-white/40 shadow-2xl"
-                  whileHover={{ scale: 1.15, rotate: 5 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  {isPlaying ? (
-                    <Pause className="w-6 h-6 text-[#0E5543]" />
-                  ) : (
-                    <Play className="w-6 h-6 text-[#0E5543]" />
-                  )}
-                </motion.button> */}
-
-                  {/* Video Badge */}
-                  <div className="absolute top-8 left-8">
-                    <span className="bg-[#0E5543] text-white px-5 py-3 rounded-full text-sm font-semibold shadow-2xl border-2 border-white/20">
-                      🎬 Live Process Showcase
-                    </span>
-                  </div>
-
-                  {/* Video Title */}
-                  <div className="absolute bottom-8 left-8 max-w-md">
-                    <h3 className="text-white text-2xl lg:text-3xl font-bold mb-3 drop-shadow-2xl">Advanced CNC Cutting</h3>
-                    <p className="text-white/90 text-lg drop-shadow-lg">Witness our precision machinery in action</p>
-                  </div>
-
-                  {/* Animated Border Effect */}
-                  <motion.div
-                    className="absolute inset-0 rounded-3xl border-2 border-white/30 pointer-events-none"
-                    animate={{
-                      opacity: [0.3, 0.6, 0.3],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
+                <div className="flex items-center gap-3 mb-3">
+                  <Sparkles className="w-5 h-5 text-[#0E5543]" />
+                  <h4 className="font-semibold text-[#0E5543]">Why Choose Us?</h4>
                 </div>
-              </motion.div>
-
+                <p className="text-[#0E5543]/80 text-sm leading-relaxed">
+                  We combine traditional marble craftsmanship with cutting-edge technology to deliver 
+                  products that exceed expectations in quality, precision, and beauty.
+                </p>
+              </motion.div> */}
             </motion.div>
           </motion.div>
         </div>

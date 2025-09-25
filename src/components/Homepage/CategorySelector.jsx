@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import HeaderContent from "../Helper/HeaderContent";
 
 const categories = [
@@ -35,7 +36,9 @@ const categories = [
 
 const CategorySelector = ({ activeCategory, setActiveCategory }) => {
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [isButtonHovered, setIsButtonHovered] = useState(false);
   const cardsRef = useRef([]);
+  const navigate = useNavigate();
 
   // 3D tilt effect
   const use3dEffect = (ref) => {
@@ -105,6 +108,38 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
     );
   };
 
+// Button animations - more subtle to match theme
+const buttonVariants = {
+  initial: { scale: 1, y: 0 },
+  hover: { 
+    scale: 1.02, 
+    y: -1,
+    transition: { 
+      duration: 0.4,
+      ease: [0.17, 0.67, 0.83, 0.67]
+    }
+  },
+  tap: { 
+    scale: 0.99,
+    transition: { 
+      duration: 0.2 
+    } 
+  }
+};
+
+  const sparkleVariants = {
+    initial: { scale: 0, opacity: 0 },
+    hover: (i) => ({
+      scale: [0, 1, 0],
+      opacity: [0, 1, 0],
+      transition: {
+        duration: 0.8,
+        delay: i * 0.1,
+        ease: "easeOut"
+      }
+    })
+  };
+
   return (
     <section className="relative py-32 bg-gradient-to-b from-gray-950 to-gray-900 overflow-hidden">
       {/* Background */}
@@ -129,7 +164,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
         />
 
         {/* Responsive Grid Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative mb-16">
           {categories.map((cat, index) => {
             const { x, y, rotateX, rotateY, handleMouseMove, handleMouseLeave } =
               use3dEffect(cardsRef[index]);
@@ -197,6 +232,98 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
               </motion.div>
             );
           })}
+        </div>
+
+        {/* Premium Explore Button */}
+        {/* Premium Explore Button */}
+        <div className="flex justify-center mt-12">
+          <motion.button
+            variants={buttonVariants}
+            initial="initial"
+            whileHover="hover"
+            whileTap="tap"
+            onHoverStart={() => setIsButtonHovered(true)}
+            onHoverEnd={() => setIsButtonHovered(false)}
+            onClick={() => navigate("/OurStones")}
+            className="relative px-10 py-4 bg-transparent border border-amber-600/40 rounded-lg 
+               text-amber-100 font-sans text-lg uppercase tracking-wider overflow-hidden 
+               group backdrop-blur-sm"
+          >
+            {/* Subtle background gradient */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-b from-amber-900/10 to-amber-950/5"
+              animate={{
+                opacity: isButtonHovered ? 1 : 0.7,
+              }}
+              transition={{ duration: 0.3 }}
+            />
+
+            {/* Hover overlay */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-amber-600/10 via-amber-500/5 to-amber-600/10"
+              animate={{
+                x: isButtonHovered ? ["-100%", "100%"] : "-100%",
+              }}
+              transition={{
+                duration: 1.2,
+                ease: "easeInOut",
+              }}
+            />
+
+            {/* Golden border glow effect */}
+            <motion.div
+              className="absolute inset-0 rounded-lg border border-amber-500/30"
+              animate={{
+                boxShadow: isButtonHovered
+                  ? "0 0 20px rgba(180, 83, 9, 0.3)"
+                  : "0 0 0px rgba(180, 83, 9, 0.1)",
+              }}
+              transition={{ duration: 0.4 }}
+            />
+
+            {/* Subtle particles matching card theme */}
+            {isButtonHovered && (
+              <>
+                {[...Array(4)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute w-1 h-1 bg-amber-400/60 rounded-full"
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{
+                      scale: [0, 1, 0],
+                      opacity: [0, 1, 0],
+                      y: [0, -15, -30],
+                      x: Math.random() * 20 - 10,
+                    }}
+                    transition={{
+                      duration: 1.5,
+                      delay: i * 0.2,
+                    }}
+                    style={{
+                      left: `${20 + i * 20}%`,
+                      bottom: "10%",
+                    }}
+                  />
+                ))}
+              </>
+            )}
+
+            {/* Button content */}
+            <div className="relative z-10 flex items-center justify-center space-x-3">
+              <span className="text-amber-100/90 group-hover:text-amber-50 transition-colors duration-300 font-medium">
+                View All Stone Collections
+              </span>
+
+              <motion.div
+                animate={{ x: isButtonHovered ? 5 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <svg className="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </motion.div>
+            </div>
+          </motion.button>
         </div>
       </div>
     </section>
