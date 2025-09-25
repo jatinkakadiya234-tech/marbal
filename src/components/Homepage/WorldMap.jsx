@@ -80,11 +80,11 @@ export default function WorldMap() {
         />
 
         {/* Enhanced Stats Grid */}
-<motion.div
+        <motion.div
   initial={{ opacity: 0, y: 30 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.5, duration: 0.8 }}
-  className="grid grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto"
+  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-12 sm:mt-16 max-w-6xl px-4 sm:px-6 lg:px-0 mx-auto"
 >
   {[
     { icon: FaGlobeAmericas, number: "7+", label: "Countries", accent: "#F2E1C5" },
@@ -98,22 +98,19 @@ export default function WorldMap() {
       whileTap={{ scale: 0.95 }}
       className="relative group cursor-pointer"
     >
-      {/* Background Glow Effect */}
+      {/* Background Glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0E5543] to-[#1A7A62] rounded-3xl blur-md opacity-50 group-hover:opacity-70 transition-all duration-300"></div>
-      
-      {/* Main Card */}
-      <div className="relative bg-gradient-to-br from-[#0E5543] to-[#1A7A62] rounded-3xl p-8 shadow-2xl border border-[#F2E1C5]/20 backdrop-blur-sm">
+
+      {/* Card */}
+      <div className="relative bg-gradient-to-br from-[#0E5543] to-[#1A7A62] rounded-3xl p-6 sm:p-8 shadow-2xl border border-[#F2E1C5]/20 backdrop-blur-sm">
         
         {/* Top Accent Line */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-[#F2E1C5] to-transparent rounded-full"></div>
-        
-        {/* Icon Container */}
-        <motion.div
-          whileHover={{ rotate: 5, scale: 1.1 }}
-          className="relative mb-6"
-        >
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-12 sm:w-16 h-1 bg-gradient-to-r from-[#F2E1C5] to-transparent rounded-full"></div>
+
+        {/* Icon */}
+        <motion.div whileHover={{ rotate: 5, scale: 1.1 }} className="relative mb-4 sm:mb-6">
           <div className="absolute inset-0 bg-[#F2E1C5] rounded-full blur-lg opacity-20"></div>
-          <stat.icon className="text-4xl mx-auto relative z-10" style={{ color: stat.accent }} />
+          <stat.icon className="text-3xl sm:text-4xl mx-auto relative z-10" style={{ color: stat.accent }} />
         </motion.div>
 
         {/* Number */}
@@ -121,28 +118,29 @@ export default function WorldMap() {
           initial={{ scale: 0.8 }}
           animate={{ scale: 1 }}
           transition={{ delay: index * 0.1 + 0.8 }}
-          className="text-5xl font-bold text-white mb-2 font-['Playfair_Display'] leading-none"
+          className="text-4xl sm:text-5xl font-bold text-white mb-1 sm:mb-2 font-['Playfair_Display'] leading-none text-center"
         >
           {stat.number}
         </motion.div>
 
         {/* Label */}
-        <div className="text-[#F2E1C5] text-sm font-medium uppercase tracking-wider font-['Inter']">
+        <div className="text-[#F2E1C5] text-xs sm:text-sm font-medium uppercase tracking-wider font-['Inter'] text-center">
           {stat.label}
         </div>
 
-        {/* Hover Effect Overlay */}
+        {/* Hover Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#F2E1C5]/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-        
+
         {/* Corner Accents */}
-        <div className="absolute top-3 left-3 w-3 h-3 border-t-2 border-l-2 border-[#F2E1C5]/30 rounded-tl-lg"></div>
-        <div className="absolute top-3 right-3 w-3 h-3 border-t-2 border-r-2 border-[#F2E1C5]/30 rounded-tr-lg"></div>
-        <div className="absolute bottom-3 left-3 w-3 h-3 border-b-2 border-l-2 border-[#F2E1C5]/30 rounded-bl-lg"></div>
-        <div className="absolute bottom-3 right-3 w-3 h-3 border-b-2 border-r-2 border-[#F2E1C5]/30 rounded-br-lg"></div>
+        <div className="absolute top-2 left-2 sm:top-3 sm:left-3 w-2 h-2 sm:w-3 sm:h-3 border-t-2 border-l-2 border-[#F2E1C5]/30 rounded-tl-lg"></div>
+        <div className="absolute top-2 right-2 sm:top-3 sm:right-3 w-2 h-2 sm:w-3 sm:h-3 border-t-2 border-r-2 border-[#F2E1C5]/30 rounded-tr-lg"></div>
+        <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 w-2 h-2 sm:w-3 sm:h-3 border-b-2 border-l-2 border-[#F2E1C5]/30 rounded-bl-lg"></div>
+        <div className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 w-2 h-2 sm:w-3 sm:h-3 border-b-2 border-r-2 border-[#F2E1C5]/30 rounded-br-lg"></div>
       </div>
     </motion.div>
   ))}
 </motion.div>
+
       </div>
 
       {/* Map Container */}
@@ -246,29 +244,49 @@ export default function WorldMap() {
 
         {/* Location Details Card */}
         <AnimatePresence>
-          {selectedLocation && (
-            <motion.div
-              initial={{ opacity: 0, y: 20, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.95 }}
-              className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl border border-[#D4C1A3] p-6 max-w-sm z-10"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <FaMapMarkerAlt className="text-[#1A7A62] text-xl" />
-                <h3 className="text-xl font-bold text-[#0E5543]">{selectedLocation.name}</h3>
-              </div>
-              <p className="text-[#1A7A62] mb-3">{selectedLocation.description}</p>
-              <div className="flex justify-between items-center text-sm">
-                <span className="bg-[#F2E1C5] text-[#0E5543] px-2 py-1 rounded-full font-medium">
-                  {selectedLocation.clients}
-                </span>
-                <button className="text-[#1A7A62] hover:text-[#0E5543] font-medium text-xs">
-                  View Case Studies →
-                </button>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+  {selectedLocation && (
+    <motion.div
+      initial={{ opacity: 0, y: 20, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: -20, scale: 0.95 }}
+      className="
+        absolute 
+        top-2 left-1/2 -translate-x-1/2 w-[90%] 
+        sm:top-4 sm:right-4 sm:left-auto sm:translate-x-0 
+        sm:w-auto sm:max-w-sm
+        bg-white/95 backdrop-blur-sm 
+        rounded-xl shadow-2xl border border-[#D4C1A3] 
+        p-4 sm:p-6 
+        z-10
+      "
+    >
+      {/* Header */}
+      <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+        <FaMapMarkerAlt className="text-[#1A7A62] text-lg sm:text-xl" />
+        <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#0E5543]">
+          {selectedLocation.name}
+        </h3>
+      </div>
+
+      {/* Description */}
+      <p className="text-[#1A7A62] mb-2 sm:mb-3 text-sm sm:text-base leading-relaxed">
+        {selectedLocation.description}
+      </p>
+
+      {/* Footer */}
+      <div className="flex justify-between items-center text-xs sm:text-sm">
+        <span className="bg-[#F2E1C5] text-[#0E5543] px-2 py-1 rounded-full font-medium">
+          {selectedLocation.clients}
+        </span>
+        <button className="text-[#1A7A62] hover:text-[#0E5543] font-medium text-xs sm:text-sm">
+          View Case Studies →
+        </button>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
+
       </div>
 
       {/* Premium CTA Section */}
