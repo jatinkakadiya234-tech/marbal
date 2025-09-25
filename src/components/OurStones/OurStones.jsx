@@ -18,7 +18,7 @@ const OurStones = () => {
   const [viewMode, setViewMode] = useState('grid');
   const [marbles, setMarbles] = useState([]);
   const [selectedMarble, setSelectedMarble] = useState(null);
-
+  const [isgrid, setIsgrid] = useState(true)
   const categories = [
     { id: 'all', name: 'All Marbles', count: 12 },
     { id: 'carrara', name: 'Carrara', count: 3 },
@@ -146,12 +146,12 @@ const OurStones = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        
-    <HeaderContent
-  tagline="Luxury in Every Layer"
-  title="Our Marble Collection"
-  subtitle="Experience world-class marble stones that bring sophistication and grandeur to every space."
-/>
+
+          <HeaderContent
+            tagline="Luxury in Every Layer"
+            title="Our Marble Collection"
+            subtitle="Experience world-class marble stones that bring sophistication and grandeur to every space."
+          />
 
         </div>
       </section>
@@ -187,6 +187,8 @@ const OurStones = () => {
 
             {/* Search and Controls */}
             <div className="flex items-center gap-4">
+
+             
               <motion.div
                 className="relative"
                 whileFocus={{ scale: 1.02 }}
@@ -201,20 +203,20 @@ const OurStones = () => {
                 />
               </motion.div>
 
-              <div className="flex bg-white/50 rounded-full p-1 border border-[#0E5543]/30">
-                <motion.button
-                  onClick={() => setViewMode('grid')}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`p-3 rounded-full transition-all ${viewMode === 'grid'
-                    ? 'bg-[#0E5543] text-white shadow-md'
-                    : 'text-[#0E5543] hover:bg-[#0E5543]/10'
-                    }`}
-                >
-                  <FiGrid size={18} />
-                </motion.button>
-                <motion.button
-                  onClick={() => setViewMode('list')}
+              <div className="flex  rounded-full p-1 border border-[#0E5543]/30">
+              {
+                isgrid ? <motion.button
+                onClick={() => {setViewMode('grid'),setIsgrid(false)}}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`p-3 rounded-full transition-all ${viewMode === 'grid'
+                  ? 'bg-[#0E5543] text-white shadow-md'
+                  : 'text-[#0E5543] hover:bg-[#0E5543]/10'
+                  }`}
+              >
+                <FiGrid size={18} />
+              </motion.button>:<motion.button
+                  onClick={() => {setViewMode('list'),setIsgrid(true)}}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className={`p-3 rounded-full transition-all ${viewMode === 'list'
@@ -224,6 +226,9 @@ const OurStones = () => {
                 >
                   <FiList size={18} />
                 </motion.button>
+              }
+                
+                
               </div>
             </div>
           </div>

@@ -4,21 +4,21 @@ import HeaderContent from "../Helper/HeaderContent";
 
 const categories = [
   {
-    name: "Uni",
+    name: "Indian Satwario",
     image: "https://www.aclassmarble.co.in/images/media_images/240826063842_blog_image.jpg",
     description: "Trusted, everyday quality with clean design and great value",
     color: "from-amber-900/30 to-amber-700/20",
     accent: "amber"
   },
   {
-    name: "Premium",
+    name: "Indian Dobar White",
     image: "https://www.aclassmarble.co.in/images/media_images/240730075202_blog_image.jpg",
     description: "Luxury-grade craftsmanship with refined finishes and lasting durability",
     color: "from-amber-800/30 to-amber-600/20",
     accent: "amber"
   },
   {
-    name: "Bedroom",
+    name: "Tropical White",
     image: "https://lifencolors.in/cdn/shop/products/81d868_98eaac6a5ff84298b9e0728109e46c67_mv2_4af1098c-41e8-4961-9e60-a2e76d62a28a.jpg?v=1753695316",
     description: "Comfort-first designs to elevate your personal sanctuary",
     color: "from-amber-900/30 to-amber-700/20",
@@ -199,6 +199,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
           })}
         </div>
       </div>
+       
     </section>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
-import { FaExpand, FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa"
+import { FaExpand, FaTimes, FaChevronLeft, FaChevronRight, FaCar, FaTools, FaHeadset, FaArrowRight } from "react-icons/fa"
 import HeaderContent from '../Helper/HeaderContent'
 
 export default function ProductCollection() {
@@ -113,6 +113,27 @@ export default function ProductCollection() {
     },
   ]
 
+  const services = [
+    {
+      icon: <FaCar className="text-4xl mb-4" />,
+      title: "Free Delivery",
+      description: "We provide free delivery services for all orders within the city limits, ensuring your marble reaches you safely and on time.",
+      features: ["Within City Limits", "Professional Handling", "Timely Delivery"]
+    },
+    {
+      icon: <FaTools className="text-4xl mb-4" />,
+      title: "Expert Installation",
+      description: "Our team of certified professionals ensures perfect installation with precision and care for long-lasting results.",
+      features: ["Certified Professionals", "Precision Work", "Quality Guarantee"]
+    },
+    {
+      icon: <FaHeadset className="text-4xl mb-4" />,
+      title: "24/7 Support",
+      description: "Round-the-clock customer support to address any queries or concerns you may have about our products and services.",
+      features: ["24/7 Availability", "Quick Response", "After-Sales Support"]
+    }
+  ]
+
   const openModal = (product, index) => {
     setSelectedProduct(product)
     setModalSlide(index)
@@ -130,8 +151,14 @@ export default function ProductCollection() {
     setModalSlide((prev) => (prev - 1 + marbleProducts.length) % marbleProducts.length)
   }
 
+  const handleExploreServices = () => {
+    // Add your explore services functionality here
+    console.log("Explore Services clicked")
+    // You can navigate to a services page or show more details
+  }
+
   return (
-    <div className=" bg-gradient-to-br from-[#0E5543] via-[#1a7a5e] to-[#2d9c7c] py-16 md:py-20 px-4 sm:px-6 lg:px-8 font-['Playfair_Display'] overflow-hidden">
+    <div className="bg-gradient-to-br from-[#0E5543] via-[#1a7a5e] to-[#2d9c7c] py-16 md:py-20 px-4 sm:px-6 lg:px-8 font-['Playfair_Display'] overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-[#F2E1C5]/5 rounded-full blur-3xl animate-pulse"></div>
@@ -140,77 +167,55 @@ export default function ProductCollection() {
 
       {/* Header Section */}
       <HeaderContent
-        tagline="Exclusive Collection"
-        title="Timeless Elegance"
-        subtitle=" Discover the world's most exquisite marble collection, curated for those who appreciate
-          unparalleled beauty and craftsmanship in every slab."
+        title="Our Premium Services"
+        subtitle="We go beyond providing exceptional marble products by offering comprehensive services 
+            to ensure your complete satisfaction from selection to installation."
         theme="dark"
       />
 
-      {/* Carousel Section - FIXED CONTAINER */}
-      <div className="relative w-full mx-auto mb-20">
-        <div
-          ref={sliderRef}
-          className="keen-slider pb-12 cursor-grab active:cursor-grabbing"
-          style={{
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-            overflow: 'hidden'
-          }}
-        >
-          {marbleProducts.map((product, index) => (
-            <div key={index} className="keen-slider__slide flex justify-center">
-              <div className="group relative bg-white/5 backdrop-blur-2xl rounded-3xl overflow-hidden border border-[#F2E1C5]/30 hover:border-[#F2E1C5]/60 transition-all duration-700 w-full max-w-sm mx-2 transform hover:scale-105 hover:rotate-1 shadow-2xl">
-                {/* Image Container */}
-                <div className="relative h-80 overflow-hidden">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                  />
-
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0E5543]/90 via-[#0E5543]/40 to-transparent opacity-80"></div>
-
-                  {/* Origin Badge */}
-                  <div className="absolute top-6 left-6">
-                    <div className="bg-gradient-to-r from-[#F2E1C5] to-[#F2E1C5]/90 text-[#0E5543] px-4 py-2 rounded-full text-sm font-semibold shadow-2xl transform group-hover:scale-110 transition-transform">
-                      {product.origin}
-                    </div>
-                  </div>
-
-                  {/* Expand Button */}
-                  <button
-                    onClick={() => openModal(product, index)}
-                    className="absolute top-6 right-6 bg-white/20 backdrop-blur-md text-white p-3 rounded-full hover:bg-white/30 transition-all duration-300 transform hover:scale-110 border border-white/30"
-                  >
-                    <FaExpand className="text-lg" />
-                  </button>
-
-                  {/* Title Overlay */}
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <h3 className="text-2xl font-bold text-white mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                      {product.title}
-                    </h3>
-                    <div className="flex gap-4 text-sm text-[#c6f6d5] opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
-                      <span className="font-light">{product.texture}</span>
-                      <span className="font-light">•</span>
-                      <span className="font-light">{product.finish}</span>
-                    </div>
-                  </div>
+      {/* Services Section */}
+      <div className="max-w-7xl mx-auto mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <div 
+              key={index} 
+              className="group relative bg-white/5 backdrop-blur-2xl rounded-3xl overflow-hidden border border-[#F2E1C5]/30 hover:border-[#F2E1C5]/60 transition-all duration-500 p-8 hover:transform hover:scale-105"
+            >
+              <div className="text-center mb-6">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-[#F2E1C5] to-[#F2E1C5]/80 rounded-full text-[#0E5543] group-hover:scale-110 transition-transform duration-300">
+                  {service.icon}
                 </div>
               </div>
+              
+              <h3 className="text-2xl font-bold text-white text-center mb-4">{service.title}</h3>
+              <p className="text-[#c6f6d5] text-center mb-6">{service.description}</p>
+              
+              <ul className="space-y-2">
+                {service.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-center text-[#c6f6d5]">
+                    <span className="w-2 h-2 bg-[#F2E1C5] rounded-full mr-3"></span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              
+              <button className="mt-6 w-full bg-gradient-to-r from-[#F2E1C5] to-[#F2E1C5]/90 text-[#0E5543] py-3 rounded-xl font-semibold hover:from-[#F2E1C5]/90 hover:to-[#F2E1C5] transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                Learn More
+                <FaArrowRight className="text-sm" />
+              </button>
             </div>
           ))}
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Explore Services Button */}
         <div className="text-center mt-12">
-          <div className="inline-flex items-center gap-3 text-[#F2E1C5]/70 text-sm font-light tracking-wide">
-            <div className="w-20 h-px bg-[#F2E1C5]/30"></div>
-            <span>Scroll to explore the collection</span>
-            <div className="w-20 h-px bg-[#F2E1C5]/30"></div>
-          </div>
+          <button 
+            onClick={handleExploreServices}
+            className="bg-gradient-to-r from-[#F2E1C5] to-[#F2E1C5]/90 text-[#0E5543] px-8 py-4 rounded-xl font-semibold text-lg hover:from-[#F2E1C5]/90 hover:to-[#F2E1C5] transition-all duration-300 transform hover:-translate-y-1 shadow-2xl border-2 border-[#F2E1C5]/30 hover:border-[#F2E1C5]/60 flex items-center justify-center gap-3 mx-auto"
+          >
+            Explore All Services
+            <FaArrowRight className="text-lg group-hover:translate-x-1 transition-transform" />
+          </button>
         </div>
       </div>
 
