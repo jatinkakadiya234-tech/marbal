@@ -49,25 +49,40 @@ const yearAnimation = {
 
 export default function ShowcasingTimeline() {
   const ref = useRef(null);
+  const timelineRef = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const [activeIndex, setActiveIndex] = useState(0);
 
+  // Scroll progress for the entire section
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"]
   });
 
+  // Scroll progress specifically for the timeline content
+  const { scrollYProgress: timelineProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start center", "end center"]
+  });
+
+  // Transform scroll progress to dot position (0% to 100% of timeline height)
+  const dotPosition = useTransform(timelineProgress, [0, 1], ["0%", "100%"]);
+
+  // Background parallax effect
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
+  // Update active index based on scroll position
   useEffect(() => {
-    if (isInView) {
-      const interval = setInterval(() => {
-        setActiveIndex((prev) => (prev + 1) % milestones.length);
-      }, 3000);
+    const unsubscribe = timelineProgress.on("change", (latest) => {
+      const newIndex = Math.min(
+        Math.floor(latest * milestones.length),
+        milestones.length - 1
+      );
+      setActiveIndex(newIndex);
+    });
 
-      return () => clearInterval(interval);
-    }
-  }, [isInView]);
+    return () => unsubscribe();
+  }, [timelineProgress]);
 
   return (
     <section ref={ref} className="relative min-h-screen py-36 overflow-hidden bg-[#F2E1C5]">
@@ -90,11 +105,11 @@ export default function ShowcasingTimeline() {
 
         <HeaderContent
           tagline='Our Journey Through Time'
-          title='Legacy of  Excellence'
-          subtitle='  From our founding in 1995 to today, RGM has been dedicated to delivering premium stone craftsmanship and innovative design solutions.'
+          title='Legacy of Excellence'
+          subtitle='From our founding in 1995 to today, RGM has been dedicated to delivering premium stone craftsmanship and innovative design solutions.'
         />
 
-        <div className="relative pt-5">
+        <div ref={timelineRef} className="relative pt-5">
           {/* Curved timeline */}
           <motion.div
             className="absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-gradient-to-b from-[#0E5543] via-[#0E5543]/70 to-[#0E5543]"
@@ -103,17 +118,11 @@ export default function ShowcasingTimeline() {
             transition={{ duration: 1.5, delay: 0.5 }}
           />
 
-          {/* Animated progress indicator */}
+          {/* Scroll-controlled progress indicator */}
           <motion.div
-            className="absolute left-1/2 top-0 w-3 h-3 -translate-x-1/2 bg-[#0E5543] rounded-full shadow-lg shadow-[#0E5543]/40"
-            animate={{
-              y: [0, 380, 760, 1140],
-              transition: {
-                duration: 12,
-                times: [0, 0.33, 0.66, 1],
-                repeat: Infinity,
-                ease: "easeInOut"
-              }
+            className="absolute left-1/2 top-0 w-3 h-3 -translate-x-1/2 bg-[#0E5543] rounded-full shadow-lg shadow-[#0E5543]/40 z-20"
+            style={{
+              y: dotPosition
             }}
           />
 
@@ -133,7 +142,9 @@ export default function ShowcasingTimeline() {
                 <div className={`flex flex-col md:flex-row items-center ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''} gap-10`}>
                   <div className="md:w-1/2">
                     <motion.div
-                      className={`p-8 rounded-2xl bg-white border border-[#0E5543]/20 shadow-xl ${idx === activeIndex ? 'ring-2 ring-[#0E5543]/30' : ''}`}
+                      className={`p-8 rounded-2xl bg-white border border-[#0E5543]/20 shadow-xl transition-all duration-300 ${
+                        idx === activeIndex ? 'ring-2 ring-[#0E5543]/30 scale-105' : 'scale-100'
+                      }`}
                       whileHover={{
                         y: -5,
                         transition: { duration: 0.3 }
@@ -160,8 +171,12 @@ export default function ShowcasingTimeline() {
                         />
                       </div>
 
-                      <div className="w-32 h-32 rounded-full bg-white border-4 border-[#0E5543] flex items-center justify-center shadow-lg">
-                        <span className="text-2xl font-bold text-[#0E5543]">{m.year}</span>
+                      <div className={`w-32 h-32 rounded-full bg-white border-4 flex items-center justify-center shadow-lg transition-all duration-300 ${
+                        idx === activeIndex ? 'border-[#0E5543] scale-110' : 'border-[#0E5543]/60 scale-100'
+                      }`}>
+                        <span className={`text-2xl font-bold transition-all duration-300 ${
+                          idx === activeIndex ? 'text-[#0E5543] scale-110' : 'text-[#0E5543]/80 scale-100'
+                        }`}>{m.year}</span>
                       </div>
                     </motion.div>
                   </div>
