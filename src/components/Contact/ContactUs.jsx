@@ -19,7 +19,7 @@ const ContactUs = () => {
   return (
     <div className="min-h-screen overflow-x-hidden bg-gradient-to-br from-[#F2E1C5] via-[#F8EDDC] to-[#F2E1C5]">
       {/* Enhanced Hero Section */}
-      <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[60vh] md:h-[50vh] md:pt-40 md:pb-15  flex items-center justify-center overflow-hidden">
         {/* Enhanced Background with Improved Color Harmony */}
         <div className="absolute inset-0">
           {/* Primary Color Background with Better Gradient */}
