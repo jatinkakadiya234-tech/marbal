@@ -14,6 +14,7 @@ import NotFoundPage from "./components/Errors/NotFoundPage";
 import ScrollToTop from "./components/Helper/NavigateScrolletop";
 import OurStones from "./components/OurStones/OurStones";
 import HelpandAddvaice from "./components/Advice/HelpandAddvaice";
+import BlogsPage from "./components/Blogs/BlogsPage";
 
 function App() {
 
@@ -35,7 +36,8 @@ function App() {
           <Route path="/gallery" element={<ProjectsGallery />} />
           <Route path="/state-of-the-art" element={<TechnologyShowcase />} />
           <Route path="/OurStones" element={<OurStones />} />
-          <Route path="/help" element={<HelpandAddvaice />} />
+          {/* <Route path="/help" element={<HelpandAddvaice />} /> */}
+          <Route path="/blogs" element={<BlogsPage />} />
 
 
 

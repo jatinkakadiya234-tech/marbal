@@ -220,10 +220,10 @@ const MarbleQuarryHome = () => {
 </motion.div>
 
             {/* Right Section - Combined Video and Original Image Grid */}
-            <motion.div className="space-y-8" variants={itemVariants}>
+            <motion.div className="space-y-8 " variants={itemVariants}>
               {/* Video Section */}
               <motion.div
-                className="relative rounded-3xl overflow-hidden shadow-3xl border-4 border-white/90 bg-white/30 backdrop-blur-lg"
+                className="relative rounded-3xl md:mb-18 overflow-hidden shadow-3xl border-4 border-white/90 bg-white/30 backdrop-blur-lg"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.4 }}
               >

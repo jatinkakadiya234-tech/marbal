@@ -49,12 +49,17 @@ const yearAnimation = {
 
 export default function ShowcasingTimeline() {
   const ref = useRef(null);
+<<<<<<< HEAD
   const containerRef = useRef(null);
+=======
+  const timelineRef = useRef(null);
+>>>>>>> bcced15b5521fb08af92d27043de6abe9c5a1e66
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const [activeIndex, setActiveIndex] = useState(0);
   const [timelineHeight, setTimelineHeight] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
 
+<<<<<<< HEAD
   // Get window height
   useEffect(() => {
     setWindowHeight(window.innerHeight);
@@ -145,6 +150,38 @@ export default function ShowcasingTimeline() {
       )
     };
   });
+=======
+  // Scroll progress for the entire section
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  // Scroll progress specifically for the timeline content
+  const { scrollYProgress: timelineProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start center", "end center"]
+  });
+
+  // Transform scroll progress to dot position (0% to 100% of timeline height)
+  const dotPosition = useTransform(timelineProgress, [0, 1], ["0%", "100%"]);
+
+  // Background parallax effect
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+
+  // Update active index based on scroll position
+  useEffect(() => {
+    const unsubscribe = timelineProgress.on("change", (latest) => {
+      const newIndex = Math.min(
+        Math.floor(latest * milestones.length),
+        milestones.length - 1
+      );
+      setActiveIndex(newIndex);
+    });
+
+    return () => unsubscribe();
+  }, [timelineProgress]);
+>>>>>>> bcced15b5521fb08af92d27043de6abe9c5a1e66
 
   return (
     <section ref={ref} className="relative min-h-screen py-36 overflow-hidden bg-[#F2E1C5]">
@@ -171,7 +208,11 @@ export default function ShowcasingTimeline() {
           subtitle='From our founding in 1995 to today, RGM has been dedicated to delivering premium stone craftsmanship and innovative design solutions.'
         />
 
+<<<<<<< HEAD
         <div ref={containerRef} className="relative pt-5">
+=======
+        <div ref={timelineRef} className="relative pt-5">
+>>>>>>> bcced15b5521fb08af92d27043de6abe9c5a1e66
           {/* Curved timeline */}
           <motion.div
             className="absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-gradient-to-b from-[#0E5543] via-[#0E5543]/70 to-[#0E5543]"
@@ -180,10 +221,19 @@ export default function ShowcasingTimeline() {
             transition={{ duration: 1.5, delay: 0.5 }}
           />
 
+<<<<<<< HEAD
           {/* Scroll-based progress indicator */}
           <motion.div
             className="absolute left-1/2 top-0 w-4 h-4 -translate-x-1/2 bg-[#0E5543] rounded-full shadow-lg shadow-[#0E5543]/40 z-20 border-2 border-white"
             style={{ y: dotY }}
+=======
+          {/* Scroll-controlled progress indicator */}
+          <motion.div
+            className="absolute left-1/2 top-0 w-3 h-3 -translate-x-1/2 bg-[#0E5543] rounded-full shadow-lg shadow-[#0E5543]/40 z-20"
+            style={{
+              y: dotPosition
+            }}
+>>>>>>> bcced15b5521fb08af92d27043de6abe9c5a1e66
           />
 
           <motion.ol
@@ -221,10 +271,15 @@ export default function ShowcasingTimeline() {
                 <div className={`flex flex-col md:flex-row items-center ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''} gap-8 md:gap-12`}>
                   <div className="md:w-1/2">
                     <motion.div
+<<<<<<< HEAD
                       className={`p-6 md:p-8 rounded-2xl bg-white border-2 transition-all duration-500 shadow-xl ${
                         idx === activeIndex 
                           ? 'border-[#0E5543] shadow-2xl' 
                           : 'border-[#0E5543]/20'
+=======
+                      className={`p-8 rounded-2xl bg-white border border-[#0E5543]/20 shadow-xl transition-all duration-300 ${
+                        idx === activeIndex ? 'ring-2 ring-[#0E5543]/30 scale-105' : 'scale-100'
+>>>>>>> bcced15b5521fb08af92d27043de6abe9c5a1e66
                       }`}
                       whileHover={{
                         y: -8,
@@ -266,6 +321,7 @@ export default function ShowcasingTimeline() {
                         />
                       </div>
 
+<<<<<<< HEAD
                       <motion.div 
                         className={`w-24 h-24 md:w-32 md:h-32 rounded-full bg-white border-4 flex items-center justify-center shadow-lg transition-all duration-300 ${
                           idx === activeIndex ? 'border-[#0E5543] shadow-xl' : 'border-[#0E5543]/60'
@@ -279,6 +335,15 @@ export default function ShowcasingTimeline() {
                       >
                         <span className="text-xl md:text-2xl font-bold text-[#0E5543]">{m.year}</span>
                       </motion.div>
+=======
+                      <div className={`w-32 h-32 rounded-full bg-white border-4 flex items-center justify-center shadow-lg transition-all duration-300 ${
+                        idx === activeIndex ? 'border-[#0E5543] scale-110' : 'border-[#0E5543]/60 scale-100'
+                      }`}>
+                        <span className={`text-2xl font-bold transition-all duration-300 ${
+                          idx === activeIndex ? 'text-[#0E5543] scale-110' : 'text-[#0E5543]/80 scale-100'
+                        }`}>{m.year}</span>
+                      </div>
+>>>>>>> bcced15b5521fb08af92d27043de6abe9c5a1e66
                     </motion.div>
                   </div>
                 </div>
