@@ -180,7 +180,7 @@ export default function Help() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-[#0E5543] mb-3 uppercase tracking-wide font-['Inter']">
+                  <label className="block text-sm font-semibold text-[#0E5543] mb-3 uppercase tracking-wide font-['Inter']  ">
                     Full Name *
                   </label>
                   <input
@@ -301,7 +301,7 @@ export default function Help() {
               <h3 className="text-2xl font-bold font-['Cormorant_Garamond'] text-[#0E5543] mb-6">
                 Expert Insights
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-4 ">
                 {faqItems.map((faq, index) => (
                   <motion.div
                     key={index}
@@ -309,9 +309,9 @@ export default function Help() {
                   >
                     <button
                       onClick={() => setActiveFAQ(activeFAQ === index ? null : index)}
-                      className="w-full px-4 py-4 text-left flex items-center justify-between bg-white/50 hover:bg-[#F2E1C5]/20 transition-colors duration-300 font-['Source_Serif_Pro']"
+                      className=" w-full px-4 py-4 text-left flex items-center justify-between bg-white/50 hover:bg-[#F2E1C5]/20 transition-colors duration-300 font-['Source_Serif_Pro']"
                     >
-                      <span className="font-semibold text-[#1c9a7a] pr-4">{faq.question}</span>
+                      <span className="font-semibold  text-[#1c9a7a] pr-4">{faq.question}</span>
                       <motion.div
                         animate={{ rotate: activeFAQ === index ? 180 : 0 }}
                         transition={{ duration: 0.3 }}

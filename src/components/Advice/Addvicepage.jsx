@@ -198,8 +198,8 @@ export default function AdvicePage() {
 
               {/* Don'ts */}
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0A3D2F]/25 to-[#0E5543]/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative bg-gradient-to-br from-[#0A3D2F]/30 to-[#0E5543]/25 backdrop-blur-lg rounded-2xl p-8 border border-[#F2E1C5]/30 hover:border-[#F2E1C5]/50 transition-all duration-500">
+                <div className="absolute inset-0  bg-gradient-to-br from-[#0A3D2F]/25 to-[#0E5543]/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative h-full bg-gradient-to-br from-[#0A3D2F]/30 to-[#0E5543]/25 backdrop-blur-lg rounded-2xl p-8 border border-[#F2E1C5]/30 hover:border-[#F2E1C5]/50 transition-all duration-500">
                   <h3 className="text-2xl font-playfair font-semibold text-[#F2E1C5] mb-6 flex items-center">
                     <span className="w-10 h-10 bg-[#0A3D2F] rounded-full flex items-center justify-center mr-4 text-[#F2E1C5] border border-[#F2E1C5]/30">
                       ✗
