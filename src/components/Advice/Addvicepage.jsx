@@ -7,24 +7,23 @@ export default function AdvicePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0A3D2F] via-[#0E5543] to-[#126A52] font-['Inter']">
       {/* Custom Font Import */}
-      <style jsx global>{`
+      {/* <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
         .font-playfair { font-family: 'Playfair Display', serif; }
-      `}</style>
+      `}</style> */}
 
-      <main className="relative max-w-7xl mx-auto px-4 pb-20 pt-32">
+       <main className="relative max-w-7xl mx-auto px-4 pb-20 pt-32">
         {/* Animated Background Elements */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        {/* <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#F2E1C5]/10 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#F2E1C5]/5 rounded-full blur-3xl"></div>
-        </div>
+        </div> */}
 
         {/* Premium Hero Section */}
-      <section className="relative mb-20">
+      {/* <section className="relative mb-20">
   <div className="relative rounded-2xl overflow-hidden bg-[#F2E1C5] border border-[#0E5543]/20">
     
     <div className="grid md:grid-cols-2 min-h-[500px]">
-      {/* Image Side */}
       <div className="relative">
         <img
           src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
@@ -34,7 +33,6 @@ export default function AdvicePage() {
         <div className="absolute inset-0 bg-[#0E5543]/10"></div>
       </div>
 
-      {/* Content Side */}
       <div className="flex items-center p-8 md:p-12">
         <div>
           <span className="text-[#0E5543]/70 text-sm font-['Inter'] uppercase tracking-widest mb-4 block">
@@ -56,7 +54,7 @@ export default function AdvicePage() {
       </div>
     </div>
   </div>
-</section>
+</section> */}
 
         {/* Premium Features Grid */}
         <section className="relative mb-28 z-10">
@@ -168,9 +166,8 @@ export default function AdvicePage() {
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8">
-              {/* Do's */}
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0E5543]/20 to-[#1A7A5E]/15 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute  inset-0 bg-gradient-to-br from-[#0E5543]/20 to-[#1A7A5E]/15 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative bg-gradient-to-br from-[#0E5543]/30 to-[#0A3D2F]/25 backdrop-blur-lg rounded-2xl p-8 border border-[#0E5543]/40 hover:border-[#0E5543]/60 transition-all duration-500">
                   <h3 className="text-2xl font-playfair font-semibold text-[#F2E1C5] mb-6 flex items-center">
                     <span className="w-10 h-10 bg-[#0E5543] rounded-full flex items-center justify-center mr-4 text-[#F2E1C5] border border-[#F2E1C5]/30">
@@ -228,9 +225,8 @@ export default function AdvicePage() {
         </section>
 
 
-        <section className="relative mb-20">
+        {/* <section className="relative mb-20">
           <div className="relative bg-gradient-to-br from-[#F2E1C5] via-[#F8EDDC] to-[#F2E1C5] rounded-3xl p-12 border-2 border-[#0E5543]/10 shadow-2xl overflow-hidden">
-            {/* Decorative Elements */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#0E5543] via-[#1A7A62] to-[#0E5543]"></div>
             <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#0E5543]/5 rounded-full"></div>
             <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-[#1A7A62]/5 rounded-full"></div>
@@ -279,7 +275,6 @@ export default function AdvicePage() {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 border-2 border-[#0E5543]/10 hover:border-[#0E5543]/30 transition-all duration-300 hover:shadow-xl h-full">
-                    {/* Header with Icon */}
                     <div className="text-center mb-6">
                       <div className="w-16 h-16 bg-gradient-to-br from-[#0E5543] to-[#1A7A62] rounded-xl flex items-center justify-center text-2xl mx-auto mb-3 shadow-md">
                         <span className="text-[#F2E1C5]">{item.icon}</span>
@@ -292,7 +287,6 @@ export default function AdvicePage() {
                       </p>
                     </div>
 
-                    {/* Tasks List */}
                     <ul className="space-y-3">
                       {item.tasks.map((task, taskIndex) => (
                         <li key={taskIndex} className="flex items-start gap-2">
@@ -308,7 +302,6 @@ export default function AdvicePage() {
               ))}
             </div>
 
-            {/* Premium Footer */}
             <div className="text-center mt-12 relative z-10">
               <div className="inline-flex items-center gap-4 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-[#0E5543]/20">
                 <span className="text-[#0E5543] font-['Source_Serif_Pro']  text-md">
@@ -317,11 +310,10 @@ export default function AdvicePage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
 
-        {/* Professional Services */}
-        <section className="relative rounded-3xl overflow-hidden mb-10 group">
+        {/* <section className="relative rounded-3xl overflow-hidden mb-10 group">
           <div className="absolute inset-0 bg-gradient-to-br from-[#0A3D2F]/40 via-[#0E5543]/30 to-[#1A7A5E]/40"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,#F2E1C5/10,transparent_50%)]"></div>
 
@@ -354,26 +346,22 @@ export default function AdvicePage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
 
 
-        <section className="text-center py-16 px-4">
+        {/* <section className="text-center py-16 px-4">
           <div className="bg-gradient-to-br from-[#F2E1C5] via-[#F8EDDC] to-[#F2E1C5] rounded-3xl p-12 border-2 border-[#0E5543]/10 shadow-2xl relative overflow-hidden">
-            {/* Decorative Elements */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#0E5543] via-[#1A7A62] to-[#0E5543]"></div>
 
-            {/* Main Heading - Cormorant Garamond (Elegant Serif) */}
             <h2 className="text-5xl font-['Cormorant_Garamond'] font-bold text-[#0E5543] mb-6 relative z-10">
               Ready to Preserve Your Investment?
             </h2>
 
-            {/* Subtitle - Source Serif Pro (Readable Serif) */}
             <p className="text-[#0E5543]/80 text-xl mb-10 max-w-2xl mx-auto font-light font-['Source_Serif_Pro'] leading-relaxed relative z-10">
               Join thousands of satisfied clients who trust our expertise to maintain their marble's timeless beauty for generations to come.
             </p>
 
-            {/* Buttons - Cormorant Garamond (Consistent with Heading) */}
             <div className="flex gap-6 justify-center flex-wrap relative z-10">
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -391,7 +379,6 @@ export default function AdvicePage() {
               </motion.button>
             </div>
 
-            {/* Trust Badge - Cormorant Garamond Italic (Elegant & Trustworthy) */}
             <div className="mt-8 flex items-center justify-center gap-3 text-[#0E5543]/80 relative z-10">
               <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-[#0E5543]/20 shadow-lg">
                 <FaShieldAlt className="text-[#0E5543]/90 text-lg" />
@@ -401,7 +388,7 @@ export default function AdvicePage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   );

@@ -7,8 +7,8 @@ export default function HelpandAddvaice() {
   return (
     <div className='min-h-screen pt-20 bg-[#F2E1C5] text-[#0E5543]'>
       <AdviceHero />
-      <AdvicePage />
-      <Help />
+      {/* <AdvicePage /> */}
+      {/* <Help /> */}
     </div>
   )
 }

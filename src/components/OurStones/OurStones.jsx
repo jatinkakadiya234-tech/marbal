@@ -11,6 +11,7 @@ import {
 } from 'react-icons/fi';
 import { TbDiamond } from 'react-icons/tb';
 import HeaderContent from '../Helper/HeaderContent';
+import AdvicePage from '../Advice/Addvicepage';
 
 const OurStones = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -428,6 +429,7 @@ const OurStones = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      {/* <AdvicePage  /> */}
     </div>
   );
 };
