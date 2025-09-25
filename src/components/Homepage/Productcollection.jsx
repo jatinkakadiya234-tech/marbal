@@ -152,17 +152,15 @@ export default function ProductCollection() {
   }
 
   const handleExploreServices = () => {
-    // Add your explore services functionality here
     console.log("Explore Services clicked")
-    // You can navigate to a services page or show more details
   }
 
   return (
-    <div className="bg-gradient-to-br from-[#0E5543] via-[#1a7a5e] to-[#2d9c7c] py-16 md:py-20 px-4 sm:px-6 lg:px-8 font-['Playfair_Display'] overflow-hidden">
+    <div className="bg-gradient-to-br from-[#0E5543] via-[#0E5543] to-[#0E5543] py-16 md:py-20 px-4 sm:px-6 lg:px-8 font-['Playfair_Display'] overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-[#F2E1C5]/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-[#F2E1C5]/5 rounded-full blur-3xl animate-pulse delay-800"></div>
+        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-[#F2E1C5]/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-[#F2E1C5]/10 rounded-full blur-3xl animate-pulse delay-800"></div>
       </div>
 
       {/* Header Section */}
@@ -173,33 +171,36 @@ export default function ProductCollection() {
         theme="dark"
       />
 
-      {/* Services Section */}
+      {/* Services Section - REVERSED THEME */}
       <div className="max-w-7xl mx-auto mb-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="group relative bg-white/5 backdrop-blur-2xl rounded-3xl overflow-hidden border border-[#F2E1C5]/30 hover:border-[#F2E1C5]/60 transition-all duration-500 p-8 hover:transform hover:scale-105"
+              className="group relative bg-gradient-to-br from-[#F2E1C5] via-[#f5e9d5] to-[#f8f1e3] rounded-3xl overflow-hidden border border-[#F2E1C5]/30 hover:border-[#F2E1C5]/60 transition-all duration-500 p-8 hover:transform hover:scale-105 shadow-xl"
             >
+              {/* Skinny card effect with minimal padding */}
               <div className="text-center mb-6">
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-[#F2E1C5] to-[#F2E1C5]/80 rounded-full text-[#0E5543] group-hover:scale-110 transition-transform duration-300">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-[#0E5543] to-[#1a7a5e] rounded-full text-[#F2E1C5] group-hover:scale-110 transition-transform duration-300">
                   {service.icon}
                 </div>
               </div>
               
-              <h3 className="text-2xl font-bold text-white text-center mb-4">{service.title}</h3>
-              <p className="text-[#c6f6d5] text-center mb-6">{service.description}</p>
+              {/* Light text content */}
+              <h3 className="text-2xl font-bold text-gray-900 text-center mb-4">{service.title}</h3>
+              <p className="text-gray-700 text-center mb-6 leading-relaxed">{service.description}</p>
               
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-[#c6f6d5]">
-                    <span className="w-2 h-2 bg-[#F2E1C5] rounded-full mr-3"></span>
-                    {feature}
+                  <li key={idx} className="flex items-center text-gray-700">
+                    <span className="w-2 h-2 bg-[#0E5543] rounded-full mr-3"></span>
+                    <span className="text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
               
-              <button className="mt-6 w-full bg-gradient-to-r from-[#F2E1C5] to-[#F2E1C5]/90 text-[#0E5543] py-3 rounded-xl font-semibold hover:from-[#F2E1C5]/90 hover:to-[#F2E1C5] transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2">
+              {/* Button with reversed colors */}
+              <button className="mt-6 w-full bg-gradient-to-r from-[#0E5543] to-[#1a7a5e] text-[#F2E1C5] py-3 rounded-xl font-semibold hover:from-[#1a7a5e] hover:to-[#0E5543] transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg">
                 Learn More
                 <FaArrowRight className="text-sm" />
               </button>
@@ -207,11 +208,11 @@ export default function ProductCollection() {
           ))}
         </div>
 
-        {/* Explore Services Button */}
+        {/* Explore Services Button - Updated to match new theme */}
         <div className="text-center mt-12">
           <button 
             onClick={handleExploreServices}
-            className="bg-gradient-to-r from-[#F2E1C5] to-[#F2E1C5]/90 text-[#0E5543] px-8 py-4 rounded-xl font-semibold text-lg hover:from-[#F2E1C5]/90 hover:to-[#F2E1C5] transition-all duration-300 transform hover:-translate-y-1 shadow-2xl border-2 border-[#F2E1C5]/30 hover:border-[#F2E1C5]/60 flex items-center justify-center gap-3 mx-auto"
+            className="bg-gradient-to-r from-[#F2E1C5] to-[#f5e9d5] text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:from-[#f5e9d5] hover:to-[#F2E1C5] transition-all duration-300 transform hover:-translate-y-1 shadow-2xl border-2 border-[#F2E1C5]/30 hover:border-[#F2E1C5]/60 flex items-center justify-center gap-3 mx-auto"
           >
             Explore All Services
             <FaArrowRight className="text-lg group-hover:translate-x-1 transition-transform" />
@@ -219,14 +220,14 @@ export default function ProductCollection() {
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Modal - Updated to match reversed theme */}
       {selectedProduct && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-2xl">
-          <div className="relative max-w-6xl w-full max-h-[90vh] bg-gradient-to-br from-[#0E5543] to-[#1a7a5e] rounded-3xl overflow-hidden border border-[#F2E1C5]/30">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-white/90 backdrop-blur-2xl">
+          <div className="relative max-w-6xl w-full max-h-[90vh] bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl overflow-hidden border border-[#F2E1C5]/30">
             {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute top-6 right-6 z-20 bg-white/20 backdrop-blur-md text-white p-3 rounded-full hover:bg-white/30 transition-all duration-300 transform hover:scale-110 border border-white/30"
+              className="absolute top-6 right-6 z-20 bg-[#F2E1C5]/20 backdrop-blur-md text-[#F2E1C5] p-3 rounded-full hover:bg-[#F2E1C5]/30 transition-all duration-300 transform hover:scale-110 border border-[#F2E1C5]/30"
             >
               <FaTimes className="text-xl" />
             </button>
@@ -234,13 +235,13 @@ export default function ProductCollection() {
             {/* Navigation Arrows */}
             <button
               onClick={prevModalSlide}
-              className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 backdrop-blur-md text-white p-4 rounded-full hover:bg-white/30 transition-all duration-300 transform hover:scale-110 border border-white/30"
+              className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 bg-[#F2E1C5]/20 backdrop-blur-md text-[#F2E1C5] p-4 rounded-full hover:bg-[#F2E1C5]/30 transition-all duration-300 transform hover:scale-110 border border-[#F2E1C5]/30"
             >
               <FaChevronLeft className="text-xl" />
             </button>
             <button
               onClick={nextModalSlide}
-              className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 backdrop-blur-md text-white p-4 rounded-full hover:bg-white/30 transition-all duration-300 transform hover:scale-110 border border-white/30"
+              className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 bg-[#F2E1C5]/20 backdrop-blur-md text-[#F2E1C5] p-4 rounded-full hover:bg-[#F2E1C5]/30 transition-all duration-300 transform hover:scale-110 border border-[#F2E1C5]/30"
             >
               <FaChevronRight className="text-xl" />
             </button>
@@ -253,22 +254,22 @@ export default function ProductCollection() {
                   alt={marbleProducts[modalSlide].title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0E5543]/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-900/40 to-transparent"></div>
               </div>
 
               {/* Content Section */}
               <div className="p-8 md:p-12 flex flex-col justify-center">
                 <div className="mb-6">
-                  <span className="bg-[#F2E1C5] text-[#0E5543] px-4 py-2 rounded-full text-sm font-semibold">
+                  <span className="bg-[#F2E1C5] text-gray-900 px-4 py-2 rounded-full text-sm font-semibold">
                     {marbleProducts[modalSlide].origin}
                   </span>
                 </div>
 
-                <h2 className="text-4xl font-bold text-white mb-4">
+                <h2 className="text-4xl font-bold text-[#F2E1C5] mb-4">
                   {marbleProducts[modalSlide].title}
                 </h2>
 
-                <div className="flex gap-6 text-[#c6f6d5] mb-6">
+                <div className="flex gap-6 text-gray-300 mb-6">
                   <div>
                     <span className="font-semibold text-[#F2E1C5]">Texture:</span> {marbleProducts[modalSlide].texture}
                   </div>
@@ -277,7 +278,7 @@ export default function ProductCollection() {
                   </div>
                 </div>
 
-                <p className="text-[#c6f6d5] text-lg leading-relaxed mb-6">
+                <p className="text-gray-300 text-lg leading-relaxed mb-6">
                   {marbleProducts[modalSlide].description}
                 </p>
 
@@ -295,11 +296,11 @@ export default function ProductCollection() {
 
                   <div>
                     <span className="font-semibold text-[#F2E1C5]">Available Size:</span>
-                    <span className="text-[#c6f6d5] ml-2">{marbleProducts[modalSlide].size}</span>
+                    <span className="text-gray-300 ml-2">{marbleProducts[modalSlide].size}</span>
                   </div>
                 </div>
 
-                <button className="mt-8 bg-gradient-to-r from-[#F2E1C5] to-[#F2E1C5]/90 text-[#0E5543] px-8 py-4 rounded-xl font-semibold text-lg hover:from-[#F2E1C5]/90 hover:to-[#F2E1C5] transition-all duration-300 transform hover:-translate-y-1 w-full max-w-xs">
+                <button className="mt-8 bg-gradient-to-r from-[#F2E1C5] to-[#f5e9d5] text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:from-[#f5e9d5] hover:to-[#F2E1C5] transition-all duration-300 transform hover:-translate-y-1 w-full max-w-xs">
                   Request Sample
                 </button>
               </div>
