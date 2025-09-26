@@ -108,24 +108,24 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
     );
   };
 
-// Button animations - more subtle to match theme
-const buttonVariants = {
-  initial: { scale: 1, y: 0 },
-  hover: { 
-    scale: 1.02, 
-    y: -1,
-    transition: { 
-      duration: 0.4,
-      ease: [0.17, 0.67, 0.83, 0.67]
+  // Button animations - more subtle to match theme
+  const buttonVariants = {
+    initial: { scale: 1, y: 0 },
+    hover: {
+      scale: 1.02,
+      y: -1,
+      transition: {
+        duration: 0.4,
+        ease: [0.17, 0.67, 0.83, 0.67]
+      }
+    },
+    tap: {
+      scale: 0.99,
+      transition: {
+        duration: 0.2
+      }
     }
-  },
-  tap: { 
-    scale: 0.99,
-    transition: { 
-      duration: 0.2 
-    } 
-  }
-};
+  };
 
   const sparkleVariants = {
     initial: { scale: 0, opacity: 0 },
@@ -215,11 +215,11 @@ const buttonVariants = {
                   <GoldenParticles count={20} accent={cat.accent} />
 
                   {/* Content */}
-                  <div className="absolute bottom-0 left-0 right-0 z-30 p-6 bg-gradient-to-t from-black/80 via-black/50 to-transparent">
+                  <div className="absolute bottom-0 left-0 right-0 z-30 p-6">
                     <h3 className="text-2xl font-serif text-amber-50 mb-2">{cat.name}</h3>
                     <p className="text-gray-300/90 mb-4 text-sm">{cat.description}</p>
                     <button
-                      className="px-6 py-2 border border-amber-600 text-amber-100 text-sm uppercase hover:bg-amber-800/40 transition"
+                      className="px-6 py-2 border  bg-gradient-to-t from-black/80 via-black/50 to-transparent border-amber-600 text-amber-100 text-sm uppercase hover:bg-amber-800/40 transition"
                       onClick={(e) => {
                         e.stopPropagation();
                         setActiveCategory(cat.name.toLowerCase());
@@ -236,7 +236,7 @@ const buttonVariants = {
 
         {/* Premium Explore Button */}
         {/* Premium Explore Button */}
-        <div className="flex justify-center mt-12">
+        <div className="flex justify-center mt-12 ">
           <motion.button
             variants={buttonVariants}
             initial="initial"
@@ -251,7 +251,7 @@ const buttonVariants = {
           >
             {/* Subtle background gradient */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-b from-amber-900/10 to-amber-950/5"
+              className="absolute inset-0"
               animate={{
                 opacity: isButtonHovered ? 1 : 0.7,
               }}
@@ -309,7 +309,7 @@ const buttonVariants = {
             )}
 
             {/* Button content */}
-            <div className="relative z-10 flex items-center justify-center space-x-3">
+            <div className="relative z-10 flex items-center justify-center space-x-3  bg-gradient-to-b from-amber-900/10 to-amber-950/5">
               <span className="text-amber-100/90 group-hover:text-amber-50 transition-colors duration-300 font-medium">
                 View All Stone Collections
               </span>
@@ -326,7 +326,7 @@ const buttonVariants = {
           </motion.button>
         </div>
       </div>
-       
+
     </section>
   );
 };
