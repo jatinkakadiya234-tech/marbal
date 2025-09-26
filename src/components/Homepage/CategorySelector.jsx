@@ -219,7 +219,10 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                     <h3 className="text-2xl font-serif text-amber-50 mb-2">{cat.name}</h3>
                     <p className="text-gray-300/90 mb-4 text-sm">{cat.description}</p>
                     <button
-                      className="px-6 py-2 border  bg-gradient-to-t from-black/80 via-black/50 to-transparent border-amber-600 text-amber-100 text-sm uppercase hover:bg-amber-800/40 transition"
+                      className="px-6 py-2 border border-amber-500/50 
+                                 bg-amber-900/30 text-black text-sm uppercase 
+                                 hover:bg-amber-800/50 hover:text-emerald-800 
+                                 transition-all duration-300 backdrop-blur-sm"
                       onClick={(e) => {
                         e.stopPropagation();
                         setActiveCategory(cat.name.toLowerCase());
@@ -235,7 +238,6 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
         </div>
 
         {/* Premium Explore Button */}
-        {/* Premium Explore Button */}
         <div className="flex justify-center mt-12 ">
           <motion.button
             variants={buttonVariants}
@@ -245,22 +247,13 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
             onHoverStart={() => setIsButtonHovered(true)}
             onHoverEnd={() => setIsButtonHovered(false)}
             onClick={() => navigate("/OurStones")}
-            className="relative px-10 py-4 bg-transparent border border-amber-600/40 rounded-lg 
-               text-amber-100 font-sans text-lg uppercase tracking-wider overflow-hidden 
-               group backdrop-blur-sm"
+            className="relative px-10 py-4 bg-amber-900/20 border border-amber-600/40 rounded-lg 
+                       text-amber-100 font-sans text-lg uppercase tracking-wider overflow-hidden 
+                       group backdrop-blur-sm hover:bg-amber-800/30 transition-colors duration-300"
           >
-            {/* Subtle background gradient */}
-            <motion.div
-              className="absolute inset-0"
-              animate={{
-                opacity: isButtonHovered ? 1 : 0.7,
-              }}
-              transition={{ duration: 0.3 }}
-            />
-
             {/* Hover overlay */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-amber-600/10 via-amber-500/5 to-amber-600/10"
+              className="absolute inset-0 bg-gradient-to-r from-amber-600/20 via-amber-500/10 to-amber-600/20"
               animate={{
                 x: isButtonHovered ? ["-100%", "100%"] : "-100%",
               }}
@@ -272,11 +265,11 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
 
             {/* Golden border glow effect */}
             <motion.div
-              className="absolute inset-0 rounded-lg border border-amber-500/30"
+              className="absolute inset-0 rounded-lg border border-amber-500/40"
               animate={{
                 boxShadow: isButtonHovered
-                  ? "0 0 20px rgba(180, 83, 9, 0.3)"
-                  : "0 0 0px rgba(180, 83, 9, 0.1)",
+                  ? "0 0 25px rgba(180, 83, 9, 0.4)"
+                  : "0 0 0px rgba(180, 83, 9, 0.2)",
               }}
               transition={{ duration: 0.4 }}
             />
@@ -287,7 +280,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                 {[...Array(4)].map((_, i) => (
                   <motion.div
                     key={i}
-                    className="absolute w-1 h-1 bg-amber-400/60 rounded-full"
+                    className="absolute w-1 h-1 bg-amber-400/70 rounded-full"
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{
                       scale: [0, 1, 0],
@@ -309,8 +302,8 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
             )}
 
             {/* Button content */}
-            <div className="relative z-10 flex items-center justify-center space-x-3  bg-gradient-to-b from-amber-900/10 to-amber-950/5">
-              <span className="text-amber-100/90 group-hover:text-amber-50 transition-colors duration-300 font-medium">
+            <div className="relative z-10 flex items-center justify-center space-x-3">
+              <span className="text-black group-hover:text-emerald-900 transition-colors duration-300 font-medium">
                 View All Stone Collections
               </span>
 
@@ -318,7 +311,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                 animate={{ x: isButtonHovered ? 5 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <svg className="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-5 h-5 text-black hover:text-emerald-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </motion.div>
@@ -326,7 +319,6 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
           </motion.button>
         </div>
       </div>
-
     </section>
   );
 };
