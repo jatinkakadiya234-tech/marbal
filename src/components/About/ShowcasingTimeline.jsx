@@ -214,8 +214,8 @@ export default function ShowcasingTimeline() {
           {/* Curved timeline with smooth animation */}
           <motion.div
             className="absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-gradient-to-b from-[#0E5543] via-[#0E5543]/70 to-[#0E5543]"
-            initial={{ height: 0, opacity: 0 }}
-            animate={isInView ? { height: "100%", opacity: 1 } : { height: 0, opacity: 0 }}
+            initial={{ height: 50, opacity: 0 }}
+            animate={isInView ? { height: "100%", opacity: 1 } : { height: "100%", opacity: 1}}
             transition={{ 
               height: { duration: 2, ease: "easeInOut" },
               opacity: { duration: 1, delay: 0.5 }

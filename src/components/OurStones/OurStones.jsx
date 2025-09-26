@@ -362,7 +362,7 @@ return (
                 className="fixed top-20  right-0 h-full w-48 bg-white z-40 lg:hidden shadow-2xl"
               >
                 {/* Sidebar Header */}
-                <div className="flex items-center justify-between p-4 border-b border-[#0E5543]/20">
+                <div className="flex items-center mb-20 justify-between p-4 border-b border-[#0E5543]/20">
                   <h3 className="text-lg font-semibold text-[#0E5543]">FILTERS</h3>
                   <button
                     onClick={() => setIsTooltipOpen(false)}
