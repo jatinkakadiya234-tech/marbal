@@ -236,7 +236,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
 
         {/* Premium Explore Button */}
         {/* Premium Explore Button */}
-        <div className="flex justify-center mt-12">
+        <div className="flex justify-center mt-12 ">
           <motion.button
             variants={buttonVariants}
             initial="initial"
@@ -251,7 +251,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
           >
             {/* Subtle background gradient */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-b from-amber-900/10 to-amber-950/5"
+              className="absolute inset-0"
               animate={{
                 opacity: isButtonHovered ? 1 : 0.7,
               }}
@@ -309,7 +309,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
             )}
 
             {/* Button content */}
-            <div className="relative z-10 flex items-center justify-center space-x-3">
+            <div className="relative z-10 flex items-center justify-center space-x-3  bg-gradient-to-b from-amber-900/10 to-amber-950/5">
               <span className="text-amber-100/90 group-hover:text-amber-50 transition-colors duration-300 font-medium">
                 View All Stone Collections
               </span>
