@@ -70,7 +70,7 @@ const Navbar = () => {
                   }`}
                 onClick={() => handleItemClick(item.name.toLowerCase())}
               >
-                <span className="relative font-medium text-white after:absolute after:w-0 after:h-px after:bg-amber-300 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
+                <span className="relative font-sans-serif text-white after:absolute after:w-0 after:h-px after:bg-amber-300 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
                   {item.name}
                 </span>
               </Link>

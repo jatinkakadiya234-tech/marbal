@@ -97,7 +97,7 @@ const Hero = () => {
 
         {/* Content */}
         <motion.div
-          className="relative z-10 text-center  md:px-12 lg:px-24 max-w-7xl"
+          className="relative z-10 text-center font-sans-serif  md:px-12 lg:px-24 max-w-7xl"
           variants={containerVariants}
           initial="hidden"
           animate="visible"

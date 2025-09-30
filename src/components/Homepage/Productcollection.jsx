@@ -156,7 +156,7 @@ export default function ProductCollection() {
   }
 
   return (
-    <div className="bg-gradient-to-br from-[#0E5543] via-[#0E5543] to-[#0E5543] py-16 md:py-20 px-4 sm:px-6 lg:px-8 font-['Playfair_Display'] overflow-hidden">
+    <div className="bg-gradient-to-br  from-[#0E5543] via-[#0E5543] to-[#0E5543] py-16 md:py-20 px-4 sm:px-6 lg:px-8 font-['Playfair_Display'] overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-[#F2E1C5]/10 rounded-full blur-3xl animate-pulse"></div>
@@ -164,7 +164,8 @@ export default function ProductCollection() {
       </div>
 
       {/* Header Section */}
-      <HeaderContent
+      <HeaderContent 
+      className='sans-serif'
         title="Our Premium Services"
         subtitle="We go beyond providing exceptional marble products by offering comprehensive services 
             to ensure your complete satisfaction from selection to installation."

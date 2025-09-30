@@ -20,14 +20,13 @@ const Footer = () => {
       <div className="absolute top-10 left-1/4 w-48 h-48 rounded-full bg-[#F2E1C5]/5 blur-lg"></div>
       <div className="absolute bottom-20 right-1/3 w-56 h-56 rounded-full bg-[#1A6B56]/30 blur-xl"></div>
 
-      {/* Marble texture pattern */}
-      <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRjJFMUM1IiBzdHJva2Utd2lkdGg9IjEiIGQ9Ik0wIDBhNjAgNjAgMCAxIDAgNjAgNjBhNjAgNjAgMCAxIDAgLTYwIC02MHoiLz48L3N2Zz4=')]"></div>
+      {/* Marble pattern */}
+      <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2Zy...')]"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-        {/* Main footer content */}
+        {/* Main content */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 py-16">
-          {/* Brand section */}
+          {/* Brand */}
           <div className="md:col-span-4">
             <div className="flex items-center mb-6">
               <div className="w-3 h-3 bg-[#F2E1C5] rounded-full mr-3 shadow-lg shadow-[#F2E1C5]/30"></div>
@@ -103,7 +102,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact */}
           <div className="md:col-span-4">
             <h3 className="text-lg font-semibold mb-6 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-[#F2E1C5]">Contact Us</h3>
             <div className="bg-[#1A6B56]/30 border border-[#F2E1C5]/10 rounded-xl p-6 mb-8">
@@ -137,21 +136,20 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Newsletter */}
-        <div className='flex justify-between w-full'>
-          <div className='flex'>
-            {/* Premium badges */}
-            <div className="flex flex-wrap justify-center gap-6 py-8 border-b border-[#F2E1C5]/20">
-              {['Premium Quality', '25+ Years Experience', 'Worldwide Shipping'].map((item, index) => (
-                <div key={index} className="flex items-center text-sm bg-[#0E5543] border border-[#F2E1C5]/20 rounded-full px-4 py-2">
-                  <FiAward className="text-[#F2E1C5] mr-2" size={14} />
-                  <span className="text-[#F2E1C5]">{item}</span>
-                </div>
-              ))}
-            </div>
+        {/* Newsletter + Badges (Responsive Fix) */}
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 w-full">
+          {/* Badges */}
+          <div className="flex flex-wrap gap-4">
+            {['Premium Quality', '25+ Years Experience', 'Worldwide Shipping'].map((item, index) => (
+              <div key={index} className="flex items-center text-sm bg-[#0E5543] border border-[#F2E1C5]/20 rounded-full px-4 py-2">
+                <FiAward className="text-[#F2E1C5] mr-2" size={14} />
+                <span className="text-[#F2E1C5]">{item}</span>
+              </div>
+            ))}
           </div>
 
-          <div className='mb-5'>
+          {/* Newsletter */}
+          <div className="w-full max-w-md">
             <h3 className="text-lg font-semibold mb-4 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-[#F2E1C5]">Newsletter</h3>
             <div className="flex gap-2">
               <input
@@ -161,7 +159,7 @@ const Footer = () => {
               />
               <button
                 style={{ "background": "#F2E1C5" }}
-                className="px-4 bg-[#F2E1C5] text-[#0E5543] font-medium rounded-r-lg hover:opacity-90 transition-all duration-300 flex items-center">
+                className="px-4 bg-[#F2E1C5] text-[#0E5543] font-medium rounded-lg hover:opacity-90 transition-all duration-300 flex items-center">
                 <FiSend size={18} />
               </button>
             </div>
@@ -169,17 +167,17 @@ const Footer = () => {
         </div>
 
         {/* Bottom section */}
-        <div className="border-t border-[#F2E1C5]/20 pt-8 pb-10 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-[#F2E1C5]/60 text-sm flex items-center">
+        <div className="border-t border-[#F2E1C5]/20 pt-8 pb-10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-[#F2E1C5]/60 text-sm flex items-center text-center md:text-left">
             © {new Date().getFullYear()} Rishab Green Marbles. Crafted with <FiHeart className="text-[#F2E1C5] mx-1" /> in India.
           </p>
 
-          <div className="flex space-x-6 mt-4 md:mt-0">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             <p onClick={() => navigate('/privacy')} className="text-[#F2E1C5]/60 hover:text-[#F2E1C5] transition-colors duration-300 text-sm cursor-pointer">Privacy Policy</p>
             <p onClick={() => navigate('/terms')} className="text-[#F2E1C5]/60 hover:text-[#F2E1C5] transition-colors duration-300 text-sm cursor-pointer">Terms of Service</p>
             <p onClick={() => navigate('/shipping')} className="text-[#F2E1C5]/60 hover:text-[#F2E1C5] transition-colors duration-300 text-sm cursor-pointer">Shipping Info</p>
           </div>
-        </div>
+        </div>  
       </div>
 
       {/* Scroll to top button */}
