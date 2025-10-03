@@ -3,7 +3,7 @@ import WorldMap from "./WorldMap";
 
 // Lazy load components
 const Hero = lazy(() => import("./Hero"));
-// const About = lazy(() => import("./About"));
+const About = lazy(() => import("./About"));
 const CategorySelector = lazy(() => import("./CategorySelector"));
 const FeaturedCollections = lazy(() => import("./OurCraft"));
 const Productcollection = lazy(() => import("./Productcollection"));
@@ -19,7 +19,7 @@ const Homepage = () => {
       </Suspense>
 
       <Suspense fallback={<div>Loading About...</div>}>
-        {/* <About /> */}
+        <About />
       </Suspense>
 
       <Suspense fallback={<div>Loading Categories...</div>}>
