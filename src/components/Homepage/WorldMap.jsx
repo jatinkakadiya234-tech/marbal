@@ -294,7 +294,7 @@ export default function WorldMap() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.8 }}
-        className="text-center max-w-7xl  mx-auto mt-12 bg-gradient-to-r from-[#F2E1C5] to-[#E8D4B5] rounded-xl p-10 shadow-2xl border border-[#D4AF37]/30"
+        className="text-center max-w-7xl  mx-auto mt-12 bg-white rounded-xl p-10 shadow-2xl border border-[#D4AF37]/30"
       >
         {/* Elegant Icon */}
         <motion.div

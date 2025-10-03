@@ -61,7 +61,7 @@ const Hero = () => {
   };
 
   // Text sections
-  const headlineWords = "Hand Crafted luxury Designs".split(" ");
+  const headlineWords = "Exquisite Natural Stone Creations".split(" ");
   const companyWords = "From Rishab Green Marbles".split(" ");
   const subheadingWords =
     "We are Surrey's leading supplier of marble, granite, limestone and quartz worktops, flooring and bathroom interiors for your home. Our craftsman will transform your interior to a room that you'll love and feel proud of and which will impress your family and friends.".split(
@@ -104,14 +104,14 @@ const Hero = () => {
         >
           {/* === Separator 1 (top line) === */}
           <motion.div
-            className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#F2E1C5]/60 to-transparent mb-6 mx-auto"
+            className="w-24 h-0.5 bg-gradient-to-r from-transparent via-white/60 to-transparent mb-6 mx-auto"
             variants={itemVariants}
           />
 
           {/* Headline + Company Name (single section) */}
           <motion.div variants={containerVariants}>
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 leading-tight tracking-wide"
+              className="text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-4 leading-tight tracking-wide font-['Poppins'] font-normal"
               variants={containerVariants}
             >
               {headlineWords.map((word, i) => (
@@ -121,12 +121,12 @@ const Hero = () => {
                   custom={i}
                   className="inline-block mr-3"
                   style={{
-                    fontFamily: "'Playfair Display', serif",
-                    fontWeight: i === 1 || i === 2 ? 600 : 400,
+                    fontFamily: "'Poppins', sans-serif",
+                    fontWeight: i === 1 || i === 2 ? 400 : 400,
                     fontStyle: i === 1 ? "italic" : "normal",
                     background:
                       i === 1
-                        ? "linear-gradient(135deg, #F2E1C5 0%, #F2E1C5 100%)"
+                        ? "linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)"
                         : "linear-gradient(135deg, #FFFFFF 0%, #F3F4F6 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
@@ -143,10 +143,10 @@ const Hero = () => {
                   key={i}
                   variants={wordVariants}
                   custom={i + headlineWords.length}
-                  className={`text-2xl md:text-4xl lg:text-5xl font-light mr-2 ${i === 1 || i === 2 ? "text-[#F2E1C5]" : "text-gray-300"
+                  className={`text-base md:text-lg lg:text-xl font-normal mr-2 ${i === 1 || i === 2 ? "text-white" : "text-gray-300"
                     }`}
                   style={{
-                    fontFamily: "'Cormorant Garamond', serif",
+                    fontFamily: "'Poppins', sans-serif",
                     fontWeight: i === 1 || i === 2 ? 500 : 300,
                   }}
                 >
@@ -158,15 +158,14 @@ const Hero = () => {
 
           {/* === Separator 2 (middle line) === */}
           <motion.div
-            className="w-32 h-0.5 bg-gradient-to-r from-[#F2E1C5]/80 to-transparent mx-auto my-6"
+            className="w-32 h-0.5 bg-gradient-to-r from-white/80 to-transparent mx-auto my-6"
             variants={itemVariants}
           />
 
           {/* Subheading */}
           <motion.p
-            className="text-lg md:text-xl lg:text-2xl font-light text-gray-200 mb-8 max-w-4xl mx-auto leading-relaxed tracking-wide"
+            className="text-base md:text-lg lg:text-xl font-light text-gray-200 mb-8 max-w-4xl mx-auto leading-relaxed tracking-wide font-['Text-book']"
             variants={itemVariants}
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
             {subheadingWords.map((word, i) => (
               <motion.span
@@ -182,7 +181,7 @@ const Hero = () => {
 
           {/* === Separator 3 (bottom line) === */}
           <motion.div
-            className="w-16 h-0.5 bg-gradient-to-r from-transparent via-[#F2E1C5]/60 to-transparent mx-auto mt-10"
+            className="w-16 h-0.5 bg-gradient-to-r from-transparent via-white/60 to-transparent mx-auto mt-10"
             variants={itemVariants}
           />
         </motion.div>
@@ -195,7 +194,7 @@ const Hero = () => {
             initial="hidden"
             animate={["visible", "bounce"]}
           >
-            <FiArrowDown className="text-[#F2E1C5] w-6 h-6" />
+            <FiArrowDown className="text-white w-6 h-6" />
           </motion.div>
         )}
       </section>

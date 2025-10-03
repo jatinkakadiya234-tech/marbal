@@ -8,7 +8,7 @@ const Section5 = () => {
             {/* CTA Section */}
             <section className="relative py-32 overflow-hidden">
                 {/* Background with elegant pattern */}
-                <div className="absolute inset-0 bg-[#F2E1C5]">
+                <div className="absolute inset-0 bg-[white]">
                     <div className="absolute inset-0 opacity-[0.03]">
                         <div className="absolute inset-0" style={{
                             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230E5543' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")`,
@@ -84,13 +84,13 @@ const Section5 = () => {
                             {/* Button with gradient border effect */}
                             <div className="relative">
                                 {/* Main button */}
-                                <button className="relative px-12 py-5 bg-[#0E5543] text-[#F2E1C5] rounded-2xl font-medium text-lg tracking-wide group-hover:shadow-2xl group-hover:shadow-[#0E5543]/40 transition-all duration-500 overflow-hidden z-10 flex items-center mx-auto">
-                                    {/* Shine effect */}
-                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#F2E1C5]/20 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                               <button className="relative px-12 py-5 bg-amber-600 rounded-2xl font-medium text-lg tracking-wide group-hover:shadow-2xl group-hover:shadow-[#0E5543]/40 transition-all duration-500 overflow-hidden z-10 flex items-center mx-auto">
+    {/* Shine effect */}
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#F2E1C5]/20 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
 
-                                    <span className="relative z-10">Schedule a Private Factory Tour</span>
-                                    <FiChevronRight className="ml-3 relative z-10 group-hover:translate-x-1 transition-transform duration-300" size={20} />
-                                </button>
+    <span className="relative z-10">Schedule a Private Factory Tour</span>
+    <FiChevronRight className="ml-3 relative z-10 group-hover:translate-x-1 transition-transform duration-300" size={20} />
+</button>
 
                                 {/* Border gradient effect */}
                                 {/* <div className="absolute -inset-1 bg-gradient-to-r from-[#0E5543] via-[#F2E1C5] to-[#0E5543] rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500"></div> */}

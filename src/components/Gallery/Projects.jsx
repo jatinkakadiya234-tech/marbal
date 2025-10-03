@@ -119,7 +119,7 @@ const Projects = ({ selectedCategory, searchQuery, setSelectedProject }) => {
                     className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
                     whileHover={{ scale: 1.05 }}
                   />
-                  <div className="absolute top-4 right-4 z-20 bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-md">
+                  <div className="absolute top-4 right-4 z-20 text-2xl backdrop-blur-sm rounded-full p-2 shadow-md">
                     {categoryIcons[project.category] || <FiSquare className="text-[#0E5543]" />}
                   </div>
                 </div>
@@ -162,7 +162,7 @@ const Projects = ({ selectedCategory, searchQuery, setSelectedProject }) => {
                     <span className="text-[#0E5543] font-medium text-sm group-hover:underline">
                       View Details
                     </span>
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[#F2E1C5] group-hover:bg-[#0E5543] group-hover:text-white transition-colors duration-300">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full    transition-colors duration-300">
                       <FiArrowRight className="transition-transform group-hover:translate-x-0.5" />
                     </div>
                   </div>

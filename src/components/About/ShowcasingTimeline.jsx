@@ -183,10 +183,10 @@ export default function ShowcasingTimeline() {
   }, [activeIndex]);
 
   return (
-    <section ref={ref} className="relative min-h-screen py-36 overflow-hidden bg-[#F2E1C5]">
+    <section ref={ref} className="relative min-h-screen py-36 overflow-hidden bg-white">
       {/* Enhanced Background with Smooth Animations */}
       <motion.div 
-        className="absolute inset-0 bg-gradient-to-b from-[#F2E1C5] to-[#e8d5b5]"
+        className="absolute inset-0 bg-gradient-to-b from-white to-gray-50"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
@@ -256,7 +256,7 @@ export default function ShowcasingTimeline() {
                 <div className={`flex flex-col md:flex-row items-center ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''} gap-10`}>
                   <div className="md:w-1/2">
                     <motion.div
-                      className={`p-8 rounded-2xl bg-white border border-[#0E5543]/20 shadow-xl transition-all duration-500 ${
+                      className={`p-8 rounded-2xl bg-[#F2E1C5] border border-[#0E5543]/20 shadow-xl transition-all duration-500 ${
                         idx === activeIndex ? 'ring-2 ring-[#0E5543]/30 scale-105' : 'scale-100'
                       }`}
                       whileHover={{
