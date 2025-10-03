@@ -194,7 +194,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                 transition={{ delay: index * 0.2 + 0.5, duration: 0.7 }}
               >
                 {/* Card content */}
-                <div className="absolute inset-0 overflow-hidden rounded-xl">
+                <div className="absolute inset-0 overflow-hidden">
                   <div className={`absolute inset-0 bg-gradient-to-br ${cat.color}`} />
                   <div className={`absolute inset-0 border border-${cat.accent}-700/30`} />
 
@@ -216,8 +216,8 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
 
                   {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 z-30 p-6">
-                    <h3 className="text-2xl font-serif text-amber-50 mb-2">{cat.name}</h3>
-                    <p className="text-gray-300/90 mb-4 text-sm">{cat.description}</p>
+                    <h3 className="text-base font-['Poppins'] font-normal text-amber-50 mb-2">{cat.name}</h3>
+                    <p className="text-gray-300/90 mb-4 text-sm font-['Text-book']">{cat.description}</p>
                     <button
                       className="px-6 py-2 border border-amber-500/50 
                                  bg-amber-900/30 text-black text-sm uppercase 

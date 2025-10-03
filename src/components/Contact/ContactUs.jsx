@@ -17,7 +17,7 @@ import HeaderContent from "../Helper/HeaderContent";
 
 const ContactUs = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-gradient-to-br from-[#F2E1C5] via-[#F8EDDC] to-[#F2E1C5]">
+    <div className="min-h-screen overflow-x-hidden bg-gradient-to-br bg-white">
       {/* Enhanced Hero Section */}
       <section className="relative h-[60vh] md:h-[50vh] md:pt-40 md:pb-15  flex items-center justify-center overflow-hidden">
         {/* Enhanced Background with Improved Color Harmony */}
@@ -58,7 +58,7 @@ const ContactUs = () => {
       </section>
 
       {/* Main Contact Section */}
-      <section className="relative py-16 px-4 max-w-7xl mx-auto">
+      <section className="relative py-16 px-4 max-w-7xl mx-auto  bg-white">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[#F2E1C5]/20"></div>
 
@@ -118,7 +118,7 @@ const ContactUs = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-start gap-4 p-4 rounded-xl bg-white/80 backdrop-blur-sm border border-[#0E5543]/10 hover:border-[#0E5543]/30 transition-all duration-300 group"
+                  className="flex items-start gap-4 p-4 rounded-xl bg-white backdrop-blur-sm border border-[#0E5543]/10 hover:border-[#0E5543]/30 transition-all duration-300 group"
                 >
                   <div className={`w-12 h-12 bg-gradient-to-r ${item.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                     <item.icon className="text-lg text-[#F2E1C5]" />
@@ -261,7 +261,6 @@ const ContactUs = () => {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.036154387616!2d72.83044417506567!3d19.099676982107667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9f6d8e4b7e1%3A0xf36a6f3f3a2c4cf2!2sMumbai%20City%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1695825569850!5m2!1sen!2sin"
               className="w-full h-[400px] md:h-[500px] border-0 grayscale contrast-125"
               allowFullScreen=""
-              loading="lazy"
             ></iframe>
 
             {/* Map Overlay Info */}

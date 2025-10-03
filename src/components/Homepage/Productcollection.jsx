@@ -115,19 +115,19 @@ export default function ProductCollection() {
 
   const services = [
     {
-      icon: <FaCar className="text-4xl mb-4" />,
+      icon: <FaCar className="text-5xl mb-4" />,
       title: "Free Delivery",
       description: "We provide free delivery services for all orders within the city limits, ensuring your marble reaches you safely and on time.",
       features: ["Within City Limits", "Professional Handling", "Timely Delivery"]
     },
     {
-      icon: <FaTools className="text-4xl mb-4" />,
+      icon: <FaTools className="text-5xl mb-4" />,
       title: "Expert Installation",
       description: "Our team of certified professionals ensures perfect installation with precision and care for long-lasting results.",
       features: ["Certified Professionals", "Precision Work", "Quality Guarantee"]
     },
     {
-      icon: <FaHeadset className="text-4xl mb-4" />,
+      icon: <FaHeadset className="text-5xl mb-4" />,
       title: "24/7 Support",
       description: "Round-the-clock customer support to address any queries or concerns you may have about our products and services.",
       features: ["24/7 Availability", "Quick Response", "After-Sales Support"]
@@ -178,24 +178,24 @@ export default function ProductCollection() {
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="group relative bg-gradient-to-br from-[#F2E1C5] via-[#f5e9d5] to-[#f8f1e3] rounded-3xl overflow-hidden border border-[#F2E1C5]/30 hover:border-[#F2E1C5]/60 transition-all duration-500 p-8 hover:transform hover:scale-105 shadow-xl"
+              className="group relative bg-white rounded-3xl overflow-hidden border border-gray-200 hover:border-gray-300 transition-all duration-500 p-8 hover:transform hover:scale-105 shadow-xl"
             >
               {/* Skinny card effect with minimal padding */}
               <div className="text-center mb-6">
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-[#0E5543] to-[#1a7a5e] rounded-full text-[#F2E1C5] group-hover:scale-110 transition-transform duration-300">
+                <div className="inline-flex items-center justify-center w-20 h-20 text-[#0E5543] group-hover:scale-110 transition-transform duration-300">
                   {service.icon}
                 </div>
               </div>
               
               {/* Light text content */}
-              <h3 className="text-2xl font-bold text-gray-900 text-center mb-4">{service.title}</h3>
-              <p className="text-gray-700 text-center mb-6 leading-relaxed">{service.description}</p>
+              <h3 className="text-base font-['Poppins'] font-normal text-gray-900 text-center mb-4">{service.title}</h3>
+              <p className="text-gray-700 text-center mb-6 leading-relaxed font-['Text-book']">{service.description}</p>
               
               <ul className="space-y-3">
                 {service.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center text-gray-700">
                     <span className="w-2 h-2 bg-[#0E5543] rounded-full mr-3"></span>
-                    <span className="text-sm">{feature}</span>
+                    <span className="text-sm font-['Text-book']">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -213,7 +213,7 @@ export default function ProductCollection() {
         <div className="text-center mt-12">
           <button 
             onClick={handleExploreServices}
-            className="bg-gradient-to-r from-[#F2E1C5] to-[#f5e9d5] text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:from-[#f5e9d5] hover:to-[#F2E1C5] transition-all duration-300 transform hover:-translate-y-1 shadow-2xl border-2 border-[#F2E1C5]/30 hover:border-[#F2E1C5]/60 flex items-center justify-center gap-3 mx-auto"
+            className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 transform hover:-translate-y-1 shadow-2xl border-2 border-gray-200 hover:border-gray-300 flex items-center justify-center gap-3 mx-auto"
           >
             Explore All Services
             <FaArrowRight className="text-lg group-hover:translate-x-1 transition-transform" />

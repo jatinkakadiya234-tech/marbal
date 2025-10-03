@@ -61,7 +61,7 @@ export default function FounderDetails() {
   const [expandedCard, setExpandedCard] = useState(null);
 
   return (
-    <section className="relative py-20 z-0 bg-[#F2E1C5] overflow-hidden">
+    <section className="relative py-20 z-0 bg-white overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-20 -right-20 w-48 h-48 bg-[#0E5543]/5 rounded-full"></div>
@@ -95,7 +95,7 @@ export default function FounderDetails() {
           {founders.map((founder, index) => (
             <motion.div
               key={founder.name}
-              className="relative rounded-xl overflow-hidden bg-white shadow-md border border-[#0E5543]/10 group cursor-pointer hover:shadow-lg transition-shadow duration-300"
+              className="relative rounded-xl overflow-hidden bg-[#F2E1C5] shadow-md border border-[#0E5543]/10 group cursor-pointer hover:shadow-lg transition-shadow duration-300"
               variants={item}
               whileHover={{ y: -5 }}
               onClick={() => setExpandedCard(expandedCard === index ? null : index)}

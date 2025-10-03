@@ -11,7 +11,7 @@ const ProjectsGallery = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <div className="min-h-screen pt-20 bg-[#F2E1C5] text-[#0E5543]">
+    <div className="min-h-screen pt-20 bg-[white] text-[#0E5543]">
       <GalleryHero />
 
       <GalleryNavbar

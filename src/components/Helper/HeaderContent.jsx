@@ -29,8 +29,8 @@ const HeaderContent = ({
       </motion.div>
 
       {/* Main Title */}
-      <motion.h1
-        className="font-sans-serif font-bold mb-6 leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+      <motion.p
+        className="font-sans-serif font-bold mb-6 leading-tight text-1xl md:text-4xl lg:text-4xl"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.1 }}
@@ -57,7 +57,7 @@ const HeaderContent = ({
             </span>
           );
         })}
-      </motion.h1>
+      </motion.p>
 
       {/* Animated Divider */}
       <motion.div

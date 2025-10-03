@@ -240,11 +240,12 @@ const OurStones = () => {
   };
 
 return (
-  <div className="min-h-screen bg-[#F2E1C5]">
+  <div className="min-h-screen bg-white">
     {/* Hero Section */}
-    <section className="relative bg-[#F2E1C5] text-[#0E5543] pb-10 pt-32 overflow-hidden">
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center"></div>
+    <section className="relative bg-white text-[#0E5543] pb-10 pt-32 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-[url('https://thumbs.dreamstime.com/b/industrial-worker-handyman-installing-big-ceramic-tiles-bathroom-walls-industrial-worker-handyman-installing-big-ceramic-tiles-251216060.jpg')] bg-cover bg-center"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -255,7 +256,7 @@ return (
         />
 
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-[#0E5543] text-white px-6 py-3 rounded-full font-medium hover:bg-[#14745c] transition-colors">
+            <button className="bg-[#0E5543] text-white px-6 py-3 rounded-full font-medium hover:bg-[#14745c] transition-colors">
             Get A Quote
           </button>
           <button className="bg-transparent text-[#0E5543] border border-[#0E5543] px-6 py-3 rounded-full font-medium hover:bg-[#0E5543] hover:text-white transition-colors">

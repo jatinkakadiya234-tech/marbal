@@ -93,7 +93,7 @@ const BlogsPage = () => {
   )
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#F2E1C5] via-[#f5e9d5] to-[#f8f1e3]">
+    <div className="min-h-screen bg-gradient-to-br  bg-white">
       {/* Header Section */}
       <div className="relative bg-gradient-to-r from-[#0E5543] to-[#1a7a5e] py-20 px-4 text-center overflow-hidden">
         <div className="absolute inset-0 opacity-10">

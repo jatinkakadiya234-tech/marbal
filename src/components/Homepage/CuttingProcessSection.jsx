@@ -83,7 +83,7 @@ const MarbleQuarryHome = () => {
   };
 
   return (
-    <div className="bg-[#F2E1C5] font-['Inter'] overflow-hidden">
+    <div className="bg-white font-['Inter'] overflow-hidden">
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
@@ -92,7 +92,7 @@ const MarbleQuarryHome = () => {
       {/* Hero Section */}
       <section ref={sectionRef} className="relative flex items-center py-12  lg:py-0 min-h-screen">
         {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0E5543]/5 via-[#F2E1C5] to-[#0E5543]/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0E5543]/5 via-white to-[#0E5543]/10"></div>
 
         {/* Decorative Elements */}
         <div className="absolute top-10% left-5% w-72 h-72 bg-[#0E5543]/5 rounded-full blur-3xl"></div>
@@ -109,11 +109,11 @@ const MarbleQuarryHome = () => {
 <motion.div className="space-y-12 lg:space-y-16" variants={itemVariants}>
   {/* Main Heading */}
   <motion.div className="space-y-8 lg:space-y-10" variants={itemVariants}>
-    <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-[#0E5543] leading-tight font-['Playfair_Display']">
+    <h1 className="text-2xl lg:text-3xl xl:text-4xl font-normal text-[#0E5543] leading-tight font-['Poppins']">
       Where <span className="font-['Cormorant_Garamond'] italic font-light text-[#1a7f66] drop-shadow-sm">Artistry</span> Meets<br />
       <span className="font-['Cormorant_Garamond'] italic font-light text-[#1a7f66] drop-shadow-sm">Precision</span> Engineering
     </h1>
-    <p className="text-xl lg:text-2xl text-[#0E5543]/90 leading-relaxed font-light max-w-2xl font-['Source_Serif_Pro']">
+    <p className="text-xl lg:text-2xl text-[#0E5543]/90 leading-relaxed font-light max-w-2xl font-['Text-book']">
       Experience the perfect symphony of <span className="font-['Cormorant_Garamond'] italic font-medium text-[#0E5543]">time-honored craftsmanship</span>
       and <span className="font-['Cormorant_Garamond'] italic font-medium text-[#0E5543]">cutting-edge innovation</span> in marble excellence.
       Our state-of-the-art technology ensures <span className="font-semibold text-[#1a7f66]">unmatched perfection</span> in every slab.
@@ -123,44 +123,44 @@ const MarbleQuarryHome = () => {
   {/* Enhanced Stats Section */}
   <motion.div className="space-y-6" variants={itemVariants}>
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-2xl">
-      <div className="space-y-3 p-4 bg-white/40 rounded-2xl backdrop-blur-sm border border-white/60">
+      <div className="space-y-3 p-4 bg-[#F2E1C5]/40 rounded-2xl backdrop-blur-sm border border-[#F2E1C5]/60">
         <div className="flex items-center gap-3">
           <div className="w-4 h-4 bg-gradient-to-br from-[#0E5543] to-[#1a7f66] rounded-full shadow-lg"></div>
           <span className="font-bold text-[#0E5543] text-lg font-['Inter']">50+</span>
         </div>
-        <p className="text-[#0E5543]/80 text-sm font-['Source_Sans_3']">Years of Excellence</p>
+        <p className="text-[#0E5543]/80 text-sm font-['Text-book']">Years of Excellence</p>
       </div>
-      <div className="space-y-3 p-4 bg-white/40 rounded-2xl backdrop-blur-sm border border-white/60">
+      <div className="space-y-3 p-4 bg-[#F2E1C5]/40 rounded-2xl backdrop-blur-sm border border-[#F2E1C5]/60">
         <div className="flex items-center gap-3">
           <div className="w-4 h-4 bg-gradient-to-br from-[#0E5543] to-[#1a7f66] rounded-full shadow-lg"></div>
           <span className="font-bold text-[#0E5543] text-lg font-['Inter']">ISO 9001</span>
         </div>
-        <p className="text-[#0E5543]/80 text-sm font-['Source_Sans_3']">Quality Certified</p>
+        <p className="text-[#0E5543]/80 text-sm font-['Text-book']">Quality Certified</p>
       </div>
-      <div className="space-y-3 p-4 bg-white/40 rounded-2xl backdrop-blur-sm border border-white/60">
+      <div className="space-y-3 p-4 bg-[#F2E1C5]/40 rounded-2xl backdrop-blur-sm border border-[#F2E1C5]/60">
         <div className="flex items-center gap-3">
           <div className="w-4 h-4 bg-gradient-to-br from-[#0E5543] to-[#1a7f66] rounded-full shadow-lg"></div>
           <span className="font-bold text-[#0E5543] text-lg font-['Inter']">1000+</span>
         </div>
-        <p className="text-[#0E5543]/80 text-sm font-['Source_Sans_3']">Projects Completed</p>
+        <p className="text-[#0E5543]/80 text-sm font-['Text-book']">Projects Completed</p>
       </div>
-      <div className="space-y-3 p-4 bg-white/40 rounded-2xl backdrop-blur-sm border border-white/60">
+      <div className="space-y-3 p-4 bg-[#F2E1C5]/40 rounded-2xl backdrop-blur-sm border border-[#F2E1C5]/60">
         <div className="flex items-center gap-3">
           <div className="w-4 h-4 bg-gradient-to-br from-[#0E5543] to-[#1a7f66] rounded-full shadow-lg"></div>
           <span className="font-bold text-[#0E5543] text-lg font-['Inter']">24/7</span>
         </div>
-        <p className="text-[#0E5543]/80 text-sm font-['Source_Sans_3']">Expert Support</p>
+        <p className="text-[#0E5543]/80 text-sm font-['Text-book']">Expert Support</p>
       </div>
     </div>
     
     {/* Enhanced Description */}
     <div className="space-y-4 max-w-2xl">
-      <p className="text-lg text-[#0E5543]/90 leading-relaxed font-['Source_Serif_Pro']">
+      <p className="text-lg text-[#0E5543]/90 leading-relaxed font-['Text-book']">
         For over half a century, our family-owned quarry has been transforming raw marble into 
         <span className="font-semibold text-[#1a7f66]"> breathtaking masterpieces</span> that grace the world's most prestigious spaces. 
         We blend <span className="italic">generations of artisan wisdom</span> with <span className="italic">precision engineering</span> to create marble that tells a story.
       </p>
-      <div className="flex items-center gap-4 text-sm text-[#0E5543]/80 font-['Source_Sans_3']">
+      <div className="flex items-center gap-4 text-sm text-[#0E5543]/80 font-['Text-book']">
         <span className="flex items-center gap-2">
           <div className="w-2 h-2 bg-[#0E5543] rounded-full"></div>
           Global shipping available
@@ -223,7 +223,7 @@ const MarbleQuarryHome = () => {
             <motion.div className="space-y-8 " variants={itemVariants}>
               {/* Video Section */}
               <motion.div
-                className="relative rounded-3xl md:mb-18 overflow-hidden shadow-3xl border-4 border-white/90 bg-white/30 backdrop-blur-lg"
+                className="relative md:mb-18 overflow-hidden shadow-3xl border-4 border-white/90 bg-white/30 backdrop-blur-lg"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.4 }}
               >
@@ -253,7 +253,7 @@ const MarbleQuarryHome = () => {
                   </div>
 
                   <motion.div
-                    className="absolute inset-0 rounded-3xl border-2 border-white/30 pointer-events-none"
+                    className="absolute inset-0 border-2 border-white/30 pointer-events-none"
                     animate={{
                       opacity: [0.3, 0.6, 0.3],
                     }}
@@ -272,12 +272,12 @@ const MarbleQuarryHome = () => {
                 variants={containerVariants}
               >
                 {/* Background Pattern */}
-                <div className="absolute -inset-4 bg-[#0E5543]/5 rounded-3xl -z-10"></div>
+                <div className="absolute -inset-4 bg-[#0E5543]/5 -z-10"></div>
 
                 <div className="grid grid-cols-8 grid-rows-5 gap-3 lg:gap-4 h-64 lg:h-72">
                   {/* Large Main Image */}
                   <motion.div
-                    className="col-span-4 row-span-4 relative group cursor-pointer rounded-2xl overflow-hidden shadow-2xl"
+                    className="col-span-4 row-span-4 relative group cursor-pointer  overflow-hidden shadow-2xl"
                     variants={imageVariants}
                     whileHover="hover"
                   >
@@ -288,7 +288,7 @@ const MarbleQuarryHome = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="absolute bottom-4 left-4 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                      <div className="bg-black/70 backdrop-blur-md rounded-xl p-3 border border-white/20">
+                      <div className="bg-black/70 backdrop-blur-md p-3 border border-white/20">
                         <h4 className="text-white font-bold text-sm">{imageGallery[0].title}</h4>
                         <p className="text-white/80 text-xs">{imageGallery[0].description}</p>
                       </div>
@@ -297,7 +297,7 @@ const MarbleQuarryHome = () => {
 
                   {/* Top Right Small Image */}
                   <motion.div
-                    className="col-span-4 row-span-2 relative group cursor-pointer rounded-xl overflow-hidden shadow-lg"
+                    className="col-span-4 row-span-2 relative group cursor-pointer overflow-hidden shadow-lg"
                     variants={imageVariants}
                     whileHover="hover"
                   >
@@ -308,7 +308,7 @@ const MarbleQuarryHome = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="bg-black/60 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
+                      <span className="bg-black/60 text-white text-xs px-2 py-1 backdrop-blur-sm">
                         {imageGallery[1].title}
                       </span>
                     </div>
@@ -316,7 +316,7 @@ const MarbleQuarryHome = () => {
 
                   {/* Bottom Right Medium Image */}
                   <motion.div
-                    className="col-span-2 row-span-2 relative group cursor-pointer rounded-xl overflow-hidden shadow-lg"
+                    className="col-span-2 row-span-2 relative group cursor-pointer overflow-hidden shadow-lg"
                     variants={imageVariants}
                     whileHover="hover"
                   >
@@ -330,7 +330,7 @@ const MarbleQuarryHome = () => {
 
                   {/* Bottom Right Small Image */}
                   <motion.div
-                    className="col-span-2 row-span-2 relative group cursor-pointer rounded-xl overflow-hidden shadow-lg"
+                    className="col-span-2 row-span-2 relative group cursor-pointer overflow-hidden shadow-lg"
                     variants={imageVariants}
                     whileHover="hover"
                   >
