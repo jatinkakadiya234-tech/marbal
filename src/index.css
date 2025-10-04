@@ -56,4 +56,40 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+/* Custom Marble Textures for Stats Cards */
+.marble-veins {
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 121, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(120, 119, 121, 0.2) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(120, 119, 121, 0.1) 50%, transparent 70%);
+}
+
+.granite-pattern {
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(96, 96, 96, 0.4) 0%, transparent 40%),
+    radial-gradient(circle at 75% 75%, rgba(96, 96, 96, 0.3) 0%, transparent 40%),
+    linear-gradient(90deg, transparent 20%, rgba(96, 96, 96, 0.2) 50%, transparent 80%);
+}
+
+.onyx-flow {
+  background-image:
+    radial-gradient(ellipse at 30% 70%, rgba(75, 85, 99, 0.4) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 30%, rgba(75, 85, 99, 0.3) 0%, transparent 60%),
+    linear-gradient(135deg, transparent 25%, rgba(75, 85, 99, 0.2) 50%, transparent 75%);
+}
+
+.limestone-grain {
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(148, 163, 184, 0.3) 2px, rgba(148, 163, 184, 0.3) 4px),
+    radial-gradient(circle at 50% 50%, rgba(148, 163, 184, 0.2) 0%, transparent 50%);
+}
+
+/* Perspective for 3D effects */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-gpu {
+  transform: translateZ(0);
+}
 }
