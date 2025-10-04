@@ -440,7 +440,7 @@ return (
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                className="text-center py-20 bg-white/50 rounded-3xl border border-[#0E5543]/20"
+                className="text-center py-20 bg-white/50 border border-[#0E5543]/20"
               >
                 <div className="text-6xl mb-6 opacity-20 text-[#0E5543]">⚱️</div>
                 <h3 className="font-serif text-2xl text-[#0E5543] mb-4">
@@ -463,7 +463,7 @@ return (
                   <motion.div
                     key={marble.id}
                     variants={itemVariants}
-                    className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 cursor-pointer border border-[#0E5543]/10"
+                    className="group relative bg-white  overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 cursor-pointer border border-[#0E5543]/10"
                     whileHover={{ y: -5 }}
                     onClick={() => setSelectedMarble(marble)}
                   >
@@ -514,9 +514,7 @@ return (
                       </p>
 
                       <div className="flex items-center justify-between">
-                        <span className="text-[#0E5543] font-semibold">
-                          {marble.price}
-                        </span>
+                        
                         <span className="text-xs text-[#0E5543]/60 uppercase tracking-wide">
                           {marble.specifications.thickness}
                         </span>

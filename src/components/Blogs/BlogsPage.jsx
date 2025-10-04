@@ -213,7 +213,7 @@ const BlogsPage = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {filteredPosts.map((post) => (
-                  <div key={post.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#0E5543]/10 group">
+                  <div key={post.id} className="bg-white  overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#0E5543]/10 group">
                     <div className="relative h-48">
                       <img 
                         src={post.image} 

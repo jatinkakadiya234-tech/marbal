@@ -106,7 +106,7 @@ const Projects = ({ selectedCategory, searchQuery, setSelectedProject }) => {
               <motion.div
                 key={project.id}
                 variants={itemVariants}
-                className="bg-white rounded-2xl overflow-hidden border border-[#0E5543]/15 hover:border-[#0E5543]/30 transition-all duration-500 group cursor-pointer shadow-lg hover:shadow-xl flex flex-col"
+                className="bg-white  overflow-hidden border border-[#0E5543]/15 hover:border-[#0E5543]/30 transition-all duration-500 group cursor-pointer shadow-lg hover:shadow-xl flex flex-col"
                 onClick={() => setSelectedProject(project)}
                 whileHover={{ y: -8 }}
               >

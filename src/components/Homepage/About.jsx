@@ -144,7 +144,7 @@ const About = () => {
           >
             <div className="mb-8 md:mb-10">
               <h3
-                className={`text-xl md:text-2xl lg:text-3xl font-serif font-semibold mb-6 md:mb-8 ${theme === "dark" ? "text-white" : "text-gray-900"
+                className={`text-xl md:text-2xl lg:text-3xl font-serif font-semibold mb-6 md:mb-8 ${theme === "dark" ? "text-white" : "text-black"
                   }`}
               >
                 Excellence Crafted with Passion Since{" "}

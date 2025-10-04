@@ -101,7 +101,7 @@ return (
                         className="relative"
                     >
                         {/* Main Image Container */}
-                        <div className="relative rounded-3xl overflow-hidden border-2 border-[#F2E1C5]/20 shadow-2xl shadow-black/30">
+                        <div className="relative  overflow-hidden border-2 border-[#F2E1C5]/20 shadow-2xl shadow-black/30">
                             <img
                                 src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                                 alt="Advanced marble cutting technology"

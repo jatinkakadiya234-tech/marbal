@@ -60,7 +60,7 @@ const ContactUs = () => {
       {/* Main Contact Section */}
       <section className="relative py-16 px-4 max-w-7xl mx-auto  bg-white">
         {/* Background Pattern */}
-        <div className="absolute inset-0 bg-[#F2E1C5]/20"></div>
+        <div className="absolute inset-0 "></div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 relative z-10">
           {/* Contact Information */}

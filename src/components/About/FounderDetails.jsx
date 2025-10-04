@@ -95,7 +95,7 @@ export default function FounderDetails() {
           {founders.map((founder, index) => (
             <motion.div
               key={founder.name}
-              className="relative rounded-xl overflow-hidden bg-[#F2E1C5] shadow-md border border-[#0E5543]/10 group cursor-pointer hover:shadow-lg transition-shadow duration-300"
+              className="relative  overflow-hidden bg-[#F2E1C5] shadow-md border border-[#0E5543]/10 group cursor-pointer hover:shadow-lg transition-shadow duration-300"
               variants={item}
               whileHover={{ y: -5 }}
               onClick={() => setExpandedCard(expandedCard === index ? null : index)}

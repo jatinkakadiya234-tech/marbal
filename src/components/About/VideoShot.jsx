@@ -172,7 +172,7 @@ export default function VideoShot() {
                 color: "#0E5543"
               }}
               whileTap={{ scale: 0.95 }}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium border transition-all font-sans ${activeCat === c ? 'bg-[#F2E1C5] text-[#0E5543] border-[#F2E1C5] shadow-md' : 'bg-transparent text-[#F2E1C5] border-[#F2E1C5]/40 hover:bg-[#F2E1C5]/10'}`}
+              className={`px-5 py-2.5  text-sm font-medium border transition-all font-sans ${activeCat === c ? 'bg-[#F2E1C5] text-[#0E5543] border-[#F2E1C5] shadow-md' : 'bg-transparent text-[#F2E1C5] border-[#F2E1C5]/40 hover:bg-[#F2E1C5]/10'}`}
               onClick={() => setActiveCat(c)}
             >
               {c}
@@ -195,7 +195,7 @@ export default function VideoShot() {
               <motion.div
                 key={globalIdx}
                 variants={itemVariants}
-                className="relative rounded-xl overflow-hidden group cursor-pointer"
+                className="relative  overflow-hidden group cursor-pointer"
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.3 }}
                 onClick={() => setModalIdx(globalIdx)}
@@ -217,7 +217,7 @@ export default function VideoShot() {
                   />
 
                   {/* Duration badge */}
-                  <div className="absolute top-3 right-3 px-2 py-1 rounded-md bg-[#0a3a2d]/90 text-[#F2E1C5] text-xs font-medium z-20 font-sans">
+                  <div className="absolute top-3 right-3 px-2 py-1  bg-[#0a3a2d]/90 text-[#F2E1C5] text-xs font-medium z-20 font-sans">
                     {v.duration}
                   </div>
 

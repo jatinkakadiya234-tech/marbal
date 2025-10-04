@@ -10,7 +10,7 @@ export default function ServiceCard({ service, setSelectedService }) {
   return (
     <motion.div
       variants={itemVariants}
-      className="relative rounded-xl overflow-hidden group bg-white border border-[#0E5543]/10 shadow-lg cursor-pointer"
+      className="relative  overflow-hidden group bg-white border border-[#0E5543]/10 shadow-lg cursor-pointer"
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       onClick={() => setSelectedService(service)}

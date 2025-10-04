@@ -68,7 +68,7 @@ export default function WorldMap() {
   const [hoveredLocation, setHoveredLocation] = useState(null);
 
   return (
-    <div className="relative w-full max-w-full  p-8  bg-gradient-to-br from-[#0E5543] via-[#1A7A62] to-[#2D8C6E] shadow-2xl border border-[#1A7A62]">
+    <div className="relative w-full max-w-full  p-8  bg-gradient-to-br from-[#0E5543] via-[#0E5543] to-[#0E5543] shadow-2xl border border-[#0E5543]">
       {/* Enhanced Header Section */}
       <div className="text-center mb-12">
         <HeaderContent
@@ -80,63 +80,158 @@ export default function WorldMap() {
         />
 
         {/* Enhanced Stats Grid */}
-        <motion.div
-  initial={{ opacity: 0, y: 30 }}
+  <motion.div
+  initial={{ opacity: 0, y: 40 }}
   animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.5, duration: 0.8 }}
-  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-12 sm:mt-16 max-w-6xl px-4 sm:px-6 lg:px-0 mx-auto"
+  transition={{ delay: 0.3, duration: 0.8 }}
+  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mt-16 sm:mt-20 max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto"
 >
   {[
-    { icon: FaGlobeAmericas, number: "7+", label: "Countries", accent: "#F2E1C5" },
-    { icon: FaAward, number: "500+", label: "Projects", accent: "#F2E1C5" },
-    { icon: FaUsers, number: "200+", label: "Experts", accent: "#F2E1C5" },
-    { icon: FaRocket, number: "15+", label: "Years", accent: "#F2E1C5" }
+    { 
+      icon: FaGlobeAmericas, 
+      number: "7+", 
+      label: "Countries", 
+      gradient: "from-emerald-50 to-green-50",
+      accent: "#059669",
+      shape: "circle",
+      darkGradient: "from-emerald-900 to-green-800"
+    },
+    { 
+      icon: FaAward, 
+      number: "500+", 
+      label: "Projects", 
+      gradient: "from-white to-emerald-100",
+      accent: "#047857",
+      shape: "hexagon",
+      darkGradient: "from-green-900 to-emerald-800"
+    },
+    { 
+      icon: FaUsers, 
+      number: "200+", 
+      label: "Experts", 
+      gradient: "from-green-50 to-white",
+      accent: "#065f46",
+      shape: "triangle",
+      darkGradient: "from-emerald-800 to-green-900"
+    },
+    { 
+      icon: FaRocket, 
+      number: "15+", 
+      label: "Years", 
+      gradient: "from-white to-green-50",
+      accent: "#034732",
+      shape: "diamond",
+      darkGradient: "from-green-800 to-emerald-900"
+    }
   ].map((stat, index) => (
     <motion.div
       key={index}
-      whileHover={{ scale: 1.08, y: -8 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{ 
+        scale: 1.05, 
+        y: -8,
+        rotate: index % 2 === 0 ? 1 : -1
+      }}
+      whileTap={{ scale: 0.98 }}
       className="relative group cursor-pointer"
     >
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0E5543] to-[#1A7A62] rounded-3xl blur-md opacity-50 group-hover:opacity-70 transition-all duration-300"></div>
-
-      {/* Card */}
-      <div className="relative bg-gradient-to-br from-[#0E5543] to-[#1A7A62] rounded-3xl p-6 sm:p-8 shadow-2xl border border-[#F2E1C5]/20 backdrop-blur-sm">
+      {/* Green Glow Effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-emerald-300/10 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></div>
+      
+      {/* Main Card - White & Green Theme */}
+      <div className={`relative bg-gradient-to-br ${stat.gradient} rounded-3xl p-8 shadow-lg border border-green-100/50 backdrop-blur-xl overflow-hidden hover:shadow-2xl hover:border-[#0E5543] transition-all duration-300`}>
         
-        {/* Top Accent Line */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-12 sm:w-16 h-1 bg-gradient-to-r from-[#F2E1C5] to-transparent rounded-full"></div>
+        {/* Animated Green Border */}
+        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-green-400/30 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
 
-        {/* Icon */}
-        <motion.div whileHover={{ rotate: 5, scale: 1.1 }} className="relative mb-4 sm:mb-6">
-          <div className="absolute inset-0 bg-[#F2E1C5] rounded-full blur-lg opacity-20"></div>
-          <stat.icon className="text-3xl sm:text-4xl mx-auto relative z-10" style={{ color: stat.accent }} />
+        {/* Green Accent Top Bar */}
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-[#0E5543] to-[#0E5543] rounded-full"></div>
+
+        {/* Shape Container with Green Border */}
+        <motion.div 
+          className="relative mb-6 mx-auto w-20 h-20 flex items-center justify-center border-2 border-green-200/50 bg-white/80 backdrop-blur-sm"
+          whileHover={{ 
+            rotate: 360,
+            scale: 1.1,
+            borderColor: "#059669"
+          }}
+          transition={{ duration: 0.6 }}
+        >
+          {/* Shape Background */}
+          <div className={`absolute inset-0 bg-green-50/50 ${
+            stat.shape === 'circle' ? 'rounded-full' :
+            stat.shape === 'hexagon' ? 'clip-hexagon' :
+            stat.shape === 'triangle' ? 'clip-triangle' :
+            'clip-diamond'
+          }`}></div>
+          
+          {/* Icon */}
+          <motion.div
+            whileHover={{ scale: 1.2 }}
+            className="relative z-10"
+          >
+            <stat.icon className="text-2xl" style={{ color: stat.accent }} />
+          </motion.div>
         </motion.div>
 
-        {/* Number */}
+        {/* Number - Green Text */}
         <motion.div
-          initial={{ scale: 0.8 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: index * 0.1 + 0.8 }}
-          className="text-4xl sm:text-5xl font-bold text-white mb-1 sm:mb-2 font-['Playfair_Display'] leading-none text-center"
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: index * 0.2 + 0.5 }}
+          className="text-5xl font-black text-green-900 mb-2 text-center font-['Inter'] tracking-tight"
         >
           {stat.number}
         </motion.div>
 
-        {/* Label */}
-        <div className="text-[#F2E1C5] text-xs sm:text-sm font-medium uppercase tracking-wider font-['Inter'] text-center">
+        {/* Label - Dark Green Text */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: index * 0.2 + 0.7 }}
+          className="text-green-700 text-sm font-semibold uppercase tracking-[0.15em] text-center font-['Inter']"
+        >
           {stat.label}
-        </div>
+        </motion.div>
 
-        {/* Hover Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#F2E1C5]/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+        {/* Hover Effect - Green Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 to-emerald-300/5 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-3xl"></div>
 
-        {/* Corner Accents */}
-        <div className="absolute top-2 left-2 sm:top-3 sm:left-3 w-2 h-2 sm:w-3 sm:h-3 border-t-2 border-l-2 border-[#F2E1C5]/30 rounded-tl-lg"></div>
-        <div className="absolute top-2 right-2 sm:top-3 sm:right-3 w-2 h-2 sm:w-3 sm:h-3 border-t-2 border-r-2 border-[#F2E1C5]/30 rounded-tr-lg"></div>
-        <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 w-2 h-2 sm:w-3 sm:h-3 border-b-2 border-l-2 border-[#F2E1C5]/30 rounded-bl-lg"></div>
-        <div className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 w-2 h-2 sm:w-3 sm:h-3 border-b-2 border-r-2 border-[#F2E1C5]/30 rounded-br-lg"></div>
+        {/* Green Corner Decorations */}
+        <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-[#0E5543] rounded-tl-lg"></div>
+        <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-[#0E5543] rounded-tr-lg"></div>
+        <div className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-[#0E5543] rounded-bl-lg"></div>
+        <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-[#0E5543] rounded-br-lg"></div>
+
+        {/* Floating Green Elements */}
+        <motion.div
+          animate={{ 
+            y: [0, -8, 0],
+            opacity: [0.3, 0.7, 0.3]
+          }}
+          transition={{ 
+            duration: 3,
+            repeat: Infinity,
+            delay: index * 0.5
+          }}
+          className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-300 rounded-full"
+        ></motion.div>
+        
+        <motion.div
+          animate={{ 
+            y: [0, -5, 0],
+            opacity: [0.5, 0.8, 0.5]
+          }}
+          transition={{ 
+            duration: 2,
+            repeat: Infinity,
+            delay: index * 0.5 + 1
+          }}
+          className="absolute -top-1 -left-1 w-3 h-3 bg-emerald-400 rounded-full"
+        ></motion.div>
       </div>
+
+      {/* Subtle Green Shadow */}
+      <div className="absolute inset-0 bg-green-200/20 rounded-3xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
     </motion.div>
   ))}
 </motion.div>
