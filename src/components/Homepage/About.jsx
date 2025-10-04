@@ -79,7 +79,7 @@ const About = () => {
           >
             <div className="grid grid-cols-2 gap-4 md:gap-6">
               <motion.div
-                className="relative rounded-xl md:rounded-2xl overflow-hidden group"
+                className="relative  overflow-hidden group"
                 variants={imageVariants}
                 whileHover="hover"
               >
@@ -92,7 +92,7 @@ const About = () => {
               </motion.div>
 
               <motion.div
-                className="relative rounded-xl md:rounded-2xl overflow-hidden group mt-8 md:mt-12"
+                className="relative  overflow-hidden group mt-8 md:mt-12"
                 variants={imageVariants}
                 whileHover="hover"
               >
@@ -107,7 +107,7 @@ const About = () => {
 
             <div className="grid grid-cols-2 gap-4 md:gap-6 mt-4 md:mt-6">
               <motion.div
-                className="relative rounded-xl md:rounded-2xl overflow-hidden group"
+                className="relative overflow-hidden group"
                 variants={imageVariants}
                 whileHover="hover"
               >
@@ -120,7 +120,7 @@ const About = () => {
               </motion.div>
 
               <motion.div
-                className="relative rounded-xl md:rounded-2xl overflow-hidden group mt-8 md:mt-12"
+                className="relative  overflow-hidden group mt-8 md:mt-12"
                 variants={imageVariants}
                 whileHover="hover"
               >

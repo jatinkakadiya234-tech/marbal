@@ -1,8 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaMapMarkerAlt, FaGlobeAmericas, FaHandshake, FaUsers, FaRocket, FaAward } from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, useTransform, animate } from "framer-motion";
 import mapImage from "../../assets/map_img.png";
 import HeaderContent from "../Helper/HeaderContent";
+
+// Counter Component for Animated Numbers
+const AnimatedCounter = ({ from, to, duration = 2 }) => {
+  const nodeRef = React.useRef();
+  const motionValue = useMotionValue(from);
+  const rounded = useTransform(motionValue, (latest) => Math.round(latest));
+
+  useEffect(() => {
+    const controls = animate(motionValue, to, {
+      duration,
+      ease: "easeOut",
+    });
+    return controls.stop;
+  }, [motionValue, to, duration]);
+
+  return <motion.span ref={nodeRef}>{rounded}</motion.span>;
+};
 
 const locations = [
   {
@@ -68,7 +85,7 @@ export default function WorldMap() {
   const [hoveredLocation, setHoveredLocation] = useState(null);
 
   return (
-    <div className="relative w-full max-w-full  p-8  bg-gradient-to-br from-[#0E5543] via-[#0E5543] to-[#0E5543] shadow-2xl border border-[#0E5543]">
+    <div className="relative w-full max-w-full  p-8  bg-gradient-to-br from-[#0E5543] via-[#0E5543] to-[#0E5543] shadow-2xl border border-[#1A7A62]">
       {/* Enhanced Header Section */}
       <div className="text-center mb-12">
         <HeaderContent
@@ -79,7 +96,7 @@ export default function WorldMap() {
           theme="dark"
         />
 
-        {/* Enhanced Stats Grid */}
+        {/* Premium Marble Stats Grid */}
   <motion.div
   initial={{ opacity: 0, y: 40 }}
   animate={{ opacity: 1, y: 0 }}
@@ -87,83 +104,71 @@ export default function WorldMap() {
   className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mt-16 sm:mt-20 max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto"
 >
   {[
-    { 
-      icon: FaGlobeAmericas, 
-      number: "7+", 
-      label: "Countries", 
-      gradient: "from-emerald-50 to-green-50",
-      accent: "#059669",
-      shape: "circle",
-      darkGradient: "from-emerald-900 to-green-800"
+    {
+      icon: FaGlobeAmericas,
+      number: 7,
+      suffix: "+",
+      label: "Countries",
+      gradient: "from-slate-50 to-stone-100",
+      accent: "#6B7280",
+      shape: "marble-slab",
+      texture: "marble-veins"
     },
-    { 
-      icon: FaAward, 
-      number: "500+", 
-      label: "Projects", 
-      gradient: "from-white to-emerald-100",
-      accent: "#047857",
-      shape: "hexagon",
-      darkGradient: "from-green-900 to-emerald-800"
+    {
+      icon: FaAward,
+      number: 500,
+      suffix: "+",
+      label: "Projects",
+      gradient: "from-white to-slate-50",
+      accent: "#4B5563",
+      shape: "polished-stone",
+      texture: "granite-pattern"
     },
-    { 
-      icon: FaUsers, 
-      number: "200+", 
-      label: "Experts", 
-      gradient: "from-green-50 to-white",
-      accent: "#065f46",
-      shape: "triangle",
-      darkGradient: "from-emerald-800 to-green-900"
+    {
+      icon: FaUsers,
+      number: 200,
+      suffix: "+",
+      label: "Artisans",
+      gradient: "from-stone-50 to-gray-100",
+      accent: "#374151",
+      shape: "carved-marble",
+      texture: "onyx-flow"
     },
-    { 
-      icon: FaRocket, 
-      number: "15+", 
-      label: "Years", 
-      gradient: "from-white to-green-50",
-      accent: "#034732",
-      shape: "diamond",
-      darkGradient: "from-green-800 to-emerald-900"
+    {
+      icon: FaRocket,
+      number: 15,
+      suffix: "+",
+      label: "Years",
+      gradient: "from-gray-50 to-slate-100",
+      accent: "#1F2937",
+      shape: "quarry-block",
+      texture: "limestone-grain"
     }
   ].map((stat, index) => (
     <motion.div
       key={index}
-      whileHover={{ 
-        scale: 1.05, 
-        y: -8,
-        rotate: index % 2 === 0 ? 1 : -1
+      whileHover={{
+        scale: 1.05,
+        y: -8
       }}
-      whileTap={{ scale: 0.98 }}
+      whileTap={{ scale: 0.95 }}
       className="relative group cursor-pointer"
     >
-      {/* Green Glow Effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-emerald-300/10 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></div>
-      
-      {/* Main Card - White & Green Theme */}
-      <div className={`relative bg-gradient-to-br ${stat.gradient} rounded-3xl p-8 shadow-lg border border-green-100/50 backdrop-blur-xl overflow-hidden hover:shadow-2xl hover:border-[#0E5543] transition-all duration-300`}>
-        
-        {/* Animated Green Border */}
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-green-400/30 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+      {/* Marble Texture Glow Effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-stone-300/20 to-slate-400/10 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></div>
 
-        {/* Green Accent Top Bar */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-[#0E5543] to-[#0E5543] rounded-full"></div>
+      {/* Main Card - Marble Theme */}
+      <div className={`relative bg-gradient-to-br ${stat.gradient} rounded-2xl p-6 shadow-lg border border-stone-200/50 backdrop-blur-sm overflow-hidden hover:shadow-xl hover:border-stone-300 transition-all duration-300`}>
 
-        {/* Shape Container with Green Border */}
-        <motion.div 
-          className="relative mb-6 mx-auto w-20 h-20 flex items-center justify-center border-2 border-green-200/50 bg-white/80 backdrop-blur-sm"
-          whileHover={{ 
-            rotate: 360,
+        {/* Simple Icon Container */}
+        <motion.div
+          className="relative mb-4 mx-auto w-16 h-16 flex items-center justify-center border-2 border-stone-300/50 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm"
+          whileHover={{
             scale: 1.1,
-            borderColor: "#059669"
+            borderColor: stat.accent
           }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
         >
-          {/* Shape Background */}
-          <div className={`absolute inset-0 bg-green-50/50 ${
-            stat.shape === 'circle' ? 'rounded-full' :
-            stat.shape === 'hexagon' ? 'clip-hexagon' :
-            stat.shape === 'triangle' ? 'clip-triangle' :
-            'clip-diamond'
-          }`}></div>
-          
           {/* Icon */}
           <motion.div
             whileHover={{ scale: 1.2 }}
@@ -173,65 +178,37 @@ export default function WorldMap() {
           </motion.div>
         </motion.div>
 
-        {/* Number - Green Text */}
+        {/* Number - Stone Text with Counter Animation */}
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: index * 0.2 + 0.5 }}
-          className="text-5xl font-black text-green-900 mb-2 text-center font-['Inter'] tracking-tight"
+          className="text-6xl font-black text-stone-800 mb-3 text-center font-['Inter'] tracking-tight drop-shadow-sm"
         >
-          {stat.number}
+          <AnimatedCounter
+            from={0}
+            to={stat.number}
+            duration={2}
+          />
+          <span className="text-4xl">{stat.suffix}</span>
         </motion.div>
 
-        {/* Label - Dark Green Text */}
+        {/* Label - Dark Stone Text */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: index * 0.2 + 0.7 }}
-          className="text-green-700 text-sm font-semibold uppercase tracking-[0.15em] text-center font-['Inter']"
+          className="text-stone-600 text-sm font-bold uppercase tracking-[0.2em] text-center font-['Inter'] drop-shadow-sm"
         >
           {stat.label}
         </motion.div>
 
-        {/* Hover Effect - Green Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 to-emerald-300/5 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-3xl"></div>
-
-        {/* Green Corner Decorations */}
-        <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-[#0E5543] rounded-tl-lg"></div>
-        <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-[#0E5543] rounded-tr-lg"></div>
-        <div className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-[#0E5543] rounded-bl-lg"></div>
-        <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-[#0E5543] rounded-br-lg"></div>
-
-        {/* Floating Green Elements */}
-        <motion.div
-          animate={{ 
-            y: [0, -8, 0],
-            opacity: [0.3, 0.7, 0.3]
-          }}
-          transition={{ 
-            duration: 3,
-            repeat: Infinity,
-            delay: index * 0.5
-          }}
-          className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-300 rounded-full"
-        ></motion.div>
-        
-        <motion.div
-          animate={{ 
-            y: [0, -5, 0],
-            opacity: [0.5, 0.8, 0.5]
-          }}
-          transition={{ 
-            duration: 2,
-            repeat: Infinity,
-            delay: index * 0.5 + 1
-          }}
-          className="absolute -top-1 -left-1 w-3 h-3 bg-emerald-400 rounded-full"
-        ></motion.div>
+        {/* Simple Hover Effect */}
+        <div className="absolute inset-0 bg-gradient-to-br from-stone-200/5 to-slate-300/5 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-2xl"></div>
       </div>
 
-      {/* Subtle Green Shadow */}
-      <div className="absolute inset-0 bg-green-200/20 rounded-3xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+      {/* Subtle Stone Shadow */}
+      <div className="absolute inset-0 bg-stone-300/30 rounded-3xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
     </motion.div>
   ))}
 </motion.div>
