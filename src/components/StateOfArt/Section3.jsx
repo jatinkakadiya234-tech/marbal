@@ -137,7 +137,7 @@ const Section3 = () => {
                                     <button
                                         key={category.id}
                                         onClick={() => setActiveTab(category.id)}
-                                        className={`px-6 py-3 rounded-xl flex items-center space-x-3 transition-all duration-500 transform hover:scale-105 ${activeTab === category.id
+                                        className={`px-6 py-3  flex items-center space-x-3 transition-all duration-500 transform hover:scale-105 ${activeTab === category.id
                                             ? 'bg-[#0E5543] text-[#F2E1C5] shadow-2xl shadow-[#0E5543]/30'
                                             : 'text-[#26987c] hover:bg-[#0E5543]/10'
                                             }`}
@@ -175,7 +175,7 @@ const Section3 = () => {
                                 className="group relative"
                             >
                                 {/* Card with gradient border effect */}
-                                <div className="relative bg-gradient-to-br from-[#F2E1C5] to-[#F2E1C5]/80 rounded-2xl overflow-hidden border border-[#0E5543]/20 hover:border-[#0E5543]/40 transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#0E5543]/20">
+                                <div className="relative bg-gradient-to-br from-[#F2E1C5] to-[#F2E1C5]/80  overflow-hidden border border-[#0E5543]/20 hover:border-[#0E5543]/40 transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#0E5543]/20">
 
                                     {/* Image Container with Overlay */}
                                     <div className="relative h-72 overflow-hidden">

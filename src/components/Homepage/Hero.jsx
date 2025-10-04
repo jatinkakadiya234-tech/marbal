@@ -119,7 +119,7 @@ const Hero = () => {
                   key={i}
                   variants={wordVariants}
                   custom={i}
-                  className="inline-block mr-3"
+                  className="inline-block mr-3 text-4xl"
                   style={{
                     fontFamily: "'Poppins', sans-serif",
                     fontWeight: i === 1 || i === 2 ? 400 : 400,
