@@ -26,7 +26,7 @@ const categories = [
     accent: "amber"
   },
   {
-    name: "Kitchen+",
+    name: "Dholikhan White+",
     image: "https://www.ilpiccolodesign.it/wp-content/uploads/2022/08/kitchen-island-black-marble.jpg",
     description: "Enhanced utility and style for modern cooking spaces",
     color: "from-amber-800/30 to-amber-600/20",

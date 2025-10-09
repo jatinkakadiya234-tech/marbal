@@ -97,7 +97,7 @@ const BlogsPage = () => {
       {/* Header Section */}
       <div className="relative bg-gradient-to-r from-[#0E5543] to-[#1a7a5e] py-20 px-4 text-center overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1565538420870-da08ff96a207?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('https://c0.wallpaperflare.com/preview/728/375/731/aerial-analog-background-blog.jpg')] bg-cover bg-center"></div>
         </div>
         <div className="relative max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold text-[#F2E1C5] mb-4 font-['Playfair_Display']">

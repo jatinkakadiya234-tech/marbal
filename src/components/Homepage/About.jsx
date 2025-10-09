@@ -224,7 +224,7 @@ const About = () => {
               ].map((stat, i) => (
                 <motion.div
                   key={i}
-                  className={`p-4 md:p-5 lg:p-6 rounded-xl md:rounded-2xl ${theme === "dark" ? "bg-gray-800" : "bg-white"
+                  className={`p-4 md:p-5 lg:p-6  ${theme === "dark" ? "bg-gray-800" : "bg-white"
                     } shadow-lg border border-[#0E5543]/10`}
                   variants={statVariants}
                   custom={i}

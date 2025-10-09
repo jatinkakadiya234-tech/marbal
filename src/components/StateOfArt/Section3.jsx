@@ -133,21 +133,26 @@ const Section3 = () => {
                     <div className="flex justify-center mb-16">
                         <div className="bg-[#F2E1C5]/30 backdrop-blur-sm rounded-2xl p-2 border border-[#0E5543]/10">
                             <div className="flex flex-wrap justify-center gap-2">
-                                {technologyCategories.map((category) => (
-                                    <button
-                                        key={category.id}
-                                        onClick={() => setActiveTab(category.id)}
-                                        className={`px-6 py-3  flex items-center space-x-3 transition-all duration-500 transform hover:scale-105 ${activeTab === category.id
-                                            ? 'bg-[#0E5543] text-[#F2E1C5] shadow-2xl shadow-[#0E5543]/30'
-                                            : 'text-[#26987c] hover:bg-[#0E5543]/10'
-                                            }`}
-                                    >
-                                        <span className={`transition-colors ${activeTab === category.id ? 'text-[#F2E1C5]' : 'text-[#26987c]'}`}>
-                                            {category.icon}
-                                        </span>
-                                        <span className="font-medium whitespace-nowrap">{category.name}</span>
-                                    </button>
-                                ))}
+                              {technologyCategories.map((category) => (
+    <button
+        key={category.id}
+        onClick={() => setActiveTab(category.id)}
+        className={`px-6 py-3 flex items-center space-x-3 transition-all duration-500 transform hover:scale-105 ${activeTab === category.id
+            ? 'border-2 border-white'
+            : 'border-2 border-transparent'
+            }`}
+        style={{ 
+            backgroundColor: "#0E5543", 
+            color: "white"
+        }}
+    >
+        <span>
+            {category.icon}
+        </span>
+        <span className="font-medium whitespace-nowrap">{category.name}</span>
+    </button>
+))}
+
                             </div>
                         </div>
                     </div>
