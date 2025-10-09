@@ -36,29 +36,33 @@ const OurStones = () => {
     { id: 'travertine', name: 'Travertine', count: 15 },
   ];
 
-  const materials = [
-    { id: 'ceramic', name: 'Ceramic', count: 88 },
-    { id: 'granite', name: 'Granite', count: 137 },
-    { id: 'limestone', name: 'Limestone', count: 15 },
-    { id: 'marble', name: 'Marble', count: 83 },
-    { id: 'porcelain', name: 'Porcelain', count: 173 },
-    { id: 'quartz', name: 'Quartz', count: 978 },
-    { id: 'sintered', name: 'Sintered Stone', count: 177 },
-    { id: 'terrazzo', name: 'Terrazzo', count: 15 },
-  ];
+const materials = [
+  { id: 'Iconic Gold', name: 'Iconic Gold', count: 0 },
+  { id: 'Agaria White', name: 'Agaria White', count: 0 },
+  { id: 'Tobacco Black', name: 'Tobacco Black', count: 0 },
+  { id: 'Iconic Black', name: 'Iconic Black', count: 0 },
+  { id: 'Cloud Grey', name: 'Cloud Grey', count: 0 },
+  { id: 'Millennium Grey', name: 'Millennium Grey', count: 0 },
+  { id: 'Indian Black', name: 'Indian Black', count: 0 },
+  { id: 'Surata Green', name: 'Surata Green', count: 0 },
+  { id: 'Forest Green', name: 'Forest Green', count: 0 },
+  { id: 'Spider Green', name: 'Spider Green', count: 0 },
+  { id: 'LZ Green', name: 'LZ Green', count: 0 },
+  { id: 'R Green', name: 'R Green', count: 0 },
+  { id: 'Mystic Green', name: 'Mystic Green', count: 0 },
+  { id: 'Pink Aravali Onyx', name: 'Pink Aravali Onyx', count: 0 },
+  { id: 'Green Aravali Onyx', name: 'Green Aravali Onyx', count: 0 },
+  { id: 'White Aravali Onyx', name: 'White Aravali Onyx', count: 0 },
+  { id: 'Fantasy Brown', name: 'Fantasy Brown', count: 0 },
+  { id: 'Bidasar Brown', name: 'Bidasar Brown', count: 0 },
+  { id: 'Bidasar Gold', name: 'Bidasar Gold', count: 0 },
+  { id: 'Bidasar Green', name: 'Bidasar Green', count: 0 },
+  { id: 'Indian Rosso Lavante', name: 'Indian Rosso Lavante', count: 0 },
+];
+
 
   const colors = [
-    { id: 'beige', name: 'Beige', count: 147 },
-    { id: 'black', name: 'Black', count: 221 },
-    { id: 'blue', name: 'Blue', count: 43 },
-    { id: 'brown', name: 'Brown', count: 185 },
-    { id: 'cream', name: 'Cream', count: 34 },
-    { id: 'gold', name: 'Gold', count: 29 },
-    { id: 'green', name: 'Green', count: 29 },
-    { id: 'grey', name: 'Grey', count: 775 },
-    { id: 'pink', name: 'Pink', count: 8 },
-    { id: 'red', name: 'Red', count: 17 },
-    { id: 'taupe', name: 'Taupe', count: 3 },
+   
   ];
 
   const marbleData = [
@@ -255,14 +259,14 @@ return (
           subtitle="We have a wide variety of premium stones available that can come in a number of different finishes and styles. The stones we provide can be used in various applications from kitchens and bathrooms to flooring."
         />
 
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        {/* <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-[#0E5543] text-white px-6 py-3 rounded-full font-medium hover:bg-[#14745c] transition-colors">
             Get A Quote
           </button>
           <button className="bg-transparent text-[#0E5543] border border-[#0E5543] px-6 py-3 rounded-full font-medium hover:bg-[#0E5543] hover:text-white transition-colors">
             Book A Showroom Visit
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
 
@@ -304,9 +308,10 @@ return (
                 ))}
               </div>
             </div>
+            
 
             {/* Color Filter */}
-            <div>
+            {/* <div>
               <h4 className="font-medium text-[#0E5543] mb-3">Colour</h4>
               <div className="space-y-2">
                 {colors.map(color => (
@@ -324,7 +329,7 @@ return (
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 

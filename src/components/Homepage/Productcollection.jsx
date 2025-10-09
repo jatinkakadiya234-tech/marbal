@@ -178,7 +178,7 @@ export default function ProductCollection() {
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="group relative bg-white rounded-3xl overflow-hidden border border-gray-200 hover:border-gray-300 transition-all duration-500 p-8 hover:transform hover:scale-105 shadow-xl"
+              className="group relative bg-white  overflow-hidden border border-gray-200 hover:border-gray-300 transition-all duration-500 p-8 hover:transform hover:scale-105 shadow-xl"
             >
               {/* Skinny card effect with minimal padding */}
               <div className="text-center mb-6">

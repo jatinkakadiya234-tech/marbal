@@ -97,7 +97,7 @@ export default function WorldMap() {
         />
 
         {/* Premium Marble Stats Grid */}
-  <motion.div
+<motion.div
   initial={{ opacity: 0, y: 40 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.3, duration: 0.8 }}
@@ -109,109 +109,101 @@ export default function WorldMap() {
       number: 7,
       suffix: "+",
       label: "Countries",
-      gradient: "from-slate-50 to-stone-100",
       accent: "#6B7280",
-      shape: "marble-slab",
-      texture: "marble-veins"
+      glow: "shadow-blue-500/50"
     },
     {
       icon: FaAward,
       number: 500,
       suffix: "+",
       label: "Projects",
-      gradient: "from-white to-slate-50",
       accent: "#4B5563",
-      shape: "polished-stone",
-      texture: "granite-pattern"
+      glow: "shadow-purple-500/50"
     },
     {
       icon: FaUsers,
       number: 200,
       suffix: "+",
       label: "Artisans",
-      gradient: "from-stone-50 to-gray-100",
       accent: "#374151",
-      shape: "carved-marble",
-      texture: "onyx-flow"
+      glow: "shadow-green-500/50"
     },
     {
       icon: FaRocket,
       number: 15,
       suffix: "+",
       label: "Years",
-      gradient: "from-gray-50 to-slate-100",
       accent: "#1F2937",
-      shape: "quarry-block",
-      texture: "limestone-grain"
+      glow: "shadow-orange-500/50"
     }
   ].map((stat, index) => (
     <motion.div
       key={index}
-      whileHover={{
-        scale: 1.05,
-        y: -8
+      whileHover={{ 
+        scale: 1.08, 
+        y: -12,
+        rotateY: 5,
+        rotateX: 5
       }}
       whileTap={{ scale: 0.95 }}
-      className="relative group cursor-pointer"
+      className="relative group cursor-pointer perspective-1000"
     >
-      {/* Marble Texture Glow Effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-stone-300/20 to-slate-400/10 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></div>
+      {/* Animated Glow */}
+      <div className={`absolute inset-0 bg-gradient-to-r from-cyan-400/20 via-purple-400/20 to-pink-400/20   opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-700 animate-pulse ${stat.glow}`}></div>
+      
+      {/* Glass Card with Enhanced Effects */}
+      <div className="relative bg-gradient-to-br from-white/25 via-white/10 to-white/5 backdrop-blur-xl  p-8 border border-white/40 shadow-2xl hover:shadow-cyan-500/25 hover:bg-white/30 transition-all duration-500 overflow-hidden">
+        
+        {/* Floating Particles Effect */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-4 left-4 w-2 h-2 bg-white/60 rounded-full animate-ping"></div>
+          <div className="absolute top-8 right-6 w-1 h-1 bg-cyan-300/80 rounded-full animate-pulse delay-300"></div>
+          <div className="absolute bottom-6 left-8 w-1.5 h-1.5 bg-purple-300/70 rounded-full animate-bounce delay-500"></div>
+        </div>
 
-      {/* Main Card - Marble Theme */}
-      <div className={`relative bg-gradient-to-br ${stat.gradient} rounded-2xl p-6 shadow-lg border border-stone-200/50 backdrop-blur-sm overflow-hidden hover:shadow-xl hover:border-stone-300 transition-all duration-300`}>
-
-        {/* Simple Icon Container */}
+        {/* Icon Container with Glow */}
         <motion.div
-          className="relative mb-4 mx-auto w-16 h-16 flex items-center justify-center border-2 border-stone-300/50 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm"
-          whileHover={{
-            scale: 1.1,
-            borderColor: stat.accent
+          className="relative mb-6 mx-auto w-20 h-20 flex items-center justify-center bg-white/50 backdrop-blur-sm border border-white/60 shadow-lg"
+          whileHover={{ 
+            scale: 1.15,
+            rotate: 360,
+            boxShadow: "0 0 30px rgba(59, 130, 246, 0.5)"
           }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.6 }}
         >
-          {/* Icon */}
-          <motion.div
-            whileHover={{ scale: 1.2 }}
-            className="relative z-10"
-          >
-            <stat.icon className="text-2xl" style={{ color: stat.accent }} />
-          </motion.div>
+          <stat.icon className="text-3xl drop-shadow-lg" style={{ color: stat.accent }} />
         </motion.div>
 
-        {/* Number - Stone Text with Counter Animation */}
+        {/* Number with White Text */}
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: index * 0.2 + 0.5 }}
-          className="text-6xl font-black text-stone-800 mb-3 text-center font-['Inter'] tracking-tight drop-shadow-sm"
+          className="text-7xl font-black text-white mb-4 text-center tracking-tight drop-shadow-2xl"
         >
-          <AnimatedCounter
-            from={0}
-            to={stat.number}
-            duration={2}
-          />
-          <span className="text-4xl">{stat.suffix}</span>
+          <AnimatedCounter from={0} to={stat.number} duration={2} />
+          <span className="text-5xl">{stat.suffix}</span>
         </motion.div>
 
-        {/* Label - Dark Stone Text */}
+        {/* Label with White Text */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: index * 0.2 + 0.7 }}
-          className="text-stone-600 text-sm font-bold uppercase tracking-[0.2em] text-center font-['Inter'] drop-shadow-sm"
+          className="text-white text-base font-bold uppercase tracking-[0.3em] text-center drop-shadow-sm"
         >
           {stat.label}
         </motion.div>
 
-        {/* Simple Hover Effect */}
-        <div className="absolute inset-0 bg-gradient-to-br from-stone-200/5 to-slate-300/5 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-2xl"></div>
+        {/* Shimmer Effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-1000"></div>
       </div>
-
-      {/* Subtle Stone Shadow */}
-      <div className="absolute inset-0 bg-stone-300/30 rounded-3xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
     </motion.div>
   ))}
 </motion.div>
+
+
+
 
       </div>
 
@@ -288,7 +280,7 @@ export default function WorldMap() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   whileHover={{ y: -2 }}
-                  className="text-sm font-bold text-white bg-gradient-to-r from-[#0E5543] to-[#1A7A62] px-2 py-1 rounded-full mt-1 shadow-lg border border-white/20 transition-all duration-200"
+                  className="text-xs sm:text-sm md:text-base font-bold text-white bg-gradient-to-r from-[#0E5543] to-[#1A7A62] px-1 sm:px-2 py-0.5 sm:py-1 rounded-full mt-1 shadow-lg border border-white/20 transition-all duration-200"
                 >
                   {loc.name}
                 </motion.span>

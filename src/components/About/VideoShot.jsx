@@ -1,58 +1,58 @@
 // components/About/VideoShot.jsx
-import React, { useRef, useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import HeaderContent from '../Helper/HeaderContent';
+import React, { useRef, useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import HeaderContent from "../Helper/HeaderContent";
 
-const categories = ['All', 'Marble', 'Granite', 'Quartz'];
+const categories = ["All", "Marble", "Granite", "Quartz"];
 
 const videos = [
   {
-    src: '/hero.webm',
-    thumb: '/kitchen.jpg',
-    title: 'Signature Marble Cuts',
-    desc: 'Elegant veins with cinematic lighting.',
-    category: 'Marble',
-    duration: '2:15'
+    src: "/hero.webm",
+    thumb: "/kitchen.jpg",
+    title: "Signature Marble Cuts",
+    desc: "Elegant veins with cinematic lighting.",
+    category: "Marble",
+    duration: "2:15",
   },
   {
-    src: '/hero.webm',
-    thumb: '/furniture.jpg',
-    title: 'Premium Countertops',
-    desc: 'Refined edges and polished surfaces.',
-    category: 'Granite',
-    duration: '1:45'
+    src: "/hero.webm",
+    thumb: "/furniture.jpg",
+    title: "Premium Countertops",
+    desc: "Refined edges and polished surfaces.",
+    category: "Granite",
+    duration: "1:45",
   },
   {
-    src: '/hero.webm',
-    thumb: '/cozyroom.jpg',
-    title: 'Flooring Showcase',
-    desc: 'Durable, luxurious floors in motion.',
-    category: 'Marble',
-    duration: '3:20'
+    src: "/hero.webm",
+    thumb: "/cozyroom.jpg",
+    title: "Flooring Showcase",
+    desc: "Durable, luxurious floors in motion.",
+    category: "Marble",
+    duration: "3:20",
   },
   {
-    src: '/hero.webm',
-    thumb: '/livingrooom.jpg',
-    title: 'Bathroom Finishes',
-    desc: 'Moody textures and water resistance.',
-    category: 'Quartz',
-    duration: '2:50'
+    src: "/hero.webm",
+    thumb: "/livingrooom.jpg",
+    title: "Bathroom Finishes",
+    desc: "Moody textures and water resistance.",
+    category: "Quartz",
+    duration: "2:50",
   },
   {
-    src: '/hero.webm',
-    thumb: '/kitchen2.jpg',
-    title: 'Kitchen Islands',
-    desc: 'Bold slabs, seamless joints.',
-    category: 'Granite',
-    duration: '2:30'
+    src: "/hero.webm",
+    thumb: "/kitchen2.jpg",
+    title: "Kitchen Islands",
+    desc: "Bold slabs, seamless joints.",
+    category: "Granite",
+    duration: "2:30",
   },
   {
-    src: '/hero.webm',
-    thumb: '/bedroom.jpg',
-    title: 'Feature Walls',
-    desc: 'Texture, depth, and natural character.',
-    category: 'Quartz',
-    duration: '1:55'
+    src: "/hero.webm",
+    thumb: "/bedroom.jpg",
+    title: "Feature Walls",
+    desc: "Texture, depth, and natural character.",
+    category: "Quartz",
+    duration: "1:55",
   },
 ];
 
@@ -62,9 +62,9 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.08
-    }
-  }
+      staggerChildren: 0.08,
+    },
+  },
 };
 
 const itemVariants = {
@@ -75,16 +75,16 @@ const itemVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.25, 0.1, 0.25, 1]
-    }
-  }
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
 };
 
 const modalVariants = {
   hidden: {
     opacity: 0,
     scale: 0.95,
-    y: 20
+    y: 20,
   },
   visible: {
     opacity: 1,
@@ -92,27 +92,30 @@ const modalVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: [0.25, 0.1, 0.25, 1]
-    }
+      ease: [0.25, 0.1, 0.25, 1],
+    },
   },
   exit: {
     opacity: 0,
     scale: 0.95,
     y: 20,
     transition: {
-      duration: 0.3
-    }
-  }
+      duration: 0.3,
+    },
+  },
 };
 
 export default function VideoShot() {
   const videoRefs = useRef([]);
   const modalVideoRef = useRef(null);
-  const [activeCat, setActiveCat] = useState('All');
+  const [activeCat, setActiveCat] = useState("All");
   const [modalIdx, setModalIdx] = useState(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
-  const visibleVideos = activeCat === 'All' ? videos : videos.filter(v => v.category === activeCat);
+  const visibleVideos =
+    activeCat === "All"
+      ? videos
+      : videos.filter((v) => v.category === activeCat);
 
   // Handle modal video playback
   useEffect(() => {
@@ -137,10 +140,11 @@ export default function VideoShot() {
         <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#F2E1C5]/5 rounded-full"></div>
 
         {/* Pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.03]"
+        <div
+          className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage: `radial-gradient(#F2E1C5 1px, transparent 1px)`,
-            backgroundSize: '20px 20px'
+            backgroundSize: "20px 20px",
           }}
         ></div>
       </div>
@@ -149,10 +153,10 @@ export default function VideoShot() {
         {/* Header */}
 
         <HeaderContent
-          tagline=' Video Gallery'
-          title='Our Marble Showcase'
-          subtitle='Discover the elegance and durability of our premium stone collection'
-          theme='dark'
+          tagline=" Video Gallery"
+          title="Our Marble Showcase"
+          subtitle="Discover the elegance and durability of our premium stone collection"
+          theme="dark"
         />
 
         {/* Category selector */}
@@ -168,11 +172,14 @@ export default function VideoShot() {
               key={c}
               whileHover={{
                 scale: 1.05,
-                backgroundColor: "#F2E1C5",
-                color: "#0E5543"
+                color: "#0E5543",
               }}
               whileTap={{ scale: 0.95 }}
-              className={`px-5 py-2.5  text-sm font-medium border transition-all font-sans ${activeCat === c ? 'bg-[#F2E1C5] text-[#0E5543] border-[#F2E1C5] shadow-md' : 'bg-transparent text-[#F2E1C5] border-[#F2E1C5]/40 hover:bg-[#F2E1C5]/10'}`}
+              className={`px-5 py-2.5 text-sm font-medium border transition-all font-sans ${
+                activeCat === c
+                  ? "bg-[#F2E1C5] text-[black] border-[#F2E1C5] shadow-md"
+                  : "bg-white text-[#0E5543] border-[#F2E1C5]/40"
+              }`}
               onClick={() => setActiveCat(c)}
             >
               {c}
@@ -186,7 +193,7 @@ export default function VideoShot() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
+          viewport={{ once: true, margin: "-50px" }}
         >
           {visibleVideos.map((v, idx) => {
             const globalIdx = videos.indexOf(v);
@@ -238,11 +245,15 @@ export default function VideoShot() {
                   className="absolute left-0 right-0 bottom-0 p-4 z-30"
                   initial={{ y: 10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.2 + (idx * 0.1) }}
+                  transition={{ delay: 0.2 + idx * 0.1 }}
                 >
                   <div className="transform transition-transform duration-500 group-hover:-translate-y-1">
-                    <h3 className="text-white text-lg font-medium mb-1 font-sans">{v.title}</h3>
-                    <p className="text-[#F2E1C5]/90 text-sm mb-2 font-sans">{v.desc}</p>
+                    <h3 className="text-white text-lg font-medium mb-1 font-sans">
+                      {v.title}
+                    </h3>
+                    <p className="text-[#F2E1C5]/90 text-sm mb-2 font-sans">
+                      {v.desc}
+                    </p>
                     <span className="inline-block text-xs px-2.5 py-1 rounded-full bg-[#F2E1C5]/20 text-[#F2E1C5] font-medium font-sans">
                       {v.category}
                     </span>
@@ -297,16 +308,27 @@ export default function VideoShot() {
                   )}
                 </div>
 
-
-
                 <motion.button
-                  whileHover={{ scale: 1.1, backgroundColor: "#F2E1C5", color: "#0E5543" }}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: "#F2E1C5",
+                    color: "#0E5543",
+                  }}
                   whileTap={{ scale: 0.95 }}
                   className="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#0E5543]/90 backdrop-blur-sm flex items-center justify-center text-[#F2E1C5] border border-[#F2E1C5]/30 hover:bg-[#F2E1C5] hover:text-[#0E5543] transition-colors shadow-md"
                   onClick={closeModal}
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                 </motion.button>
               </motion.div>
@@ -317,23 +339,27 @@ export default function VideoShot() {
 
       {/* Add font imports */}
       <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
-        
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+
         .font-serif {
-          font-family: 'Playfair Display', serif;
+          font-family: "Playfair Display", serif;
         }
-        
+
         .font-sans {
-          font-family: 'Inter', sans-serif;
+          font-family: "Inter", sans-serif;
         }
-        
+
         /* Custom video controls styling */
         video::-webkit-media-controls-panel {
-          background: linear-gradient(to top, rgba(14, 85, 67, 0.7), transparent);
+          background: linear-gradient(
+            to top,
+            rgba(14, 85, 67, 0.7),
+            transparent
+          );
         }
-        
+
         video::-webkit-media-controls-play-button {
-          background-color: #F2E1C5;
+          background-color: #f2e1c5;
           border-radius: 50%;
         }
       `}</style>
