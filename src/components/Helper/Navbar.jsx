@@ -8,6 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeItem, setActiveItem] = useState("home");
+  const [showDropdown, setShowDropdown] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,9 +31,18 @@ const Navbar = () => {
     { name: "Our Stones", path: "/OurStones" },
     { name: "Services", path: "/services" },
     { name: "Art", path: "/state-of-the-art" },
-    { name: "Gallery", path: "/gallery" },
+    { 
+      name: "Exporters", 
+      path: "",
+      dropdown: [
+        { name: "Marble Exporters in UAE", path: "/marble-export" },
+        { name: "Marble Exporters in Qatar", path: "/marble-export" },
+        { name: "Marble Exporters in Saudi Arabia", path: "/marble-export" },
+        { name: "Marble Exporters in Europe", path: "/marble-export" },
+       
+      ]
+    },
     { name: "Blogs", path: "/Blogs" },
-    // { name: "Help & Advice", path: "/help" },
     { name: "Contact Us", path: "/contact" },
   ];
 
@@ -61,19 +71,56 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             {menuItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`transition-all duration-300 group ${activeItem === item.name.toLowerCase()
-                    ? "text-white"
-                    : "text-white hover:text-amber-300"
-                  }`}
-                onClick={() => handleItemClick(item.name.toLowerCase())}
-              >
-                <span className="relative font-sans-serif text-white after:absolute after:w-0 after:h-px after:bg-amber-300 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
-                  {item.name}
-                </span>
-              </Link>
+              <div key={item.name} className="relative">
+                {item.dropdown ? (
+                  <div 
+                    className="relative"
+                    onMouseEnter={() => setShowDropdown(true)}
+                    onMouseLeave={() => setShowDropdown(false)}
+                  >
+                    <Link
+                      to={item.path}
+                      className={`transition-all duration-300 group ${activeItem === item.name.toLowerCase()
+                          ? "text-white"
+                          : "text-white hover:text-amber-300"
+                        }`}
+                      onClick={() => handleItemClick(item.name.toLowerCase())}
+                    >
+                      <span className="relative font-sans-serif text-white after:absolute after:w-0 after:h-px after:bg-amber-300 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
+                        {item.name}
+                      </span>
+                    </Link>
+                    {showDropdown && (
+                      <div className="absolute top-full left-0 mt-2 w-68 bg-[#0E5543] border border-gray-700 rounded-lg shadow-xl z-50">
+                        {item.dropdown.map((dropItem) => (
+                          <Link
+                            key={dropItem.name}
+                            to={dropItem.path}
+                            style={{textDecoration: "none"}}
+                            className="block px-4 py-3 text-white hover:bg-[#1A7A62] hover:!text-[white] transition-all duration-300 first:rounded-t-lg last:rounded-b-lg cursor-pointer"
+                            onClick={() => setShowDropdown(false)}
+                          >
+                            {dropItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className={`transition-all duration-300 group ${activeItem === item.name.toLowerCase()
+                        ? "text-white"
+                        : "text-white hover:text-amber-300"
+                      }`}
+                    onClick={() => handleItemClick(item.name.toLowerCase())}
+                  >
+                    <span className="relative font-sans-serif text-white after:absolute after:w-0 after:h-px after:bg-amber-300 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
+                      {item.name}
+                    </span>
+                  </Link>
+                )}
+              </div>
             ))}
 
             {/* Search + Cart */}
