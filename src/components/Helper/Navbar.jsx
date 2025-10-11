@@ -125,14 +125,15 @@ const Navbar = () => {
 
             {/* Search + Cart */}
             <div className="flex items-center ml-4 pl-4 border-l border-gray-700 space-x-4">
-              <div className="relative">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                 <input
                   type="text"
-                  placeholder="Search..."
-                  className="px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500/50 transition-all duration-300 w-32 lg:w-40"
+                  placeholder="Search marble..."
+                  className="relative px-4 py-2.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#1A7A62]/50 focus:border-[#1A7A62]/50 focus:bg-[#1A7A62]/20 transition-all duration-300 w-32 lg:w-48 hover:bg-[#1A7A62]/15"
                 />
                 <FiSearch
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/70 group-hover:text-amber-300 transition-colors duration-300"
                   size={16}
                 />
               </div>

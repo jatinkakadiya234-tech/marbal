@@ -104,74 +104,60 @@ export default function WorldMap() {
   className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mt-16 sm:mt-20 max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto"
 >
   {[
-    {
-      icon: FaGlobeAmericas,
-      number: 7,
-      suffix: "+",
-      label: "Countries",
-      accent: "#6B7280",
-      glow: "shadow-blue-500/50"
-    },
-    {
-      icon: FaAward,
-      number: 500,
-      suffix: "+",
-      label: "Projects",
-      accent: "#4B5563",
-      glow: "shadow-purple-500/50"
-    },
-    {
-      icon: FaUsers,
-      number: 200,
-      suffix: "+",
-      label: "Artisans",
-      accent: "#374151",
-      glow: "shadow-green-500/50"
-    },
-    {
-      icon: FaRocket,
-      number: 15,
-      suffix: "+",
-      label: "Years",
-      accent: "#1F2937",
-      glow: "shadow-orange-500/50"
-    }
-  ].map((stat, index) => (
+  {
+    icon: FaGlobeAmericas,
+    number: 7,
+    suffix: "+",
+    label: "Countries",
+    accent: "#6B7280",
+    glow: "shadow-blue-500/50",
+    color: "#0E5543"
+  },
+  {
+    icon: FaAward,
+    number: 500,
+    suffix: "+",
+    label: "Projects",
+    accent: "#4B5563",
+    glow: "shadow-purple-500/50",
+    color: "#0E5543"
+  },
+  {
+    icon: FaUsers,
+    number: 200,
+    suffix: "+",
+    label: "Artisans",
+    accent: "#374151",
+    glow: "shadow-green-500/50",
+    color: "#0E5543"
+  },
+  {
+    icon: FaRocket,
+    number: 15,
+    suffix: "+",
+    label: "Years",
+    accent: "#1F2937",
+    glow: "shadow-orange-500/50",
+    color: "#0E5543"
+  }
+]
+.map((stat, index) => (
     <motion.div
       key={index}
-      whileHover={{ 
-        scale: 1.08, 
-        y: -12,
-        rotateY: 5,
-        rotateX: 5
-      }}
+     
       whileTap={{ scale: 0.95 }}
       className="relative group cursor-pointer perspective-1000"
     >
-      {/* Animated Glow */}
-      <div className={`absolute inset-0 bg-gradient-to-r from-cyan-400/20 via-purple-400/20 to-pink-400/20   opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-700 animate-pulse ${stat.glow}`}></div>
-      
-      {/* Glass Card with Enhanced Effects */}
-      <div className="relative bg-gradient-to-br from-white/25 via-white/10 to-white/5 backdrop-blur-xl  p-8 border border-white/40 shadow-2xl hover:shadow-cyan-500/25 hover:bg-white/30 transition-all duration-500 overflow-hidden">
+      {/* Glass Card */}
+      <div className="relative bg-gradient-to-br from-white/25 via-white/10 to-white/5 backdrop-blur-xl  p-8 border border-white/40 shadow-2xl transition-all duration-500 overflow-hidden">
         
-        {/* Floating Particles Effect */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-4 left-4 w-2 h-2 bg-white/60 rounded-full animate-ping"></div>
-          <div className="absolute top-8 right-6 w-1 h-1 bg-cyan-300/80 rounded-full animate-pulse delay-300"></div>
-          <div className="absolute bottom-6 left-8 w-1.5 h-1.5 bg-purple-300/70 rounded-full animate-bounce delay-500"></div>
-        </div>
 
-        {/* Icon Container with Glow */}
+
+        {/* Icon Container */}
         <motion.div
-          className="relative mb-6 mx-auto w-20 h-20 flex items-center justify-center bg-white/50 backdrop-blur-sm border border-white/60 shadow-lg"
-          whileHover={{ 
-            scale: 1.15,
-            rotate: 360,
-            boxShadow: "0 0 30px rgba(59, 130, 246, 0.5)"
-          }}
-          transition={{ duration: 0.6 }}
+          className="relative mb-6 mx-auto w-20 h-20 flex items-center justify-center bg-white/50 backdrop-blur-sm  border border-white/60 shadow-lg"
         >
-          <stat.icon className="text-3xl drop-shadow-lg" style={{ color: stat.accent }} />
+          <stat.icon className="text-3xl drop-shadow-lg" style={{ color: stat.color }} />
         </motion.div>
 
         {/* Number with White Text */}
@@ -195,8 +181,7 @@ export default function WorldMap() {
           {stat.label}
         </motion.div>
 
-        {/* Shimmer Effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-1000"></div>
+
       </div>
     </motion.div>
   ))}
