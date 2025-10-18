@@ -19,6 +19,7 @@ export default function ServiceGrid({ filteredServices, setSelectedService }) {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
+        style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
       >
         {filteredServices.map((service) => (
           <ServiceCard

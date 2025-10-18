@@ -6,7 +6,8 @@ import { FiPlay } from 'react-icons/fi';
 const Section1 = () => {
 return (
     <>
-        <section className="relative py-10 bg-gradient-to-br from-[#0E5543] via-[#1a6b52] to-[#0E5543] overflow-hidden">
+        <section className="relative py-10 bg-gradient-to-br from-[#0E5543] via-[#1a6b52] to-[#0E5543] overflow-hidden"
+        style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
             {/* Premium Background Elements */}
             <div className="absolute inset-0">
                 <div className="absolute inset-0 opacity-[0.03]">

@@ -334,7 +334,9 @@ return (
         </div>
 
         {/* Mobile Filter Button */}
-        <div className="lg:hidden flex justify-end mb-4">
+        <div className="lg:hidden flex justify-end mb-4"
+        >
+        
           <button
             className="flex items-center gap-2 bg-[#0E5543] text-white px-4 py-2 rounded-lg"
             onClick={() => setIsTooltipOpen(true)}
@@ -342,7 +344,7 @@ return (
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.207A1 1 0 013 6.5V4z" />
             </svg>
-            <span>Filters</span>
+            <span   style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.em' }}>Filters</span>
           </button>
         </div>
 
@@ -357,6 +359,7 @@ return (
                 exit={{ opacity: 0 }}
                 className="fixed inset-0 bg-black/50 z-40 lg:hidden"
                 onClick={() => setIsTooltipOpen(false)}
+                  style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.em' }}
               />
 
               {/* Sidebar */}
@@ -366,6 +369,8 @@ return (
                 exit={{ x: '100%' }}
                 transition={{ type: 'spring', damping: 30, stiffness: 300 }}
                 className="fixed top-20  right-0 h-full w-48 bg-white z-40 lg:hidden shadow-2xl"
+                        style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
+
               >
                 {/* Sidebar Header */}
                 <div className="flex items-center mb-20 justify-between p-4 border-b border-[#0E5543]/20">
@@ -552,7 +557,9 @@ return (
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header Image */}
-            <div className="relative h-64 sm:h-96">
+            <div className="relative h-64 sm:h-96" 
+                   style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
+>
               <img
                 src={selectedMarble.image}
                 alt={selectedMarble.name}
@@ -584,7 +591,8 @@ return (
             </div>
 
             {/* Modal Content */}
-            <div className="p-6 sm:p-8">
+            <div className="p-6 sm:p-8"
+              style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.em' }}>
               <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
                 <div>
                   <h3 className="font-serif text-lg sm:text-xl text-[#0E5543] mb-3 sm:mb-4">Description</h3>

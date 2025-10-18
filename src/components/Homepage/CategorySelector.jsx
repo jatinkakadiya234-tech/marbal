@@ -157,7 +157,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <HeaderContent
-          tagline=""
+          tagline="way choose us"
           title="Top Product Categories"
           subtitle=" Explore Uni for smart essentials and Premium for exclusive, refined finishes"
           theme="dark"
@@ -215,7 +215,8 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                   <GoldenParticles count={20} accent={cat.accent} />
 
                   {/* Content */}
-                  <div className="absolute bottom-0 left-0 right-0 z-30 p-6">
+                  <div className="absolute bottom-0 left-0 right-0 z-30 p-6"
+                              style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
                     <h3 className="text-base font-['Poppins'] font-normal text-amber-50 mb-2">{cat.name}</h3>
                     <p className="text-gray-300/90 mb-4 text-sm font-['Text-book']">{cat.description}</p>
                     <button

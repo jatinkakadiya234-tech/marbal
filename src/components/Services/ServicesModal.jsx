@@ -8,6 +8,7 @@ export default function ServiceModal({ selectedService, setSelectedService }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
+      style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
     >
       <motion.div
         className="absolute inset-0 bg-[#0E5543]/10 backdrop-blur-sm"

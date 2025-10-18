@@ -156,7 +156,7 @@ export default function ProductCollection() {
   }
 
   return (
-    <div className="bg-gradient-to-br  from-[#0E5543] via-[#0E5543] to-[#0E5543] py-16 md:py-20 px-4 sm:px-6 lg:px-8 font-['Playfair_Display'] overflow-hidden">
+    <div className="bg-gradient-to-br   from-[#0E5543] via-[#0E5543] to-[#0E5543] py-16 md:py-20 px-4 sm:px-6 lg:px-8 font-['Playfair_Display'] overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-[#F2E1C5]/10 rounded-full blur-3xl animate-pulse"></div>
@@ -165,7 +165,7 @@ export default function ProductCollection() {
 
       {/* Header Section */}
       <HeaderContent 
-      className='sans-serif'
+      className='sans-serif  mb-20'
         title="Our Premium Services"
         subtitle="We go beyond providing exceptional marble products by offering comprehensive services 
             to ensure your complete satisfaction from selection to installation."
@@ -173,21 +173,19 @@ export default function ProductCollection() {
       />
 
       {/* Services Section - REVERSED THEME */}
-      <div className="max-w-7xl mx-auto mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto mb-8">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div 
               key={index} 
               className="group relative bg-white  overflow-hidden border border-gray-200 hover:border-gray-300 transition-all duration-500 p-8 hover:transform hover:scale-105 shadow-xl"
             >
-              {/* Skinny card effect with minimal padding */}
               <div className="text-center mb-6">
                 <div className="inline-flex items-center justify-center w-20 h-20 text-[#0E5543] group-hover:scale-110 transition-transform duration-300">
                   {service.icon}
                 </div>
               </div>
               
-              {/* Light text content */}
               <h3 className="text-base font-['Poppins'] font-normal text-gray-900 text-center mb-4">{service.title}</h3>
               <p className="text-gray-700 text-center mb-6 leading-relaxed font-['Text-book']">{service.description}</p>
               
@@ -200,17 +198,16 @@ export default function ProductCollection() {
                 ))}
               </ul>
               
-              {/* Button with reversed colors */}
               <button className="mt-6 w-full bg-gradient-to-r from-[#0E5543] to-[#1a7a5e] text-[#F2E1C5] py-3 rounded-xl font-semibold hover:from-[#1a7a5e] hover:to-[#0E5543] transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg">
                 Learn More
                 <FaArrowRight className="text-sm" />
               </button>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Explore Services Button - Updated to match new theme */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-10 ">
           <button 
             onClick={handleExploreServices}
             className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 transform hover:-translate-y-1 shadow-2xl border-2 border-gray-200 hover:border-gray-300 flex items-center justify-center gap-3 mx-auto"

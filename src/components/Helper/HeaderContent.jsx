@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const HeaderContent = ({
   title = "Rishab Green Marbles",
   subtitle = "Choose us for trusted quality, on-time delivery, and service that stands behind every installation.",
-  tagline = "Why Choose Us",
+  tagline = "",
   theme = "light" // Added theme prop with default value
 }) => {
   return (
@@ -34,6 +34,7 @@ const HeaderContent = ({
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.1 }}
+         style={{ fontFamily: 'Arial, sans-serif', fontWeight: '200', letterSpacing: '0.3em' }}
       >
         {title.split(' ').map((word, index) => {
           const colorConfig = {
@@ -74,6 +75,7 @@ const HeaderContent = ({
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
+            style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.3em' }}
       >
         {subtitle}
       </motion.p>

@@ -14,6 +14,7 @@ export default function ServiceCard({ service, setSelectedService }) {
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       onClick={() => setSelectedService(service)}
+        style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
     >
       {/* Image */}
       <div className="relative overflow-hidden aspect-video">
