@@ -65,7 +65,7 @@ const About = () => {
     <section id="about" className={`py-12 md:py-16 lg:py-24 bg-white transition-colors duration-500 overflow-hidden`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-       <HeaderContent />
+       <HeaderContent  />
 
         {/* Content */}
         <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16">
@@ -98,11 +98,12 @@ const About = () => {
               >
                 <img
                   src={about2}
-                  alt="Granite Worktop"
+                  alt="Granite Worktop" 
                   className="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0E5543]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </motion.div>
+              
             </div>
 
             <div className="grid grid-cols-2 gap-4 md:gap-6 mt-4 md:mt-6">
@@ -146,6 +147,8 @@ const About = () => {
               <h3
                 className={`text-xl md:text-2xl lg:text-3xl font-serif font-semibold mb-6 md:mb-8 ${theme === "dark" ? "text-white" : "text-black"
                   }`}
+                    style={{ fontFamily: 'Arial, sans-serif', fontWeight: '200', letterSpacing: '0.3em' }}
+
               >
                 Excellence Crafted with Passion Since{" "}
                 <span className="text-[#0E5543]">1995</span>
@@ -154,6 +157,8 @@ const About = () => {
               <p
                 className={`text-base md:text-lg leading-relaxed ${theme === "dark" ? "text-gray-300" : "text-gray-700"
                   } mb-4 md:mb-6`}
+            style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
+
               >
                 At Surrey Marble & Granite, we believe that your living spaces should
                 reflect your personality and provide both beauty and functionality.
@@ -164,6 +169,7 @@ const About = () => {
               <p
                 className={`text-base md:text-lg leading-relaxed ${theme === "dark" ? "text-gray-300" : "text-gray-700"
                   }`}
+                         style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
               >
                 Our team of skilled craftsmen combines traditional techniques
                 with modern precision to create installations that are not only
@@ -201,6 +207,7 @@ const About = () => {
                     <span
                       className={`text-sm md:text-base ${theme === "dark" ? "text-gray-300" : "text-gray-700"
                         }`}
+                                  style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
                     >
                       {feature}
                     </span>
@@ -216,6 +223,7 @@ const About = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
+                          style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
             >
               {[
                 { icon: FiAward, value: "25+", label: "Years Experience" },

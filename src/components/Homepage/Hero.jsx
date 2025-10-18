@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FiArrowDown } from "react-icons/fi";
-import CustomCursor from "../Helper/CustomCursor";
 
 const Hero = () => {
   const [isMuted, setIsMuted] = useState(true);
@@ -16,7 +15,7 @@ const Hero = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Animation variants
+  // === Animation Variants ===
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -60,7 +59,7 @@ const Hero = () => {
     },
   };
 
-  // Text sections
+  // === Text Sections ===
   const headlineWords = "Exquisite Natural Stone Creations".split(" ");
   const companyWords = "From Rishab Green Marbles".split(" ");
   const subheadingWords =
@@ -70,9 +69,7 @@ const Hero = () => {
 
   return (
     <>
-      {/* <CustomCursor /> */}
-
-      <section className="relative h-screen flex  items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Video */}
         <video
           autoPlay
@@ -83,80 +80,66 @@ const Hero = () => {
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/hero.webm" type="video/mp4" />
-
         </video>
 
-
         {/* Gradient Overlay */}
-   <div className="absolute inset-0 bg-gradient-to-b from-gray-900/70 via-gray-900/50 to-gray-900/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/70 via-gray-900/50 to-gray-900/80" />
 
         {/* Pattern Overlay */}
-        <div className="absolute inset-0 opacity-20 bg-[url(
-        'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0zMCAzMG0tMjggMGEyOCwyOCAwIDEsMSA1NiwwYTI4LDI4IDAgMSwxIC01NiwwIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIHN0cm9rZS13aWR0aD0iMC41IiBmaWxsPSJub25lIiBzdHJva2UtZGFzaGFycmF5OjAuNSw0Ii8+PC9zdmc+'
-        )]"></div>
+        <div
+          className="absolute inset-0 opacity-20 bg-[url(
+            'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0zMCAzMG0tMjggMGEyOCwyOCAwIDEsMSA1NiwwYTI4LDI4IDAgMSwxIC01NiwwIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIHN0cm9rZS13aWR0aD0iMC41IiBmaWxsPSJub25lIiBzdHJva2UtZGFzaGFycmF5OjAuNSw0Ii8+PC9zdmc+'
+          )]"
+        ></div>
 
-        {/* Content */}
+        {/* === Content === */}
         <motion.div
-          className="relative z-10 text-center font-sans-serif  md:px-12 lg:px-24 max-w-7xl"
+          className="relative z-10 text-center md:px-12 lg:px-24 max-w-7xl"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          {/* === Separator 1 (top line) === */}
-          <motion.div
-            className="w-24 h-0.5 bg-gradient-to-r from-transparent via-white/60 to-transparent mb-6 mx-auto"
-            variants={itemVariants}
-          />
+          {/* Headline */}
+          <motion.h1
+            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 leading-tight tracking-[0.35em] font-light text-white uppercase font-['Raleway']"
+            variants={containerVariants}
+            style={{
+              fontFamily: "Arial, sans-serif",
+              fontWeight: "200",
+              letterSpacing: "0.3em",
+            }}
+          >
+            {headlineWords.map((word, i) => (
+              <motion.span
+                key={i}
+                variants={wordVariants}
+                custom={i}
+                className="inline-block mr-4 text-4xl"
+                style={{
+                  WebkitBackgroundClip: "text",
+                  // WebkitTextFillColor: "transparent",
+                }}
+              >
+                {word}
+              </motion.span>
+            ))}
+          </motion.h1>
 
-          {/* Headline + Company Name (single section) */}
-          <motion.div variants={containerVariants}>
-            <motion.h1
-              className="text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-4 leading-tight tracking-wide font-['Poppins'] font-normal"
-              variants={containerVariants}
-            >
-              {headlineWords.map((word, i) => (
-                <motion.span
-                  key={i}
-                  variants={wordVariants}
-                  custom={i}
-                  className="inline-block mr-3 text-4xl"
-                  style={{
-                    fontFamily: "'Poppins', sans-serif",
-                    fontWeight: i === 1 || i === 2 ? 400 : 400,
-                    fontStyle: i === 1 ? "italic" : "normal",
-                    background:
-                      i === 1
-                        ? "linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)"
-                        : "linear-gradient(135deg, #FFFFFF 0%, #F3F4F6 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  }}
-                >
-                  {word}
-                </motion.span>
-              ))}
-            </motion.h1>
-
-            <div className="mb-6">
-              {companyWords.map((word, i) => (
-                <motion.span
-                  key={i}
-                  variants={wordVariants}
-                  custom={i + headlineWords.length}
-                  className={`text-base md:text-lg lg:text-xl font-normal mr-2 ${i === 1 || i === 2 ? "text-white" : "text-gray-300"
-                    }`}
-                  style={{
-                    fontFamily: "'Poppins', sans-serif",
-                    fontWeight: i === 1 || i === 2 ? 500 : 300,
-                  }}
-                >
-                  {word}
-                </motion.span>
-              ))}
-            </div>
+          {/* Company Line */}
+          <motion.div className="mb-6">
+            {companyWords.map((word, i) => (
+              <motion.span
+                key={i}
+                variants={wordVariants}
+                custom={i + headlineWords.length}
+                className="text-lg md:text-xl lg:text-2xl font-light mr-3 text-gray-300 tracking-[0.4em] uppercase font-['Raleway']"
+              >
+                {word}
+              </motion.span>
+            ))}
           </motion.div>
 
-          {/* === Separator 2 (middle line) === */}
+          {/* Separator */}
           <motion.div
             className="w-32 h-0.5 bg-gradient-to-r from-white/80 to-transparent mx-auto my-6"
             variants={itemVariants}
@@ -164,29 +147,29 @@ const Hero = () => {
 
           {/* Subheading */}
           <motion.p
-            className="text-base md:text-lg lg:text-xl font-light text-gray-200 mb-8 max-w-4xl mx-auto leading-relaxed tracking-wide font-['Text-book']"
+            className="text-base md:text-lg lg:text-xl font-light text-gray-200 mb-8 max-w-4xl mx-auto leading-relaxed tracking-wide font-['Raleway']"
             variants={itemVariants}
+            style={{
+              fontFamily: "Montserrat",
+              fontWeight: "200",
+              letterSpacing: "2px",
+            }}
           >
             {subheadingWords.map((word, i) => (
               <motion.span
                 key={i}
                 variants={wordVariants}
                 custom={i + headlineWords.length + companyWords.length}
-                className="inline-block mr-2 opacity-96"
+                className="inline-block mr-2 opacity-95"
+                            style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '3px' }}
               >
                 {word}
               </motion.span>
             ))}
           </motion.p>
-
-          {/* === Separator 3 (bottom line) === */}
-          <motion.div
-            className="w-16 h-0.5 bg-gradient-to-r from-transparent via-white/60 to-transparent mx-auto mt-10"
-            variants={itemVariants}
-          />
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* Scroll Indicator */}
         {scrollIndicatorVisible && (
           <motion.div
             className="absolute bottom-8 left-1/2 transform -translate-x-1/2"

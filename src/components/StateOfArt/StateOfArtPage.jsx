@@ -24,7 +24,8 @@ const TechnologyShowcase = () => {
 
 
     return (
-        <div className="min-h-screen py-10 pt-20 bg-white text-[#0E5543]">
+        <div className="min-h-screen py-10 pt-20 bg-white text-[#0E5543]" 
+        >
 
             <Arthero />
 

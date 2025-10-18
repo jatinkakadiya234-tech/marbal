@@ -200,6 +200,7 @@ export default function WorldMap() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
           className="relative"
+           style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-[#0E5543]/20 to-[#1A7A62]/20 rounded-2xl z-0"></div>
           <img
@@ -362,20 +363,23 @@ export default function WorldMap() {
           className="text-center mb-3 space-y-6"
         >
           {/* Premium Serif Font */}
-          <h3 className="text-5xl font-normal text-[#0E5543] font-['Cormorant_Garamond'] leading-tight">
+          <h3 className="text-5xl  text-[#0E5543] ' leading-tight"
+         style={{ fontFamily: 'Arial, sans-serif', fontWeight: '200', letterSpacing: '0.1em' }}
+          >
             Elevate Your Space with<br />
             <span className="italic font-light text-[#1A7A62]">Exquisite Marble</span>
           </h3>
 
           {/* Elegant Description */}
-          <p className="text-[#1A7A62] text-lg max-w-2xl mx-auto leading-relaxed font-['Source_Serif_Pro'] font-light italic">
+          <p className="text-[#1A7A62] text-lg max-w-2xl mx-auto leading-relaxed font-['Source_Serif_Pro'] font-light italic"
+            style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
             Chosen by 500+ luxury projects globally. Where artistry meets architecture
             in perfect harmony.
           </p>
         </motion.div>
 
 
-        <div className="flex gap-6 justify-center  flex-wrap">
+        <div className="flex gap-6 justify-center  flex-wrap"   style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
@@ -386,13 +390,17 @@ export default function WorldMap() {
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
+
             className="px-10 py-4 bg-transparent border-2 border-[#0E5543] text-[#189173] font-semibold rounded-xl hover:bg-[#0E5543]/10 transition-all duration-300 text-lg"
+             style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
           >
             View Catalog
           </motion.button>
         </div>
 
-        <div className="mt-6 text-[#1A7A62] text-sm flex items-center justify-center gap-4 flex-wrap">
+        <div className="mt-6 text-[#1A7A62] text-sm flex items-center justify-center gap-4 flex-wrap"
+         style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
+
           <span className="flex items-center gap-2">⭐ Premium Quality Guarantee</span>
           <span className="flex items-center gap-2">🌍 Global Shipping</span>
           <span className="flex items-center gap-2">💎 Custom Solutions</span>

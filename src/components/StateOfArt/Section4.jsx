@@ -47,21 +47,11 @@ return (
                             key={index}
                             initial={{ opacity: 0, y: 40, scale: 0.9 }}
                             whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                            transition={{ 
-                                duration: 0.6, 
-                                delay: index * 0.1,
-                                type: "spring",
-                                stiffness: 100
-                            }}
                             viewport={{ once: true }}
-                            whileHover={{ y: -5, scale: 1.02 }}
-                            className="group relative"
+                            className="relative"
                         >
-                            {/* Card with gradient border */}
-                            <div className="relative bg-gradient-to-br from-[#F2E1C5]/10 to-[#F2E1C5]/5 backdrop-blur-sm rounded-2xl p-8 border border-[#F2E1C5]/20 hover:border-[#F2E1C5]/40 transition-all duration-500 shadow-2xl shadow-black/20">
-                                
-                                {/* Animated background effect */}
-                                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-[#F2E1C5]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            {/* Card with glassmorphism effect */}
+                            <div className="relative bg-white/10 backdrop-blur-lg  p-8 border border-white/20 shadow-2xl shadow-black/20">
                                 
                                 <div className="relative z-10 text-center">
                                     {/* Main value with counter animation */}
@@ -88,14 +78,13 @@ return (
                                 </div>
 
                                 {/* Corner accents */}
-                                <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#F2E1C5]/30 rounded-tl-2xl"></div>
-                                <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#F2E1C5]/30 rounded-tr-2xl"></div>
-                                <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#F2E1C5]/30 rounded-bl-2xl"></div>
-                                <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#F2E1C5]/30 rounded-br-2xl"></div>
+                                <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#F2E1C5]/30 "></div>
+                                <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#F2E1C5]/30"></div>
+                                <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#F2E1C5]/30"></div>
+                                <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#F2E1C5]/30 "></div>
                             </div>
 
-                            {/* Glow effect on hover */}
-                            <div className="absolute inset-0 rounded-2xl bg-[#F2E1C5]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+
                         </motion.div>
                     ))}
                 </div>

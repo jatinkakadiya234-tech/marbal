@@ -11,6 +11,7 @@ const ServiceNav = ({ categories, activeCategory, setActiveCategory }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.6, duration: 0.5 }}
+                style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
             >
               {categories.map((category) => (
 <motion.button

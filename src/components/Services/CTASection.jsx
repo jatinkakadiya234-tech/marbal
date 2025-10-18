@@ -10,6 +10,8 @@ export default function CTASection() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
+                style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
+
     >
       <div className="bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-xl p-6 text-[#F2E1C5] border border-[#F2E1C5]/15 shadow-lg">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">

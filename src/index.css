@@ -2,12 +2,23 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
 
 * {
   font-family: 'Poppins', sans-serif;
 }
 
 body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Headings use Crimson Text (serif) */
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: 'Crimson Text', serif !important;
+}
+
+/* Content uses Poppins */
+p, span, div, li, a, button, input, textarea {
   font-family: 'Poppins', sans-serif;
 }
 

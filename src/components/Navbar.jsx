@@ -8,8 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeItem, setActiveItem] = useState("home");
-  const [showOurStonesDropdown, setShowOurStonesDropdown] = useState(false);
-  const [showExportersDropdown, setShowExportersDropdown] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,25 +28,17 @@ const Navbar = () => {
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { 
-      name: "Our Stones", 
-      path: "/OurStones",
-      dropdown: [
-        { name: "Marble", path: "/marble" },
-        { name: "Granite", path: "/granite" },
-        { name: "Sandstone", path: "/sandstone" },
-      ]
-    },
+    { name: "Our Stones", path: "/OurStones" },
     { name: "Services", path: "/services" },
-    { name: "Technology Export", path: "/state-of-the-art" },
+    { name: "Technology xport", path: "/state-of-the-art" },
     { 
       name: "Exporters", 
       path: "",
       dropdown: [
-        { name: "Marble Export - UAE", path: "/marble-export" },
-        { name: "Marble Export - Qatar", path: "/marble-export" },
-        { name: "Marble Export - Saudi Arabia", path: "/marble-export" },
-        { name: "Marble Export - Europe", path: "/marble-export" },
+        { name: "Marble Exporters in UAE", path: "/marble-export" },
+        { name: "Marble Exporters in Qatar", path: "/marble-export" },
+        { name: "Marble Exporters in Saudi Arabia", path: "/marble-export" },
+        { name: "Marble Exporters in Europe", path: "/marble-export" },
        
       ]
     },
@@ -82,27 +73,24 @@ const Navbar = () => {
             {menuItems.map((item) => (
               <div key={item.name} className="relative">
                 {item.dropdown ? (
-                  <div className="relative">
+                  <div 
+                    className="relative"
+                    onMouseEnter={() => setShowDropdown(true)}
+                    onMouseLeave={() => setShowDropdown(false)}
+                  >
                     <Link
-                      to="#"
+                      to={item.path}
                       className={`transition-all duration-300 group ${activeItem === item.name.toLowerCase()
                           ? "text-white"
                           : "text-white hover:text-amber-300"
                         }`}
-                      onClick={() => {
-                        if (item.name === "Our Stones") {
-                          setShowOurStonesDropdown(!showOurStonesDropdown);
-                        } else if (item.name === "Exporters") {
-                          setShowExportersDropdown(!showExportersDropdown);
-                        }
-                      }}
+                      onClick={() => handleItemClick(item.name.toLowerCase())}
                     >
                       <span className="relative font-sans-serif text-white after:absolute after:w-0 after:h-px after:bg-amber-300 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
                         {item.name}
                       </span>
                     </Link>
-                    {((item.name === "Our Stones" && showOurStonesDropdown) || 
-                      (item.name === "Exporters" && showExportersDropdown)) && (
+                    {showDropdown && (
                       <div className="absolute top-full left-0 mt-2 w-68 bg-[#0E5543] border border-gray-700 rounded-lg shadow-xl z-50">
                         {item.dropdown.map((dropItem) => (
                           <Link
@@ -110,13 +98,7 @@ const Navbar = () => {
                             to={dropItem.path}
                             style={{textDecoration: "none"}}
                             className="block px-4 py-3 text-white hover:bg-[#1A7A62] hover:!text-[white] transition-all duration-300 first:rounded-t-lg last:rounded-b-lg cursor-pointer"
-                            onClick={() => {
-                              if (item.name === "Our Stones") {
-                                setShowOurStonesDropdown(false);
-                              } else if (item.name === "Exporters") {
-                                setShowExportersDropdown(false);
-                              }
-                            }}
+                            onClick={() => setShowDropdown(false)}
                           >
                             {dropItem.name}
                           </Link>

@@ -100,6 +100,7 @@ export default function FounderDetails() {
               whileHover={{ y: -5 }}
               onClick={() => setExpandedCard(expandedCard === index ? null : index)}
               layout
+               style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
             >
               {/* Card content */}
               <div className="flex flex-col h-full">

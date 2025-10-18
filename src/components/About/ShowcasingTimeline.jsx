@@ -190,6 +190,7 @@ export default function ShowcasingTimeline() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
+        
       />
 
       <motion.div 
@@ -252,6 +253,7 @@ export default function ShowcasingTimeline() {
                 className="relative milestone-item"
                 variants={item}
                 onHoverStart={() => setActiveIndex(idx)}
+                
               >
                 <div className={`flex flex-col md:flex-row items-center ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''} gap-10`}>
                   <div className="md:w-1/2">
@@ -267,8 +269,10 @@ export default function ShowcasingTimeline() {
                         }
                       }}
                     >
-                      <h3 className="text-2xl md:text-3xl font-serif text-[#0E5543] mb-3">{m.title}</h3>
-                      <p className="text-gray-700/90 leading-relaxed">{m.desc}</p>
+                      <h3 className="text-2xl md:text-3xl font-serif text-[#0E5543] mb-3" 
+                       style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>{m.title}</h3>
+                      <p className="text-gray-700/90 leading-relaxed" 
+                       style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>{m.desc}</p>
                     </motion.div>
                   </div>
 
