@@ -35,11 +35,11 @@ const Footer = () => {
           <div className="md:col-span-4">
             <div className="flex items-center mb-6">
               <div className="w-3 h-3 bg-[#F2E1C5] rounded-full mr-3 shadow-lg shadow-[#F2E1C5]/30"></div>
-              <h3 className="text-2xl font-serif font-bold text-[#F2E1C5]">
+              <h3 className="text-2xl font-serif font-bold text-[#F2E1C5]"style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
                 Rishab Green Marbles
               </h3>
             </div>
-            <p className="text-[#F2E1C5]/80 mb-6 leading-relaxed">
+            <p className="text-[#F2E1C5]/80 mb-6 leading-relaxed" style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
               Providing premium quality natural marbles and stones since 1995.
               Our products transform spaces with elegance and timeless beauty
               that lasts generations.
@@ -63,10 +63,12 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="md:col-span-2">
-            <h3 className="text-lg font-semibold mb-6 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-[#F2E1C5]">
+            <h3 className="text-lg font-semibold mb-6 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-[#F2E1C5]"style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
               Explore
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-4 mx-[-20px]"
+                        style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
+
               {[
                 { label: "Home", to: "/" },
                 { label: "About Us", to: "/about" },
@@ -89,10 +91,11 @@ const Footer = () => {
 
           {/* Products */}
           <div className="md:col-span-2">
-            <h3 className="text-lg font-semibold mb-6 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-[#F2E1C5]">
+            <h3 className="text-lg font-semibold mb-6 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-[#F2E1C5]" style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
               Products
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-4 mx-[-20px]"            style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
+
               {[
                 { label: "Green Marble", to: "/products/green-marble" },
                 { label: "White Marble", to: "/products/white-marble" },
@@ -115,10 +118,10 @@ const Footer = () => {
 
           {/* Contact */}
           <div className="md:col-span-4">
-            <h3 className="text-lg font-semibold mb-6 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-[#F2E1C5]">
+            <h3 className="text-lg font-semibold mb-6 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-[#F2E1C5]"style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
               Contact Us
             </h3>
-            <div className="bg-[#1A6B56]/30 border border-[#F2E1C5]/10 rounded-xl p-6 mb-8">
+            <div className="bg-[#1A6B56]/30 border border-[#F2E1C5]/10 rounded-xl p-6 mb-8" style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
               <ul className="space-y-5">
                 <li className="flex items-start">
                   <div className="p-2 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg mr-4 flex-shrink-0">
