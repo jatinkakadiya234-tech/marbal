@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import WorldMap from "./WorldMap";
+import SEO from "../Helper/SEO";
 
 // Lazy load components
 const Hero = lazy(() => import("./Hero"));
@@ -14,6 +15,11 @@ const Testimonials = lazy(() => import("./Testimonials"));
 const Homepage = () => {
   return (
     <>
+      <SEO 
+        title="Rishab Green Marbles - Premium Natural Stone & Marble Supplier"
+        description="Leading supplier of premium natural stones and marbles in India. Transform your space with our finest quality marble, granite, and natural stone products. Expert craftsmanship and precision cutting services."
+        keywords="marble supplier India, natural stone, granite, premium marble, stone cutting, marble installation, interior design, construction materials, Rishab Green Marbles"
+      />
       <Suspense fallback={<div>Loading Hero...</div>}>
         <Hero />
       </Suspense>
