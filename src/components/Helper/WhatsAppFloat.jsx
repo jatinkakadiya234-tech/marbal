@@ -34,6 +34,7 @@ const WhatsAppFloat = ({
       <motion.a
         href={whatsappUrl}
         target="_blank"
+        
         rel="noopener noreferrer"
         className="flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
         onMouseEnter={() => setIsHovered(true)}
@@ -72,6 +73,7 @@ const WhatsAppFloat = ({
             initial={{ opacity: 0, x: 10 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 10 }}
+            transition={{ duration: 0.3 }}
             className={`absolute ${position.includes('left') ? 'left-16' : 'right-20'} top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap shadow-lg`}
           >
             Chat with us on WhatsApp
