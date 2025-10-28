@@ -42,6 +42,33 @@ const MarbleQuarryHome = () => {
     },
   ];
 
+  const sections = [
+    {
+      title: "Our Curated Selections",
+      content:
+        "Discover our signature stone collections that redefine elegance and style.",
+    },
+    {
+      title: "Surata Green",
+      content:
+        "Choose the shade of distinction, crafted for those who value rarity.",
+    },
+    {
+      title: "Forest Green",
+      content:
+        "Enrich your interiors with the timeless charm of nature’s finest creation.",
+    },
+    {
+      title: "Spider Green",
+      content:
+        "Let the calm of green breathe life into every corner of your space.",
+    },
+    {
+      title: "Advanced Production Facility",
+      content: "Engineering Excellence in Every Stone.",
+    },
+  ];
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -120,105 +147,96 @@ const MarbleQuarryHome = () => {
                 className="space-y-8 lg:space-y-8"
                 variants={itemVariants}
               >
-                <h1 className="text-2xl lg:text-3xl xl:text-4xl font-norma text-[#0E5543] leading-tight " 
-         style={{ fontFamily: 'Arial, sans-serif', fontWeight: '200', letterSpacing: '0.1em' }}
+                <h1
+                  className="text-2xl lg:text-3xl xl:text-4xl font-norma text-[#0E5543] leading-tight "
+                  style={{
+                    fontFamily: "Arial, sans-serif",
+                    fontWeight: "200",
+                    letterSpacing: "0.1em",
+                  }}
                 >
-                  Where{" "}
+                  Stone{" "}
                   <span className="font-['Cormorant_Garamond'] italic font-light text-[#1a7f66] drop-shadow-sm">
-                    Artistry
+                    Solutions
                   </span>{" "}
-                  Meets
+                  Meets by
                   <br />
                   <span className="font-['Cormorant_Garamond'] italic font-light text-[#1a7f66] drop-shadow-sm">
-                    Precision
+                    Rishabh Green
                   </span>{" "}
-                  Engineering
+                  Marbles
                 </h1>
-                <p className="text-xl lg:text-2xl text-[#0E5543]/90 leading-relaxed font-light max-w-2xl font-['Text-book']"
-                            style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
+                <p
+                  className="text-xl lg:text-2xl text-[#0E5543]/90 leading-relaxed font-light max-w-2xl font-['Text-book']"
+                  style={{
+                    fontFamily: "Montserrat",
+                    fontWeight: "200",
+                    letterSpacing: "0.1em",
+                  }}
                 >
-                  Experience the perfect symphony of{" "}
+                  Bringing spaces to life,{" "}
                   <span className="font-['Cormorant_Garamond'] italic font-medium text-[#0E5543]">
-                    time-honored craftsmanship
+                    we deliver versatile stone solutions for
+                    interiors,exteriors,
                   </span>
                   and{" "}
                   <span className="font-['Cormorant_Garamond'] italic font-medium text-[#0E5543]">
-                    cutting-edge innovation
+                    outdoor spaces,
                   </span>{" "}
-                  in marble excellence. Our state-of-the-art technology ensures{" "}
-                  <span className="font-semibold text-[#1a7f66]">
-                    unmatched perfection
-                  </span>{" "}
-                  in every slab.
+                  combining precision,{" "}
+                  <span className="font-semibold text-[#1a7f66]">vation,</span>{" "}
+                  and timeless craftsmanship in every project.
                 </p>
               </motion.div>
 
               {/* Enhanced Stats Section */}
-              <motion.div className="space-y-6 mb-10" variants={itemVariants} 
-                          style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
+              <motion.div
+                className="space-y-6 mb-10"
+                variants={itemVariants}
+                style={{
+                  fontFamily: "Montserrat",
+                  fontWeight: "200",
+                  letterSpacing: "0.1em",
+                }}
+              >
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-2xl">
-                  <div className="space-y-3 p-4 bg-[#F2E1C5]/40 rounded-2xl backdrop-blur-sm border border-[#F2E1C5]/60">
-                    <div className="flex items-center gap-3">
-                      <div className="w-4 h-4 bg-gradient-to-br from-[#0E5543] to-[#1a7f66] rounded-full shadow-lg"></div>
-                      <span className="font-bold text-[#0E5543] text-lg font-['Inter']">
-                        50+
-                      </span>
-                    </div>
-                    <p className="text-[#0E5543]/80 text-sm font-['Text-book']">
-                      Years of Excellence
-                    </p>
-                  </div>
-                  <div className="space-y-3 p-4 bg-[#F2E1C5]/40 rounded-2xl backdrop-blur-sm border border-[#F2E1C5]/60">
-                    <div className="flex items-center gap-3">
-                      <div className="w-4 h-4 bg-gradient-to-br from-[#0E5543] to-[#1a7f66] rounded-full shadow-lg"></div>
-                      <span className="font-bold text-[#0E5543] text-lg font-['Inter']">
-                        ISO 9001
-                      </span>
-                    </div>
-                    <p className="text-[#0E5543]/80 text-sm font-['Text-book']">
-                      Quality Certified
-                    </p>
-                  </div>
-                  <div className="space-y-3 p-4 bg-[#F2E1C5]/40 rounded-2xl backdrop-blur-sm border border-[#F2E1C5]/60">
-                    <div className="flex items-center gap-3">
-                      <div className="w-4 h-4 bg-gradient-to-br from-[#0E5543] to-[#1a7f66] rounded-full shadow-lg"></div>
-                      <span className="font-bold text-[#0E5543] text-lg font-['Inter']">
-                        1000+
-                      </span>
-                    </div>
-                    <p className="text-[#0E5543]/80 text-sm font-['Text-book']">
-                      Projects Completed
-                    </p>
-                  </div>
-                  <div className="space-y-3 p-4 bg-[#F2E1C5]/40 rounded-2xl backdrop-blur-sm border border-[#F2E1C5]/60">
-                    <div className="flex items-center gap-3">
-                      <div className="w-4 h-4 bg-gradient-to-br from-[#0E5543] to-[#1a7f66] rounded-full shadow-lg"></div>
-                      <span className="font-bold text-[#0E5543] text-lg font-['Inter']">
-                        24/7
-                      </span>
-                    </div>
-                    <p className="text-[#0E5543]/80 text-sm font-['Text-book']">
-                      Expert Support
-                    </p>
+                  <div className="columns-1 md:columns-4 lg:columns-5 gap-6 max-w-6xl mx-auto space-y-6">
+                    {sections.map((item, index) => (
+                      <div
+                        key={index}
+                        className="break-inside-avoid space-y-2 p-3 bg-[#F2E1C5]/40 rounded-xl backdrop-blur-sm border border-[#F2E1C5]/60 h-50 overflow-hidden w-30  "
+                      >
+                        <h4 className="text-xs font-semibold text-[#0E5543] uppercase tracking-wide font-['Inter']">
+                          {item.title}
+                        </h4>
+                        <p style={{}} className="text-xs text-[#0E5543]/70 leading-snug font-['Text-book']">
+                          {item.content}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
                 {/* Enhanced Description */}
                 <div className="space-y-4 max-w-2xl">
-                  <p className="text-lg text-[#0E5543]/90 leading-relaxed font-['Text-book']"
-                              style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
-                    For over half a century, our family-owned quarry has been
-                    transforming raw marble into
-                    <span className="font-semibold text-[#1a7f66]">
-                      {" "}
-                      breathtaking masterpieces
-                    </span>{" "}
-                    that grace the world's most prestigious spaces. We blend{" "}
-                    <span className="italic">
-                      generations of artisan wisdom
-                    </span>{" "}
-                    with <span className="italic">precision engineering</span>{" "}
-                    to create marble that tells a story.
+                  <p
+                    className="text-lg text-[#0E5543]/90 leading-relaxed font-['Text-book']"
+                    style={{
+                      fontFamily: "Montserrat",
+                      fontWeight: "200",
+                      letterSpacing: "0.1em",
+                    }}
+                  >
+                    At Rishabh Green Marbles, our modern processing unit
+                    features the latest technology blended with Italian
+                    machinery, which produces extremely high-quality stones.
+                    From block cutting and polishing to automated resining and
+                    finishing, we have optimized our entire manufacturing
+                    process for the best efficiency, accuracy, and quality. This
+                    combination of technology with expert craftsmanship makes
+                    certain that every stone produced is suitable for the
+                    international market, offering perfect surfaces and strength
+                    for any interior or exterior or outdoor use.
                   </p>
                 </div>
               </motion.div>
@@ -227,7 +245,11 @@ const MarbleQuarryHome = () => {
               <motion.div
                 className="flex flex-col sm:flex-row gap-5 lg:gap-6 mb-7"
                 variants={itemVariants}
-                            style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
+                style={{
+                  fontFamily: "Montserrat",
+                  fontWeight: "200",
+                  letterSpacing: "0.1em",
+                }}
               >
                 <motion.button
                   className="group relative bg-gradient-to-r from-[#0E5543] to-[#1a7f66] text-white hover:from-[#1a7f66] hover:to-[#0E5543] px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 flex items-center gap-3 shadow-2xl hover:shadow-3xl overflow-hidden font-['Inter']"

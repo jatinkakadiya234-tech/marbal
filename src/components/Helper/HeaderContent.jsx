@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const HeaderContent = ({
   title = "Rishab Green Marbles",
-  subtitle = "Choose us for trusted quality, on-time delivery, and service that stands behind every installation.",
+  subtitle = "Turning the finest natural stones into masterpieces of elegance, precision, and lasting sophistication for any space.",
   tagline = "",
   theme = "light" // Added theme prop with default value
 }) => {

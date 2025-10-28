@@ -150,31 +150,24 @@ const About = () => {
                     style={{ fontFamily: 'Arial, sans-serif', fontWeight: '200', letterSpacing: '0.3em' }}
 
               >
-                Excellence Crafted with Passion Since{" "}
-                <span className="text-[#0E5543]">1995</span>
+                Legacy Etched in Stones 
               </h3>
 
-              <p
-                className={`text-base md:text-lg leading-relaxed ${theme === "dark" ? "text-gray-300" : "text-gray-700"
-                  } mb-4 md:mb-6`}
-            style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
-
-              >
-                At Surrey Marble & Granite, we believe that your living spaces should
-                reflect your personality and provide both beauty and functionality.
-                Our journey began with a simple vision: to transform homes with
-                natural stone that stands the test of time.
-              </p>
 
               <p
                 className={`text-base md:text-lg leading-relaxed ${theme === "dark" ? "text-gray-300" : "text-gray-700"
                   }`}
                          style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
               >
-                Our team of skilled craftsmen combines traditional techniques
-                with modern precision to create installations that are not only
-                beautiful but also built to last. Each project tells a story of
-                dedication, attention to detail, and passion for excellence.
+                Rishabh Green Marbles transforms nature's artistry into timeless beauty. With more than 25 years in the business, we specialize in Indian and imported granite, marble, sandstone, and slate with over 100 beautiful choices. Our stones are produced with Italian technology, striving for precision, quality, and durability. RGM brings spaces to life with luxurious materials that inspire, impress, and endure, from stunning interiors.
+              </p>
+              <p
+                className={`text-base md:text-lg leading-relaxed ${theme === "dark" ? "text-gray-300" : "text-gray-700"
+                  } mb-4 md:mb-6`}
+            style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
+
+              >
+              to architectural masterpieces. Being a lead marble exporter, Rishabh Green Marbles is trusted by clients all around the world, Rishabh Green Marbles combines traditional craftsmanship with cutting-edge technology, creating surfaces that tell a story. Through RGM, every craft represents beauty, strength, and a commitment to perfection.
               </p>
             </div>
 
@@ -188,10 +181,10 @@ const About = () => {
             >
               <div className="grid gap-3 md:gap-4">
                 {[
-                  "Premium quality marble, granite & quartz",
-                  "Expert measurement & installation",
-                  "Lifetime warranty on all workmanship",
-                  "Free consultation & design services",
+                  "Decades of Mastery",
+                  "Cutting-Edge Technology",
+                  "Vast Stone Collection",
+                  "Trusted Worldwide",
                 ].map((feature, i) => (
                   <motion.div
                     key={i}
