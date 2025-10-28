@@ -6,18 +6,18 @@ const ServiceNav = ({ categories, activeCategory, setActiveCategory }) => {
         <>
             {/* Category Selector */}
             <motion.div
-                className="flex flex-wrap gap-3 justify-center mb-12"
+                className="flex flex-wrap gap-2 sm:gap-3 justify-center mb-6 sm:mb-8 md:mb-10 lg:mb-12"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.6, duration: 0.5 }}
-                style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
+                style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.05em' }}
             >
               {categories.map((category) => (
 <motion.button
     key={category}
     whileTap={{ scale: 0.95 }}
-    className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all font-sans ${activeCategory === category ? 'border-2 border-white' : 'border-2 border-transparent'}`}
+    className={`px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 text-xs sm:text-sm font-medium transition-all font-sans ${activeCategory === category ? 'border-2 border-white' : 'border-2 border-transparent'}`}
     style={{ 
         backgroundColor: "#0E5543", 
         color: "white"

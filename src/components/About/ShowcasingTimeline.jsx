@@ -110,12 +110,7 @@ export default function ShowcasingTimeline() {
       duration: 1
     }, 0);
 
-    // Smooth scale animation based on scroll
-    tl.to(dot, {
-      scale: 1.1,
-      ease: "sine.inOut",
-      duration: 1
-    }, 0);
+    // Remove scale animation to keep dot size consistent
 
     return () => {
       tl.kill();
@@ -142,7 +137,7 @@ export default function ShowcasingTimeline() {
 
     const handleMouseLeave = () => {
       gsap.to(dot, {
-        scale: 1.1,
+        scale: 1,
         duration: 0.5,
         ease: "power2.out",
         background: "#0E5543",
@@ -253,16 +248,16 @@ export default function ShowcasingTimeline() {
             {milestones.map((m, idx) => (
               <motion.li
                 key={idx}
-                className="relative milestone-item"
+                className="relative milestone-item z-30"
                 variants={item}
                 onMouseEnter={() => setActiveIndex(idx)} // FIXED: Changed from onHoverStart to onMouseEnter
               >
                 <div className={`flex flex-col h-full md:flex-row items-center ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''} gap-10`}>
-                  <div className="md:w-1/2">
+                  <div className="md:w-1/2 z-10">
                     <motion.div
-                      className={`p-8 rounded-2xl bg-[#F2E1C5] border border-[#0E5543]/20 shadow-xl transition-all duration-500 ${
+                      className={`p-4 sm:p-6 md:p-8 bg-[#F2E1C5] border border-[#0E5543]/20 shadow-xl transition-all duration-500 ${
                         idx === activeIndex ? 'ring-2 ring-[#0E5543]/30 scale-105' : 'scale-100'
-                      }`}
+                      } relative z-40`}
                       whileHover={{
                         y: -8,
                         transition: { 
@@ -271,9 +266,9 @@ export default function ShowcasingTimeline() {
                         }
                       }}
                     >
-                      <h3 className="text-2xl md:text-3xl font-serif text-[#0E5543] mb-3" 
+                      <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif text-[#0E5543] mb-2 sm:mb-3" 
                        style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>{m.title}</h3>
-                      <p className="text-gray-700/90 leading-relaxed" 
+                      <p className="text-sm sm:text-base text-gray-700/90 leading-relaxed" 
                        style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>{m.desc}</p>
                     </motion.div>
                   </div>
@@ -299,11 +294,11 @@ export default function ShowcasingTimeline() {
                         />
                       </div>
 
-                      <div className={`w-32 h-32 rounded-full bg-white border-4 flex items-center justify-center shadow-lg transition-all duration-500 ${
+                      <div className={`w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 bg-white border-2 sm:border-3 md:border-4 flex items-center justify-center shadow-lg transition-all duration-500 rounded-b-lg sm:rounded-full ${
                         idx === activeIndex ? 'border-[#0E5543] scale-110' : 'border-[#0E5543]/60 scale-100'
-                      }`}>
+                      } relative z-40`}>
                         <motion.span 
-                          className={`text-2xl font-bold transition-all duration-500 ${
+                          className={`text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold transition-all duration-500 ${
                             idx === activeIndex ? 'text-[#0E5543] scale-110' : 'text-[#0E5543]/80 scale-100'
                           }`}
                           whileHover={{ scale: 1.1 }}

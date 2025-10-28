@@ -26,7 +26,7 @@ const Section5 = () => {
         </div>
 
         {/* Main content */}
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div className="max-w-5xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -39,9 +39,9 @@ const Section5 = () => {
               initial={{ scale: 0, rotate: -180 }}
               whileInView={{ scale: 1, rotate: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-[#0E5543] text-[#F2E1C5] mb-8 shadow-2xl shadow-[#0E5543]/30"
+              className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl bg-[#0E5543] text-[#F2E1C5] mb-4 sm:mb-6 md:mb-8 shadow-2xl shadow-[#0E5543]/30"
             >
-              <div className="text-2xl font-light">✓</div>
+              <div className="text-lg sm:text-xl md:text-2xl font-light">✓</div>
             </motion.div>
 
             {/* Main heading */}
@@ -49,7 +49,7 @@ const Section5 = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-5xl md:text-6xl font-serif font-light text-[#0E5543] mb-6 leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-light text-[#0E5543] mb-4 sm:mb-6 leading-tight"
             >
               Witness <span className="italic">Marble</span>
               <br />
@@ -73,7 +73,7 @@ const Section5 = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-xl md:text-2xl text-[#0E5543]/80 mb-10 max-w-3xl mx-auto leading-relaxed font-light"
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-[#0E5543]/80 mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed font-light"
             >
               Experience the transformation of raw marble into exquisite
               surfaces through our state-of-the-art technology and master
@@ -92,7 +92,7 @@ const Section5 = () => {
               {/* Button with gradient border effect */}
               <div className="relative">
                 {/* Main button */}
-                <button className="relative px-12 py-5 bg-amber-600 rounded-2xl font-medium text-lg tracking-wide group-hover:shadow-2xl group-hover:shadow-[#0E5543]/40 transition-all duration-500 overflow-hidden z-10 flex items-center mx-auto">
+                <button className="relative px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5 bg-amber-600 rounded-2xl font-medium text-sm sm:text-base md:text-lg tracking-wide group-hover:shadow-2xl group-hover:shadow-[#0E5543]/40 transition-all duration-500 overflow-hidden z-10 flex items-center mx-auto">
                   {/* Shine effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#F2E1C5]/20 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
 
@@ -114,7 +114,7 @@ const Section5 = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="text-[#0E5543]/60 mt-4 text-sm font-light"
+                className="text-[#0E5543]/60 mt-3 sm:mt-4 text-xs sm:text-sm font-light"
               >
                 Limited slots available • Complimentary consultation included
               </motion.p>

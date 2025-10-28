@@ -121,7 +121,7 @@ const MarbleQuarryHome = () => {
       {/* Hero Section */}
       <section
         ref={sectionRef}
-        className="relative flex items-center py-12  lg:py-0 min-h-screen "
+        className="relative flex items-center py-8 sm:py-12 lg:py-0 min-h-screen"
       >
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0E5543]/5 via-white to-[#0E5543]/10"></div>
@@ -130,29 +130,29 @@ const MarbleQuarryHome = () => {
         <div className="absolute top-10% left-5% w-72 h-72 bg-[#0E5543]/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20% right-10% w-96 h-96 bg-[#0E5543]/10 rounded-full blur-3xl"></div>
 
-        <div className="container mx-auto px-4 lg:px-8 relative py-20 z-10">
+        <div className="container mx-auto px-3 sm:px-4 lg:px-8 relative py-8 sm:py-12 lg:py-20 z-10">
           <motion.div
-            className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center"
+            className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 items-center"
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
             {/* Left Content - Enhanced */}
             <motion.div
-              className="space-y-12 lg:space-y-10"
+              className="space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12"
               variants={itemVariants}
             >
               {/* Main Heading */}
               <motion.div
-                className="space-y-8 lg:space-y-8"
+                className="space-y-4 sm:space-y-6 lg:space-y-8"
                 variants={itemVariants}
               >
                 <h1
-                  className="text-2xl lg:text-3xl xl:text-4xl font-norma text-[#0E5543] leading-tight "
+                  className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal text-[#0E5543] leading-tight"
                   style={{
                     fontFamily: "Arial, sans-serif",
                     fontWeight: "200",
-                    letterSpacing: "0.1em",
+                    letterSpacing: "0.05em",
                   }}
                 >
                   Stone{" "}
@@ -167,11 +167,11 @@ const MarbleQuarryHome = () => {
                   Marbles
                 </h1>
                 <p
-                  className="text-xl lg:text-2xl text-[#0E5543]/90 leading-relaxed font-light max-w-2xl font-['Text-book']"
+                  className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-[#0E5543]/90 leading-relaxed font-light max-w-2xl"
                   style={{
                     fontFamily: "Montserrat",
                     fontWeight: "200",
-                    letterSpacing: "0.1em",
+                    letterSpacing: "0.05em",
                   }}
                 >
                   Bringing spaces to life,{" "}
@@ -191,25 +191,25 @@ const MarbleQuarryHome = () => {
 
               {/* Enhanced Stats Section */}
               <motion.div
-                className="space-y-6 mb-10"
+                className="space-y-4 sm:space-y-6 mb-6 sm:mb-8 md:mb-10"
                 variants={itemVariants}
                 style={{
                   fontFamily: "Montserrat",
                   fontWeight: "200",
-                  letterSpacing: "0.1em",
+                  letterSpacing: "0.05em",
                 }}
               >
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-2xl">
-                  <div className="columns-1 md:columns-4 lg:columns-5 gap-6 max-w-6xl mx-auto space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-2xl">
+                  <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-3 sm:gap-4 md:gap-6 max-w-6xl mx-auto space-y-3 sm:space-y-4 md:space-y-6">
                     {sections.map((item, index) => (
                       <div
                         key={index}
-                        className="break-inside-avoid space-y-2 p-3 bg-[#F2E1C5]/40 rounded-xl backdrop-blur-sm border border-[#F2E1C5]/60 h-50 overflow-hidden w-30  "
+                        className="break-inside-avoid space-y-1 sm:space-y-2 p-2 sm:p-3 bg-[#F2E1C5]/40 rounded-lg sm:rounded-xl backdrop-blur-sm border border-[#F2E1C5]/60 overflow-hidden"
                       >
-                        <h4 className="text-xs font-semibold text-[#0E5543] uppercase tracking-wide font-['Inter']">
+                        <h4 className="text-xs sm:text-sm font-semibold text-[#0E5543] uppercase tracking-wide">
                           {item.title}
                         </h4>
-                        <p style={{}} className="text-xs text-[#0E5543]/70 leading-snug font-['Text-book']">
+                        <p className="text-xs sm:text-sm text-[#0E5543]/70 leading-snug">
                           {item.content}
                         </p>
                       </div>
@@ -218,13 +218,13 @@ const MarbleQuarryHome = () => {
                 </div>
 
                 {/* Enhanced Description */}
-                <div className="space-y-4 max-w-2xl">
+                <div className="space-y-3 sm:space-y-4 max-w-2xl">
                   <p
-                    className="text-lg text-[#0E5543]/90 leading-relaxed font-['Text-book']"
+                    className="text-sm sm:text-base md:text-lg text-[#0E5543]/90 leading-relaxed"
                     style={{
                       fontFamily: "Montserrat",
                       fontWeight: "200",
-                      letterSpacing: "0.1em",
+                      letterSpacing: "0.05em",
                     }}
                   >
                     At Rishabh Green Marbles, our modern processing unit
@@ -243,31 +243,31 @@ const MarbleQuarryHome = () => {
 
               {/* Enhanced CTA Buttons */}
               <motion.div
-                className="flex flex-col sm:flex-row gap-5 lg:gap-6 mb-7"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 lg:gap-6 mb-4 sm:mb-6 md:mb-7"
                 variants={itemVariants}
                 style={{
                   fontFamily: "Montserrat",
                   fontWeight: "200",
-                  letterSpacing: "0.1em",
+                  letterSpacing: "0.05em",
                 }}
               >
                 <motion.button
-                  className="group relative bg-gradient-to-r from-[#0E5543] to-[#1a7f66] text-white hover:from-[#1a7f66] hover:to-[#0E5543] px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 flex items-center gap-3 shadow-2xl hover:shadow-3xl overflow-hidden font-['Inter']"
+                  className="group relative bg-gradient-to-r from-[#0E5543] to-[#1a7f66] text-white hover:from-[#1a7f66] hover:to-[#0E5543] px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-xl sm:rounded-2xl font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 shadow-2xl hover:shadow-3xl overflow-hidden"
                   whileHover={{ scale: 1.03, y: -3 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <span className="relative z-10">Discover Our Process</span>
-                  <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                 </motion.button>
 
                 <motion.button
-                  className="group relative border-2 border-[#0E5543] text-[#0E5543] hover:bg-[#0E5543] hover:text-white px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 flex items-center gap-3 backdrop-blur-sm overflow-hidden font-['Inter']"
+                  className="group relative border-2 border-[#0E5543] text-[#0E5543] hover:bg-[#0E5543] hover:text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-xl sm:rounded-2xl font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 backdrop-blur-sm overflow-hidden"
                   whileHover={{ scale: 1.03, y: -3 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <span className="relative z-10">View Gallery</span>
-                  <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
                   <div className="absolute inset-0 bg-[#0E5543] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </motion.button>
               </motion.div>
@@ -276,10 +276,10 @@ const MarbleQuarryHome = () => {
             </motion.div>
 
             {/* Right Section - Combined Video and Original Image Grid */}
-            <motion.div className="space-y-8 " variants={itemVariants}>
+            <motion.div className="space-y-4 sm:space-y-6 md:space-y-8" variants={itemVariants}>
               {/* Video Section */}
               <motion.div
-                className="relative md:mb-18 overflow-hidden shadow-3xl border-4 border-white/90 bg-white/30 backdrop-blur-lg"
+                className="relative mb-4 sm:mb-6 md:mb-8 lg:mb-18 overflow-hidden shadow-2xl sm:shadow-3xl border-2 sm:border-4 border-white/90 bg-white/30 backdrop-blur-lg rounded-lg sm:rounded-xl"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.4 }}
               >
@@ -300,9 +300,9 @@ const MarbleQuarryHome = () => {
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
 
-                  <div className="absolute top-6 left-6">
-                    <span className="bg-[#0E5543] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-2xl border-2 border-white/20">
-                      🎬 Live Process Showcase
+                  <div className="absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6">
+                    <span className="bg-[#0E5543] text-white px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-2xl border border-white/20 sm:border-2">
+                      🎬 Live Process
                     </span>
                   </div>
 
@@ -334,7 +334,7 @@ const MarbleQuarryHome = () => {
                 {/* Background Pattern */}
                 <div className="absolute -inset-4 bg-[#0E5543]/5 -z-10"></div>
 
-                <div className="grid grid-cols-8 grid-rows-5 gap-3 lg:gap-4 h-64 lg:h-72">
+                <div className="grid grid-cols-8 grid-rows-5 gap-2 sm:gap-3 lg:gap-4 h-48 sm:h-56 md:h-64 lg:h-72">
                   {/* Large Main Image */}
                   <motion.div
                     className="col-span-4 row-span-4 relative group cursor-pointer  overflow-hidden shadow-2xl"

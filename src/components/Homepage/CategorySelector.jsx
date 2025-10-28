@@ -1,44 +1,61 @@
 import React, { useState, useRef } from "react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import HeaderContent from "../Helper/HeaderContent";
 
 const categories = [
   {
     name: "Indian Satwario",
-    image: "https://www.aclassmarble.co.in/images/media_images/240826063842_blog_image.jpg",
+    image:
+      "https://www.aclassmarble.co.in/images/media_images/240826063842_blog_image.jpg",
     description: "Trusted, everyday quality with clean design and great value",
     color: "from-amber-900/30 to-amber-700/20",
-    accent: "amber"
+    accent: "amber",
   },
   {
     name: "Indian Dobar White",
-    image: "https://www.aclassmarble.co.in/images/media_images/240730075202_blog_image.jpg",
-    description: "Luxury-grade craftsmanship with refined finishes and lasting durability",
+    image:
+      "https://www.aclassmarble.co.in/images/media_images/240730075202_blog_image.jpg",
+    description:
+      "Luxury-grade craftsmanship with refined finishes and lasting durability",
     color: "from-amber-800/30 to-amber-600/20",
-    accent: "amber"
+    accent: "amber",
   },
   {
     name: "Tropical White",
-    image: "https://lifencolors.in/cdn/shop/products/81d868_98eaac6a5ff84298b9e0728109e46c67_mv2_4af1098c-41e8-4961-9e60-a2e76d62a28a.jpg?v=1753695316",
+    image:
+      "https://lifencolors.in/cdn/shop/products/81d868_98eaac6a5ff84298b9e0728109e46c67_mv2_4af1098c-41e8-4961-9e60-a2e76d62a28a.jpg?v=1753695316",
     description: "Comfort-first designs to elevate your personal sanctuary",
     color: "from-amber-900/30 to-amber-700/20",
-    accent: "amber"
+    accent: "amber",
   },
   {
     name: "Dholikhan White+",
-    image: "https://www.ilpiccolodesign.it/wp-content/uploads/2022/08/kitchen-island-black-marble.jpg",
+    image:
+      "https://www.ilpiccolodesign.it/wp-content/uploads/2022/08/kitchen-island-black-marble.jpg",
     description: "Enhanced utility and style for modern cooking spaces",
     color: "from-amber-800/30 to-amber-600/20",
-    accent: "amber"
+    accent: "amber",
   },
 ];
 
 const CategorySelector = ({ activeCategory, setActiveCategory }) => {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [isButtonHovered, setIsButtonHovered] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const cardsRef = useRef([]);
   const navigate = useNavigate();
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % categories.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(
+      (prev) => (prev - 1 + categories.length) % categories.length
+    );
+  };
 
   // 3D tilt effect
   const use3dEffect = (ref) => {
@@ -74,9 +91,9 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
       transition: {
         duration: 4 + i * 0.5,
         repeat: Infinity,
-        ease: "easeInOut"
-      }
-    })
+        ease: "easeInOut",
+      },
+    }),
   };
 
   // Golden particles
@@ -116,15 +133,15 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
       y: -1,
       transition: {
         duration: 0.4,
-        ease: [0.17, 0.67, 0.83, 0.67]
-      }
+        ease: [0.17, 0.67, 0.83, 0.67],
+      },
     },
     tap: {
       scale: 0.99,
       transition: {
-        duration: 0.2
-      }
-    }
+        duration: 0.2,
+      },
+    },
   };
 
   const sparkleVariants = {
@@ -135,9 +152,9 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
       transition: {
         duration: 0.8,
         delay: i * 0.1,
-        ease: "easeOut"
-      }
-    })
+        ease: "easeOut",
+      },
+    }),
   };
 
   return (
@@ -147,7 +164,8 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
         <div
           className="absolute inset-0 opacity-90"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=1600&q=80')",
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=1600&q=80')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -163,18 +181,26 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
           theme="dark"
         />
 
-        {/* Responsive Grid Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative mb-16">
+        {/* Desktop Grid Cards */}
+        <div className="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-6 relative mb-16">
           {categories.map((cat, index) => {
-            const { x, y, rotateX, rotateY, handleMouseMove, handleMouseLeave } =
-              use3dEffect(cardsRef[index]);
+            const {
+              x,
+              y,
+              rotateX,
+              rotateY,
+              handleMouseMove,
+              handleMouseLeave,
+            } = use3dEffect(cardsRef[index]);
 
             return (
               <motion.div
                 key={cat.name}
                 ref={(el) => (cardsRef.current[index] = el)}
                 className={`relative h-[480px] cursor-pointer perspective-1000 
-                  ${activeCategory === cat.name.toLowerCase() ? "z-30" : "z-20"}`}
+                  ${
+                    activeCategory === cat.name.toLowerCase() ? "z-30" : "z-20"
+                  }`}
                 style={{
                   x,
                   y,
@@ -195,8 +221,12 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
               >
                 {/* Card content */}
                 <div className="absolute inset-0 overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${cat.color}`} />
-                  <div className={`absolute inset-0 border border-${cat.accent}-700/30`} />
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${cat.color}`}
+                  />
+                  <div
+                    className={`absolute inset-0 border border-${cat.accent}-700/30`}
+                  />
 
                   <motion.div
                     className="absolute inset-0 w-full h-full bg-cover bg-center"
@@ -215,10 +245,20 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                   <GoldenParticles count={20} accent={cat.accent} />
 
                   {/* Content */}
-                  <div className="absolute bottom-0 left-0 right-0 z-30 p-6"
-                              style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
-                    <h3 className="text-base font-['Poppins'] font-normal text-amber-50 mb-2">{cat.name}</h3>
-                    <p className="text-gray-300/90 mb-4 text-sm font-['Text-book']">{cat.description}</p>
+                  <div
+                    className="absolute bottom-0 left-0 right-0 z-30 p-6"
+                    style={{
+                      fontFamily: "Montserrat",
+                      fontWeight: "200",
+                      letterSpacing: "0.1em",
+                    }}
+                  >
+                    <h3 className="text-base font-['Poppins'] font-normal text-amber-50 mb-2">
+                      {cat.name}
+                    </h3>
+                    <p className="text-gray-300/90 mb-4 text-sm font-['Text-book']">
+                      {cat.description}
+                    </p>
                     <button
                       className="px-6 py-2 border border-amber-500/50 
                                  bg-amber-900/30 text-black text-sm uppercase 
@@ -236,6 +276,76 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
               </motion.div>
             );
           })}
+        </div>
+
+        {/* Mobile Carousel */}
+        <div className="sm:hidden relative mb-16">
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex"
+              animate={{ x: -currentSlide * 100 + "%" }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            >
+              {categories.map((cat, index) => (
+                <div key={cat.name} className="w-full flex-shrink-0 px-4">
+                  <motion.div
+                    className="relative h-[400px] cursor-pointer"
+                    onClick={() => setActiveCategory(cat.name.toLowerCase())}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <div className="absolute inset-0 overflow-hidden rounded-lg">
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br ${cat.color}`}
+                      />
+                      <motion.div
+                        className="absolute inset-0 w-full h-full bg-cover bg-center rounded-lg"
+                        style={{ backgroundImage: `url(${cat.image})` }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent rounded-lg" />
+
+                      <div className="absolute bottom-0 left-0 right-0 z-30 p-6">
+                        <h3 className="text-lg font-medium text-amber-50 mb-2">
+                          {cat.name}
+                        </h3>
+                        <p className="text-gray-300/90 mb-4 text-sm">
+                          {cat.description}
+                        </p>
+                        <button
+                          className="px-4 py-2 border border-amber-500/50 text-sm uppercase hover:bg-amber-800/50 transition-all duration-300 backdrop-blur-sm rounded"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setActiveCategory(cat.name.toLowerCase());
+                          }}
+                        >
+                          Discover
+                        </button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Carousel Controls */}
+          <p
+            onClick={prevSlide}
+            style={{backgroundColor:"transparent"}}
+            className="absolute left-2 top-[45%] -translate-y-1/2 z-40 p-2 text-white rounded-full backdrop-blur-sm hover:bg-black/70 transition-colors"
+          >
+            <FiChevronLeft size={20} />
+          </p>
+          <p
+          style={{backgroundColor:"transparent"}}
+            onClick={nextSlide}
+            className="absolute right-2 top-[45%] -translate-y-1/2 z-40 p-2  text-white rounded-full backdrop-blur-sm hover:bg-black/70 transition-colors"
+          >
+            <FiChevronRight size={20} />
+          </p>
+
+          {/* Dots Indicator */}
+         
         </div>
 
         {/* Premium Explore Button */}
@@ -312,8 +422,18 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                 animate={{ x: isButtonHovered ? 5 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <svg className="w-5 h-5 text-black hover:text-emerald-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                <svg
+                  className="w-5 h-5 text-black hover:text-emerald-900"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
                 </svg>
               </motion.div>
             </div>

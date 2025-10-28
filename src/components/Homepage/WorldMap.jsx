@@ -85,9 +85,9 @@ export default function WorldMap() {
   const [hoveredLocation, setHoveredLocation] = useState(null);
 
   return (
-    <div className="relative w-full max-w-full  p-8  bg-gradient-to-br from-[#0E5543] via-[#0E5543] to-[#0E5543] shadow-2xl border border-[#1A7A62]">
+    <div className="relative w-full max-w-full p-3 sm:p-4 md:p-6 lg:p-8 bg-gradient-to-br from-[#0E5543] via-[#0E5543] to-[#0E5543] shadow-2xl border border-[#1A7A62]">
       {/* Enhanced Header Section */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
         <HeaderContent
           tagline=""
           title=" Global Marble Excellence"
@@ -100,7 +100,7 @@ export default function WorldMap() {
   initial={{ opacity: 0, y: 40 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.3, duration: 0.8 }}
-  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mt-16 sm:mt-20 max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto"
+  className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 mt-8 sm:mt-12 md:mt-16 lg:mt-20 max-w-7xl px-2 sm:px-4 lg:px-8 mx-auto"
 >
   {[
   {
@@ -148,15 +148,15 @@ export default function WorldMap() {
       className="relative group cursor-pointer perspective-1000"
     >
       {/* Glass Card */}
-      <div className="relative bg-gradient-to-br from-white/25 via-white/10 to-white/5 backdrop-blur-xl  p-8 border border-white/40 shadow-2xl transition-all duration-500 overflow-hidden">
+      <div className="relative bg-gradient-to-br from-white/25 via-white/10 to-white/5 backdrop-blur-xl p-3 sm:p-4 md:p-6 lg:p-8 border border-white/40 shadow-2xl transition-all duration-500 overflow-hidden">
         
 
 
         {/* Icon Container */}
         <motion.div
-          className="relative mb-6 mx-auto w-20 h-20 flex items-center justify-center bg-white/50 backdrop-blur-sm  border border-white/60 shadow-lg"
+          className="relative mb-3 sm:mb-4 md:mb-6 mx-auto w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/50 backdrop-blur-sm border border-white/60 shadow-lg"
         >
-          <stat.icon className="text-3xl drop-shadow-lg" style={{ color: stat.color }} />
+          <stat.icon className="text-lg sm:text-xl md:text-2xl lg:text-3xl drop-shadow-lg" style={{ color: stat.color }} />
         </motion.div>
 
         {/* Number with White Text */}
@@ -164,10 +164,10 @@ export default function WorldMap() {
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: index * 0.2 + 0.5 }}
-          className="text-7xl font-black text-white mb-4 text-center tracking-tight drop-shadow-2xl"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-2 sm:mb-3 md:mb-4 text-center tracking-tight drop-shadow-2xl"
         >
           <AnimatedCounter from={0} to={stat.number} duration={2} />
-          <span className="text-5xl">{stat.suffix}</span>
+          <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">{stat.suffix}</span>
         </motion.div>
 
         {/* Label with White Text */}
@@ -175,7 +175,7 @@ export default function WorldMap() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: index * 0.2 + 0.7 }}
-          className="text-white text-base font-bold uppercase tracking-[0.3em] text-center drop-shadow-sm"
+          className="text-white text-xs sm:text-sm md:text-base font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em] md:tracking-[0.3em] text-center drop-shadow-sm"
         >
           {stat.label}
         </motion.div>
@@ -192,7 +192,7 @@ export default function WorldMap() {
       </div>
 
       {/* Map Container */}
-      <div className="relative bg-white rounded-2xl shadow-xl p-4 border border-[#D4C1A3] max-w-7xl mx-auto">
+      <div className="relative bg-white shadow-xl p-2 sm:p-3 md:p-4 border border-[#D4C1A3] max-w-7xl mx-auto">
         {/* Map Image with Enhanced Styling */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -201,11 +201,11 @@ export default function WorldMap() {
           className="relative"
            style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0E5543]/20 to-[#1A7A62]/20 rounded-2xl z-0"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0E5543]/20 to-[#1A7A62]/20 z-0"></div>
           <img
             src={mapImage}
             alt="World Map"
-            className="w-full h-auto rounded-lg shadow-inner border border-[#D4C1A3]"
+            className="w-full h-auto shadow-inner border border-[#D4C1A3]"
           />
 
           {/* Animated Location Markers - FIXED HOVER POSITION */}
@@ -242,7 +242,7 @@ export default function WorldMap() {
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <FaMapMarkerAlt
-                      size={28}
+                      size={window.innerWidth < 640 ? 20 : window.innerWidth < 768 ? 24 : 28}
                       className={`drop-shadow-lg transition-colors duration-200 ${selectedLocation?.name === loc.name
                         ? 'text-[#D35400]'
                         : hoveredLocation === loc.name
@@ -265,7 +265,7 @@ export default function WorldMap() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   whileHover={{ y: -2 }}
-                  className="text-xs sm:text-sm md:text-base font-bold text-white bg-gradient-to-r from-[#0E5543] to-[#1A7A62] px-1 sm:px-2 py-0.5 sm:py-1 rounded-full mt-1 shadow-lg border border-white/20 transition-all duration-200"
+                  className="text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-[#0E5543] to-[#1A7A62] px-1 sm:px-2 py-0.5 mt-1 shadow-lg border border-white/20 transition-all duration-200"
                 >
                   {loc.name}
                 </motion.span>
@@ -277,7 +277,7 @@ export default function WorldMap() {
                       initial={{ opacity: 0, y: 10, scale: 0.9 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 5, scale: 0.9 }}
-                      className="absolute top-full mt-2 bg-[#0E5543] text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10"
+                      className="absolute top-full mt-2 bg-[#0E5543] text-white text-xs px-2 py-1 whitespace-nowrap z-10 border border-white/20"
                     >
                       Click for details
                       <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-b-[#0E5543]" />
@@ -304,7 +304,7 @@ export default function WorldMap() {
         sm:top-4 sm:right-4 sm:left-auto sm:translate-x-0 
         sm:w-auto sm:max-w-sm
         bg-white/95 backdrop-blur-sm 
-        rounded-xl shadow-2xl border border-[#D4C1A3] 
+        shadow-2xl border border-[#D4C1A3] 
         p-4 sm:p-6 
         z-10
       "
@@ -312,19 +312,19 @@ export default function WorldMap() {
       {/* Header */}
       <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
         <FaMapMarkerAlt className="text-[#1A7A62] text-lg sm:text-xl" />
-        <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#0E5543]">
+        <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-[#0E5543]">
           {selectedLocation.name}
         </h3>
       </div>
 
       {/* Description */}
-      <p className="text-[#1A7A62] mb-2 sm:mb-3 text-sm sm:text-base leading-relaxed">
+      <p className="text-[#1A7A62] mb-2 sm:mb-3 text-xs sm:text-sm md:text-base leading-relaxed">
         {selectedLocation.description}
       </p>
 
       {/* Footer */}
       <div className="flex justify-between items-center text-xs sm:text-sm">
-        <span className="bg-[#F2E1C5] text-[#0E5543] px-2 py-1 rounded-full font-medium">
+        <span className="bg-[#F2E1C5] text-[#0E5543] px-2 py-1 font-medium border border-[#0E5543]/20">
           {selectedLocation.clients}
         </span>
         <button className="text-[#1A7A62] hover:text-[#0E5543] font-medium text-xs sm:text-sm">
@@ -343,14 +343,14 @@ export default function WorldMap() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.8 }}
-        className="text-center max-w-7xl  mx-auto mt-12 bg-white rounded-xl p-10 shadow-2xl border border-[#D4AF37]/30"
+        className="text-center max-w-7xl mx-auto mt-6 sm:mt-8 md:mt-10 lg:mt-12 bg-white p-4 sm:p-6 md:p-8 lg:p-10 shadow-2xl border border-[#D4AF37]/30"
       >
         {/* Elegant Icon */}
         <motion.div
           whileHover={{ scale: 1.1 }}
-          className="inline-flex mb-5 items-center justify-center w-16 h-16 bg-gradient-to-br from-[#0E5543] to-[#1A7A62] rounded-full shadow-lg"
+          className="inline-flex mb-3 sm:mb-4 md:mb-5 items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#0E5543] to-[#1A7A62] shadow-lg border border-white/20"
         >
-          <FaHandshake className="text-2xl text-[#F2E1C5]" />
+          <FaHandshake className="text-lg sm:text-xl md:text-2xl text-[#F2E1C5]" />
         </motion.div>
 
         {/* Premium Headline Section */}
@@ -359,29 +359,29 @@ export default function WorldMap() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="text-center mb-3 space-y-6"
+          className="text-center mb-3 sm:mb-4 md:mb-6 space-y-3 sm:space-y-4 md:space-y-6"
         >
           {/* Premium Serif Font */}
-          <h3 className="text-5xl  text-[#0E5543] ' leading-tight"
-         style={{ fontFamily: 'Arial, sans-serif', fontWeight: '200', letterSpacing: '0.1em' }}
+          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0E5543] leading-tight"
+         style={{ fontFamily: 'Arial, sans-serif', fontWeight: '200', letterSpacing: '0.05em' }}
           >
           Elevate Every Space with<br />
             <span className="italic font-light text-[#1A7A62]">Luxury Stone</span>
           </h3>
 
           {/* Elegant Description */}
-          <p className="text-[#1A7A62] text-lg max-w-2xl mx-auto leading-relaxed font-['Source_Serif_Pro'] font-light italic"
-            style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
+          <p className="text-[#1A7A62] text-sm sm:text-base md:text-lg max-w-xl sm:max-w-2xl mx-auto leading-relaxed font-light"
+            style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.05em' }}>
           Explore our premium marble and granite collections, meticulously crafted to bring unmatched elegance and sophistication to your projects. 
           </p>
         </motion.div>
 
 
-        <div className="flex gap-6 justify-center  flex-wrap"   style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
+        <div className="flex gap-3 sm:gap-4 md:gap-6 justify-center flex-wrap" style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.05em' }}>
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="px-10 py-4 bg-gradient-to-r from-[#0E5543] to-[#1A7A62] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg"
+            className="px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-4 bg-gradient-to-r from-[#0E5543] to-[#1A7A62] text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base md:text-lg border border-[#0E5543]"
           >
             Request Consultation
           </motion.button>
@@ -389,15 +389,15 @@ export default function WorldMap() {
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
 
-            className="px-10 py-4 bg-transparent border-2 border-[#0E5543] text-[#189173] font-semibold rounded-xl hover:bg-[#0E5543]/10 transition-all duration-300 text-lg"
-             style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
+            className="px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-4 bg-transparent border-2 border-[#0E5543] text-[#189173] font-semibold hover:bg-[#0E5543]/10 transition-all duration-300 text-sm sm:text-base md:text-lg"
+             style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.05em' }}
           >
             View Catalog
           </motion.button>
         </div>
 
-        <div className="mt-6 text-[#1A7A62] text-sm flex items-center justify-center gap-4 flex-wrap"
-         style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
+        <div className="mt-4 sm:mt-5 md:mt-6 text-[#1A7A62] text-xs sm:text-sm flex items-center justify-center gap-2 sm:gap-3 md:gap-4 flex-wrap"
+         style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.05em' }}>
 
           <span className="flex items-center gap-2">⭐ Premium Quality Guarantee</span>
           <span className="flex items-center gap-2">🌍 Global Shipping</span>

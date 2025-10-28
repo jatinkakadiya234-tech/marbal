@@ -132,7 +132,7 @@ const Section3 = () => {
       <section className="pt-20  pb-10 bg-gradient-to-br from-[#F2E1C5]/20 to-[#0E5543]/10"
       style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           {/* Header Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -144,11 +144,11 @@ const Section3 = () => {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#0E5543] text-[#F2E1C5] mb-6">
               <FiTool size={28} />
             </div>
-            <h2 className="text-4xl md:text-5xl font-serif font-light text-[#0E5543] mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif font-light text-[#0E5543] mb-4">
               Advanced Technology
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[#0E5543] to-[#F2E1C5] mx-auto mb-6"></div>
-            <p className="text-lg text-[#0E5543]/80 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#0E5543]/80 max-w-2xl mx-auto leading-relaxed">
               Discover the sophisticated machinery and innovative processes that
               elevate our marble craftsmanship to unparalleled excellence
             </p>
@@ -157,12 +157,12 @@ const Section3 = () => {
           {/* Category Tabs - Premium Design */}
           <div className="flex justify-center mb-16">
             <div className="bg-[#F2E1C5]/30 backdrop-blur-sm rounded-2xl p-2 border border-[#0E5543]/10">
-              <div className="flex flex-wrap justify-center gap-2">
+              <div className="flex flex-wrap justify-center gap-1 sm:gap-2">
                 {technologyCategories.map((category) => (
                   <button
                     key={category.id}
                     onClick={() => setActiveTab(category.id)}
-                    className={`px-6 py-3 flex items-center space-x-3 transition-all duration-500 transform hover:scale-105 ${
+                    className={`px-3 sm:px-4 md:px-6 py-2 sm:py-3 flex items-center space-x-2 sm:space-x-3 transition-all duration-500 transform hover:scale-105 ${
                       activeTab === category.id
                         ? "border-2 border-white"
                         : "border-2 border-transparent"
@@ -173,7 +173,7 @@ const Section3 = () => {
                     }}
                   >
                     <span>{category.icon}</span>
-                    <span className="font-medium whitespace-nowrap">
+                    <span className="font-medium whitespace-nowrap text-xs sm:text-sm md:text-base">
                       {category.name}
                     </span>
                   </button>
@@ -188,7 +188,7 @@ const Section3 = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, staggerChildren: 0.2 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8"
           >
             {activeCategory.technologies.map((tech, index) => (
               <motion.div
@@ -205,7 +205,7 @@ const Section3 = () => {
                 {/* Card with gradient border effect */}
                 <div className="relative bg-gradient-to-br from-[#F2E1C5] to-[#F2E1C5]/80  overflow-hidden border border-[#0E5543]/20 hover:border-[#0E5543]/40 transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#0E5543]/20">
                   {/* Image Container with Overlay */}
-                  <div className="relative h-72 overflow-hidden">
+                  <div className="relative h-48 sm:h-56 md:h-64 lg:h-72 overflow-hidden">
                     <img
                       src={tech.image}
                       alt={tech.name}
@@ -235,17 +235,17 @@ const Section3 = () => {
                     {/* Accent Line */}
                     <div className="w-12 h-1 bg-gradient-to-r from-[#0E5543] to-[#F2E1C5] mb-4"></div>
 
-                    <h3 className="text-2xl font-serif text-[#0E5543] mb-3 font-light">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-serif text-[#0E5543] mb-2 sm:mb-3 font-light">
                       {tech.name}
                     </h3>
-                    <p className="text-[#0E5543]/80 leading-relaxed mb-6">
+                    <p className="text-xs sm:text-sm md:text-base text-[#0E5543]/80 leading-relaxed mb-4 sm:mb-6">
                       {tech.description}
                     </p>
 
                     {/* Play Button */}
                     <button
                       onClick={() => setActiveVideo(tech.video)}
-                      className="inline-flex items-center px-5 py-2.5 bg-[#0E5543] text-[#F2E1C5] rounded-lg hover:bg-[#0E5543]/90 transition-all duration-300 group/btn font-medium"
+                      className="inline-flex items-center px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 bg-[#0E5543] text-[#F2E1C5] rounded-lg hover:bg-[#0E5543]/90 transition-all duration-300 group/btn font-medium text-xs sm:text-sm md:text-base"
                     >
                       <FiPlay className="mr-2 transition-transform group-hover/btn:translate-x-1" />
                       Watch in Action
@@ -268,10 +268,10 @@ const Section3 = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-12"
             >
-              <h3 className="text-2xl font-serif text-[#0E5543] mb-3">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-serif text-[#0E5543] mb-2 sm:mb-3">
                 {activeCategory.name}
               </h3>
-              <p className="text-[#0E5543]/70 italic max-w-3xl mx-auto">
+              <p className="text-xs sm:text-sm md:text-base text-[#0E5543]/70 italic max-w-3xl mx-auto">
                 {activeCategory.description}
               </p>
             </motion.div>

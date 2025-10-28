@@ -69,7 +69,7 @@ const Hero = () => {
 
   return (
     <>
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen h-screen flex items-center justify-center overflow-hidden">
         {/* Background Video */}
         <video
           autoPlay
@@ -94,19 +94,19 @@ const Hero = () => {
 
         {/* === Content === */}
         <motion.div
-          className="relative z-10 text-center md:px-12 lg:px-24 max-w-7xl"
+          className="relative z-10 text-center px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 max-w-7xl mx-auto w-full"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {/* Headline */}
           <motion.h1
-            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 leading-tight tracking-[0.35em] font-light text-white uppercase font-['Raleway']"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 sm:mb-6 leading-tight font-light text-white uppercase"
             variants={containerVariants}
             style={{
               fontFamily: "Arial, sans-serif",
               fontWeight: "200",
-              letterSpacing: "0.3em",
+              letterSpacing: "0.1em",
             }}
           >
             {headlineWords.map((word, i) => (
@@ -114,10 +114,9 @@ const Hero = () => {
                 key={i}
                 variants={wordVariants}
                 custom={i}
-                className="inline-block mr-4 text-4xl"
+                className="inline-block mr-2 sm:mr-3 md:mr-4"
                 style={{
-                  WebkitBackgroundClip: "text",
-                  // WebkitTextFillColor: "transparent",
+                  letterSpacing: "0.1em",
                 }}
               >
                 {word}
@@ -126,13 +125,16 @@ const Hero = () => {
           </motion.h1>
 
           {/* Company Line */}
-          <motion.div className="mb-6">
+          <motion.div className="mb-4 sm:mb-6">
             {companyWords.map((word, i) => (
               <motion.span
                 key={i}
                 variants={wordVariants}
                 custom={i + headlineWords.length}
-                className="text-lg md:text-xl lg:text-2xl font-light mr-3 text-gray-300 tracking-[0.4em] uppercase font-['Raleway']"
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-light mr-2 sm:mr-3 text-gray-300 uppercase"
+                style={{
+                  letterSpacing: "0.2em",
+                }}
               >
                 {word}
               </motion.span>
@@ -141,18 +143,18 @@ const Hero = () => {
 
           {/* Separator */}
           <motion.div
-            className="w-32 h-0.5 bg-gradient-to-r from-white/80 to-transparent mx-auto my-6"
+            className="w-16 sm:w-24 md:w-32 h-0.5 bg-gradient-to-r from-white/80 to-transparent mx-auto my-4 sm:my-6"
             variants={itemVariants}
           />
 
           {/* Subheading */}
           <motion.p
-            className="text-base md:text-lg lg:text-xl font-light text-gray-200 mb-8 max-w-4xl mx-auto leading-relaxed tracking-wide font-['Raleway']"
+            className="text-sm sm:text-base md:text-lg lg:text-xl font-light text-gray-200 mb-6 sm:mb-8 max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto leading-relaxed px-2 sm:px-0"
             variants={itemVariants}
             style={{
               fontFamily: "Montserrat",
               fontWeight: "200",
-              letterSpacing: "2px",
+              letterSpacing: "1px",
             }}
           >
             {subheadingWords.map((word, i) => (
@@ -160,8 +162,12 @@ const Hero = () => {
                 key={i}
                 variants={wordVariants}
                 custom={i + headlineWords.length + companyWords.length}
-                className="inline-block mr-2 opacity-95"
-                            style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '3px' }}
+                className="inline-block mr-1 sm:mr-2 opacity-95"
+                style={{ 
+                  fontFamily: 'Montserrat', 
+                  fontWeight: '200', 
+                  letterSpacing: '1px'
+                }}
               >
                 {word}
               </motion.span>
@@ -172,12 +178,12 @@ const Hero = () => {
         {/* Scroll Indicator */}
         {scrollIndicatorVisible && (
           <motion.div
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2"
             variants={scrollIndicatorVariants}
             initial="hidden"
             animate={["visible", "bounce"]}
           >
-            <FiArrowDown className="text-white w-6 h-6" />
+            <FiArrowDown className="text-white w-5 h-5 sm:w-6 sm:h-6" />
           </motion.div>
         )}
       </section>

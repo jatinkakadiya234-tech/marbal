@@ -62,13 +62,13 @@ const About = () => {
   };
 
   return (
-    <section id="about" className={`py-12 md:py-16 lg:py-24 bg-white transition-colors duration-500 overflow-hidden`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className={`py-8 sm:py-12 md:py-16 lg:py-24 bg-white transition-colors duration-500 overflow-hidden`}>
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Header */}
        <HeaderContent  />
 
         {/* Content */}
-        <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 md:gap-12 lg:gap-16">
           {/* Images Grid */}
           <motion.div
             className="lg:w-1/2 w-full"
@@ -77,7 +77,7 @@ const About = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            <div className="grid grid-cols-2 gap-4 md:gap-6">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
               <motion.div
                 className="relative  overflow-hidden group"
                 variants={imageVariants}
@@ -86,7 +86,7 @@ const About = () => {
                 <img
                   src={about1}
                   alt="Marble Installation"
-                  className="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-32 xs:h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0E5543]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </motion.div>
@@ -145,26 +145,25 @@ const About = () => {
           >
             <div className="mb-8 md:mb-10">
               <h3
-                className={`text-xl md:text-2xl lg:text-3xl font-serif font-semibold mb-6 md:mb-8 ${theme === "dark" ? "text-white" : "text-black"
+                className={`text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif font-semibold mb-4 sm:mb-6 md:mb-8 ${theme === "dark" ? "text-white" : "text-black"
                   }`}
-                    style={{ fontFamily: 'Arial, sans-serif', fontWeight: '200', letterSpacing: '0.3em' }}
-
+                style={{ fontFamily: 'Arial, sans-serif', fontWeight: '200', letterSpacing: '0.2em' }}
               >
                 Legacy Etched in Stones 
               </h3>
 
 
               <p
-                className={`text-base md:text-lg leading-relaxed ${theme === "dark" ? "text-gray-300" : "text-gray-700"
+                className={`text-sm sm:text-base md:text-lg leading-relaxed mb-3 sm:mb-4 ${theme === "dark" ? "text-gray-300" : "text-gray-700"
                   }`}
-                         style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
+                style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.05em' }}
               >
                 Rishabh Green Marbles transforms nature's artistry into timeless beauty. With more than 25 years in the business, we specialize in Indian and imported granite, marble, sandstone, and slate with over 100 beautiful choices. Our stones are produced with Italian technology, striving for precision, quality, and durability. RGM brings spaces to life with luxurious materials that inspire, impress, and endure, from stunning interiors.
               </p>
               <p
-                className={`text-base md:text-lg leading-relaxed ${theme === "dark" ? "text-gray-300" : "text-gray-700"
-                  } mb-4 md:mb-6`}
-            style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
+                className={`text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-5 md:mb-6 ${theme === "dark" ? "text-gray-300" : "text-gray-700"
+                  }`}
+                style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.05em' }}
 
               >
               to architectural masterpieces. Being a lead marble exporter, Rishabh Green Marbles is trusted by clients all around the world, Rishabh Green Marbles combines traditional craftsmanship with cutting-edge technology, creating surfaces that tell a story. Through RGM, every craft represents beauty, strength, and a commitment to perfection.
@@ -173,13 +172,13 @@ const About = () => {
 
             {/* Features List */}
             <motion.div
-              className="mb-8 md:mb-10 lg:mb-12"
+              className="mb-6 sm:mb-8 md:mb-10 lg:mb-12"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <div className="grid gap-3 md:gap-4">
+              <div className="grid gap-2 sm:gap-3 md:gap-4">
                 {[
                   "Decades of Mastery",
                   "Cutting-Edge Technology",
@@ -198,9 +197,9 @@ const About = () => {
                       size={18}
                     />
                     <span
-                      className={`text-sm md:text-base ${theme === "dark" ? "text-gray-300" : "text-gray-700"
+                      className={`text-xs sm:text-sm md:text-base ${theme === "dark" ? "text-gray-300" : "text-gray-700"
                         }`}
-                                  style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
+                      style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.05em' }}
                     >
                       {feature}
                     </span>
@@ -211,12 +210,12 @@ const About = () => {
 
             {/* Stats */}
             <motion.div
-              className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 lg:gap-8 text-center"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8 text-center"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-                          style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
+              style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.05em' }}
             >
               {[
                 { icon: FiAward, value: "25+", label: "Years Experience" },

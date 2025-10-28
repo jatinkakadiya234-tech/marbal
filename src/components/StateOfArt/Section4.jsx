@@ -21,7 +21,7 @@ return (
             <div className="absolute top-10 left-10 w-20 h-20 bg-[#F2E1C5]/10 rounded-full blur-xl"></div>
             <div className="absolute bottom-10 right-10 w-32 h-32 bg-[#F2E1C5]/5 rounded-full blur-2xl"></div>
             
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -29,14 +29,14 @@ return (
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-serif font-light text-[#F2E1C5] mb-4">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif font-light text-[#F2E1C5] mb-4">
                         Excellence in Numbers
                     </h2>
                     <div className="w-24 h-0.5 bg-gradient-to-r from-[#F2E1C5] to-transparent mx-auto mb-4"></div>
                     <div className="w-16 h-0.5 bg-gradient-to-r from-transparent to-[#F2E1C5] mx-auto"></div>
                 </motion.div>
 
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
                     {[
                         { value: '25+', label: 'Years of Mastery', suffix: 'Years' },
                         { value: '15', label: 'Advanced Machinery', suffix: 'Machines' },
@@ -51,28 +51,28 @@ return (
                             className="relative"
                         >
                             {/* Card with glassmorphism effect */}
-                            <div className="relative bg-white/10 backdrop-blur-lg  p-8 border border-white/20 shadow-2xl shadow-black/20">
+                            <div className="relative bg-white/10 backdrop-blur-lg p-3 sm:p-4 md:p-6 lg:p-8 border border-white/20 shadow-2xl shadow-black/20">
                                 
                                 <div className="relative z-10 text-center">
                                     {/* Main value with counter animation */}
                                     <motion.div 
-                                        className="text-5xl md:text-6xl font-serif font-bold text-[#F2E1C5] mb-3"
+                                        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-[#F2E1C5] mb-2 sm:mb-3"
                                         initial={{ opacity: 0 }}
                                         whileInView={{ opacity: 1 }}
                                         transition={{ delay: index * 0.1 + 0.3 }}
                                     >
                                         {stat.value}
-                                        {index === 2 && <span className="text-3xl">mm</span>}
-                                        {index === 3 && <span className="text-3xl">%</span>}
+                                        {index === 2 && <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl">mm</span>}
+                                        {index === 3 && <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl">%</span>}
                                     </motion.div>
                                     
                                     {/* Suffix */}
-                                    <div className="text-[#F2E1C5]/70 text-sm font-light mb-2 tracking-wider">
+                                    <div className="text-[#F2E1C5]/70 text-xs sm:text-sm font-light mb-1 sm:mb-2 tracking-wider">
                                         {stat.suffix}
                                     </div>
                                     
                                     {/* Label */}
-                                    <div className="text-[#F2E1C5]/90 font-medium text-lg leading-tight">
+                                    <div className="text-[#F2E1C5]/90 font-medium text-xs sm:text-sm md:text-base lg:text-lg leading-tight">
                                         {stat.label}
                                     </div>
                                 </div>

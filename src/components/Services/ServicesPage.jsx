@@ -64,7 +64,7 @@ export default function ServicesPage() {
       : services.filter((service) => service.category === activeCategory);
 
   return (
-    <section className="relative min-h-screen pb-15 bg-[white] overflow-hidden">
+    <section className="relative min-h-screen pb-8 sm:pb-10 md:pb-12 lg:pb-15 bg-[white] overflow-hidden">
       {/* Service Header */}
       <ServiceHeader />
 

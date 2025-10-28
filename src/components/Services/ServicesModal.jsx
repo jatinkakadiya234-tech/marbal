@@ -1,29 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function ServiceModal({ selectedService, setSelectedService }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <motion.div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      initial={isMobile ? false : { opacity: 0 }}
+      animate={isMobile ? false : { opacity: 1 }}
+      exit={isMobile ? false : { opacity: 0 }}
       style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
     >
       <motion.div
         className="absolute inset-0 bg-[#0E5543]/10 backdrop-blur-sm"
         onClick={() => setSelectedService(null)}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+        initial={isMobile ? false : { opacity: 0 }}
+        animate={isMobile ? false : { opacity: 1 }}
+        exit={isMobile ? false : { opacity: 0 }}
       ></motion.div>
 
       <motion.div
         className="relative w-full max-w-4xl rounded-2xl overflow-hidden bg-white border border-[#0E5543]/20 shadow-2xl z-10"
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.9, opacity: 0 }}
-        transition={{ type: "spring", damping: 25, stiffness: 300 }}
+        initial={isMobile ? false : { scale: 0.9, opacity: 0 }}
+        animate={isMobile ? false : { scale: 1, opacity: 1 }}
+        exit={isMobile ? false : { scale: 0.9, opacity: 0 }}
+        transition={isMobile ? undefined : { type: "spring", damping: 25, stiffness: 300 }}
       >
         <div className="aspect-video w-full relative">
           <img
@@ -76,23 +85,23 @@ export default function ServiceModal({ selectedService, setSelectedService }) {
 
           <div className="flex gap-4">
             <motion.button
-              whileHover={{
+              whileHover={isMobile ? undefined : {
                 scale: 1.05,
                 backgroundColor: "#0E5543",
                 color: "#F2E1C5",
               }}
-              whileTap={{ scale: 0.95 }}
+              whileTap={isMobile ? undefined : { scale: 0.95 }}
               className="flex-1 py-3 rounded-lg bg-[#0E5543] text-[#F2E1C5] font-medium font-sans"
             >
               Request Quote
             </motion.button>
             <motion.button
-              whileHover={{
+              whileHover={isMobile ? undefined : {
                 scale: 1.05,
                 backgroundColor: "transparent",
                 borderColor: "#0E5543",
               }}
-              whileTap={{ scale: 0.95 }}
+              whileTap={isMobile ? undefined : { scale: 0.95 }}
               className="flex-1 py-3 rounded-lg bg-transparent text-[#0E5543] font-medium border border-[#0E5543] font-sans"
               onClick={() => setSelectedService(null)}
             >
@@ -102,12 +111,12 @@ export default function ServiceModal({ selectedService, setSelectedService }) {
         </div>
 
         <motion.button
-          whileHover={{
+          whileHover={isMobile ? undefined : {
             scale: 1.1,
             backgroundColor: "#0E5543",
             color: "#F2E1C5",
           }}
-          whileTap={{ scale: 0.95 }}
+          whileTap={isMobile ? undefined : { scale: 0.95 }}
           className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-[#0E5543] border border-[#0E5543]/20 hover:bg-[#0E5543] hover:text-white transition-colors shadow-md"
           onClick={() => setSelectedService(null)}
         >

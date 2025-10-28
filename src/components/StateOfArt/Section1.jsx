@@ -20,8 +20,8 @@ return (
                 <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#F2E1C5]/10 to-transparent"></div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center">
                     {/* Content Section */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
@@ -41,13 +41,13 @@ return (
                             <span className="text-[#F2E1C5] font-light tracking-widest text-sm uppercase">Craftsmanship & Innovation</span>
                         </motion.div>
 
-                        <h2 className="text-4xl lg:text-5xl font-serif font-light text-[#F2E1C5] mb-6 leading-tight">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif font-light text-[#F2E1C5] mb-4 sm:mb-6 leading-tight">
                             Where <span className="italic font-normal">Timeless Craft</span> Meets Modern Innovation
                         </h2>
                         
                         <div className="w-20 h-0.5 bg-gradient-to-r from-[#F2E1C5] to-transparent mb-8"></div>
 
-                        <p className="text-lg text-[#F2E1C5]/80 leading-relaxed mb-8">
+                        <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#F2E1C5]/80 leading-relaxed mb-6 sm:mb-8">
                             At Rishab Green Marbles, we blend generations of stoneworking artistry with cutting-edge technology 
                             to deliver unparalleled perfection in every slab. Our sophisticated machinery ensures precision cuts, 
                             flawless finishes, and consistent quality that defines industry excellence.
@@ -62,7 +62,7 @@ return (
                                 className="flex items-center group"
                             >
                                 <div className="w-3 h-3 bg-[#F2E1C5] rounded-full mr-4 group-hover:scale-125 transition-transform duration-300"></div>
-                                <span className="text-[#F2E1C5] font-medium">ISO 9001 Certified Manufacturing Processes</span>
+                                <span className="text-[#F2E1C5] font-medium text-xs sm:text-sm md:text-base">ISO 9001 Certified Manufacturing Processes</span>
                             </motion.div>
                             <motion.div
                                 initial={{ opacity: 0, x: -20 }}
@@ -71,7 +71,7 @@ return (
                                 className="flex items-center group"
                             >
                                 <div className="w-3 h-3 bg-[#F2E1C5] rounded-full mr-4 group-hover:scale-125 transition-transform duration-300"></div>
-                                <span className="text-[#F2E1C5] font-medium">0.1mm Precision Tolerance Guarantee</span>
+                                <span className="text-[#F2E1C5] font-medium text-xs sm:text-sm md:text-base">0.1mm Precision Tolerance Guarantee</span>
                             </motion.div>
                             <motion.div
                                 initial={{ opacity: 0, x: -20 }}
@@ -80,7 +80,7 @@ return (
                                 className="flex items-center group"
                             >
                                 <div className="w-3 h-3 bg-[#F2E1C5] rounded-full mr-4 group-hover:scale-125 transition-transform duration-300"></div>
-                                <span className="text-[#F2E1C5] font-medium">Advanced Digital Quality Control Systems</span>
+                                <span className="text-[#F2E1C5] font-medium text-xs sm:text-sm md:text-base">Advanced Digital Quality Control Systems</span>
                             </motion.div>
                         </div>
 
@@ -102,11 +102,11 @@ return (
                         className="relative"
                     >
                         {/* Main Image Container */}
-                        <div className="relative  overflow-hidden border-2 border-[#F2E1C5]/20 shadow-2xl shadow-black/30">
+                        <div className="relative overflow-hidden border-2 border-[#F2E1C5]/20 shadow-2xl shadow-black/30">
                             <img
                                 src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                                 alt="Advanced marble cutting technology"
-                                className="w-full h-96 object-cover transition-transform duration-700 hover:scale-105"
+                                className="w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover transition-transform duration-700 hover:scale-105"
                             />
                             
                             {/* Gradient Overlay */}
@@ -124,8 +124,8 @@ return (
                                     <div className="absolute inset-0 bg-[#F2E1C5] rounded-full animate-ping opacity-20"></div>
                                     
                                     {/* Main Button */}
-                                    <div className="relative w-20 h-20 bg-gradient-to-br from-[#F2E1C5] to-[#F2E1C5]/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-2xl shadow-black/40">
-                                        <FiPlay size={28} className="text-[#0E5543] ml-1" />
+                                    <div className="relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-[#F2E1C5] to-[#F2E1C5]/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-2xl shadow-black/40">
+                                        <FiPlay size={16} className="text-[#0E5543] ml-1 sm:text-xl md:text-2xl" />
                                     </div>
                                     
                                     {/* Hover Effect */}
@@ -151,7 +151,7 @@ return (
                             transition={{ delay: 0.6, duration: 0.6 }}
                             className="text-center mt-6"
                         >
-                            <p className="text-[#F2E1C5]/60 text-sm font-light">Watch our precision technology in action</p>
+                            <p className="text-[#F2E1C5]/60 text-xs sm:text-sm font-light">Watch our precision technology in action</p>
                         </motion.div>
                     </motion.div>
                 </div>
