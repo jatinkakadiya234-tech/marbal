@@ -60,10 +60,10 @@ const Hero = () => {
   };
 
   // === Text Sections ===
-  const headlineWords = "Exquisite Natural Stone Creations".split(" ");
-  const companyWords = "From Rishab Green Marbles".split(" ");
+  const headlineWords = "Rishabh Green Marbles ".split(" ");
+  const companyWords = "Premium, from core to craft ".split(" ");
   const subheadingWords =
-    "We are Surrey's leading supplier of marble, granite, limestone and quartz worktops, flooring and bathroom interiors for your home. Our craftsman will transform your interior to a room that you'll love and feel proud of and which will impress your family and friends.".split(
+    "Redefining luxury since 1990 with the finest marbles, sandstones, and granites. Gleaned from prime quarries, sculpted with precision, and polished to perfection. Each stone is carved to endure, elevate your spaces, and inspire timeless elegance to worldwide standards. ".split(
       " "
     );
 

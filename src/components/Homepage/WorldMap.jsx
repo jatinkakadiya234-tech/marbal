@@ -91,8 +91,7 @@ export default function WorldMap() {
         <HeaderContent
           tagline=""
           title=" Global Marble Excellence"
-          subtitle="Serving premium clients across 7 countries with 500+ luxury marble installations.
-          From royal palaces to corporate headquarters, we bring world-class marble excellence to your doorstep."
+          subtitle="Transforming spaces across countries like UAE, Qatar,Saudi Arabia, and Europe countries with 1,000+ iconic marble creations. From majestic estates to landmark projects, we deliver unmatched global marble excellence."
           theme="dark"
         />
 
@@ -366,15 +365,14 @@ export default function WorldMap() {
           <h3 className="text-5xl  text-[#0E5543] ' leading-tight"
          style={{ fontFamily: 'Arial, sans-serif', fontWeight: '200', letterSpacing: '0.1em' }}
           >
-            Elevate Your Space with<br />
-            <span className="italic font-light text-[#1A7A62]">Exquisite Marble</span>
+          Elevate Every Space with<br />
+            <span className="italic font-light text-[#1A7A62]">Luxury Stone</span>
           </h3>
 
           {/* Elegant Description */}
           <p className="text-[#1A7A62] text-lg max-w-2xl mx-auto leading-relaxed font-['Source_Serif_Pro'] font-light italic"
             style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
-            Chosen by 500+ luxury projects globally. Where artistry meets architecture
-            in perfect harmony.
+          Explore our premium marble and granite collections, meticulously crafted to bring unmatched elegance and sophistication to your projects. 
           </p>
         </motion.div>
 

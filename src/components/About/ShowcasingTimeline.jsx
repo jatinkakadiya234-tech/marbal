@@ -9,10 +9,16 @@ import HeaderContent from '../Helper/HeaderContent';
 gsap.registerPlugin(ScrollTrigger);
 
 const milestones = [
-  { year: '1995', title: 'Founded', desc: 'RGM began its journey in premium stone craftsmanship.' },
-  { year: '2005', title: 'Expanded Services', desc: 'Introduced bespoke kitchen and bath solutions.' },
-  { year: '2015', title: 'Sustainable Sourcing', desc: 'Committed to responsible, world-class material sourcing.' },
-  { year: '2025', title: 'Design Innovation', desc: 'Launched new premium and uni collections with modern finishes.' },
+  { year: '1975', title: 'Founded', desc: 'Foundation years of the mining industry setup & future expansion' },
+  { year: '1981', title: 'Expanded Services', desc: 'Commencement of mining in green marble' },
+  { year: '1986', title: 'Sustainable Sourcing', desc: 'Business expansion to the international market' },
+  { year: '1991', title: 'Design Innovation', desc: 'First Marble Processing Unit Set up at Banarasi Marbles ' },
+  { year: '1996', title: 'Design Innovation', desc: 'Opening export outlets in Germany, the UAE, and China & participating in international expos.' },
+  { year: '2000', title: 'Design Innovation', desc: 'Established a 100% export-oriented unit under Rishabh Green Marbles' },
+  { year: '2005', title: 'Design Innovation', desc: 'Invested in advanced machinery & processing technology.' },
+  { year: '2010', title: 'Design Innovation', desc: 'Received recognition for the delivery of quality products globally.' },
+  // { year: '2015', title: 'Design Innovation', desc: 'Developed into an independent company backed by decades of experience.' },
+  // { year: '2020', title: 'Design Innovation', desc: 'Onboarded premium clients and expanded business overseas.' },
 ];
 
 const container = {
@@ -78,13 +84,11 @@ export default function ShowcasingTimeline() {
         trigger: timelineRef.current,
         start: "top center",
         end: "bottom center",
-        scrub: 2, // Increased scrub for smoother movement
+        scrub: 2,
         onUpdate: (self) => {
           const progress = self.progress;
-          // Smooth active index transition with easing
-          const easedProgress = self.progress; // Use raw progress for smoother index changes
           const newIndex = Math.min(
-            Math.floor(easedProgress * milestones.length),
+            Math.floor(progress * milestones.length),
             milestones.length - 1
           );
           setActiveIndex(newIndex);
@@ -95,13 +99,13 @@ export default function ShowcasingTimeline() {
     // Ultra-smooth dot movement with custom easing
     tl.to(dot, {
       y: maxTravelDistance,
-      ease: "sine.inOut", // Smoother easing function
+      ease: "sine.inOut",
       duration: 1
     }, 0);
 
     // Additional smooth animations
     tl.to(dot, {
-      rotation: 360, // Subtle rotation for smoothness
+      rotation: 360,
       ease: "none",
       duration: 1
     }, 0);
@@ -117,7 +121,7 @@ export default function ShowcasingTimeline() {
       tl.kill();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, []);
+  }, [milestones.length]); // Added dependency
 
   // Enhanced hover interactions with smoother animations
   useEffect(() => {
@@ -129,10 +133,10 @@ export default function ShowcasingTimeline() {
       gsap.to(dot, {
         scale: 1.4,
         duration: 0.5,
-        ease: "elastic.out(1, 0.8)", // Smoother elastic effect
+        ease: "elastic.out(1, 0.8)",
         background: "#0E5543",
         boxShadow: "0 0 30px rgba(14, 85, 67, 0.6)",
-        rotation: 180 // Smooth rotation on hover
+        rotation: 180
       });
     };
 
@@ -183,14 +187,13 @@ export default function ShowcasingTimeline() {
   }, [activeIndex]);
 
   return (
-    <section ref={ref} className="relative min-h-screen py-36 overflow-hidden bg-white">
-      {/* Enhanced Background with Smooth Animations */}
+    <div ref={ref} className="relative  py-36 overflow-hidden bg-white">
+      {/* Enhanced Background with Smooth Animations - FIXED: Removed duplicate animate prop */}
       <motion.div 
         className="absolute inset-0 bg-gradient-to-b from-white to-gray-50"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        
       />
 
       <motion.div 
@@ -252,10 +255,9 @@ export default function ShowcasingTimeline() {
                 key={idx}
                 className="relative milestone-item"
                 variants={item}
-                onHoverStart={() => setActiveIndex(idx)}
-                
+                onMouseEnter={() => setActiveIndex(idx)} // FIXED: Changed from onHoverStart to onMouseEnter
               >
-                <div className={`flex flex-col md:flex-row items-center ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''} gap-10`}>
+                <div className={`flex flex-col h-full md:flex-row items-center ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''} gap-10`}>
                   <div className="md:w-1/2">
                     <motion.div
                       className={`p-8 rounded-2xl bg-[#F2E1C5] border border-[#0E5543]/20 shadow-xl transition-all duration-500 ${
@@ -291,7 +293,7 @@ export default function ShowcasingTimeline() {
                           } : {}}
                           transition={{ 
                             duration: 3, 
-                            repeat: Infinity,
+                            repeat: idx === activeIndex ? Infinity : 0,
                             ease: "easeInOut"
                           }}
                         />
@@ -339,6 +341,6 @@ export default function ShowcasingTimeline() {
           </motion.ol>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
