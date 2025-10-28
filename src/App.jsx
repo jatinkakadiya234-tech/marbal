@@ -1,6 +1,7 @@
 // App.js (Main Component)
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from 'react-helmet-async';
 
 import Navbar from "./components/Helper/Navbar";
 import Homepage from "./components/Homepage/Homepage";
@@ -15,18 +16,18 @@ import ScrollToTop from "./components/Helper/NavigateScrolletop";
 import OurStones from "./components/OurStones/OurStones";
 import HelpandAddvaice from "./components/Advice/HelpandAddvaice";
 import BlogsPage from "./components/Blogs/BlogsPage";
+import WhatsAppFloat from "./components/Helper/WhatsAppFloat";
 
 function App() {
 
 
 
   return (
-    <Router>
-
-      <div className=" ">
-        <ScrollToTop />
-
-        <Navbar />
+    <HelmetProvider>
+      <Router>
+        <div className=" ">
+          <ScrollToTop />
+          <Navbar />
 
         <Routes>
           <Route path="/" element={<Homepage />} />
@@ -45,8 +46,10 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer />
+        <WhatsAppFloat />
       </div>
     </Router>
+    </HelmetProvider>
   );
 }
 
