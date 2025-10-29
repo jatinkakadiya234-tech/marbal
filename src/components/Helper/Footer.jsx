@@ -29,22 +29,22 @@ const Footer = () => {
       {/* Marble pattern */}
       <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2Zy...')]"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 py-16">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 py-8 sm:py-12">
           {/* Brand */}
           <div className="md:col-span-4">
             <div className="flex items-center mb-6">
               <div className="w-3 h-3 bg-[#F2E1C5] rounded-full mr-3 shadow-lg shadow-[#F2E1C5]/30"></div>
-              <h3 className="text-2xl font-serif font-bold text-[#F2E1C5]"style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-serif font-bold text-[#F2E1C5]" style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
                 Rishab Green Marbles
               </h3>
             </div>
-            <p className="text-[#F2E1C5]/80 mb-6 leading-relaxed" style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
+            <p className="text-sm sm:text-base text-[#F2E1C5]/80 mb-4 sm:mb-6 leading-relaxed" style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
               Providing premium quality natural marbles and stones since 1995.
               Our products transform spaces with elegance and timeless beauty
               that lasts generations.
             </p>
-            <div className="flex space-x-3">
+            <div className="flex space-x-2 sm:space-x-3">
               {[
                 { icon: <FiFacebook size={18} />, to: "/facebook" },
                 { icon: <FiTwitter size={18} />, to: "/twitter" },
@@ -53,7 +53,7 @@ const Footer = () => {
                 <p
                   key={index}
                   onClick={() => navigate(item.to)}
-                  className="p-3 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg text-[#F2E1C5] transition-all duration-300 group hover:bg-[#F2E1C5] hover:text-[#0E5543] cursor-pointer"
+                  className="p-2 sm:p-3 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg text-[#F2E1C5] transition-all duration-300 group hover:bg-[#F2E1C5] hover:text-[#0E5543] cursor-pointer"
                 >
                   {item.icon}
                 </p>
@@ -157,13 +157,13 @@ const Footer = () => {
         </div>
 
         {/* Newsletter + Badges */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 w-full">
-          <div className="flex flex-wrap gap-4">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 sm:gap-6 w-full border-t border-[#F2E1C5]/20 pt-6 sm:pt-8">
+          <div className="flex flex-wrap gap-2 sm:gap-3">
             {["Premium Quality", "25+ Years Experience", "Worldwide Shipping"].map(
               (item, index) => (
                 <div
                   key={index}
-                  className="flex items-center text-sm bg-[#0E5543] border border-[#F2E1C5]/20 rounded-full px-4 py-2"
+                  className="flex items-center text-xs sm:text-sm bg-[#0E5543] border border-[#F2E1C5]/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2"
                 >
                   <FiAward className="text-[#F2E1C5] mr-2" size={14} />
                   <span className="text-[#F2E1C5]">{item}</span>
@@ -193,8 +193,8 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-[#F2E1C5]/20 pt-8 pb-10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[#F2E1C5]/60 text-sm flex items-center text-center md:text-left">
+        <div className="border-t border-[#F2E1C5]/20 pt-6 sm:pt-8 pb-6 sm:pb-8 flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
+          <p className="text-[#F2E1C5]/60 text-xs sm:text-sm flex items-center text-center md:text-left">
             © {new Date().getFullYear()} Rishab Green Marbles. Crafted with{" "}
             <FiHeart className="text-[#F2E1C5] mx-1" /> in India.
           </p>
@@ -225,7 +225,7 @@ const Footer = () => {
       <button
         style={{ background: "#F2E1C5" }}
         onClick={scrollToTop}
-        className="fixed bottom-6 right-6 p-3 bg-[#F2E1C5] text-[#0E5543] rounded-lg shadow-lg hover:shadow-xl hover:shadow-[#F2E1C5]/30 transition-all duration-300 z-40 group border border-[#F2E1C5]/30"
+        className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 p-2.5 sm:p-3 bg-[#F2E1C5] text-[#0E5543] rounded-lg shadow-lg hover:shadow-xl hover:shadow-[#F2E1C5]/30 transition-all duration-300 z-40 group border border-[#F2E1C5]/30"
         aria-label="Scroll to top"
       >
         <FiArrowUp size={20} className="group-hover:-translate-y-0.5 transition-transform" />

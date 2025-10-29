@@ -112,7 +112,7 @@ const MarbleQuarryHome = () => {
   };
 
   return (
-    <div className="bg-white font-['Inter'] overflow-hidden">
+    <div className="bg-white font-['Inter'] overflow-hidden w-full">
       <style jsx global>{`
         @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
         @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap");
@@ -121,7 +121,7 @@ const MarbleQuarryHome = () => {
       {/* Hero Section */}
       <section
         ref={sectionRef}
-        className="relative flex items-center py-8 sm:py-12 lg:py-0 min-h-screen"
+        className="relative flex items-center py-4 sm:py-8 lg:py-12 min-h-screen w-full"
       >
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0E5543]/5 via-white to-[#0E5543]/10"></div>
@@ -130,49 +130,51 @@ const MarbleQuarryHome = () => {
         <div className="absolute top-10% left-5% w-72 h-72 bg-[#0E5543]/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20% right-10% w-96 h-96 bg-[#0E5543]/10 rounded-full blur-3xl"></div>
 
-        <div className="container mx-auto px-3 sm:px-4 lg:px-8 relative py-8 sm:py-12 lg:py-20 z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative py-4 sm:py-8 lg:py-16 z-10 w-full max-w-7xl">
           <motion.div
-            className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 items-center"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center w-full"
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
             {/* Left Content - Enhanced */}
             <motion.div
-              className="space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12"
+              className="space-y-4 sm:space-y-6 lg:space-y-8 w-full"
               variants={itemVariants}
             >
               {/* Main Heading */}
               <motion.div
-                className="space-y-4 sm:space-y-6 lg:space-y-8"
+                className="space-y-3 sm:space-y-4 lg:space-y-6 w-full"
                 variants={itemVariants}
               >
-                <h1
-                  className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal text-[#0E5543] leading-tight"
+                <p
+                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-normal text-[#0E5543] leading-tight w-full"
                   style={{
                     fontFamily: "Arial, sans-serif",
                     fontWeight: "200",
                     letterSpacing: "0.05em",
                   }}
                 >
-                  Advanced 
+                  <span className="block sm:inline">Advanced </span>
                   <span className="font-['Cormorant_Garamond'] italic font-light text-[#1a7f66] drop-shadow-sm">
                     Production 
-                  </span>{" "}
-                 Facility 
-                  <br />
-                  <span className="font-['Cormorant_Garamond'] italic font-light text-[#1a7f66] drop-shadow-sm">
-                   Engineering Excellence
-                  </span>{" "}
-                  in Every Stone 
+                  </span>
+                  <span className="block sm:inline">Facility</span> 
+                  <br className="hidden sm:block" />
+                  <span className="block sm:inline">
+                    <span className="font-['Cormorant_Garamond'] italic font-light text-[#1a7f66] drop-shadow-sm">
+                      Engineering Excellence
+                    </span>{" "}
+                    in Every Stone
+                  </span> 
 
-                </h1>
+                </p>
                
               </motion.div>
 
               {/* Enhanced Stats Section */}
               <motion.div
-                className="space-y-4 sm:space-y-6 mb-6 sm:mb-8 md:mb-10"
+                className="space-y-3 sm:space-y-4 mb-4 sm:mb-6 w-full"
                 variants={itemVariants}
                 style={{
                   fontFamily: "Montserrat",
@@ -182,9 +184,9 @@ const MarbleQuarryHome = () => {
               >
               
                 {/* Enhanced Description */}
-                <div className="space-y-3 sm:space-y-4 max-w-2xl">
+                <div className="space-y-3 sm:space-y-4 w-full">
                   <p
-                    className="text-sm sm:text-base md:text-lg text-[#0E5543]/90 leading-relaxed"
+                    className="text-sm sm:text-base md:text-lg text-[#0E5543]/90 leading-relaxed w-full"
                     style={{
                       fontFamily: "Montserrat",
                       fontWeight: "200",
@@ -207,7 +209,7 @@ const MarbleQuarryHome = () => {
 
               {/* Enhanced CTA Buttons */}
               <motion.div
-                className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 lg:gap-6 mb-4 sm:mb-6 md:mb-7"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full"
                 variants={itemVariants}
                 style={{
                   fontFamily: "Montserrat",
@@ -216,22 +218,22 @@ const MarbleQuarryHome = () => {
                 }}
               >
                 <motion.button
-                  className="group relative bg-gradient-to-r from-[#0E5543] to-[#1a7f66] text-white hover:from-[#1a7f66] hover:to-[#0E5543] px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-xl sm:rounded-2xl font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 shadow-2xl hover:shadow-3xl overflow-hidden"
+                  className="group relative bg-gradient-to-r from-[#0E5543] to-[#1a7f66] text-white hover:from-[#1a7f66] hover:to-[#0E5543] px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl overflow-hidden w-full sm:w-auto"
                   whileHover={{ scale: 1.03, y: -3 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <span className="relative z-10">Discover Our Process</span>
-                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                 </motion.button>
 
                 <motion.button
-                  className="group relative border-2 border-[#0E5543] text-[#0E5543] hover:bg-[#0E5543] hover:text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-xl sm:rounded-2xl font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 backdrop-blur-sm overflow-hidden"
+                  className="group relative border-2 border-[#0E5543] text-[#0E5543] hover:bg-[#0E5543] hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm overflow-hidden w-full sm:w-auto"
                   whileHover={{ scale: 1.03, y: -3 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <span className="relative z-10">View Gallery</span>
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
                   <div className="absolute inset-0 bg-[#0E5543] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </motion.button>
               </motion.div>
@@ -240,14 +242,14 @@ const MarbleQuarryHome = () => {
             </motion.div>
 
             {/* Right Section - Combined Video and Original Image Grid */}
-            <motion.div className="space-y-4 sm:space-y-6 md:space-y-8" variants={itemVariants}>
+            <motion.div className="space-y-4 sm:space-y-6 w-full" variants={itemVariants}>
               {/* Video Section */}
               <motion.div
-                className="relative mb-4 sm:mb-6 md:mb-8 lg:mb-18 overflow-hidden shadow-2xl sm:shadow-3xl border-2 sm:border-4 border-white/90 bg-white/30 backdrop-blur-lg rounded-lg sm:rounded-xl"
+                className="relative mb-4 sm:mb-6 overflow-hidden shadow-xl border-2 border-white/90 bg-white/30 backdrop-blur-lg rounded-lg w-full"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.4 }}
               >
-                <div className="relative aspect-video">
+                <div className="relative aspect-video w-full">
                   <video
                     ref={videoRef}
                     autoPlay
@@ -264,17 +266,17 @@ const MarbleQuarryHome = () => {
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
 
-                  <div className="absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6">
-                    <span className="bg-[#0E5543] text-white px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-2xl border border-white/20 sm:border-2">
+                  <div className="absolute top-2 sm:top-3 md:top-4 left-2 sm:left-3 md:left-4">
+                    <span className="bg-[#0E5543] text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs font-semibold shadow-xl border border-white/20">
                       🎬 Live Process
                     </span>
                   </div>
 
-                  <div className="absolute bottom-6 left-6 max-w-md">
-                    <h3 className="text-white text-xl lg:text-2xl font-bold mb-2 drop-shadow-2xl">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-white text-base sm:text-lg font-bold mb-2 drop-shadow-xl">
                       Advanced CNC Cutting
                     </h3>
-                    <p className="text-white/90 text-base drop-shadow-lg">
+                    <p className="text-white/90 text-sm drop-shadow-lg">
                       Witness our precision machinery in action
                     </p>
                   </div>
@@ -294,14 +296,14 @@ const MarbleQuarryHome = () => {
               </motion.div>
 
               {/* Original Unique Image Gallery Layout */}
-              <motion.div className="relative" variants={containerVariants}>
+              <motion.div className="relative w-full" variants={containerVariants}>
                 {/* Background Pattern */}
                 <div className="absolute -inset-4 bg-[#0E5543]/5 -z-10"></div>
 
-                <div className="grid grid-cols-8 grid-rows-5 gap-2 sm:gap-3 lg:gap-4 h-48 sm:h-56 md:h-64 lg:h-72">
+                <div className="grid grid-cols-8 grid-rows-5 gap-2 sm:gap-3 h-48 sm:h-56 lg:h-64 w-full">
                   {/* Large Main Image */}
                   <motion.div
-                    className="col-span-4 row-span-4 relative group cursor-pointer  overflow-hidden shadow-2xl"
+                    className="col-span-4 row-span-4 relative group cursor-pointer overflow-hidden shadow-xl rounded-lg"
                     variants={imageVariants}
                     whileHover="hover"
                   >
@@ -311,9 +313,9 @@ const MarbleQuarryHome = () => {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="absolute bottom-4 left-4 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                      <div className="bg-black/70 backdrop-blur-md p-3 border border-white/20">
-                        <h4 className="text-white font-bold text-sm">
+                    <div className="absolute bottom-2 sm:bottom-3 md:bottom-4 left-2 sm:left-3 md:left-4 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                      <div className="bg-black/70 backdrop-blur-md p-2 sm:p-3 border border-white/20">
+                        <h4 className="text-white font-bold text-xs sm:text-sm">
                           {imageGallery[0].title}
                         </h4>
                         <p className="text-white/80 text-xs">
@@ -325,7 +327,7 @@ const MarbleQuarryHome = () => {
 
                   {/* Top Right Small Image */}
                   <motion.div
-                    className="col-span-4 row-span-2 relative group cursor-pointer overflow-hidden shadow-lg"
+                    className="col-span-4 row-span-2 relative group cursor-pointer overflow-hidden shadow-lg rounded-lg"
                     variants={imageVariants}
                     whileHover="hover"
                   >
@@ -335,8 +337,8 @@ const MarbleQuarryHome = () => {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="bg-black/60 text-white text-xs px-2 py-1 backdrop-blur-sm">
+                    <div className="absolute top-1 sm:top-2 right-1 sm:right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="bg-black/60 text-white text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 backdrop-blur-sm">
                         {imageGallery[1].title}
                       </span>
                     </div>
@@ -344,7 +346,7 @@ const MarbleQuarryHome = () => {
 
                   {/* Bottom Right Medium Image */}
                   <motion.div
-                    className="col-span-2 row-span-2 relative group cursor-pointer overflow-hidden shadow-lg"
+                    className="col-span-2 row-span-2 relative group cursor-pointer overflow-hidden shadow-lg rounded-lg"
                     variants={imageVariants}
                     whileHover="hover"
                   >
@@ -358,7 +360,7 @@ const MarbleQuarryHome = () => {
 
                   {/* Bottom Right Small Image */}
                   <motion.div
-                    className="col-span-2 row-span-2 relative group cursor-pointer overflow-hidden shadow-lg"
+                    className="col-span-2 row-span-2 relative group cursor-pointer overflow-hidden shadow-lg rounded-lg"
                     variants={imageVariants}
                     whileHover="hover"
                   >

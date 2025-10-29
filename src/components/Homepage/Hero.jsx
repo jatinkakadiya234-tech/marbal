@@ -94,14 +94,14 @@ const Hero = () => {
 
         {/* === Content === */}
         <motion.div
-          className="relative z-10 text-center px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 max-w-7xl mx-auto w-full"
+          className="relative z-10 text-center px-3 sm:px-4 md:px-8 lg:px-16 xl:px-24 max-w-6xl mx-auto w-full"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {/* Headline */}
-          <motion.h1
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 sm:mb-6 leading-tight font-light text-white uppercase"
+          <motion.p
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-3 sm:mb-4 md:mb-6 leading-tight font-light text-white uppercase"
             variants={containerVariants}
             style={{
               fontFamily: "Arial, sans-serif",
@@ -114,7 +114,7 @@ const Hero = () => {
                 key={i}
                 variants={wordVariants}
                 custom={i}
-                className="inline-block mr-2 sm:mr-3 md:mr-4"
+                className="inline-block mr-1.5 sm:mr-2 md:mr-3"
                 style={{
                   letterSpacing: "0.1em",
                 }}
@@ -122,16 +122,16 @@ const Hero = () => {
                 {word}
               </motion.span>
             ))}
-          </motion.h1>
+          </motion.p>
 
           {/* Company Line */}
-          <motion.div className="mb-4 sm:mb-6">
+          <motion.div className="mb-3 sm:mb-4 md:mb-6">
             {companyWords.map((word, i) => (
               <motion.span
                 key={i}
                 variants={wordVariants}
                 custom={i + headlineWords.length}
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-light mr-2 sm:mr-3 text-gray-300 uppercase"
+                className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-light mr-1.5 sm:mr-2 text-gray-300 uppercase"
                 style={{
                   letterSpacing: "0.2em",
                 }}
@@ -143,13 +143,13 @@ const Hero = () => {
 
           {/* Separator */}
           <motion.div
-            className="w-16 sm:w-24 md:w-32 h-0.5 bg-gradient-to-r from-white/80 to-transparent mx-auto my-4 sm:my-6"
+            className="w-12 sm:w-16 md:w-24 h-0.5 bg-gradient-to-r from-white/80 to-transparent mx-auto my-3 sm:my-4 md:my-6"
             variants={itemVariants}
           />
 
           {/* Subheading */}
           <motion.p
-            className="text-sm sm:text-base md:text-lg lg:text-xl font-light text-gray-200 mb-6 sm:mb-8 max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto leading-relaxed px-2 sm:px-0"
+            className="text-xs sm:text-sm md:text-base lg:text-lg font-light text-gray-200 mb-4 sm:mb-6 md:mb-8 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-3 sm:px-2 md:px-0"
             variants={itemVariants}
             style={{
               fontFamily: "Montserrat",
@@ -162,7 +162,7 @@ const Hero = () => {
                 key={i}
                 variants={wordVariants}
                 custom={i + headlineWords.length + companyWords.length}
-                className={`inline-block mr-1 sm:mr-2 opacity-95 ${word === '1990' ? 'text-[#8DB59] font-semibold' : ''}`}
+                className={`inline-block mr-0.5 sm:mr-1 opacity-95 ${word === '1990' ? 'text-yellow-400 font-semibold' : ''}`}
                 style={{ 
                   fontFamily: 'Montserrat', 
                   fontWeight: word === '1990' ? '600' : '200', 
@@ -178,12 +178,12 @@ const Hero = () => {
         {/* Scroll Indicator */}
         {scrollIndicatorVisible && (
           <motion.div
-            className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2"
+            className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2"
             variants={scrollIndicatorVariants}
             initial="hidden"
             animate={["visible", "bounce"]}
           >
-            <FiArrowDown className="text-white w-5 h-5 sm:w-6 sm:h-6" />
+            <FiArrowDown className="text-white w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
           </motion.div>
         )}
       </section>
