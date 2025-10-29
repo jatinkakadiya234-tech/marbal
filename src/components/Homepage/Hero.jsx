@@ -162,10 +162,10 @@ const Hero = () => {
                 key={i}
                 variants={wordVariants}
                 custom={i + headlineWords.length + companyWords.length}
-                className="inline-block mr-1 sm:mr-2 opacity-95"
+                className={`inline-block mr-1 sm:mr-2 opacity-95 ${word === '1990' ? 'text-[#8DB59] font-semibold' : ''}`}
                 style={{ 
                   fontFamily: 'Montserrat', 
-                  fontWeight: '200', 
+                  fontWeight: word === '1990' ? '600' : '200', 
                   letterSpacing: '1px'
                 }}
               >
