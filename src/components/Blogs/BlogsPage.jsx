@@ -268,20 +268,7 @@ const BlogsPage = () => {
       </div>
 
       {/* Social Media Section */}
-      <div className="bg-gradient-to-r from-[#0E5543] to-[#1a7a5e] py-12 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#F2E1C5] mb-4 font-['Playfair_Display']">Follow Our Marble Journey</h2>
-          <p className="text-[#F2E1C5]/90 mb-8">Join our community for daily inspiration and expert tips</p>
-          <div className="flex justify-center space-x-6">
-            {[FaFacebook, FaInstagram, FaTwitter, FaLinkedin].map((Icon, index) => (
-              <a key={index} href="#" className="w-12 h-12 bg-[#F2E1C5] text-[#0E5543] rounded-full flex items-center justify-center hover:bg-[#F2E1C5]/90 transition-colors">
-                <Icon className="text-xl" />
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-
+    
       {/* Custom Styles */}
       <style jsx>{`
         .line-clamp-2 {

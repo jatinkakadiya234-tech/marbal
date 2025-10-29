@@ -155,38 +155,19 @@ const MarbleQuarryHome = () => {
                     letterSpacing: "0.05em",
                   }}
                 >
-                  Stone{" "}
+                  Advanced 
                   <span className="font-['Cormorant_Garamond'] italic font-light text-[#1a7f66] drop-shadow-sm">
-                    Solutions
+                    Production 
                   </span>{" "}
-                  Meets by
+                 Facility 
                   <br />
                   <span className="font-['Cormorant_Garamond'] italic font-light text-[#1a7f66] drop-shadow-sm">
-                    Rishabh Green
+                   Engineering Excellence
                   </span>{" "}
-                  Marbles
+                  in Every Stone 
+
                 </h1>
-                <p
-                  className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-[#0E5543]/90 leading-relaxed font-light max-w-2xl"
-                  style={{
-                    fontFamily: "Montserrat",
-                    fontWeight: "200",
-                    letterSpacing: "0.05em",
-                  }}
-                >
-                  Bringing spaces to life,{" "}
-                  <span className="font-['Cormorant_Garamond'] italic font-medium text-[#0E5543]">
-                    we deliver versatile stone solutions for
-                    interiors,exteriors,
-                  </span>
-                  and{" "}
-                  <span className="font-['Cormorant_Garamond'] italic font-medium text-[#0E5543]">
-                    outdoor spaces,
-                  </span>{" "}
-                  combining precision,{" "}
-                  <span className="font-semibold text-[#1a7f66]">vation,</span>{" "}
-                  and timeless craftsmanship in every project.
-                </p>
+               
               </motion.div>
 
               {/* Enhanced Stats Section */}
@@ -199,24 +180,7 @@ const MarbleQuarryHome = () => {
                   letterSpacing: "0.05em",
                 }}
               >
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-2xl">
-                  <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-3 sm:gap-4 md:gap-6 max-w-6xl mx-auto space-y-3 sm:space-y-4 md:space-y-6">
-                    {sections.map((item, index) => (
-                      <div
-                        key={index}
-                        className="break-inside-avoid space-y-1 sm:space-y-2 p-2 sm:p-3 bg-[#F2E1C5]/40 rounded-lg sm:rounded-xl backdrop-blur-sm border border-[#F2E1C5]/60 overflow-hidden"
-                      >
-                        <h4 className="text-xs sm:text-sm font-semibold text-[#0E5543] uppercase tracking-wide">
-                          {item.title}
-                        </h4>
-                        <p className="text-xs sm:text-sm text-[#0E5543]/70 leading-snug">
-                          {item.content}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
+              
                 {/* Enhanced Description */}
                 <div className="space-y-3 sm:space-y-4 max-w-2xl">
                   <p

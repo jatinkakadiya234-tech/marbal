@@ -31,9 +31,9 @@ const Homepage = () => {
         <FeaturedCollections />
       </Suspense> */}
 
-      <Suspense fallback={<div>Loading Products...</div>}>
+      {/* <Suspense fallback={<div>Loading Products...</div>}>
         <Productcollection />
-      </Suspense>
+      </Suspense> */}
 
       {/* <Suspense fallback={<div>Loading Application...</div>}>
         <Application />

@@ -184,6 +184,7 @@ const About = () => {
                   "Cutting-Edge Technology",
                   "Vast Stone Collection",
                   "Trusted Worldwide",
+                  "Sustainable Craftsmanship ",
                 ].map((feature, i) => (
                   <motion.div
                     key={i}

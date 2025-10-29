@@ -6,35 +6,35 @@ import HeaderContent from "../Helper/HeaderContent";
 
 const categories = [
   {
-    name: "Indian Satwario",
+    name: "Surata Green",
     image:
       "https://www.aclassmarble.co.in/images/media_images/240826063842_blog_image.jpg",
-    description: "Trusted, everyday quality with clean design and great value",
+    description: "Choose the shade of distinction, crafted for those who value rarity.",
     color: "from-amber-900/30 to-amber-700/20",
     accent: "amber",
   },
   {
-    name: "Indian Dobar White",
+    name: "ForestGreen ",
     image:
       "https://www.aclassmarble.co.in/images/media_images/240730075202_blog_image.jpg",
     description:
-      "Luxury-grade craftsmanship with refined finishes and lasting durability",
+      "Enrich your interiors with the timeless charm of nature’s finest creation.",
     color: "from-amber-800/30 to-amber-600/20",
     accent: "amber",
   },
   {
-    name: "Tropical White",
+    name: "Spider Green",
     image:
       "https://lifencolors.in/cdn/shop/products/81d868_98eaac6a5ff84298b9e0728109e46c67_mv2_4af1098c-41e8-4961-9e60-a2e76d62a28a.jpg?v=1753695316",
-    description: "Comfort-first designs to elevate your personal sanctuary",
+    description: "Let the calm of green breathe life into every corner of your space. ",
     color: "from-amber-900/30 to-amber-700/20",
     accent: "amber",
   },
   {
-    name: "Dholikhan White+",
+    name: "R Green ",
     image:
       "https://www.ilpiccolodesign.it/wp-content/uploads/2022/08/kitchen-island-black-marble.jpg",
-    description: "Enhanced utility and style for modern cooking spaces",
+    description: "Choose the shade of distinction ,crafted for those who value rare. ",
     color: "from-amber-800/30 to-amber-600/20",
     accent: "amber",
   },
@@ -175,9 +175,9 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <HeaderContent
-          tagline="way choose us"
-          title="Top Product Categories"
-          subtitle=" Explore Uni for smart essentials and Premium for exclusive, refined finishes"
+         
+          title=" Our curated Selections"
+          subtitle=" Discover our signature stone collections that redefine elegance and style"
           theme="dark"
         />
 
