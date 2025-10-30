@@ -1,4 +1,5 @@
 // components/Footer.js
+import { Earth } from "lucide-react";
 import React from "react";
 import {
   FiPhone,
@@ -128,28 +129,29 @@ const Footer = () => {
                     <FiMapPin className="text-[#F2E1C5]" size={16} />
                   </div>
                   <span className="text-[#F2E1C5]/80">
-                    123 Marble Street, Stone City, 10001
+                   Araji No. 114, NH. 8, Sukher,
+Udaipur - 313001, Rajasthan, India
                   </span>
                 </li>
                 <li className="flex items-start">
                   <div className="p-2 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg mr-4 flex-shrink-0">
                     <FiPhone className="text-[#F2E1C5]" size={16} />
                   </div>
-                  <span className="text-[#F2E1C5]/80">+1 (555) 123-4567</span>
+                  <span className="text-[#F2E1C5]/80">+919414165062, +918433820920</span>
                 </li>
                 <li className="flex items-start">
                   <div className="p-2 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg mr-4 flex-shrink-0">
                     <FiMail className="text-[#F2E1C5]" size={16} />
                   </div>
                   <span className="text-[#F2E1C5]/80">
-                    info@rishabgreenmarbles.com
+                    rishabhgreenminerals@gmail.com
                   </span>
                 </li>
                 <li className="flex items-start">
                   <div className="p-2 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg mr-4 flex-shrink-0">
-                    <FiClock className="text-[#F2E1C5]" size={16} />
+                    <Earth className="text-[#F2E1C5]" size={16} />
                   </div>
-                  <span className="text-[#F2E1C5]/80">Mon-Sat: 9AM - 6PM</span>
+                  <span className="text-[#F2E1C5]/80">rishabhgreenmarbles.com</span>
                 </li>
               </ul>
             </div>

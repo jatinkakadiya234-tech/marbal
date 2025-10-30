@@ -132,7 +132,7 @@ export default function WorldMap() {
   },
   {
     icon: FaRocket,
-    number: 15,
+    number: 25,
     suffix: "+",
     label: "Years",
     accent: "#1F2937",

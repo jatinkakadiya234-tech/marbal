@@ -39,8 +39,8 @@ const Navbar = () => {
         { name: "Sandstone", path: "/sandstone" },
       ]
     },
-    { name: "Services", path: "/services" },
-    { name: "Technology Export", path: "/state-of-the-art" },
+    
+    { name: "Production Technology", path: "/state-of-the-art" },
     { 
       name: "Exporters", 
       path: "",
