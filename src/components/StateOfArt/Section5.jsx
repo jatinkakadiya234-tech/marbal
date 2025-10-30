@@ -92,15 +92,14 @@ const Section5 = () => {
               {/* Button with gradient border effect */}
               <div className="relative">
                 {/* Main button */}
-                <button className="relative px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5 bg-amber-600 rounded-2xl font-medium text-sm sm:text-base md:text-lg tracking-wide group-hover:shadow-2xl group-hover:shadow-[#0E5543]/40 transition-all duration-500 overflow-hidden z-10 flex items-center mx-auto">
+                <button className="relative px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5  rounded-2xl font-medium text-sm sm:text-base md:text-lg tracking-wide overflow-hidden z-10 flex items-center mx-auto">
                   {/* Shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#F2E1C5]/20 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
 
                   <span className="relative z-10">
                     Schedule a Private Factory Tour
                   </span>
                   <FiChevronRight
-                    className="ml-3 relative z-10 group-hover:translate-x-1 transition-transform duration-300"
+                    className="ml-3 relative z-10"
                     size={20}
                   />
                 </button>

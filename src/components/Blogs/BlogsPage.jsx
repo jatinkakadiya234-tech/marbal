@@ -164,7 +164,7 @@ const BlogsPage = () => {
                   placeholder="Your email address" 
                   className="w-full px-4 py-3 rounded-xl bg-white/10 border border-[#F2E1C5]/20 text-[#F2E1C5] placeholder-[#F2E1C5]/60 focus:outline-none focus:ring-2 focus:ring-[#F2E1C5]"
                 />
-                <button className="w-full bg-[#F2E1C5] text-[#0E5543] py-3 rounded-xl font-semibold hover:bg-[#F2E1C5]/90 transition-colors">
+                <button className="w-full bg-[#F2E1C5] text-[#0E5543] py-3 rounded-xl font-semibold ">
                   Subscribe
                 </button>
               </div>
@@ -254,7 +254,7 @@ const BlogsPage = () => {
                             </span>
                           ))}
                         </div>
-                        <button className="text-[#0E5543] hover:text-[#1a7a5e] transition-colors flex items-center gap-2 text-sm font-semibold">
+                        <button className="bg-white text-black flex items-center gap-2 text-sm font-semibold">
                           Read More <FaArrowRight className="text-xs" />
                         </button>
                       </div>

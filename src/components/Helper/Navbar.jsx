@@ -180,7 +180,8 @@ const Navbar = () => {
           <div className="lg:hidden flex items-center space-x-2 sm:space-x-3">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 sm:p-2.5 border bg-transparent border-[#F2E1C5] text-[#F2E1C5] rounded-sm focus:outline-none transition-all duration-300 hover:bg-[#F2E1C5] hover:text-[#0E5543]"
+              
+              className="p-2 sm:p-2.5   transition-all duration-300"
             >
               {isOpen ? <FiX size={18} /> : <FiMenu size={18} />}
             </button>
@@ -191,7 +192,7 @@ const Navbar = () => {
       {/* Mobile Overlay */}
       {isOpen && (
         <div
-          className="lg:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+          className="lg:hidden fixed inset-0 backdrop-blur-sm z-40"
           onClick={() => setIsOpen(false)}
         />
       )}

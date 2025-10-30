@@ -224,17 +224,15 @@ const MarbleQuarryHome = () => {
                 >
                   <span className="relative z-10">Discover Our Process</span>
                   <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                 </motion.button>
 
                 <motion.button
-                  className="group relative border-2 border-[#0E5543] text-[#0E5543] hover:bg-[#0E5543] hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm overflow-hidden w-full sm:w-auto"
-                  whileHover={{ scale: 1.03, y: -3 }}
-                  whileTap={{ scale: 0.98 }}
+                  className="group relative  text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base flex items-center justify-center gap-2 backdrop-blur-sm overflow-hidden w-full sm:w-auto"
+                
                 >
                   <span className="relative z-10">View Gallery</span>
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
-                  <div className="absolute inset-0 bg-[#0E5543] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5  transition-transform duration-300 relative z-10" />
                 </motion.button>
               </motion.div>
 

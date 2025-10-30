@@ -175,11 +175,7 @@ export default function VideoShot() {
                 color: "#0E5543",
               }}
               whileTap={{ scale: 0.95 }}
-              className={`px-5 py-2.5 text-sm font-medium border transition-all font-sans ${
-                activeCat === c
-                  ? "bg-[#F2E1C5] text-[black] border-[#F2E1C5] shadow-md"
-                  : "bg-white text-[#0E5543] border-[#F2E1C5]/40"
-              }`}
+              className={`px-5 py-2.5 text-sm font-medium border transition-all font-sans `}
               onClick={() => setActiveCat(c)}
             >
               {c}

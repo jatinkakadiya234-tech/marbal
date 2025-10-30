@@ -260,10 +260,9 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                       {cat.description}
                     </p>
                     <button
-                      className="px-6 py-2 border border-amber-500/50 
-                                 bg-amber-900/30 text-black text-sm uppercase 
-                                 hover:bg-amber-800/50 hover:text-emerald-800 
-                                 transition-all duration-300 backdrop-blur-sm"
+                      className="px-6 py-2 border
+                                
+                                 transition-all duration-300 "
                       onClick={(e) => {
                         e.stopPropagation();
                         setActiveCategory(cat.name.toLowerCase());
@@ -312,7 +311,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                           {cat.description}
                         </p>
                         <button
-                          className="px-4 py-2 border border-amber-500/50 text-sm uppercase hover:bg-amber-800/50 transition-all duration-300 backdrop-blur-sm rounded"
+                          className="px-4 py-2 border  text-sm uppercase  transition-all duration-300  rounded"
                           onClick={(e) => {
                             e.stopPropagation();
                             setActiveCategory(cat.name.toLowerCase());
@@ -358,32 +357,13 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
             onHoverStart={() => setIsButtonHovered(true)}
             onHoverEnd={() => setIsButtonHovered(false)}
             onClick={() => navigate("/OurStones")}
-            className="relative px-10 py-4 bg-amber-900/20 border border-amber-600/40 rounded-lg 
-                       text-amber-100 font-sans text-lg uppercase tracking-wider overflow-hidden 
-                       group backdrop-blur-sm hover:bg-amber-800/30 transition-colors duration-300"
+          
           >
             {/* Hover overlay */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-amber-600/20 via-amber-500/10 to-amber-600/20"
-              animate={{
-                x: isButtonHovered ? ["-100%", "100%"] : "-100%",
-              }}
-              transition={{
-                duration: 1.2,
-                ease: "easeInOut",
-              }}
-            />
+         
 
             {/* Golden border glow effect */}
-            <motion.div
-              className="absolute inset-0 rounded-lg border border-amber-500/40"
-              animate={{
-                boxShadow: isButtonHovered
-                  ? "0 0 25px rgba(180, 83, 9, 0.4)"
-                  : "0 0 0px rgba(180, 83, 9, 0.2)",
-              }}
-              transition={{ duration: 0.4 }}
-            />
+               
 
             {/* Subtle particles matching card theme */}
             {isButtonHovered && (
@@ -391,7 +371,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                 {[...Array(4)].map((_, i) => (
                   <motion.div
                     key={i}
-                    className="absolute w-1 h-1 bg-amber-400/70 rounded-full"
+                    className="absolute w-1 h- rounded-full"
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{
                       scale: [0, 1, 0],
@@ -414,7 +394,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
 
             {/* Button content */}
             <div className="relative z-10 flex items-center justify-center space-x-3">
-              <span className="text-black group-hover:text-emerald-900 transition-colors duration-300 font-medium">
+              <span className="text-black bg-white group-hover:text-emerald-900 transition-colors duration-300 font-medium">
                 View All Stone Collections
               </span>
 
@@ -423,7 +403,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                 transition={{ duration: 0.3 }}
               >
                 <svg
-                  className="w-5 h-5 text-black hover:text-emerald-900"
+                  className="w-5 h-5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

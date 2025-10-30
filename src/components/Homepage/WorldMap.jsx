@@ -389,7 +389,7 @@ export default function WorldMap() {
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
 
-            className="px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-4 bg-transparent border-2 border-[#0E5543] text-[#189173] font-semibold hover:bg-[#0E5543]/10 transition-all duration-300 text-sm sm:text-base md:text-lg"
+            className="px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-4 bg-white text-black text-sm sm:text-base md:text-lg"
              style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.05em' }}
           >
             View Catalog
