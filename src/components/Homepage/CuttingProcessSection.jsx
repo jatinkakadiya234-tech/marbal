@@ -41,6 +41,7 @@ const MarbleQuarryHome = () => {
       description: "Ready for delivery",
     },
   ];
+  
 
   const sections = [
     {
@@ -111,26 +112,25 @@ const MarbleQuarryHome = () => {
     },
   };
 
+  const title = "Precision Cutting Excellence";
+  const subtitle =
+    "Experience the fusion of advanced technology and expert craftsmanship in every stone we produce.";
+  
+  const theme = "light";
   return (
-    <div className="bg-white font-['Inter'] overflow-hidden w-full">
-      <style jsx global>{`
-        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
-        @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap");
-      `}</style>
+    <div className="bg-white overflow-hidden w-full">
 
+      {/* Header Section */}
+     
       {/* Hero Section */}
       <section
         ref={sectionRef}
-        className="relative flex items-center py-4 sm:py-8 lg:py-12 min-h-screen w-full"
+        className="relative flex items-center py-8 sm:py-12 w-full  "
       >
         {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0E5543]/5 via-white to-[#0E5543]/10"></div>
 
-        {/* Decorative Elements */}
-        <div className="absolute top-10% left-5% w-72 h-72 bg-[#0E5543]/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20% right-10% w-96 h-96 bg-[#0E5543]/10 rounded-full blur-3xl"></div>
-
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative py-4 sm:py-8 lg:py-16 z-10 w-full max-w-7xl">
+ 
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative py-8 sm:py-12 z-10 w-full max-w-7xl">
           <motion.div
             className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center w-full"
             variants={containerVariants}
@@ -139,42 +139,57 @@ const MarbleQuarryHome = () => {
           >
             {/* Left Content - Enhanced */}
             <motion.div
-              className="space-y-4 sm:space-y-6 lg:space-y-8 w-full"
+              className="space-y-4 sm:space-y-6 w-full"
               variants={itemVariants}
             >
               {/* Main Heading */}
               <motion.div
-                className="space-y-3 sm:space-y-4 lg:space-y-6 w-full"
+                className="space-y-4 sm:space-y-6 w-full text-center"
                 variants={itemVariants}
               >
-                <p
-                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-normal text-[#0E5543] leading-tight w-full"
-                  style={{
-                    fontFamily: "Arial, sans-serif",
-                    fontWeight: "200",
-                    letterSpacing: "0.05em",
-                  }}
-                >
-                  <span className="block sm:inline">Advanced </span>
-                  <span className="font-['Cormorant_Garamond'] italic font-light text-[#1a7f66] drop-shadow-sm">
-                    Production 
-                  </span>
-                  <span className="block sm:inline">Facility</span> 
-                  <br className="hidden sm:block" />
-                  <span className="block sm:inline">
-                    <span className="font-['Cormorant_Garamond'] italic font-light text-[#1a7f66] drop-shadow-sm">
-                      Engineering Excellence
-                    </span>{" "}
-                    in Every Stone
-                  </span> 
-
-                </p>
-               
+                <div className="relative">
+                  <h2
+                    className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#0E5543] leading-tight w-full mb-4"
+                    style={{
+                      fontFamily: "Arial, sans-serif",
+                      fontWeight: "600",
+                      letterSpacing: "0.02em",
+                    }}
+                  >
+                    <span className="relative">
+                      Advanced Production 
+                      <span className="text-[#1a7f66] italic font-light">
+                        Facility
+                      </span>
+                    </span>
+                  </h2>
+                  
+                  {/* Decorative line */}
+                 <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: 60 }}
+                        transition={{ duration: 1, delay: 0.3 }}
+                        className="h-0.5 bg-gradient-to-r from-[#0E5543] via-[#F2E1C5] to-[#0E5543] mx-auto mb-4 sm:mb-5 md:mb-6 lg:mb-8"
+                        style={{ width: 'clamp(60px, 15vw, 100px)' }}
+                      />
+                
+                  
+                  <p
+                    className="text-lg sm:text-xl md:text-2xl text-[#0E5543]/90 leading-relaxed font-medium"
+                    style={{
+                      fontFamily: "Montserrat",
+                      fontWeight: "500",
+                      letterSpacing: "0.02em",
+                    }}
+                  >
+                    Engineering Excellence in Every Stone
+                  </p>
+                </div>
               </motion.div>
 
               {/* Enhanced Stats Section */}
               <motion.div
-                className="space-y-3 sm:space-y-4 mb-4 sm:mb-6 w-full"
+                className="space-y-3 sm:space-y-4 w-full"
                 variants={itemVariants}
                 style={{
                   fontFamily: "Montserrat",
