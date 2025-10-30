@@ -228,14 +228,14 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                     className={`absolute inset-0 border border-${cat.accent}-700/30`}
                   />
 
-                  <motion.div
+                  <div
                     className="absolute inset-0 w-full h-full bg-cover bg-center"
                     style={{ backgroundImage: `url(${cat.image})` }}
                     animate={{ scale: hoveredCard === index ? 1.05 : 1 }}
                     transition={{ duration: 0.7 }}
                   />
 
-                  <motion.div
+                  <div
                     className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"
                     initial={{ opacity: 0.7 }}
                     whileHover={{ opacity: 0.9 }}
@@ -262,7 +262,8 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                     <button
                       className="px-6 py-2 border
                                 
-                                 transition-all duration-300 "
+ "
+  style={{backgroundColor:"white", color:"black"}}
                       onClick={(e) => {
                         e.stopPropagation();
                         setActiveCategory(cat.name.toLowerCase());
@@ -280,14 +281,14 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
         {/* Mobile Carousel */}
         <div className="sm:hidden relative mb-16">
           <div className="overflow-hidden">
-            <motion.div
+            <div
               className="flex"
               animate={{ x: -currentSlide * 100 + "%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
               {categories.map((cat, index) => (
                 <div key={cat.name} className="w-full flex-shrink-0 px-4">
-                  <motion.div
+                  <div
                     className="relative h-[400px] cursor-pointer"
                     onClick={() => setActiveCategory(cat.name.toLowerCase())}
                     whileHover={{ scale: 1.02 }}
@@ -297,7 +298,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                       <div
                         className={`absolute inset-0 bg-gradient-to-br ${cat.color}`}
                       />
-                      <motion.div
+                      <div
                         className="absolute inset-0 w-full h-full bg-cover bg-center rounded-lg"
                         style={{ backgroundImage: `url(${cat.image})` }}
                       />
@@ -311,6 +312,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                           {cat.description}
                         </p>
                         <button
+                        style={{backgroundColor:"white", color:"black"}}
                           className="px-4 py-2 border  text-sm uppercase  transition-all duration-300  rounded"
                           onClick={(e) => {
                             e.stopPropagation();
@@ -321,10 +323,10 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                         </button>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
           {/* Carousel Controls */}
@@ -393,30 +395,13 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
             )}
 
             {/* Button content */}
-            <div className="relative z-10 flex items-center justify-center space-x-3">
-              <span className="text-black bg-white group-hover:text-emerald-900 transition-colors duration-300 font-medium">
+            <button className="relative z-10 flex items-center justify-center space-x-3"  style={{backgroundColor:"white", color:"black"}}>
+              <span className="text-black transition-colors duration-300 font-medium">
                 View All Stone Collections
               </span>
 
-              <motion.div
-                animate={{ x: isButtonHovered ? 5 : 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </motion.div>
-            </div>
+            
+            </button>
           </motion.button>
         </div>
       </div>
