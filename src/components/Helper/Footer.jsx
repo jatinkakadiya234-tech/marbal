@@ -41,7 +41,7 @@ const Footer = () => {
               </h3>
             </div>
             <p className="text-sm sm:text-base text-[#F2E1C5]/80 mb-4 sm:mb-6 leading-relaxed" style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
-              Providing premium quality natural marbles and stones since 1995.
+              Providing premium quality natural marbles and stones since 1990.
               Our products transform spaces with elegance and timeless beauty
               that lasts generations.
             </p>
