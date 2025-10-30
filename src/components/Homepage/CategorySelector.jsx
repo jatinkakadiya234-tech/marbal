@@ -394,7 +394,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
 
             {/* Button content */}
             <button
-              className="flex items-center justify-center space-x-3 p-8"
+              className="flex items-center justify-center space-x-3 p-1"
               style={{ backgroundColor: "white", color: "black" }}
             >
                 View All Stone Collections
