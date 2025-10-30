@@ -168,7 +168,7 @@ export default function VideoShot() {
           transition={{ delay: 0.6, duration: 0.5 }}
         >
           {categories.map((c) => (
-            <motion.button
+            <button
               key={c}
             style={{backgroundColor:"white", color:"black"}}
               whileTap={{ scale: 0.95 }}
@@ -176,7 +176,7 @@ export default function VideoShot() {
               onClick={() => setActiveCat(c)}
             >
               {c}
-            </motion.button>
+            </button>
           ))}
         </motion.div>
 
