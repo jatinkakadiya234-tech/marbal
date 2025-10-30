@@ -170,12 +170,9 @@ export default function VideoShot() {
           {categories.map((c) => (
             <motion.button
               key={c}
-              whileHover={{
-                scale: 1.05,
-                color: "#0E5543",
-              }}
+            
               whileTap={{ scale: 0.95 }}
-              className={`px-5 py-2.5 text-sm font-medium border transition-all font-sans `}
+              className={`px-5 py-2.5 text-sm font-medium border transition-all font-sans bg-white text-black `}
               onClick={() => setActiveCat(c)}
             >
               {c}
