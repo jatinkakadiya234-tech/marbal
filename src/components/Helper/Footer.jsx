@@ -37,7 +37,7 @@ const Footer = () => {
             <div className="flex items-center mb-6">
               <div className="w-3 h-3 bg-[#F2E1C5] rounded-full mr-3 shadow-lg shadow-[#F2E1C5]/30"></div>
               <h3 className="text-lg sm:text-xl md:text-2xl font-serif font-bold text-[#F2E1C5]" style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
-                Rishab Green Marbles
+                Rishabh Green Marbles
               </h3>
             </div>
             <p className="text-sm sm:text-base text-[#F2E1C5]/80 mb-4 sm:mb-6 leading-relaxed" style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
