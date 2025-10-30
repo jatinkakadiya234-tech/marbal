@@ -9,7 +9,8 @@ const categories = [
     name: "Surata Green",
     image:
       "https://www.aclassmarble.co.in/images/media_images/240826063842_blog_image.jpg",
-    description: "Choose the shade of distinction, crafted for those who value rarity.",
+    description:
+      "Choose the shade of distinction, crafted for those who value rarity.",
     color: "from-amber-900/30 to-amber-700/20",
     accent: "amber",
   },
@@ -26,7 +27,8 @@ const categories = [
     name: "Spider Green",
     image:
       "https://lifencolors.in/cdn/shop/products/81d868_98eaac6a5ff84298b9e0728109e46c67_mv2_4af1098c-41e8-4961-9e60-a2e76d62a28a.jpg?v=1753695316",
-    description: "Let the calm of green breathe life into every corner of your space. ",
+    description:
+      "Let the calm of green breathe life into every corner of your space. ",
     color: "from-amber-900/30 to-amber-700/20",
     accent: "amber",
   },
@@ -34,7 +36,8 @@ const categories = [
     name: "R Green ",
     image:
       "https://www.ilpiccolodesign.it/wp-content/uploads/2022/08/kitchen-island-black-marble.jpg",
-    description: "Choose the shade of distinction ,crafted for those who value rare. ",
+    description:
+      "Choose the shade of distinction ,crafted for those who value rare. ",
     color: "from-amber-800/30 to-amber-600/20",
     accent: "amber",
   },
@@ -175,7 +178,6 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <HeaderContent
-         
           title=" Our curated Selections"
           subtitle=" Discover our signature stone collections that redefine elegance and style"
           theme="dark"
@@ -263,7 +265,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                       className="px-6 py-2 border
                                 
  "
-  style={{backgroundColor:"white", color:"black"}}
+                      style={{ backgroundColor: "white", color: "black" }}
                       onClick={(e) => {
                         e.stopPropagation();
                         setActiveCategory(cat.name.toLowerCase());
@@ -312,7 +314,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                           {cat.description}
                         </p>
                         <button
-                        style={{backgroundColor:"white", color:"black"}}
+                          style={{ backgroundColor: "white", color: "black" }}
                           className="px-4 py-2 border  text-sm uppercase  transition-all duration-300  rounded"
                           onClick={(e) => {
                             e.stopPropagation();
@@ -332,13 +334,13 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
           {/* Carousel Controls */}
           <p
             onClick={prevSlide}
-            style={{backgroundColor:"transparent"}}
+            style={{ backgroundColor: "transparent" }}
             className="absolute left-2 top-[45%] -translate-y-1/2 z-40 p-2 text-white rounded-full backdrop-blur-sm hover:bg-black/70 transition-colors"
           >
             <FiChevronLeft size={20} />
           </p>
           <p
-          style={{backgroundColor:"transparent"}}
+            style={{ backgroundColor: "transparent" }}
             onClick={nextSlide}
             className="absolute right-2 top-[45%] -translate-y-1/2 z-40 p-2  text-white rounded-full backdrop-blur-sm hover:bg-black/70 transition-colors"
           >
@@ -346,7 +348,6 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
           </p>
 
           {/* Dots Indicator */}
-         
         </div>
 
         {/* Premium Explore Button */}
@@ -359,13 +360,10 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
             onHoverStart={() => setIsButtonHovered(true)}
             onHoverEnd={() => setIsButtonHovered(false)}
             onClick={() => navigate("/OurStones")}
-          
           >
             {/* Hover overlay */}
-         
 
             {/* Golden border glow effect */}
-               
 
             {/* Subtle particles matching card theme */}
             {isButtonHovered && (
@@ -395,12 +393,13 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
             )}
 
             {/* Button content */}
-            <button className="relative z-10 flex items-center justify-center space-x-3"  style={{backgroundColor:"white", color:"black"}}>
+            <button
+              className="relative z-10 flex items-center justify-center space-x-3"
+              style={{ backgroundColor: "white", color: "black" }}
+            >
               <span className="text-black transition-colors duration-300 font-medium">
                 View All Stone Collections
               </span>
-
-            
             </button>
           </motion.button>
         </div>
