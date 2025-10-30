@@ -149,7 +149,7 @@ const MarbleQuarryHome = () => {
               >
                 <div className="relative">
                   <h2
-                    className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#0E5543] leading-tight w-full mb-4"
+                    className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#0E5543] leading-tight w-full mb-4"
                     style={{
                       fontFamily: "Arial, sans-serif",
                       fontWeight: "600",
@@ -157,10 +157,8 @@ const MarbleQuarryHome = () => {
                     }}
                   >
                     <span className="relative">
-                      Advanced Production 
-                      <span className="text-[#1a7f66] italic font-light">
-                        Facility
-                      </span>
+                      Advanced Production  Facility
+                    
                     </span>
                   </h2>
                   
@@ -175,7 +173,7 @@ const MarbleQuarryHome = () => {
                 
                   
                   <p
-                    className="text-lg sm:text-xl md:text-2xl text-[#0E5543]/90 leading-relaxed font-medium"
+                    className="text-md sm:text-md md:text-2xl text-[#0E5543]/90 leading-relaxed font-medium"
                     style={{
                       fontFamily: "Montserrat",
                       fontWeight: "500",

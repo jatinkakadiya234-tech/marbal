@@ -283,14 +283,14 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
         {/* Mobile Carousel */}
         <div className="sm:hidden relative mb-16">
           <div className="overflow-hidden">
-            <div
+            <motion.div
               className="flex"
               animate={{ x: -currentSlide * 100 + "%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
               {categories.map((cat, index) => (
                 <div key={cat.name} className="w-full flex-shrink-0 px-4">
-                  <div
+                  <motion.div
                     className="relative h-[400px] cursor-pointer"
                     onClick={() => setActiveCategory(cat.name.toLowerCase())}
                     whileHover={{ scale: 1.02 }}
@@ -325,27 +325,27 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                         </button>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </div>
 
           {/* Carousel Controls */}
-          <p
-            onClick={prevSlide}
-            style={{ backgroundColor: "transparent" }}
-            className="absolute left-2 top-[45%] -translate-y-1/2 z-40 p-2 text-white rounded-full backdrop-blur-sm hover:bg-black/70 transition-colors"
+          <button
+            onClick={prevSlide} style={{ backgroundColor: "transparent" }}            className="absolute left-2 top-[45%] -translate-y-1/2 z-40 p-2 text-white rounded-full backdrop-blur-sm hover:bg-black/70 transition-colors bg-black/50"
           >
             <FiChevronLeft size={20} />
-          </p>
-          <p
-            style={{ backgroundColor: "transparent" }}
+          </button>
+          <button
             onClick={nextSlide}
-            className="absolute right-2 top-[45%] -translate-y-1/2 z-40 p-2  text-white rounded-full backdrop-blur-sm hover:bg-black/70 transition-colors"
+             style={{ backgroundColor: "transparent" }}
+            className="absolute right-2 top-[45%] -translate-y-1/2 z-40 p-2 text-white rounded-full backdrop-blur-sm hover:bg-black/70 transition-colors bg-black/50"
           >
             <FiChevronRight size={20} />
-          </p>
+          </button>
+          
+       
 
           {/* Dots Indicator */}
         </div>
