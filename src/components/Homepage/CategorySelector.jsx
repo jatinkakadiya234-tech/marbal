@@ -397,9 +397,8 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
               className="relative z-10 flex items-center justify-center space-x-3"
               style={{ backgroundColor: "white", color: "black" }}
             >
-              <span className="text-black transition-colors duration-300 font-medium">
                 View All Stone Collections
-              </span>
+              
             </button>
           </motion.button>
         </div>
