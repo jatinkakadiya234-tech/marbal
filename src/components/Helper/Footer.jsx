@@ -122,36 +122,36 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-[#F2E1C5]"style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
               Contact Us
             </h3>
-            <div className="bg-[#1A6B56]/30 border border-[#F2E1C5]/10 rounded-xl p-6 mb-8" style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
-              <ul className="space-y-5">
+            <div className="bg-[#1A6B56]/30 border border-[#F2E1C5]/10 rounded-xl p-4 sm:p-6 mb-6 sm:mb-8" style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
+              <ul className="space-y-3 sm:space-y-4">
                 <li className="flex items-start">
-                  <div className="p-2 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg mr-4 flex-shrink-0">
-                    <FiMapPin className="text-[#F2E1C5]" size={16} />
+                  <div className="p-1.5 sm:p-2 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg mr-3 sm:mr-4 flex-shrink-0">
+                    <FiMapPin className="text-[#F2E1C5]" size={14} />
                   </div>
-                  <span className="text-[#F2E1C5]/80">
-                   Araji No. 114, NH. 8, Sukher,
-Udaipur - 313001, Rajasthan, India
+                  <span className="text-xs sm:text-sm text-[#F2E1C5]/80 leading-relaxed">
+                   Araji No. 114, NH. 8, Sukher,<br className="hidden sm:block" />
+                   Udaipur - 313001, Rajasthan, India
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <div className="p-2 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg mr-4 flex-shrink-0">
-                    <FiPhone className="text-[#F2E1C5]" size={16} />
+                  <div className="p-1.5 sm:p-2 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg mr-3 sm:mr-4 flex-shrink-0">
+                    <FiPhone className="text-[#F2E1C5]" size={14} />
                   </div>
-                  <span className="text-[#F2E1C5]/80">+919414165062, +918433820920</span>
+                  <span className="text-xs sm:text-sm text-[#F2E1C5]/80">+919414165062,<br className="sm:hidden" /> +918433820920</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="p-2 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg mr-4 flex-shrink-0">
-                    <FiMail className="text-[#F2E1C5]" size={16} />
+                  <div className="p-1.5 sm:p-2 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg mr-3 sm:mr-4 flex-shrink-0">
+                    <FiMail className="text-[#F2E1C5]" size={14} />
                   </div>
-                  <span className="text-[#F2E1C5]/80">
+                  <span className="text-xs sm:text-sm text-[#F2E1C5]/80 break-all">
                     rishabhgreenminerals@gmail.com
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <div className="p-2 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg mr-4 flex-shrink-0">
-                    <Earth className="text-[#F2E1C5]" size={16} />
+                  <div className="p-1.5 sm:p-2 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg mr-3 sm:mr-4 flex-shrink-0">
+                    <Earth className="text-[#F2E1C5]" size={14} />
                   </div>
-                  <span className="text-[#F2E1C5]/80">rishabhgreenmarbles.com</span>
+                  <span className="text-xs sm:text-sm text-[#F2E1C5]/80">rishabhgreenmarbles.com</span>
                 </li>
               </ul>
             </div>
