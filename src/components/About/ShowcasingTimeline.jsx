@@ -170,7 +170,7 @@ export default function ShowcasingTimeline() {
           <motion.div
             className="absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-gradient-to-b from-[#0E5543] via-[#0E5543]/70 to-[#0E5543]"
             initial={{ height: 50, opacity: 0 }}
-            animate={isInView ? { height: "100%", opacity: 1 } : { height: "100%", opacity: 1}}
+            animate={isInView ? { height: "100%", opacity: 1 } : { height: "0%", opacity: 0 }}
             transition={{ 
               height: { duration: 2, ease: "easeInOut" },
               opacity: { duration: 1, delay: 0.5 }
@@ -197,7 +197,7 @@ export default function ShowcasingTimeline() {
                 key={idx}
                 className="relative milestone-item z-30"
                 variants={item}
-                onMouseEnter={() => setActiveIndex(idx)} // FIXED: Changed from onHoverStart to onMouseEnter
+                onHoverStart={() => setActiveIndex(idx)}
               >
                 <div className={`flex flex-col h-full md:flex-row items-center ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''} gap-10`}>
                   <div className="md:w-1/2 z-10">
@@ -224,8 +224,11 @@ export default function ShowcasingTimeline() {
                           className="w-40 h-40 rounded-full bg-[#0E5543]/10 absolute inset-0 m-auto"
                           animate={idx === activeIndex ? {
                             scale: [1, 1.3, 1],
-                            opacity: [0.3, 0.1, 0.3],
-                          } : {}}
+                            opacity: [0.3, 0.1, 0.3]
+                          } : {
+                            scale: 1,
+                            opacity: 0.3
+                          }}
                           transition={{ 
                             duration: 3, 
                             repeat: idx === activeIndex ? Infinity : 0,
