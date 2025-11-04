@@ -5,31 +5,28 @@ import HeaderContent from '../Helper/HeaderContent';
 
 const founders = [
   {
-    name: 'Rahul Mehta',
-    role: 'Founder & CEO',
+    name: 'Dev Chand Patel',
+    role: 'Director',
     image: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=500&auto=format&fit=crop',
-    bio: 'Leads brand vision and product strategy with two decades of experience in luxury stone craftsmanship.',
-    extendedBio: 'With over 20 years in the luxury stone industry, Rahul brings unparalleled expertise in sourcing the finest materials from around the world. His vision has transformed the landscape of premium stone solutions.'
+    bio: 'The cornerstone of Rishabh Green’s journey, Dev Chand Patel brings decades of experience and vision. His leadership has shaped the brand’s enduring legacy of trust, quality, and innovation in the stone industry. ',
   },
   {
-    name: 'Gauri Patel',
-    role: 'Co‑Founder & Design Head',
+    name: 'Poonam Chand Patel',
+  
     image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=500&auto=format&fit=crop',
-    bio: 'Oversees design direction and client experience, blending timeless aesthetics with modern usability.',
-    extendedBio: 'Gauri combines her architectural background with a passion for sustainable design. Her innovative approach to stone applications has earned international recognition and numerous design awards.'
+    bio: 'With an unwavering eye for perfection, Director Poonam Chand Patel anchors Rishabh Green’s growth with strategy and substance. His leadership blends traditional values with modern vision, ensuring every slab of marble reflects the brand’s enduring integrity and excellence. ',
   },
   {
-    name: 'Arjun Kumar',
-    role: 'Technical Director',
+    name: 'Rajendra Patel',
+   
     image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=500&auto=format&fit=crop',
-    bio: 'Expert in stone fabrication technology and innovative installation techniques.'
+    bio: 'Director Rajendra Patel embodies precision in progress. Steering production and global partnerships, he champions innovation while preserving the authenticity of Rishabh Green’s craft , transforming raw stone into timeless statements of elegance across continents. '
   },
   {
-    name: 'Priya Sharma',
-    role: 'Creative Director',
+    name: 'Sohan Lal Patel',
+   
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=500&auto=format&fit=crop',
-    bio: 'Leads our creative team in developing innovative stone applications and designs.',
-    extendedBio: 'Priya\'s artistic vision and understanding of material properties have resulted in groundbreaking designs that push the boundaries of what\'s possible with natural stone.'
+    bio: 'At the intersection of innovation and craftsmanship, Director Sohan Lal Patel drives operational excellence at Rishabh Green. His dedication to quality, sustainability, and cutting-edge technology ensures the brand’s creations remain as enduring as the stone itself. ',
   },
 ];
 
@@ -79,8 +76,9 @@ export default function FounderDetails() {
         {/* Header */}
         <HeaderContent
           tagline='Meet the Team'
-          title='Visionaries Behind The Brand'
-          subtitle='Meet the passionate individuals who have revolutionized the stone industry with innovation and artistry.'
+          title='Visionaries Behind the Craftsmanship 
+'
+          subtitle='Meet the Pioneers Who Built the Legacy. Driven by foresight and passion, the guiding minds of Rishabh Green transformed a bold dream into a lasting legacy where innovation, integrity, and craftsmanship define every stone we create'
         />
 
         {/* Founder Cards */}
@@ -116,9 +114,17 @@ export default function FounderDetails() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0E5543]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                   {/* Role badge */}
-                  <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-full bg-[#0E5543] text-white text-xs font-medium backdrop-blur-sm font-sans">
+                  {
+                    founder.role ? ( 
+                      <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-full bg-[#0E5543] text-white text-xs font-medium backdrop-blur-sm font-sans">
+                        {founder.role}
+                      </div>
+                    ) :  null
+                  }
+
+                  {/* <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-full bg-[#0E5543] text-white text-xs font-medium backdrop-blur-sm font-sans">
                     {founder.role}
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Text content */}
@@ -126,21 +132,9 @@ export default function FounderDetails() {
                   <h3 className="text-lg font-serif text-[#0E5543] mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
                     {founder.name}
                   </h3>
-                  <p className="text-[#0E5543]/80 text-sm mb-3 flex-1 font-sans">{founder.bio}</p>
+                  <p className="text-[#0E5543]/80 text-sm mb-3 flex-1 font-sans leading-relaxed tracking-normal " style={{textAlign:"justify",wordSpacing:"normal"}}> {founder.bio}</p>
 
-                  <AnimatePresence>
-                    {expandedCard === index && (
-                      <motion.p
-                        className="text-[#0E5543]/70 text-xs mt-2 pt-2 border-t border-[#0E5543]/10 font-sans"
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        {founder.extendedBio}
-                      </motion.p>
-                    )}
-                  </AnimatePresence>
+               
 
                   {/* Expand indicator - only show if there's extended bio */}
                   {founder.extendedBio && (
@@ -191,7 +185,7 @@ export default function FounderDetails() {
         >
           <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-[#0E5543]/10 text-[#0E5543] text-xs font-sans">
             <span className="w-1.5 h-1.5 bg-[#0E5543] rounded-full mr-1.5 animate-pulse"></span>
-            Leading the industry since 2005
+            Leading the industry since 1975
           </div>
         </motion.div>
       </div>
