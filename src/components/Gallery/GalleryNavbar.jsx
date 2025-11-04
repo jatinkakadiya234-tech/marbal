@@ -20,25 +20,24 @@ const GalleryNavbar = ({ selectedCategory, setSelectedCategory, searchQuery, set
           className="flex flex-col md:flex-row justify-between items-center gap-8"
         >
           <div className="flex flex-wrap justify-center gap-3">
-        {categories.map((category) => (
-  <motion.button
-    key={category.id}
-    onClick={() => setSelectedCategory(category.id)}
-    whileTap={{ scale: 0.95 }}
-    className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-      selectedCategory === category.id
-        ? 'border-2 border-white'
-        : 'border-2 border-transparent'
-    }`}
-    style={{ 
-      backgroundColor: "white", 
-      color: "#0E5543"
-    }}
-  >
-    {category.name}
-  </motion.button>
-))}
-
+            {categories.map((category) => (
+              <motion.button
+                key={category.id}
+                onClick={() => setSelectedCategory(category.id)}
+                whileTap={{ scale: 0.95 }}
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                  selectedCategory === category.id
+                    ? 'border-2 border-white'
+                    : 'border-2 border-transparent'
+                }`}
+                style={{ 
+                  backgroundColor: "white", 
+                  color: "#0E5543"
+                }}
+              >
+                {category.name}
+              </motion.button>
+            ))}
           </div>
 
           <motion.div 
