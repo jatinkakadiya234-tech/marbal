@@ -135,28 +135,7 @@ export default function ShowcasingTimeline() {
     };
   }, []);
 
-  // Simplified active index transitions
-  useEffect(() => {
-    if (!timelineRef.current) return;
 
-    const activeElements = timelineRef.current.querySelectorAll('.milestone-item');
-    
-    activeElements.forEach((element, index) => {
-      if (index === activeIndex) {
-        gsap.to(element, {
-          scale: 1.02,
-          duration: 0.3,
-          ease: "power2.out"
-        });
-      } else {
-        gsap.to(element, {
-          scale: 1,
-          duration: 0.3,
-          ease: "power2.out"
-        });
-      }
-    });
-  }, [activeIndex]);
 
   return (
     <div ref={ref} className="relative  py-36 overflow-hidden bg-white">
@@ -222,23 +201,16 @@ export default function ShowcasingTimeline() {
               >
                 <div className={`flex flex-col h-full md:flex-row items-center ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''} gap-10`}>
                   <div className="md:w-1/2 z-10">
-                    <motion.div
-                      className={`p-4 sm:p-6 md:p-8 bg-[#F2E1C5] border border-[#0E5543]/20 shadow-xl transition-all duration-500 ${
-                        idx === activeIndex ? 'ring-2 ring-[#0E5543]/30 scale-105' : 'scale-100'
+                    <div
+                      className={`p-4 sm:p-6 md:p-8 bg-[#F2E1C5] border border-[#0E5543]/20 shadow-xl transition-all duration-300 ${
+                        idx === activeIndex ? 'ring-2 ring-[#0E5543]/30' : ''
                       } relative z-40`}
-                      whileHover={{
-                        y: -8,
-                        transition: { 
-                          duration: 0.4,
-                          ease: "easeOut"
-                        }
-                      }}
                     >
                       <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif text-[#0E5543] mb-2 sm:mb-3" 
                        style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>{m.title}</h3>
                       <p className="text-sm sm:text-base text-gray-700/90 leading-relaxed" 
                        style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>{m.desc}</p>
-                    </motion.div>
+                    </div>
                   </div>
 
                   <div className="md:w-1/2 flex justify-center">
