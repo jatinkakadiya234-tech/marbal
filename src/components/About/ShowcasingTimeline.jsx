@@ -65,26 +65,22 @@ export default function ShowcasingTimeline() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Enhanced GSAP Scroll Animation with Smooth Easing
+  // Simplified GSAP Scroll Animation
   useEffect(() => {
     if (!timelineRef.current || !dotRef.current) return;
 
     const timelineHeight = timelineRef.current.offsetHeight;
     const dot = dotRef.current;
+    const maxTravelDistance = timelineHeight - 50;
 
-    // Calculate the maximum travel distance for the dot
-    const maxTravelDistance = timelineHeight - 12;
-
-    // Kill any existing ScrollTriggers
     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 
-    // Enhanced GSAP timeline with smooth easing
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: timelineRef.current,
         start: "top center",
         end: "bottom center",
-        scrub: 2,
+        scrub: 1,
         onUpdate: (self) => {
           const progress = self.progress;
           const newIndex = Math.min(
@@ -96,29 +92,19 @@ export default function ShowcasingTimeline() {
       }
     });
 
-    // Ultra-smooth dot movement with custom easing
     tl.to(dot, {
       y: maxTravelDistance,
-      ease: "sine.inOut",
-      duration: 1
-    }, 0);
-
-    // Additional smooth animations
-    tl.to(dot, {
-      rotation: 360,
       ease: "none",
       duration: 1
-    }, 0);
-
-    // Remove scale animation to keep dot size consistent
+    });
 
     return () => {
       tl.kill();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, [milestones.length]); // Added dependency
+  }, [milestones.length]);
 
-  // Enhanced hover interactions with smoother animations
+  // Simplified hover interactions
   useEffect(() => {
     if (!dotRef.current) return;
 
@@ -126,23 +112,17 @@ export default function ShowcasingTimeline() {
     
     const handleMouseEnter = () => {
       gsap.to(dot, {
-        scale: 1.4,
-        duration: 0.5,
-        ease: "elastic.out(1, 0.8)",
-        background: "#0E5543",
-        boxShadow: "0 0 30px rgba(14, 85, 67, 0.6)",
-        rotation: 180
+        scale: 1.2,
+        duration: 0.3,
+        ease: "power2.out"
       });
     };
 
     const handleMouseLeave = () => {
       gsap.to(dot, {
         scale: 1,
-        duration: 0.5,
-        ease: "power2.out",
-        background: "#0E5543",
-        boxShadow: "0 0 20px rgba(14, 85, 67, 0.4)",
-        rotation: 0
+        duration: 0.3,
+        ease: "power2.out"
       });
     };
 
@@ -155,27 +135,24 @@ export default function ShowcasingTimeline() {
     };
   }, []);
 
-  // Smooth active index transitions
+  // Simplified active index transitions
   useEffect(() => {
     if (!timelineRef.current) return;
 
-    // Add smooth transitions for active elements
     const activeElements = timelineRef.current.querySelectorAll('.milestone-item');
     
     activeElements.forEach((element, index) => {
       if (index === activeIndex) {
         gsap.to(element, {
-          scale: 1.05,
-          duration: 0.6,
-          ease: "back.out(1.7)",
-          y: -5
+          scale: 1.02,
+          duration: 0.3,
+          ease: "power2.out"
         });
       } else {
         gsap.to(element, {
           scale: 1,
-          duration: 0.4,
-          ease: "power2.out",
-          y: 0
+          duration: 0.3,
+          ease: "power2.out"
         });
       }
     });
@@ -222,22 +199,13 @@ export default function ShowcasingTimeline() {
           />
 
           {/* Enhanced GSAP-controlled progress indicator */}
-          <motion.div
+          <div
             ref={dotRef}
-            className="absolute left-1/2 top-0 w-4 h-4 -translate-x-1/2 bg-gradient-to-br from-[#0E5543] to-[#1a7a5e] rounded-full shadow-2xl shadow-[#0E5543]/50 z-20 cursor-pointer border-2 border-white/50"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ 
-              scale: { type: "spring", stiffness: 200, damping: 15, delay: 0.8 },
-              opacity: { duration: 0.5, delay: 0.8 }
-            }}
+            className="absolute left-1/2 top-0 w-4 h-4 bg-[#0E5543] rounded-full shadow-lg z-20 cursor-pointer"
             style={{
-              transform: 'translateX(-50%) translateY(0px)'
+              transform: 'translateX(-50%)'
             }}
-          >
-            {/* Inner glow effect */}
-            <div className="absolute inset-0 rounded-full bg-[#0E5543] opacity-50 animate-pulse"></div>
-          </motion.div>
+          />
 
           <motion.ol
             className="relative space-y-32"

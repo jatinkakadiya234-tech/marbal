@@ -6,7 +6,7 @@ export default  function About () {
     return  (
         <>
         <ShowcasingTimeline/>
-        <VideoShot/>
+        {/* <VideoShot/> */}
         <FounderDetails/>
         </>
     )

@@ -22,8 +22,7 @@ const founders = [
     name: 'Arjun Kumar',
     role: 'Technical Director',
     image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=500&auto=format&fit=crop',
-    bio: 'Expert in stone fabrication technology and innovative installation techniques.',
-    extendedBio: 'Arjun brings technical excellence with 15 years of experience in advanced stone fabrication. His expertise ensures precision and quality in every project we deliver.'
+    bio: 'Expert in stone fabrication technology and innovative installation techniques.'
   },
   {
     name: 'Priya Sharma',
@@ -95,10 +94,9 @@ export default function FounderDetails() {
           {founders.map((founder, index) => (
             <motion.div
               key={founder.name}
-              className="relative  overflow-hidden bg-[#F2E1C5] shadow-md border border-[#0E5543]/10 group cursor-pointer hover:shadow-lg transition-shadow duration-300"
+              className="relative  overflow-hidden bg-[#F2E1C5] shadow-md border border-[#0E5543]/10 group hover:shadow-lg transition-shadow duration-300"
               variants={item}
               whileHover={{ y: -5 }}
-              onClick={() => setExpandedCard(expandedCard === index ? null : index)}
               layout
                style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
             >
@@ -144,23 +142,29 @@ export default function FounderDetails() {
                     )}
                   </AnimatePresence>
 
-                  {/* Expand indicator */}
-                  <motion.div
-                    className="flex items-center text-[#0E5543] text-xs font-medium mt-3 font-sans"
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="mr-1">{expandedCard === index ? 'Show less' : 'Read more'}</span>
-                    <motion.svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-3 w-3"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      animate={{ rotate: expandedCard === index ? 180 : 0 }}
+                  {/* Expand indicator - only show if there's extended bio */}
+                  {founder.extendedBio && (
+                    <motion.div
+                      className="flex items-center text-[#0E5543] text-xs font-medium mt-3 font-sans cursor-pointer"
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.2 }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setExpandedCard(expandedCard === index ? null : index);
+                      }}
                     >
-                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </motion.svg>
-                  </motion.div>
+                      <span className="mr-1">{expandedCard === index ? 'Show less' : 'Read more'}</span>
+                      <motion.svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-3 w-3"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        animate={{ rotate: expandedCard === index ? 180 : 0 }}
+                      >
+                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </motion.svg>
+                    </motion.div>
+                  )}
                 </div>
               </div>
 
