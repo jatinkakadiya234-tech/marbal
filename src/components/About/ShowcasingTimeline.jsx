@@ -148,11 +148,46 @@ export default function ShowcasingTimeline() {
       />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <HeaderContent
-          title="Legacy of Excellence"
-          tagline="Our Journey Through Time"
-          subtitle="From our founding in 1995 to today, RGM has been dedicated to delivering premium stone craftsmanship and innovative design solutions."
-        />
+        {/* <HeaderContent
+          title="The Rishabh Green 	Marble  Chronicle"
+          tagline="Built on a Timeless Foundationx  "
+          subtitle="Born from a vision of perfection and guided by unwavering values, Rishabh Green’s legacy of excellence spans decades of passion, perseverance and craftsmanship, evolving from humble origins to enduring trust and timeless quality. 
+ "
+        /> */}
+          <div className="relative text-center mb-20">
+                          <h2
+                            className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#0E5543] leading-tight w-full mb-4"
+                            style={{ fontFamily: 'Arial, sans-serif', fontWeight: '200',  }}
+                          >
+                            <span className="relative">
+                            The Rishabh Green 	Marble  Chronicle   
+ 
+                            
+                            </span>
+                          </h2>
+                          
+                          {/* Decorative line */}
+                         <motion.div
+                                initial={{ width: 0 }}
+                                whileInView={{ width: 60 }}
+                                transition={{ duration: 1, delay: 0.3 }}
+                                className="h-0.5 bg-gradient-to-r from-[#0E5543] via-[#F2E1C5] to-[#0E5543] mx-auto mb-4 sm:mb-5 md:mb-6 lg:mb-8"
+                                style={{ width: 'clamp(60px, 15vw, 100px)' }}
+                              />
+                        
+                          
+                          <p
+                            className="text-sm tracking-[0.3em] uppercase text-[#0E5543]/90 leading-relaxed font-medium"
+                            style={{
+                              fontFamily: "Montserrat",
+                              fontWeight: "500",
+                              letterSpacing: "0.02em",
+                            }}
+                          >
+                           Built on a Timeless Foundation 
+                          </p>
+                        </div>
+
 
         <div ref={timelineRef} className="relative pt-5 min-h-[800px]">
           {/* Main line */}

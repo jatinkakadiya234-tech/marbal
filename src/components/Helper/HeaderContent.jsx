@@ -70,8 +70,8 @@ const HeaderContent = ({
 
       {/* Subtitle */}
       <motion.p
-        className={`text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-light ${theme === "dark" ? "text-[#F8EBD5]" : "text-[#1A6B52]"
-          }`}
+        className={`text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-light  ${theme === "dark" ? "text-[#F8EBD5]" : "text-[#1A6B52]"
+          } `}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
