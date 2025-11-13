@@ -13,6 +13,9 @@ import TechnologyShowcase from "./components/StateOfArt/StateOfArtPage";
 import NotFoundPage from "./components/Errors/NotFoundPage";
 import ScrollToTop from "./components/Helper/NavigateScrolletop";
 import OurStones from "./components/OurStones/OurStones";
+import Marble from "./components/OurStones/Marble";
+import Granite from "./components/OurStones/Granite";
+import Sandstone from "./components/OurStones/Sandstone";
 import HelpandAddvaice from "./components/Advice/HelpandAddvaice";
 import BlogsPage from "./components/Blogs/BlogsPage";
 
@@ -36,6 +39,9 @@ function App() {
           <Route path="/gallery" element={<ProjectsGallery />} />
           <Route path="/state-of-the-art" element={<TechnologyShowcase />} />
           <Route path="/OurStones" element={<OurStones />} />
+          <Route path="/marble" element={<Marble />} />
+          <Route path="/granite" element={<Granite />} />
+          <Route path="/sandstone" element={<Sandstone />} />
           {/* <Route path="/help" element={<HelpandAddvaice />} /> */}
           <Route path="/blogs" element={<BlogsPage />} />
 

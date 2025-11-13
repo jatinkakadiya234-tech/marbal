@@ -96,12 +96,13 @@ const Navbar = () => {
                 {item.dropdown ? (
                   <div className="relative">
                     <Link
-                      to="#"
+                      to={item.path}
                       className={`transition-all duration-300 group ${activeItem === item.name.toLowerCase()
                           ? "text-white"
                           : "text-white hover:text-amber-300"
                         }`}
                       onClick={() => {
+                        handleItemClick(item.name.toLowerCase());
                         if (item.name === "Our Stones") {
                           setShowOurStonesDropdown(!showOurStonesDropdown);
                           setShowExportersDropdown(false);
@@ -199,16 +200,16 @@ const Navbar = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`lg:hidden fixed top-0 right-0 h-screen w-64 sm:w-72 md:w-80 bg-gray-900/95 backdrop-blur-md z-50 shadow-2xl transform transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"
+        className={`lg:hidden fixed top-0 right-0 h-screen w-64 sm:w-72 md:w-80 bg-white z-50 shadow-2xl transform transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
-        <div className="flex items-center justify-between px-4 h-14 sm:h-16 border-b border-gray-800">
-          <span className="text-[#F2E1C5] font-semibold text-sm sm:text-base tracking-wide">
+        <div className="flex items-center justify-between px-4 h-14 sm:h-16 border-b border-gray-200">
+          <span className="text-[#0E5543] font-semibold text-sm sm:text-base tracking-wide">
             Menu
           </span>
           <button
             onClick={() => setIsOpen(false)}
-            className="p-2 rounded-lg    hover:bg-gray-800/60 transition"
+            className="p-2 rounded-lg text-[#0E5543] hover:bg-gray-100 transition"
           >
             <FiX size={18} />
           </button>
@@ -218,27 +219,31 @@ const Navbar = () => {
             <div key={item.name} className="space-y-1">
               {item.dropdown ? (
                 <>
-                  <button
+                  <Link
+                    to={item.path}
                     className={`w-full text-left px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg transition-all duration-300 flex items-center justify-between group text-sm sm:text-base ${activeItem === item.name.toLowerCase()
-                        ? "bg-[#F2E1C5]/10 text-[#F2E1C5]"
-                        : "text-[#F2E1C5] hover:bg-[#F2E1C5]/20 hover:text-[#F2E1C5]"
+                        ? "bg-[#0E5543]/10 text-[#0E5543]"
+                        : "text-[#0E5543] hover:bg-[#0E5543]/10 hover:text-[#0E5543]"
                       }`}
-                    onClick={() => setMobileDropdowns(prev => ({
-                      [item.name]: !prev[item.name]
-                    }))}
+                    onClick={() => {
+                      handleItemClick(item.name.toLowerCase());
+                      setMobileDropdowns(prev => ({
+                        [item.name]: !prev[item.name]
+                      }));
+                    }}
                   >
                     <span className="font-medium">{item.name}</span>
                     <span className={`transform transition-transform duration-200 ${mobileDropdowns[item.name] ? 'rotate-180' : ''}`}>
                       ▼
                     </span>
-                  </button>
+                  </Link>
                   {mobileDropdowns[item.name] && (
                     <div className="ml-4 space-y-1">
                       {item.dropdown.map((dropItem) => (
                         <Link
                           key={dropItem.name}
                           to={dropItem.path}
-                          className="block px-3 py-2 text-xs sm:text-sm text-gray-300 hover:text-[#F2E1C5] hover:bg-gray-800/30 rounded transition-all duration-300"
+                          className="block px-3 py-2 text-xs sm:text-sm text-gray-600 hover:text-[#0E5543] hover:bg-gray-100 rounded transition-all duration-300"
                           onClick={() => setIsOpen(false)}
                         >
                           {dropItem.name}
@@ -251,8 +256,8 @@ const Navbar = () => {
                 <Link
                   to={item.path}
                   className={`block px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg transition-all duration-300 flex items-center group text-sm sm:text-base ${activeItem === item.name.toLowerCase()
-                      ? "bg-[#F2E1C5]/10 text-[#F2E1C5]"
-                      : "text-[#F2E1C5] hover:bg-[#F2E1C5]/20 hover:text-[#F2E1C5]"
+                      ? "bg-[#0E5543]/10 text-[#0E5543]"
+                      : "text-[#0E5543] hover:bg-[#0E5543]/10 hover:text-[#0E5543]"
                     }`}
                   onClick={() => handleItemClick(item.name.toLowerCase())}
                 >
@@ -263,14 +268,14 @@ const Navbar = () => {
           ))}
 
           {/* Mobile Search */}
-          <div className="pt-3 mt-3 border-t border-gray-800">
+          <div className="pt-3 mt-3 border-t border-gray-200">
             <div className="px-3 sm:px-4 py-3">
               <div className="relative">
-                <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-[#F2E1C5]" size={16} />
+                <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-[#0E5543]" size={16} />
                 <input
                   type="text"
                   placeholder="Search marble..."
-                  className="pl-10 pr-4 py-2.5 bg-gray-800 border border-gray-700 rounded-lg text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#1A7A62]/50 focus:border-[#1A7A62]/50 transition-all duration-300 w-full"
+                  className="pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#0E5543]/50 focus:border-[#0E5543]/50 transition-all duration-300 w-full"
                 />
               </div>
             </div>

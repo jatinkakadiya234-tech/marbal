@@ -161,7 +161,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
   };
 
   return (
-    <section className="relative py-32 bg-gradient-to-b from-gray-950 to-gray-900 overflow-hidden">
+    <section className="relative py-16 sm:py-24 md:py-32 bg-gradient-to-b from-gray-950 to-gray-900 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <div
@@ -184,7 +184,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
         />
 
         {/* Desktop Grid Cards */}
-        <div className="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-6 relative mb-16">
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative mb-12 sm:mb-16">
           {categories.map((cat, index) => {
             const {
               x,
@@ -199,7 +199,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
               <motion.div
                 key={cat.name}
                 ref={(el) => (cardsRef.current[index] = el)}
-                className={`relative h-[480px] cursor-pointer perspective-1000 
+                className={`relative h-[400px] sm:h-[450px] lg:h-[480px] cursor-pointer perspective-1000 
                   ${
                     activeCategory === cat.name.toLowerCase() ? "z-30" : "z-20"
                   }`}
@@ -248,23 +248,21 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
 
                   {/* Content */}
                   <div
-                    className="absolute bottom-0 left-0 right-0 z-30 p-6"
+                    className="absolute bottom-0 left-0 right-0 z-30 p-4 sm:p-6"
                     style={{
                       fontFamily: "Montserrat",
-                      fontWeight: "200",
-                      letterSpacing: "0.1em",
+                      fontWeight: "300",
+                      letterSpacing: "0.05em",
                     }}
                   >
-                    <h3 className="text-base font-['Poppins'] font-normal text-amber-50 mb-2">
+                    <h3 className="text-lg sm:text-xl font-['Poppins'] font-normal text-amber-50 mb-2 sm:mb-3">
                       {cat.name}
                     </h3>
-                    <p className="text-gray-300/90 mb-4 text-sm font-['Text-book']">
+                    <p className="text-gray-300/90 mb-3 sm:mb-4 text-sm sm:text-base font-['Text-book'] leading-relaxed">
                       {cat.description}
                     </p>
                     <button
-                      className="px-6 py-2 border
-                                
- "
+                      className="px-4 sm:px-6 py-2 border rounded transition-all duration-300 hover:scale-105"
                       style={{ backgroundColor: "white", color: "black" }}
                       onClick={(e) => {
                         e.stopPropagation();
@@ -281,7 +279,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
         </div>
 
         {/* Mobile Carousel */}
-        <div className="sm:hidden relative mb-16">
+        <div className="md:hidden relative mb-12 sm:mb-16">
           <div className="overflow-hidden">
             <motion.div
               className="flex"
@@ -289,9 +287,9 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
               {categories.map((cat, index) => (
-                <div key={cat.name} className="w-full flex-shrink-0 px-4">
+                <div key={cat.name} className="w-full flex-shrink-0 px-3 sm:px-4">
                   <motion.div
-                    className="relative h-[400px] cursor-pointer"
+                    className="relative h-[350px] sm:h-[400px] cursor-pointer"
                     onClick={() => setActiveCategory(cat.name.toLowerCase())}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -306,16 +304,16 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent rounded-lg" />
 
-                      <div className="absolute bottom-0 left-0 right-0 z-30 p-6">
-                        <h3 className="text-lg font-medium text-amber-50 mb-2">
+                      <div className="absolute bottom-0 left-0 right-0 z-30 p-4 sm:p-6">
+                        <h3 className="text-xl sm:text-2xl font-medium text-amber-50 mb-2 sm:mb-3">
                           {cat.name}
                         </h3>
-                        <p className="text-gray-300/90 mb-4 text-sm">
+                        <p className="text-gray-300/90 mb-3 sm:mb-4 text-sm sm:text-base leading-relaxed">
                           {cat.description}
                         </p>
                         <button
                           style={{ backgroundColor: "white", color: "black" }}
-                          className="px-4 py-2 border  text-sm uppercase  transition-all duration-300  rounded"
+                          className="px-4 sm:px-6 py-2 sm:py-3 border text-sm sm:text-base uppercase transition-all duration-300 rounded hover:scale-105"
                           onClick={(e) => {
                             e.stopPropagation();
                             setActiveCategory(cat.name.toLowerCase());
@@ -333,16 +331,18 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
 
           {/* Carousel Controls */}
           <button
-            onClick={prevSlide} style={{ backgroundColor: "transparent" }}            className="absolute left-2 top-[45%] -translate-y-1/2 z-40 p-2 text-white rounded-full backdrop-blur-sm hover:bg-black/70 transition-colors bg-black/50"
+            onClick={prevSlide} 
+            style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
+            className="absolute left-2 sm:left-4 top-[45%] -translate-y-1/2 z-40 p-2 sm:p-3 text-white rounded-full backdrop-blur-sm hover:bg-black/70 transition-colors"
           >
-            <FiChevronLeft size={20} />
+            <FiChevronLeft size={24} />
           </button>
           <button
             onClick={nextSlide}
-             style={{ backgroundColor: "transparent" }}
-            className="absolute right-2 top-[45%] -translate-y-1/2 z-40 p-2 text-white rounded-full backdrop-blur-sm hover:bg-black/70 transition-colors bg-black/50"
+            style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
+            className="absolute right-2 sm:right-4 top-[45%] -translate-y-1/2 z-40 p-2 sm:p-3 text-white rounded-full backdrop-blur-sm hover:bg-black/70 transition-colors"
           >
-            <FiChevronRight size={20} />
+            <FiChevronRight size={24} />
           </button>
           
        
@@ -351,7 +351,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
         </div>
 
         {/* Premium Explore Button */}
-        <div className="flex justify-center mt-12 ">
+        <div className="flex justify-center mt-8 sm:mt-12">
           <motion.button
             variants={buttonVariants}
             initial="initial"
@@ -394,11 +394,10 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
 
             {/* Button content */}
             <button
-              className="flex items-center justify-center  p-3"
+              className="flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-medium rounded transition-all duration-300 hover:scale-105"
               style={{ backgroundColor: "white", color: "black" }}
             >
-                View All Stone Collections
-              
+              View All Stone Collections
             </button>
           </motion.button>
         </div>

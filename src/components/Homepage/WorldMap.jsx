@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaMapMarkerAlt, FaGlobeAmericas, FaHandshake, FaUsers, FaRocket, FaAward } from "react-icons/fa";
+import { FaMapMarkerAlt, FaGlobeAmericas, FaHandshake, FaUsers, FaRocket, FaAward, FaGlobe, FaGem } from "react-icons/fa";
 import { motion, AnimatePresence, useMotionValue, useTransform, animate } from "framer-motion";
 import mapImage from "../../assets/map_img.png";
 import HeaderContent from "../Helper/HeaderContent";
@@ -91,7 +91,7 @@ export default function WorldMap() {
         <HeaderContent
           tagline=""
           title=" Global Marble Excellence"
-          subtitle="Transforming spaces across countries like UAE, Qatar,Saudi Arabia, and Europe countries with 1,000+ iconic marble creations. From majestic estates to landmark projects, we deliver unmatched global marble excellence."
+          subtitle="Transforming spaces across countries like UAE, Qatar,Saudi Arabia, and Europe countries with 1,000+ iconic marble creations. "
           theme="dark"
         />
 
@@ -399,9 +399,9 @@ export default function WorldMap() {
         <div className="mt-4 sm:mt-5 md:mt-6 text-[#1A7A62] text-xs sm:text-sm flex items-center justify-center gap-2 sm:gap-3 md:gap-4 flex-wrap"
          style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.05em' }}>
 
-          <span className="flex items-center gap-2">⭐ Premium Quality Guarantee</span>
-          <span className="flex items-center gap-2">🌍 Global Shipping</span>
-          <span className="flex items-center gap-2">💎 Custom Solutions</span>
+          <span className="flex items-center gap-2"><FaAward className="text-[#D4AF37]" /> Premium Quality Guarantee</span>
+          <span className="flex items-center gap-2"><FaGlobe className="text-[#1A7A62]" /> Global Shipping</span>
+          <span className="flex items-center gap-2"><FaGem className="text-[#0E5543]" /> Custom Solutions</span>
         </div>
       </motion.div>
 
