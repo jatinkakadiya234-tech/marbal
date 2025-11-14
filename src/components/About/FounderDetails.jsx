@@ -12,19 +12,19 @@ const founders = [
   },
   {
     name: 'Poonam Chand Patel',
-  
+    role: 'Director',
     image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=500&auto=format&fit=crop',
     bio: 'With an unwavering eye for perfection, Director Poonam Chand Patel anchors Rishabh Green’s growth with strategy and substance. His leadership blends traditional values with modern vision, ensuring every slab of marble reflects the brand’s enduring integrity and excellence. ',
   },
   {
     name: 'Rajendra Patel',
-   
+    role: 'Director', 
     image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=500&auto=format&fit=crop',
     bio: 'Director Rajendra Patel embodies precision in progress. Steering production and global partnerships, he champions innovation while preserving the authenticity of Rishabh Green’s craft , transforming raw stone into timeless statements of elegance across continents. '
   },
   {
     name: 'Sohan Lal Patel',
-   
+     role: 'Director',
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=500&auto=format&fit=crop',
     bio: 'At the intersection of innovation and craftsmanship, Director Sohan Lal Patel drives operational excellence at Rishabh Green. His dedication to quality, sustainability, and cutting-edge technology ensures the brand’s creations remain as enduring as the stone itself. ',
   },

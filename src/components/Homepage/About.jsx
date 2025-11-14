@@ -180,7 +180,7 @@ const About = () => {
             >
               <div className="grid gap-3 sm:gap-4">
                 {[
-                  "Decades of Mastery",
+                 
                   "Cutting-Edge Technology",
                   "Vast Stone Collection",
                   "Trusted Worldwide",
