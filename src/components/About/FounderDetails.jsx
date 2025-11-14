@@ -185,7 +185,7 @@ export default function FounderDetails() {
         >
           <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-[#0E5543]/10 text-[#0E5543] text-xs font-sans">
             <span className="w-1.5 h-1.5 bg-[#0E5543] rounded-full mr-1.5 animate-pulse"></span>
-            Leading the industry since 1995
+            Leading the industry since 1999
           </div>
         </motion.div>
       </div>
