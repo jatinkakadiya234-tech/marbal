@@ -45,11 +45,10 @@ const Navbar = () => {
       name: "Exporters", 
       path: "/exporters",
       dropdown: [
-        { name: "Marble Export - UAE", path: "/exporters" },
-        { name: "Marble Export - Qatar", path: "/exporters" },
-        { name: "Marble Export - Saudi Arabia", path: "/exporters" },
-        { name: "Marble Export - Europe", path: "/exporters" },
-       
+        { name: "Marble Export - UAE", path: "/exporters/uae" },
+        { name: "Marble Export - Qatar", path: "/exporters/qatar" },
+        { name: "Marble Export - Saudi Arabia", path: "/exporters/saudi-arabia" },
+        { name: "Marble Export - Europe", path: "/exporters/europe" },
       ]
     },
     { name: "Blogs", path: "/Blogs" },

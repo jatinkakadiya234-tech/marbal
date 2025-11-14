@@ -37,7 +37,7 @@ const Europe = () => {
         <div className="max-w-6xl mx-auto mt-10">
         
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#F2E1C5] mb-6">
-            Marble Export in Europe: Crafting Luxury Beyond Borders
+            Marble Export in Europe <br/> Crafting Luxury Beyond Borders
           </h1>
           <p className="text-lg sm:text-xl text-[#F2E1C5]/90 mb-8 max-w-4xl mx-auto">
             Leading the way for marble export to Europe with the finest presentation of Indian natural stones, showcasing elegance and durability

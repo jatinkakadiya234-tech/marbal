@@ -27,7 +27,7 @@ const UAE = () => {
         <div className="max-w-6xl mx-auto  mt-10">
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#F2E1C5] mb-6">
-            Marble Export to UAE | Rishabh Green Marbles
+            Marble Export to UAE <br/> Rishabh Green Marbles
           </h1>
           <p className="text-lg sm:text-xl text-[#F2E1C5]/90 mb-8 max-w-4xl mx-auto">
             India's leading unit of marble export to UAE with trusted sources and logistics

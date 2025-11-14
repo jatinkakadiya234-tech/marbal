@@ -27,7 +27,7 @@ const Qatar = () => {
         <div className="max-w-6xl mx-auto mt-10">
          
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#F2E1C5] mb-6">
-            Marble Export to Qatar | Rishabh Green Marbles
+            Marble Export to Qatar <br/> Rishabh Green Marbles
           </h1>
           <p className="text-lg sm:text-xl text-[#F2E1C5]/90 mb-8 max-w-4xl mx-auto">
             India's leading unit of marble export to Qatar with trusted solutions for luxurious infrastructural development
