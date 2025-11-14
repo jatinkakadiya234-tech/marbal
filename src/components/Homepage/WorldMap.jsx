@@ -78,6 +78,38 @@ const locations = [
     clients: "40+ premium installations",
     projects: ["Moscow Metro", "St. Petersburg Palace", "Kremlin"]
   },
+  {
+    name: "UAE",
+    top: "52%",
+    left: "58%",
+    description: "Marble Export - UAE with premium stone collections",
+    clients: "75+ luxury exports",
+    projects: ["Emirates Palace", "Atlantis Resort", "ADNOC Tower"]
+  },
+  {
+    name: "Qatar",
+    top: "50%",
+    left: "56%",
+    description: "Marble Export - Qatar serving World Cup venues",
+    clients: "45+ stadium projects",
+    projects: ["Lusail Stadium", "Museum of Islamic Art", "The Pearl"]
+  },
+  {
+    name: "Saudi Arabia",
+    top: "48%",
+    left: "54%",
+    description: "Marble Export - Saudi Arabia for NEOM developments",
+    clients: "60+ mega projects",
+    projects: ["NEOM City", "King Abdullah Center", "Riyadh Metro"]
+  },
+  {
+    name: "Europe",
+    top: "42%",
+    left: "48%",
+    description: "Marble Export - Europe covering multiple countries",
+    clients: "120+ continental projects",
+    projects: ["Louvre Museum", "Vatican Restoration", "Barcelona Sagrada"]
+  },
 ];
 
 export default function WorldMap() {
@@ -105,7 +137,7 @@ export default function WorldMap() {
   {[
   {
     icon: FaGlobeAmericas,
-    number: 7,
+    number: 11,
     suffix: "+",
     label: "Countries",
     accent: "#6B7280",
