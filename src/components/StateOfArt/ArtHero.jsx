@@ -12,9 +12,10 @@ const Arthero = () => {
                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center opacity-10"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <HeaderContent
-                        tagline='Innovation in Every Detail'
-                        title='Cutting-Edge Craftsmanship'
-                        subtitle='Harnessing advanced technology to shape natural stone with unmatched precision and timeless elegance.' />
+                        tagline=''
+                        title='Highly Advanced Infrastructure and Technology'
+                        subtitle='Rishabh Green Marbles is where craftsmanship fuses with innovation. Built to the highest standard.
+' />
                 </div>
             </section>
         </>

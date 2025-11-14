@@ -18,6 +18,11 @@ import Granite from "./components/OurStones/Granite";
 import Sandstone from "./components/OurStones/Sandstone";
 import HelpandAddvaice from "./components/Advice/HelpandAddvaice";
 import BlogsPage from "./components/Blogs/BlogsPage";
+import Exporters from "./components/Exporters/Exporters";
+import UAE from "./components/Exporters/UAE";
+import Qatar from "./components/Exporters/Qatar";
+import SaudiArabia from "./components/Exporters/SaudiArabia";
+import Europe from "./components/Exporters/Europe";
 
 function App() {
 
@@ -44,6 +49,11 @@ function App() {
           <Route path="/sandstone" element={<Sandstone />} />
           {/* <Route path="/help" element={<HelpandAddvaice />} /> */}
           <Route path="/blogs" element={<BlogsPage />} />
+          <Route path="/exporters" element={<Exporters />} />
+          <Route path="/exporters/uae" element={<UAE />} />
+          <Route path="/exporters/qatar" element={<Qatar />} />
+          <Route path="/exporters/saudi-arabia" element={<SaudiArabia />} />
+          <Route path="/exporters/europe" element={<Europe />} />
 
 
 

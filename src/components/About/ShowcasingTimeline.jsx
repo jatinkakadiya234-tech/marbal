@@ -12,7 +12,7 @@ const milestones = [
   { year: "2005", title: "Technology Growth", desc: "Invested in advanced machinery & processing technology." },
   { year: "2010", title: "Global Recognition", desc: "Received recognition for the delivery of quality products globally." },
   { year: "2015", title: "Global Recognition", desc: "Developed into an independent company backed by decades of experience. " },
-  { year: "2025", title: "Global Recognition", desc: " Onboarded premium clients and expanded business overseas " },
+  { year: "2020", title: "Global Recognition", desc: " Onboarded premium clients and expanded business overseas " },
 ];
 
 

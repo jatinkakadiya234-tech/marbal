@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaMapMarkerAlt, FaGlobeAmericas, FaHandshake, FaUsers, FaRocket, FaAward, FaGlobe, FaGem } from "react-icons/fa";
+import { FaMapMarkerAlt, FaGlobeAmericas, FaHandshake, FaUsers, FaRocket, FaAward, FaGlobe, FaGem, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence, useMotionValue, useTransform, animate } from "framer-motion";
 import mapImage from "../../assets/map_img.png";
 import HeaderContent from "../Helper/HeaderContent";
@@ -31,15 +31,6 @@ const locations = [
     projects: ["Taj Hotel", "Infosys Campus", "Reliance Towers"]
   },
   {
-    name: "Canada",
-    top: "38%",
-    left: "20%",
-    description: "North American headquarters serving luxury real estate",
-    clients: "50+ luxury villas",
-    projects: ["Toronto Skyscraper", "Vancouver Estates", "Montreal Museum"]
-  },
-
-  {
     name: "Australia",
     top: "78%",
     left: "78%",
@@ -48,19 +39,11 @@ const locations = [
     projects: ["Sydney Opera House", "Melbourne Towers", "Perth Resort"]
   },
   {
-    name: "London",
-    top: "40%",
-    left: "45%",
-    description: "UK operations with heritage restoration expertise",
-    clients: "60+ heritage projects",
-    projects: ["Buckingham Palace", "London Bridge", "The Shard"]
-  },
-  {
     name: "UAE",
     top: "54.5%",
     left: "57.5%",
-    description: "Middle East hub for ultra-luxury developments",
-    clients: "35+ iconic projects",
+    description: "Marble Export - UAE with premium stone collections",
+    clients: "75+ luxury exports",
     projects: ["Burj Khalifa", "Palm Jumeirah", "Dubai Mall"]
   },
   {
@@ -71,7 +54,6 @@ const locations = [
     clients: "40+ premium installations",
     projects: ["Moscow Metro", "St. Petersburg Palace", "Kremlin"]
   },
-  
   {
     name: "Qatar",
     top: "50%",
@@ -79,14 +61,6 @@ const locations = [
     description: "Marble Export - Qatar serving World Cup venues",
     clients: "45+ stadium projects",
     projects: ["Lusail Stadium", "Museum of Islamic Art", "The Pearl"]
-  },
-  {
-    name: "Saudi Arabia",
-    top: "48%",
-    left: "54%",
-    description: "Marble Export - Saudi Arabia for NEOM developments",
-    clients: "60+ mega projects",
-    projects: ["NEOM City", "King Abdullah Center", "Riyadh Metro"]
   },
   {
     name: "Europe",
@@ -123,7 +97,7 @@ export default function WorldMap() {
   {[
   {
     icon: FaGlobeAmericas,
-    number: 11,
+    number: 7,
     suffix: "+",
     label: "Countries",
     accent: "#6B7280",
@@ -283,7 +257,7 @@ export default function WorldMap() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   whileHover={{ y: -2 }}
-                  className="text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-[#0E5543] to-[#1A7A62] px-1 sm:px-2 py-0.5 mt-1 shadow-lg border border-white/20 transition-all duration-200"
+                  className="text-[8px] sm:text-xs font-bold text-white bg-gradient-to-r from-[#0E5543] to-[#1A7A62] px-1 py-0.5 mt-1 shadow-lg border border-white/20 transition-all duration-200 whitespace-nowrap"
                 >
                   {loc.name}
                 </motion.span>
@@ -328,11 +302,19 @@ export default function WorldMap() {
       "
     >
       {/* Header */}
-      <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-        <FaMapMarkerAlt className="text-[#1A7A62] text-lg sm:text-xl" />
-        <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-[#0E5543]">
-          {selectedLocation.name}
-        </h3>
+      <div className="flex items-center justify-between mb-2 sm:mb-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <FaMapMarkerAlt className="text-[#1A7A62] text-lg sm:text-xl" />
+          <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-[#0E5543]">
+            {selectedLocation.name}
+          </h3>
+        </div>
+        <button 
+          onClick={() => setSelectedLocation(null)}
+          className="text-[#1A7A62] hover:text-[#0E5543] transition-colors duration-200 p-1"
+        >
+          <FaTimes className="text-sm sm:text-base" />
+        </button>
       </div>
 
       {/* Description */}

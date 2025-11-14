@@ -22,17 +22,17 @@ const Section3 = () => {
         "Advanced diamond wire and bridge saws for perfect cuts every time",
       technologies: [
         {
-          name: "Diamond Wire Saws",
+          name: "Multi Disc Block Cutter",
           description:
-            "Computer-controlled cutting with precision up to 0.1mm tolerance",
+            "Ensures accurate and efficient cutting for maximum block utilization.",
           image:
             "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
           video: "https://player.vimeo.com/video/370756669",
         },
         {
-          name: "Bridge Saw Systems",
+          name: "The Tiling Plant",
           description:
-            "CNC-operated saws with laser guidance for flawless straight cuts",
+            "Delivers seamless tile finishing with unmatched precision and consistency. ",
           image:
             "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
           video: "https://player.vimeo.com/video/370756669",
@@ -46,17 +46,17 @@ const Section3 = () => {
       description: "Automated polishing lines that create mirror-like finishes",
       technologies: [
         {
-          name: "Automatic Polishing Lines",
+          name: "ASlab Polisher from Breton",
           description:
-            "16-head polishing machines that create perfect glossy surfaces",
+            "Achieves mirror-like polish and surface perfection in every slab. ",
           image:
             "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
           video: "https://player.vimeo.com/video/370756669",
         },
         {
-          name: "Calibrating Machines",
+          name: "Multi-wire Saw",
           description:
-            "Ensure uniform thickness across all slabs with precision engineering",
+            " Enables ultra-fast, precise cutting with minimal material waste.",
           image:
             "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
           video: "https://player.vimeo.com/video/370756669",
@@ -70,17 +70,17 @@ const Section3 = () => {
       description: "CNC technology for intricate designs and custom patterns",
       technologies: [
         {
-          name: "CNC Waterjet Cutters",
+          name: "Automatic Resin Lines",
           description:
-            "Precision cutting complex shapes with high-pressure water and abrasives",
+            "Enhances durability and beauty through flawless resin application.",
           image:
             "https://images.unsplash.com/photo-1581094271901-8242d0fcd5a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
           video: "https://player.vimeo.com/video/370756669",
         },
         {
-          name: "3D Stone Scanning",
+          name: "Bridge Cutting Machine",
           description:
-            "Advanced scanning for perfect template creation and measurements",
+            "Crafts perfect edges and complex designs with absolute precision. ",
           image:
             "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
           video: "https://player.vimeo.com/video/370756669",
@@ -95,19 +95,19 @@ const Section3 = () => {
         "Advanced inspection systems ensuring perfection in every slab",
       technologies: [
         {
-          name: "Laser Measurement",
-          description: "Sub-millimeter accuracy in dimensional verification",
+          name: "Two Gangsaw Machines",
+          description: "High-performance cutters designed for large-scale, uniform slab production",
           image:
             "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
           video: "https://player.vimeo.com/video/370756669",
         },
-        {
-          name: "Spectrophotometry",
-          description: "Color matching technology ensuring batch consistency",
-          image:
-            "https://images.unsplash.com/photo-1581094271901-8242d0fcd5a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-          video: "https://player.vimeo.com/video/370756669",
-        },
+        // {
+        //   name: "Spectrophotometry",
+        //   description: "Color matching technology ensuring batch consistency",
+        //   image:
+        //     "https://images.unsplash.com/photo-1581094271901-8242d0fcd5a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        //   video: "https://player.vimeo.com/video/370756669",
+        // },
       ],
     },
   ];

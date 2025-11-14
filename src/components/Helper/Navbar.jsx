@@ -43,12 +43,12 @@ const Navbar = () => {
     { name: "Production Technology", path: "/state-of-the-art" },
     { 
       name: "Exporters", 
-      path: "",
+      path: "/exporters",
       dropdown: [
-        { name: "Marble Export - UAE", path: "/marble-export" },
-        { name: "Marble Export - Qatar", path: "/marble-export" },
-        { name: "Marble Export - Saudi Arabia", path: "/marble-export" },
-        { name: "Marble Export - Europe", path: "/marble-export" },
+        { name: "Marble Export - UAE", path: "/exporters" },
+        { name: "Marble Export - Qatar", path: "/exporters" },
+        { name: "Marble Export - Saudi Arabia", path: "/exporters" },
+        { name: "Marble Export - Europe", path: "/exporters" },
        
       ]
     },
@@ -181,10 +181,10 @@ const Navbar = () => {
           <div className="lg:hidden flex items-center space-x-2 sm:space-x-3">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              
-              className="p-2 sm:p-2.5   transition-all duration-300"
+              style={{backgroundColor:"black"}}
+              className="p-2 sm:p-2.5   transition-all duration-300 "
             >
-              {isOpen ? <FiX size={18} /> : <FiMenu size={18} />}
+              {isOpen ? <FiX size={18} /> : <FiMenu className="text-white" size={18} />}
             </button>
           </div>
         </div>

@@ -20,6 +20,17 @@ const BlogsPage = () => {
   const blogPosts = [
     {
       id: 2,
+      title: "A Complete Guide on the Indian Green Marble",
+      excerpt: "Indian Green marble, a long-known flooring material, is redefining luxury, elegance, and durability all over again. Discover a complete guide on Indian green marble, focusing on its origin, colour, brief history, sustainability, and interior use.",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      category: "Green Marble Guide",
+      date: "2024-01-15",
+      author: "Marble Specialists",
+      readTime: "12 min read",
+      tags: ["Indian green marble", "green marble manufacturers in India", "green marble suppliers in India", "leading marble company in India"]
+    },
+    {
+      id: 3,
       title: "Modern Marble Trends: What's Hot in 2024",
       excerpt: "Explore the latest marble trends taking the interior design world by storm this year.",
       image: "https://images.unsplash.com/photo-1514053026555-49ce8886ae41?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
@@ -30,7 +41,7 @@ const BlogsPage = () => {
       tags: ["Trends", "2024", "Innovation"]
     },
     {
-      id: 3,
+      id: 4,
       title: "Caring for Your Marble Surfaces: Maintenance Tips",
       excerpt: "Learn professional tips to maintain the pristine condition of your marble surfaces for years to come.",
       image: "https://images.unsplash.com/photo-1565538420870-da08ff96a207?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
@@ -41,7 +52,7 @@ const BlogsPage = () => {
       tags: ["Maintenance", "Care", "Longevity"]
     },
     {
-      id: 4,
+      id: 5,
       title: "Italian vs Indian Marble: A Comprehensive Comparison",
       excerpt: "Understand the key differences between Italian and Indian marble to make an informed decision.",
       image: "https://images.unsplash.com/photo-1554743365-a80c1243316e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
@@ -52,7 +63,7 @@ const BlogsPage = () => {
       tags: ["Comparison", "Quality", "Origin"]
     },
     {
-      id: 5,
+      id: 6,
       title: "Transforming Spaces with Marble Accent Walls",
       excerpt: "Discover creative ways to use marble accent walls to elevate your interior spaces.",
       image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
@@ -63,7 +74,7 @@ const BlogsPage = () => {
       tags: ["Design", "Accent Walls", "Transformation"]
     },
     {
-      id: 6,
+      id: 7,
       title: "Sustainable Marble Sourcing: Our Eco-Friendly Approach",
       excerpt: "Learn about our commitment to sustainable and environmentally responsible marble sourcing practices.",
       image: "https://images.unsplash.com/photo-1511389026070-a14ae610a1be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
@@ -76,6 +87,7 @@ const BlogsPage = () => {
   ]
 
   const categories = [
+    { name: "Green Marble Guide", count: 1 },
     { name: "Marble Selection", count: 12 },
     { name: "Design Ideas", count: 8 },
     { name: "Maintenance", count: 6 },
@@ -84,7 +96,7 @@ const BlogsPage = () => {
     { name: "Installation", count: 7 }
   ]
 
-  const popularTags = ["Marble", "Design", "Interior", "Luxury", "Home", "Trending", "Quality", "Natural Stone", "Elegance", "Modern"]
+  const popularTags = ["Indian green marble", "green marble manufacturers in India", "green marble suppliers in India", "leading marble company in India", "Marble", "Design", "Interior", "Luxury", "Home", "Trending", "Quality", "Natural Stone", "Elegance", "Modern"]
 
   const filteredPosts = blogPosts.filter(post =>
     post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
