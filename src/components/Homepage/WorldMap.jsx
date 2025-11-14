@@ -38,14 +38,7 @@ const locations = [
     clients: "50+ luxury villas",
     projects: ["Toronto Skyscraper", "Vancouver Estates", "Montreal Museum"]
   },
-  {
-    name: "Germany",
-    top: "45%",
-    left: "50%",
-    description: "European innovation hub with architectural marvels",
-    clients: "80+ commercial projects",
-    projects: ["Berlin Airport", "Munich Mall", "Frankfurt Towers"]
-  },
+
   {
     name: "Australia",
     top: "78%",
@@ -63,7 +56,7 @@ const locations = [
     projects: ["Buckingham Palace", "London Bridge", "The Shard"]
   },
   {
-    name: "Dubai",
+    name: "UAE",
     top: "54.5%",
     left: "57.5%",
     description: "Middle East hub for ultra-luxury developments",
@@ -78,14 +71,7 @@ const locations = [
     clients: "40+ premium installations",
     projects: ["Moscow Metro", "St. Petersburg Palace", "Kremlin"]
   },
-  {
-    name: "UAE",
-    top: "52%",
-    left: "58%",
-    description: "Marble Export - UAE with premium stone collections",
-    clients: "75+ luxury exports",
-    projects: ["Emirates Palace", "Atlantis Resort", "ADNOC Tower"]
-  },
+  
   {
     name: "Qatar",
     top: "50%",
