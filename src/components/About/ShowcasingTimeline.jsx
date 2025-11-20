@@ -3,16 +3,16 @@ import React, { useState } from "react";
 import HeaderContent from "../Helper/HeaderContent";
 
 const milestones = [
-  { year: "1975", title: "Founded", desc: "Foundation years of the mining industry setup & future expansion" },
-  { year: "1981", title: "Expanded Services", desc: "Commencement of mining in green marble" },
-  { year: "1986", title: "Sustainable Sourcing", desc: "Business expansion to the international market" },
-  { year: "1991", title: "Design Innovation", desc: "First Marble Processing Unit Set up at Banarasi Marbles" },
-  { year: "1996", title: "Global Presence", desc: "Opened export outlets in Germany, UAE, and China & participated in international expos." },
-  { year: "2000", title: "Export Expansion", desc: "Established a 100% export-oriented unit under Rishabh Green Marbles" },
-  { year: "2005", title: "Technology Growth", desc: "Invested in advanced machinery & processing technology." },
-  { year: "2010", title: "Global Recognition", desc: "Received recognition for the delivery of quality products globally." },
-  { year: "2015", title: "Global Recognition", desc: "Developed into an independent company backed by decades of experience. " },
-  { year: "2020", title: "Global Recognition", desc: " Onboarded premium clients and expanded business overseas " },
+  { year: "1975-1980", title: "Foundation Era", desc: "Foundation years of the mining industry setup & future expansion" },
+  { year: "1981-1985", title: "Mining Commencement", desc: "Commencement of mining in green marble" },
+  { year: "1986-1990", title: "International Expansion", desc: "Business expansion to the international market" },
+  { year: "1991-1995", title: "Processing Innovation", desc: "First Marble Processing Unit Set up at Banarasi Marbles" },
+  { year: "1996-2000", title: "Global Presence", desc: "Opening export outlets in Germany, the UAE, and China & participating in international expos" },
+  { year: "2000-2005", title: "Export Excellence", desc: "Established a 100% export-oriented unit under Rishabh Green Marbles" },
+  { year: "2005-2010", title: "Technology Advancement", desc: "Invested in advanced machinery & processing technology" },
+  { year: "2010-2015", title: "Quality Recognition", desc: "Received recognition for the delivery of quality products globally" },
+  { year: "2015-2020", title: "Independent Growth", desc: "Developed into an independent company backed by decades of experience" },
+  { year: "2020-2025", title: "Premium Expansion", desc: "Onboarded premium clients and expanded business overseas" },
 ];
 
 
@@ -129,7 +129,7 @@ export default function ShowcasingTimeline() {
                       </div>
 
                       <div
-                        className={`w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 bg-white border-2 sm:border-3 md:border-4 flex items-center justify-center shadow-lg transition-all duration-500 rounded-b-lg sm:rounded-full ${
+                        className={`w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 bg-white border-2 sm:border-3 md:border-4 flex items-center justify-center shadow-lg transition-all duration-500 rounded-b-lg sm:rounded-full hover:scale-125 cursor-pointer ${
                           idx === activeIndex
                             ? "border-[#0E5543] scale-110"
                             : "border-[#0E5543]/60 scale-100"

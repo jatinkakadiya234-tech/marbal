@@ -13,6 +13,7 @@ import TechnologyShowcase from "./components/StateOfArt/StateOfArtPage";
 import NotFoundPage from "./components/Errors/NotFoundPage";
 import ScrollToTop from "./components/Helper/NavigateScrolletop";
 import OurStones from "./components/OurStones/OurStones";
+import ProductDetail from "./components/OurStones/ProductDetail";
 import Marble from "./components/OurStones/Marble";
 import Granite from "./components/OurStones/Granite";
 import Sandstone from "./components/OurStones/Sandstone";
@@ -44,6 +45,7 @@ function App() {
           <Route path="/gallery" element={<ProjectsGallery />} />
           <Route path="/state-of-the-art" element={<TechnologyShowcase />} />
           <Route path="/OurStones" element={<OurStones />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/marble" element={<Marble />} />
           <Route path="/granite" element={<Granite />} />
           <Route path="/sandstone" element={<Sandstone />} />

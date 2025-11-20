@@ -81,7 +81,7 @@ const About = () => {
 
 
               <motion.div
-                className="relative overflow-hidden group mt-4 md:mt-12 rounded-lg bottom-10"
+                className="relative overflow-hidden group mt-4 md:mt-12  bottom-10"
                 variants={imageVariants}
                 whileHover="hover"
               >
@@ -93,7 +93,7 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0E5543]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </motion.div>
               <motion.div
-                className="relative overflow-hidden group mt-8 md:mt-12 rounded-lg"
+                className="relative overflow-hidden group mt-8 md:mt-12 "
                 variants={imageVariants}
                 whileHover="hover"
               >
@@ -109,7 +109,7 @@ const About = () => {
 
             <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 mt-3 sm:mt-4 md:mt-6">
               <motion.div
-                className="relative overflow-hidden group rounded-lg"
+                className="relative overflow-hidden group "
                 variants={imageVariants}
                 whileHover="hover"
               >
@@ -122,7 +122,7 @@ const About = () => {
               </motion.div>
 
               <motion.div
-                className="relative overflow-hidden group mt-8 md:mt-12 rounded-lg"
+                className="relative overflow-hidden group mt-8 md:mt-12 "
                 variants={imageVariants}
                 whileHover="hover"
               >

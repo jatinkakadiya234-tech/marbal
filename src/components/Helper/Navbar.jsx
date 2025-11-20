@@ -11,6 +11,7 @@ const Navbar = () => {
   const [showOurStonesDropdown, setShowOurStonesDropdown] = useState(false);
   const [showExportersDropdown, setShowExportersDropdown] = useState(false);
   const [mobileDropdowns, setMobileDropdowns] = useState({});
+  const [clickTimeout, setClickTimeout] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,27 +95,39 @@ const Navbar = () => {
               <div key={item.name} className="relative">
                 {item.dropdown ? (
                   <div className="relative">
-                    <Link
-                      to={item.path}
-                      className={`transition-all duration-300 group ${activeItem === item.name.toLowerCase()
+                    <span
+                      className={`transition-all duration-300 group cursor-pointer ${activeItem === item.name.toLowerCase()
                           ? "text-white"
                           : "text-white hover:text-amber-300"
                         }`}
-                      onClick={() => {
-                        handleItemClick(item.name.toLowerCase());
-                        if (item.name === "Our Stones") {
-                          setShowOurStonesDropdown(!showOurStonesDropdown);
-                          setShowExportersDropdown(false);
-                        } else if (item.name === "Exporters") {
-                          setShowExportersDropdown(!showExportersDropdown);
-                          setShowOurStonesDropdown(false);
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (clickTimeout) {
+                          clearTimeout(clickTimeout);
+                          setClickTimeout(null);
+                          // Double click - show dropdown
+                          if (item.name === "Our Stones") {
+                            setShowOurStonesDropdown(!showOurStonesDropdown);
+                            setShowExportersDropdown(false);
+                          } else if (item.name === "Exporters") {
+                            setShowExportersDropdown(!showExportersDropdown);
+                            setShowOurStonesDropdown(false);
+                          }
+                        } else {
+                          // Single click - navigate to page
+                          const timeout = setTimeout(() => {
+                            handleItemClick(item.name.toLowerCase());
+                            window.location.href = item.path;
+                            setClickTimeout(null);
+                          }, 300);
+                          setClickTimeout(timeout);
                         }
                       }}
                     >
                       <span className="relative text-sm xl:text-base font-medium text-white after:absolute after:w-0 after:h-px after:bg-amber-300 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
                         {item.name}
                       </span>
-                    </Link>
+                    </span>
                     {((item.name === "Our Stones" && showOurStonesDropdown) || 
                       (item.name === "Exporters" && showExportersDropdown)) && (
                       <div className={`absolute top-full mt-2 w-56 xl:w-64 bg-[#0E5543] border border-gray-700 rounded-lg shadow-xl z-50 transform transition-all duration-300 ease-out opacity-0 translate-y-2 animate-in ${item.name === "Exporters" ? "right-0" : "left-0"}`} style={{animation: 'fadeInUp 0.3s ease-out forwards'}}>

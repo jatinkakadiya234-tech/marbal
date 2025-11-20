@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaMapMarkerAlt, FaGlobeAmericas, FaHandshake, FaUsers, FaRocket, FaAward, FaGlobe, FaGem, FaTimes } from "react-icons/fa";
+import { FaMapMarkerAlt, FaGlobeAmericas, FaHandshake, FaUsers, FaClock, FaAward, FaGlobe, FaGem, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence, useMotionValue, useTransform, animate } from "framer-motion";
 import mapImage from "../../assets/map_img.png";
 import HeaderContent from "../Helper/HeaderContent";
@@ -70,6 +70,14 @@ const locations = [
     clients: "120+ continental projects",
     projects: ["Louvre Museum", "Vatican Restoration", "Barcelona Sagrada"]
   },
+  {
+    name: "Canada",
+    top: "46%",
+    left: "20%",
+    description: "North American marble specialist for luxury developments",
+    clients: "85+ premium projects",
+    projects: ["CN Tower Plaza", "Toronto Pearson", "Vancouver Convention"]
+  },
 ];
 
 export default function WorldMap() {
@@ -97,7 +105,7 @@ export default function WorldMap() {
   {[
   {
     icon: FaGlobeAmericas,
-    number: 7,
+    number: 8,
     suffix: "+",
     label: "Countries",
     accent: "#6B7280",
@@ -123,7 +131,7 @@ export default function WorldMap() {
     color: "#0E5543"
   },
   {
-    icon: FaRocket,
+    icon: FaClock,
     number: 25,
     suffix: "+",
     label: "Years",
@@ -399,7 +407,7 @@ export default function WorldMap() {
         <div className="mt-4 sm:mt-5 md:mt-6 text-[#1A7A62] text-xs sm:text-sm flex items-center justify-center gap-2 sm:gap-3 md:gap-4 flex-wrap"
          style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.05em' }}>
 
-          <span className="flex items-center gap-2"><FaAward className="text-[#D4AF37]" /> Premium Quality Guarantee</span>
+          <span className="flex items-center gap-2"><FaAward className="text-[#1A7A62]" /> Premium Quality Guarantee</span>
           <span className="flex items-center gap-2"><FaGlobe className="text-[#1A7A62]" /> Global Shipping</span>
           <span className="flex items-center gap-2"><FaGem className="text-[#0E5543]" /> Custom Solutions</span>
         </div>
