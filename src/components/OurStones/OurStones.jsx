@@ -17,7 +17,7 @@ import imperialRed from "../../assets/Granites/IMPERIAL RED GRANITE.jpeg";
 
 
 import teakwoodSandstone from "../../assets/Sandstone/Teakwood-Sandstone.jpg";
-import rainbowSandstone from "../../assets/Sandstone/Rainbow Sandstone.jpeg";
+import rainbowSandstone from "../../assets/Sandstone/rainbow-1.jpg";
 import jaisalmerYellow from "../../assets/Sandstone/jaisalmer yellow sandstone.jpg";
 import chocolateSandstone from "../../assets/Sandstone/Chocolate Sandstone.jpg";
 import jodhpurPink from "../../assets/Sandstone/JODHPUR PINK Snadstone.jpg";
