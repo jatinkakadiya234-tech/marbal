@@ -44,7 +44,7 @@ function App() {
           <Route path="/services" element={<ServicesShowcase />} />
           <Route path="/gallery" element={<ProjectsGallery />} />
           <Route path="/state-of-the-art" element={<TechnologyShowcase />} />
-          <Route path="/ourstones" element={<OurStones />} />
+          <Route path="/OurStones" element={<OurStones />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/marble" element={<Marble />} />
           <Route path="/granite" element={<Granite />} />
