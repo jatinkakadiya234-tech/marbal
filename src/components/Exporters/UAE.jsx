@@ -4,17 +4,17 @@ import { FaHome, FaBuilding, FaWarehouse, FaShippingFast } from 'react-icons/fa'
 const UAE = () => {
   const projectTypes = [
     {
-      icon: <FaHome className="text-3xl text-[#0E5543]" />,
+      icon: <FaHome className="text-2xl sm:text-3xl text-[#0E5543]" />,
       title: "Residential Solutions",
       description: "Transforming your residence into an elegant sanctuary constructed with durable marbles is not difficult. With us, you can always design yourself a home which is not an ordinary setup, but an opulence of luxury."
     },
     {
-      icon: <FaBuilding className="text-3xl text-[#0E5543]" />,
+      icon: <FaBuilding className="text-2xl sm:text-3xl text-[#0E5543]" />,
       title: "Commercial Solutions",
       description: "For commercial construction solutions in the UAE, Indian Marbles set global standards in luxury and long-lasting durability. Whether you need a corporate space or a formal and retail outlet, our marbles enhance the ambience by understanding the requirements."
     },
     {
-      icon: <FaWarehouse className="text-3xl text-[#0E5543]" />,
+      icon: <FaWarehouse className="text-2xl sm:text-3xl text-[#0E5543]" />,
       title: "Indoor & Outdoor Solutions",
       description: "For modern solutions, we have both indoor and outdoor marble categories to create timeless spaces in the UAE. As the best marble supplier in UAE, we assure you of stunning marble patterns to transform your ordinary backdrops."
     }
@@ -26,21 +26,21 @@ const UAE = () => {
       <div className="relative bg-gradient-to-r from-[#0E5543] to-[#1a7a5e] py-20 px-4 text-center">
         <div className="max-w-6xl mx-auto  mt-10">
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#F2E1C5] mb-6">
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#F2E1C5] mb-6">
             Marble Export to UAE <br/> Rishabh Green Marbles
-          </h1>
-          <p className="text-lg sm:text-xl text-[#F2E1C5]/90 mb-8 max-w-4xl mx-auto">
+          </p>
+          <p className="text-sm sm:text-base md:text-lg text-[#F2E1C5]/90 mb-8 max-w-4xl mx-auto">
             India's leading unit of marble export to UAE with trusted sources and logistics
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-[#F2E1C5]">
-            <div className="bg-[#F2E1C5]/10 backdrop-blur-md px-6 py-3 rounded-full">
-              <span className="font-semibold">Trusted Sources</span>
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-[#F2E1C5]">
+            <div className="bg-[#F2E1C5]/10 backdrop-blur-md px-3 sm:px-6 py-2 sm:py-3 rounded-full">
+              <span className="font-semibold text-xs sm:text-sm">Trusted Sources</span>
             </div>
-            <div className="bg-[#F2E1C5]/10 backdrop-blur-md px-6 py-3 rounded-full">
-              <span className="font-semibold">Quality Proven</span>
+            <div className="bg-[#F2E1C5]/10 backdrop-blur-md px-3 sm:px-6 py-2 sm:py-3 rounded-full">
+              <span className="font-semibold text-xs sm:text-sm">Quality Proven</span>
             </div>
-            <div className="bg-[#F2E1C5]/10 backdrop-blur-md px-6 py-3 rounded-full">
-              <span className="font-semibold">Expert Logistics</span>
+            <div className="bg-[#F2E1C5]/10 backdrop-blur-md px-3 sm:px-6 py-2 sm:py-3 rounded-full">
+              <span className="font-semibold text-xs sm:text-sm">Expert Logistics</span>
             </div>
           </div>
         </div>
@@ -51,10 +51,10 @@ const UAE = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0E5543] mb-6">
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#0E5543] mb-6">
                 An Introduction to India's Leading Unit of Marble Export to UAE
               </h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
+              <div className="space-y-4 text-gray-700 leading-relaxed text-sm sm:text-base">
                 <p>
                   Rishabh Green Marbles is India's leading unit of marble export to UAE with trusted sources and logistics. With years of expertise in the export hub, we manufacture and deliver durable and quality-proven marbles overseas.
                 </p>
@@ -78,14 +78,14 @@ const UAE = () => {
       <div className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0E5543] mb-6">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#0E5543] mb-6">
               Why Choose Indian Marbles for the UAE Projects?
             </h2>
             <div className="max-w-4xl mx-auto">
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-gray-700 leading-relaxed mb-6 text-sm sm:text-base">
                 Indian Marbles have been ruling natural stone production processes for years due to their fineness, affordability and durability. Specifically, for the UAE projects, products with unmatched quality and variety are preferred to match the modern lifestyle of people.
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
                 Hence, choose Rishabh Green Marbles as the best marble exporter in India to achieve high ROI on premium-quality solutions.
               </p>
             </div>
@@ -97,7 +97,7 @@ const UAE = () => {
       <div className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0E5543] mb-6">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#0E5543] mb-6">
               Marble Application by Project Types in the UAE
             </h2>
           </div>
@@ -107,17 +107,17 @@ const UAE = () => {
                 <div className="mb-4 flex justify-center">
                   {project.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-800 mb-4 text-center">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                   {project.description}
                 </p>
               </div>
             ))}
           </div>
           <div className="mt-8 text-center">
-            <p className="text-gray-700 italic">
+            <p className="text-gray-700 italic text-sm sm:text-base">
               From our manufacturing unit to your doorstep, we export marble solutions through extremely responsible logistics to the UAE.
             </p>
           </div>
@@ -128,30 +128,30 @@ const UAE = () => {
       <div className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0E5543] mb-6">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#0E5543] mb-6">
               Our Additional Collection of Natural Stones to Export in the UAE
             </h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="bg-gray-50 rounded-xl p-8">
-              <h3 className="text-xl sm:text-2xl font-bold text-[#0E5543] mb-4">
+              <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-[#0E5543] mb-4">
                 Durable Granite for Long-lasting Strength
               </h3>
-              <p className="text-gray-700 leading-relaxed mb-4">
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
                 When you demand uncompromising marble solutions in the UAE, we also pledge to deliver the needed. Hence, Rishabh Green Marbles is also the best granite exporter in India, delivering durable & strong natural stones.
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
                 Furthermore, we take pride in delivering the best to the UAE market in terms of logistics to empower success. Our vision is to exceed client expectations through practical natural stone solutions.
               </p>
             </div>
             <div className="bg-gray-50 rounded-xl p-8">
-              <h3 className="text-xl sm:text-2xl font-bold text-[#0E5543] mb-4">
+              <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-[#0E5543] mb-4">
                 Polished Indian Sandstone for Ultimate Resilience
               </h3>
-              <p className="text-gray-700 leading-relaxed mb-4">
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
                 Indian Sandstones are among the most polished and resilient natural stones due to their inherent properties. Rishabh Green Marbles is also the best sandstone exporter in India, offering a unique product catalog.
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
                 We cautiously manufacture Indian Sandstones without compromising their natural texture, to add a layer of uniqueness. The ideal applications could be interiors & exteriors with rustic-themed settings.
               </p>
             </div>
@@ -163,10 +163,10 @@ const UAE = () => {
       <div className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0E5543] mb-6">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#0E5543] mb-6">
               The Streamlined Process of Indian Marble Export to UAE
             </h2>
-            <p className="text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-gray-700 max-w-4xl mx-auto leading-relaxed text-sm sm:text-base">
               Operating as the best marble exporter in India, requires us to consult about material selection. This process is followed by expert quarry selection and quality inspection to professionally pack and load the details. Then we focus on shipping and custom paperwork for smooth clearance at the UAE ports.
             </p>
           </div>

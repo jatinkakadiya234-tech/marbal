@@ -6,7 +6,7 @@ import bidasarGreen from '../assets/marbles/bidasar-green-500x500[1].jpg'
 import cloudGrey from '../assets/marbles/Cloud-Grey-Marble[1].jpg'
 import fantasyBrown from '../assets/marbles/fantasy brown marble.jpg'
 import iconicBlack from '../assets/marbles/Iconic-black-marble-1200x1200-1[1].jpg'
-import iconicGold from '../assets/marbles/iconic-gold-marble-slabs-985059-1-B.jpeg.jpg'
+import iconicGold from '../assets/marbles/istockphoto-1134258949-612x612.jpg'
 import indianBlack from '../assets/marbles/indian-black-marble[1].jpg'
 import katniBeige from '../assets/marbles/katni-beige-marble-500x500[1].jpg'
 import merryGold from '../assets/marbles/merry-gold-500x500[1].jpg'
@@ -75,6 +75,7 @@ import rainbowSandstone from '../assets/Sandstone/rainbow-1.jpg'
 import redSandstone from '../assets/Sandstone/Red Sandstone.jpg'
 import teakwoodSandstone from '../assets/Sandstone/Teakwood-Sandstone.jpg'
 
+// Main product collections for sub-categories
 export const allProducts = [
   // Marbles (1-16)
   { id: 1, name: "Agaria White", image: agariaWhite, category: "Marble", description: "Premium white marble with elegant natural patterns and superior quality finish." },
@@ -151,6 +152,67 @@ export const allProducts = [
   { id: 61, name: "Rainbow Sandstone", image: rainbowSandstone, category: "Sandstone", description: "Multicolored sandstone with beautiful rainbow patterns and natural texture." },
   { id: 62, name: "Red Sandstone", image: redSandstone, category: "Sandstone", description: "Traditional red sandstone with natural texture and warm appeal." },
   { id: 63, name: "Teakwood Sandstone", image: teakwoodSandstone, category: "Sandstone", description: "Natural teakwood sandstone with wood-like grain patterns and warm tones." },
+];
+
+// Sub-product categories
+export const subProductCategories = [
+  {
+    id: 1,
+    name: "Premium White Collection",
+    category: "Marble",
+    description: "Elegant white marble varieties for luxury interiors",
+    products: [
+      { id: 1, name: "Agaria White", image: agariaWhite, category: "Marble" },
+      { id: 17, name: "Afyon White", image: afyonWhite, category: "Marble" },
+      { id: 20, name: "White Aravali Onyx", image: whiteAravaliOnyx, category: "Marble" }
+    ]
+  },
+  {
+    id: 2,
+    name: "Natural Green Series",
+    category: "Marble", 
+    description: "Beautiful green marble with natural patterns",
+    products: [
+      { id: 2, name: "Aravali Green", image: aravaliGreen, category: "Marble" },
+      { id: 4, name: "Bidasar Green", image: bidasarGreen, category: "Marble" },
+      { id: 13, name: "Mystic Green", image: mysticGreen, category: "Marble" }
+    ]
+  },
+  {
+    id: 3,
+    name: "Premium Black Granite",
+    category: "Granite",
+    description: "Sophisticated black granite collection", 
+    products: [
+      { id: 17, name: "Absolute Black", image: absoluteBlack, category: "Granite" },
+      { id: 21, name: "Black Galaxy", image: blackGalaxy, category: "Granite" },
+      { id: 22, name: "Black Pearl", image: blackPearl, category: "Granite" },
+      { id: 33, name: "Impala Black", image: impalaBlack, category: "Granite" }
+    ]
+  },
+  {
+    id: 4,
+    name: "Golden Granite Collection", 
+    category: "Granite",
+    description: "Warm golden granite varieties",
+    products: [
+      { id: 18, name: "Alaska Gold", image: alaskaGold, category: "Granite" },
+      { id: 25, name: "Champagne Gold", image: champagneGold, category: "Granite" },
+      { id: 44, name: "New Imperial Gold", image: newImperialGold, category: "Granite" },
+      { id: 51, name: "Sunrise Gold", image: sunriseGold, category: "Granite" }
+    ]
+  },
+  {
+    id: 5,
+    name: "Traditional Sandstone",
+    category: "Sandstone",
+    description: "Classic Rajasthani sandstone varieties",
+    products: [
+      { id: 57, name: "Jaisalmer Yellow", image: jaisalmerYellow, category: "Sandstone" },
+      { id: 58, name: "Jodhpur Pink", image: jodhpurPink, category: "Sandstone" },
+      { id: 62, name: "Red Sandstone", image: redSandstone, category: "Sandstone" }
+    ]
+  }
 ];
 
 export const categories = [

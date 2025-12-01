@@ -10,7 +10,7 @@ import bidasarGreen from '../../assets/marbles/bidasar-green-500x500[1].jpg'
 import cloudGrey from '../../assets/marbles/Cloud-Grey-Marble[1].jpg'
 import fantasyBrown from '../../assets/marbles/fantasy brown marble.jpg'
 import iconicBlack from '../../assets/marbles/Iconic-black-marble-1200x1200-1[1].jpg'
-import iconicGold from '../../assets/marbles/iconic-gold-marble-slabs-985059-1-B.jpeg.jpg'
+import iconicGold from '../../assets/marbles/istockphoto-1134258949-612x612.jpg'
 import indianBlack from '../../assets/marbles/indian-black-marble[1].jpg'
 import katniBeige from '../../assets/marbles/katni-beige-marble-500x500[1].jpg'
 import merryGold from '../../assets/marbles/merry-gold-500x500[1].jpg'
@@ -116,10 +116,40 @@ export default function Marble() {
           </div>
         </div>
 
+        {/* Search Bar */}
+        <div className="mb-8 max-w-md mx-auto">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search marble products..."
+              value={searchTerm}
+              onChange={(e) => handleSearch(e.target.value)}
+              className="w-full px-4 py-3 pl-12 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#0E5543] focus:border-transparent"
+              style={{
+                fontFamily: "Arial, sans-serif",
+                fontWeight: "300",
+                letterSpacing: "0.1em",
+              }}
+            />
+            <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
+              <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
         {/* Product Grid */}
         <div className="mb-8">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {filteredProducts.map((product) => (
+          {filteredProducts.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-gray-500 text-lg" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300' }}>
+                No products found
+              </p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {filteredProducts.map((product) => (
               <div 
                 key={product.id} 
                 className="group bg-white shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:scale-105 border border-gray-100"
@@ -155,8 +185,9 @@ export default function Marble() {
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
         
         {/* About Rishabh Green Marbles */}

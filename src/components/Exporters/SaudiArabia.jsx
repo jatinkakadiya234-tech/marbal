@@ -31,27 +31,27 @@ const SaudiArabia = () => {
 
   const whyChooseReasons = [
     {
-      icon: <FaAward className="text-3xl text-[#0E5543]" />,
+      icon: <FaAward className="text-2xl sm:text-3xl text-[#0E5543]" />,
       title: "Years of Experience",
       description: "We are a top name in the natural stone business, both in India and globally."
     },
     {
-      icon: <FaShieldAlt className="text-3xl text-[#0E5543]" />,
+      icon: <FaShieldAlt className="text-2xl sm:text-3xl text-[#0E5543]" />,
       title: "Rigorous Quality Control",
       description: "We perform due diligence on each slab before it is shipped."
     },
     {
-      icon: <FaCogs className="text-3xl text-[#0E5543]" />,
+      icon: <FaCogs className="text-2xl sm:text-3xl text-[#0E5543]" />,
       title: "Modern Processing Facility",
       description: "We use the latest machinery for cutting, polishing, and finishing."
     },
     {
-      icon: <FaShippingFast className="text-3xl text-[#0E5543]" />,
+      icon: <FaShippingFast className="text-2xl sm:text-3xl text-[#0E5543]" />,
       title: "International Logistics",
       description: "We manage International freight forwarding and exports for timely shipping."
     },
     {
-      icon: <FaLeaf className="text-3xl text-[#0E5543]" />,
+      icon: <FaLeaf className="text-2xl sm:text-3xl text-[#0E5543]" />,
       title: "Responsible Sourcing",
       description: "Our quarries comply with ethical quarrying standards and sustain the environment."
     }
@@ -63,21 +63,21 @@ const SaudiArabia = () => {
       <div className="relative bg-gradient-to-r from-[#0E5543] to-[#1a7a5e] py-20 px-4 text-center">
         <div className="max-w-6xl mx-auto mt-10">
         
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#F2E1C5] mb-6" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#F2E1C5] mb-6" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
             Marble Exporters in Saudi Arabia
-          </h1>
-          <h2 className="text-xl sm:text-2xl md:text-3xl text-[#F2E1C5]/90 mb-8 max-w-4xl mx-auto" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+          </p>
+          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#F2E1C5]/90 mb-8 max-w-4xl mx-auto" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
             Delivering Timeless Indian Marble Excellence to Saudi Arabia
           </h2>
-          <div className="flex flex-wrap justify-center gap-4 text-[#F2E1C5]">
-            <div className="bg-[#F2E1C5]/10 backdrop-blur-md px-6 py-3 rounded-full">
-              <span className="font-semibold" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Luxury & Strength</span>
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-[#F2E1C5]">
+            <div className="bg-[#F2E1C5]/10 backdrop-blur-md px-3 sm:px-6 py-2 sm:py-3 rounded-full">
+              <span className="font-semibold text-xs sm:text-sm" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Luxury & Strength</span>
             </div>
-            <div className="bg-[#F2E1C5]/10 backdrop-blur-md px-6 py-3 rounded-full">
-              <span className="font-semibold" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Decades of Excellence</span>
+            <div className="bg-[#F2E1C5]/10 backdrop-blur-md px-3 sm:px-6 py-2 sm:py-3 rounded-full">
+              <span className="font-semibold text-xs sm:text-sm" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Decades of Excellence</span>
             </div>
-            <div className="bg-[#F2E1C5]/10 backdrop-blur-md px-6 py-3 rounded-full">
-              <span className="font-semibold" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Riyadh • Jeddah • Dammam</span>
+            <div className="bg-[#F2E1C5]/10 backdrop-blur-md px-3 sm:px-6 py-2 sm:py-3 rounded-full">
+              <span className="font-semibold text-xs sm:text-sm" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Riyadh • Jeddah • Dammam</span>
             </div>
           </div>
         </div>
@@ -88,10 +88,10 @@ const SaudiArabia = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0E5543] mb-6" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#0E5543] mb-6" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 Trusted Marble Exporters to Saudi Arabia
               </h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
+              <div className="space-y-4 text-gray-700 leading-relaxed text-sm sm:text-base">
                 <p style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                   Rishabh Green Marbles is one of the most trusted marble exporters to Saudi Arabia when it comes to designing spaces that exude luxury, strength and beauty. Our heritage has been developed over decades of precision, excellence and an understanding of natural stone.
                 </p>
@@ -115,17 +115,17 @@ const SaudiArabia = () => {
       <div className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0E5543] mb-6" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#0E5543] mb-6" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
               Bringing the Craftsmanship of India to the Vision of Saudi Arabia
             </h2>
             <div className="max-w-4xl mx-auto">
-              <p className="text-gray-700 leading-relaxed mb-6" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+              <p className="text-gray-700 leading-relaxed mb-6 text-sm sm:text-base" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 India has always been famed for its beautiful natural stones, especially marble that has its origin as an expression of the earth's artistry in its purest form. At Rishabh Green, we are proud to be part of this global exchange in which we export from India quality marble to Saudi Arabia like no other.
               </p>
-              <p className="text-gray-700 leading-relaxed mb-6" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+              <p className="text-gray-700 leading-relaxed mb-6 text-sm sm:text-base" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 Our process combines traditional stone craftsmanship and modern processing technologies, which allow each block or slab of the marble to meet international standards for strength, finish, and aesthetic appeal.
               </p>
-              <p className="text-gray-700 leading-relaxed" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 We export into megacities such as Riyadh, Jeddah, Dammam, Al Khobar, and Mecca with marble commonly used in luxury villas, hotels, mosques, and in commercial use. Our marbles are beautiful and made durable for the climate of Saudi Arabia.
               </p>
             </div>
@@ -137,59 +137,59 @@ const SaudiArabia = () => {
       <div className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0E5543] mb-6" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#0E5543] mb-6" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
               How We Proceed: Successful Exports to Saudi Arabia
             </h2>
-            <h3 className="text-lg sm:text-xl text-gray-600 mb-8" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+            <h3 className="text-base sm:text-lg md:text-xl text-gray-600 mb-8" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
               A Journey from Quarry to Quality
             </h3>
-            <p className="text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+            <p className="text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8 text-sm sm:text-base" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
               Marble exportation from India to Saudi Arabia is not a mere process of trade. It is an experience, which we at Rishabh Green Marbles take pride in. The foundation of our success in the Saudi market has been our transparency, professionalism, and expedience.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200">
-              <div className="bg-[#0E5543] text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+              <div className="bg-[#0E5543] text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-lg sm:text-xl font-bold" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 1
               </div>
-              <h3 className="font-semibold text-gray-800 mb-3 text-center" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Choosing & Customization</h3>
-              <p className="text-gray-600 text-sm leading-relaxed" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+              <h3 className="font-semibold text-gray-800 mb-3 text-center text-sm sm:text-base" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Choosing & Customization</h3>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 We assist clients in choosing appropriate marble from shade, patterns, finish to slab sizes for design intent and architectural style.
               </p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200">
-              <div className="bg-[#0E5543] text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+              <div className="bg-[#0E5543] text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-lg sm:text-xl font-bold" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 2
               </div>
-              <h3 className="font-semibold text-gray-800 mb-3 text-center" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Precise Processing</h3>
-              <p className="text-gray-600 text-sm leading-relaxed" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+              <h3 className="font-semibold text-gray-800 mb-3 text-center text-sm sm:text-base" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Precise Processing</h3>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 Advanced technology in our Udaipur factory producing precise cut, mirror-like polish, uniform texture and color.
               </p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200">
-              <div className="bg-[#0E5543] text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+              <div className="bg-[#0E5543] text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-lg sm:text-xl font-bold" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 3
               </div>
-              <h3 className="font-semibold text-gray-800 mb-3 text-center" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Quality Assurance</h3>
-              <p className="text-gray-600 text-sm leading-relaxed" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+              <h3 className="font-semibold text-gray-800 mb-3 text-center text-sm sm:text-base" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Quality Assurance</h3>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 Stringent tests of each slab checking strength, polish, thickness, and color shade to meet international standards.
               </p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200">
-              <div className="bg-[#0E5543] text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+              <div className="bg-[#0E5543] text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-lg sm:text-xl font-bold" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 4
               </div>
-              <h3 className="font-semibold text-gray-800 mb-3 text-center" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Safe Packing & Shipping</h3>
-              <p className="text-gray-600 text-sm leading-relaxed" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+              <h3 className="font-semibold text-gray-800 mb-3 text-center text-sm sm:text-base" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Safe Packing & Shipping</h3>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 State-of-the-art wooden crates, moisture-proof wrapping for safe shipping and transit to Saudi Arabia.
               </p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200">
-              <div className="bg-[#0E5543] text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+              <div className="bg-[#0E5543] text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-lg sm:text-xl font-bold" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 5
               </div>
-              <h3 className="font-semibold text-gray-800 mb-3 text-center" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Prompt Delivery & Support</h3>
-              <p className="text-gray-600 text-sm leading-relaxed" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+              <h3 className="font-semibold text-gray-800 mb-3 text-center text-sm sm:text-base" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Prompt Delivery & Support</h3>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>ily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 Timely delivery record and customer service support making us reliable marble exporters to Saudi Arabia.
               </p>
             </div>
