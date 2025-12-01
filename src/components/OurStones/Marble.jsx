@@ -55,6 +55,10 @@ export default function Marble() {
   const navigate = useNavigate()
   const [searchParams, setSearchParams] = useSearchParams()
   
+  const filteredProducts = marbleProducts.filter(product => 
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+  
   useEffect(() => {
     const nameParam = searchParams.get('name')
     if (nameParam) {
@@ -62,11 +66,11 @@ export default function Marble() {
     }
   }, [searchParams])
   
-  const filteredProducts = marbleProducts.filter(product => 
-    product.name.toLowerCase().includes(searchTerm.toLowerCase())
-  )
+  useEffect(() => {
+    setCurrentSlide(0)
+  }, [filteredProducts.length])
   
-  const maxSlides = Math.ceil(filteredProducts.length / 4)
+  const maxSlides = filteredProducts.length
   
   const handleSearch = (value) => {
     setSearchTerm(value)
@@ -78,11 +82,11 @@ export default function Marble() {
   }
 
   const nextSlide = () => {
-    setCurrentSlide(prev => Math.min(prev + 1, maxSlides - 1))
+    setCurrentSlide(prev => (prev + 1) % maxSlides)
   }
 
   const prevSlide = () => {
-    setCurrentSlide(prev => Math.max(prev - 1, 0))
+    setCurrentSlide(prev => (prev - 1 + maxSlides) % maxSlides)
   }
 
   const goToSlide = (slideIndex) => {
@@ -100,91 +104,20 @@ export default function Marble() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16 mt-10">
              <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-4xl font-bold text-[#0E5543] mb-4"
-             style={{ fontFamily: "Arial, sans-serif", fontWeight: "200" }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0E5543] mb-4"
+             style={{ fontFamily: "Arial, sans-serif", fontWeight: "300", letterSpacing: "0.1em" }}>
               Exquisite Marble Collection
             </h2>
             <div className="h-0.5 bg-gradient-to-r from-[#0E5543] via-[#F2E1C5] to-[#0E5543] mx-auto mb-6 w-20" />
-            <p className="text-gray-600 max-w-2xl mx-auto"
+            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto"
                style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
-              Discover the endless possibilities of our premium stones in real-world applicationsDiscover our handpicked selection of premium marble stones, each piece carefully sourced for exceptional beauty and durability.
+              Discover our handpicked selection of premium marble stones, each piece carefully sourced for exceptional beauty and durability.
             </p>
           </div>
         </div>
 
-        {/* Mobile Carousel */}
-        <div className="sm:hidden relative mb-6">
-          <div className="overflow-hidden">
-            <div
-              className="flex transition-transform duration-300"
-              style={{
-                transform: `translateX(-${currentSlide * 100}%)`
-              }}
-            >
-              {filteredProducts.map((product) => (
-                <div key={product.id} className="w-full flex-shrink-0 px-2">
-                  <div 
-                    className="group bg-white shadow-xl overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-2xl border border-gray-100"
-                    onClick={() => navigate(`/product/${product.id}`)}
-                  >
-                    <div className="relative overflow-hidden">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <div className="absolute top-4 right-4">
-                        <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-[#0E5543] shadow-lg">
-                          Premium
-                        </span>
-                      </div>
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-gray-900 text-center group-hover:text-[#0E5543] transition-colors duration-300"
-                         style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
-                        {product.name}
-                      </h3>
-                      <div className="mt-3 flex justify-center">
-                        <div className="w-12 h-0.5 bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-full"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile Controls */}
-          <button
-            className="absolute left-2 top-[120px] -translate-y-1/2 text-[#0E5543] p-2 rounded-full shadow-lg hover:text-[#1A7A62] bg-white"
-            onClick={prevSlide}
-          >
-            <FiChevronLeft size={16} />
-          </button>
-          <button
-            className="absolute right-2 top-[120px] -translate-y-1/2 text-[#0E5543] p-2 rounded-full shadow-lg hover:text-[#1A7A62] bg-white"
-            onClick={nextSlide}
-          >
-            <FiChevronRight size={16} />
-          </button>
-
-          {/* Mobile Dots */}
-          <div className="flex justify-center mt-4 space-x-2">
-            {filteredProducts.map((_, idx) => (
-              <button
-                key={idx}
-                className={`w-2 h-2 rounded-full transition-colors ${
-                  idx === currentSlide ? "bg-[#0E5543]" : "bg-gray-300"
-                }`}
-                onClick={() => goToSlide(idx)}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Desktop Grid */}
-        <div className="hidden sm:block">
+        {/* Product Grid */}
+        <div className="mb-8">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {filteredProducts.map((product) => (
               <div 
@@ -213,7 +146,7 @@ export default function Marble() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 text-center group-hover:text-[#0E5543] transition-colors duration-300"
+                  <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 text-center group-hover:text-[#0E5543] transition-colors duration-300"
                      style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                     {product.name}
                   </h3>

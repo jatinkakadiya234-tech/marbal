@@ -45,46 +45,45 @@ import ivoryBrown from '../../assets/Granites/Best Ivory Brown Granite (Pictures
 
 
 const graniteProducts = [
-  { id: 17, name: "Absolute Black", image: absoluteBlack },
-  { id: 18, name: "Alaska Gold", image: alaskaGold },
-  { id: 19, name: "Alaska White", image: alaskaWhite },
-  { id: 20, name: "Alpine White", image: alpineWhite },
-  { id: 21, name: "Black Galaxy", image: blackGalaxy },
-  { id: 22, name: "Black Pearl", image: blackPearl },
-  { id: 23, name: "Black Beauty", image: blackBeauty },
-  { id: 24, name: "Bruno Red", image: brunoRed },
-  { id: 25, name: "Champagne Gold", image: champagneGold },
-  { id: 26, name: "Chima Blue", image: chimaBlue },
-  { id: 27, name: "Chima Pink", image: chimaPink },
-  { id: 28, name: "Crystal Yellow", image: crystalYellow },
-  { id: 29, name: "Desert Brown", image: desertBrown },
-  { id: 30, name: "Dessert Green", image: dessertGreen },
-  { id: 31, name: "Amba White", image: ambaWhite },
-  { id: 32, name: "Ikon Brown", image: ikonBrown },
-  { id: 33, name: "Impala Black", image: impalaBlack },
-  { id: 34, name: "Imperial Red", image: imperialRed },
-  { id: 35, name: "Ivory Fantasy", image: ivoryFantasy },
-  { id: 36, name: "Jeerawal White", image: jeerawalWhite },
-  { id: 37, name: "Jhansi Red", image: jhansiRed },
-  { id: 38, name: "Kashmir White", image: kashmirWhite },
-  { id: 39, name: "Koliwada Blue", image: koliwadaBlue },
-  { id: 40, name: "Lakha Red", image: lakhaRed },
-  { id: 41, name: "Magic White", image: magicWhite },
-  { id: 42, name: "Marigold", image: marigold },
-  { id: 43, name: "Merry Wood", image: merryWood },
-  { id: 44, name: "New Imperial Gold", image: newImperialGold },
-  { id: 45, name: "P White", image: pWhite },
-  { id: 46, name: "Rajasthan Black", image: rajasthanBlack },
-  { id: 47, name: "Rosy Pink", image: rosyPink },
-  { id: 48, name: "Royal Cream", image: royalCream },
-  { id: 49, name: "Royal Green", image: royalGreen },
-  { id: 50, name: "Sapphire Blue", image: sapphireBlue },
-  { id: 51, name: "Sunrise Gold", image: sunriseGold },
-  { id: 52, name: "Tan Brown", image: tanBrown },
-  { id: 53, name: "Bala Flower", image: balaFlower },
-  { id: 54, name: "Copper Silk", image: copperSilk },
-  { id: 55, name: "Ivory Brown", image: ivoryBrown },
- 
+  { id: 22, name: "Absolute Black", image: absoluteBlack },
+  { id: 23, name: "Alaska Gold", image: alaskaGold },
+  { id: 24, name: "Alaska White", image: alaskaWhite },
+  { id: 25, name: "Alpine White", image: alpineWhite },
+  { id: 26, name: "Black Galaxy", image: blackGalaxy },
+  { id: 27, name: "Black Pearl", image: blackPearl },
+  { id: 28, name: "Black Beauty", image: blackBeauty },
+  { id: 29, name: "Bruno Red", image: brunoRed },
+  { id: 30, name: "Champagne Gold", image: champagneGold },
+  { id: 31, name: "Chima Blue", image: chimaBlue },
+  { id: 32, name: "Chima Pink", image: chimaPink },
+  { id: 33, name: "Crystal Yellow", image: crystalYellow },
+  { id: 34, name: "Desert Brown", image: desertBrown },
+  { id: 35, name: "Dessert Green", image: dessertGreen },
+  { id: 36, name: "Amba White", image: ambaWhite },
+  { id: 37, name: "Ikon Brown", image: ikonBrown },
+  { id: 38, name: "Impala Black", image: impalaBlack },
+  { id: 39, name: "Imperial Red", image: imperialRed },
+  { id: 40, name: "Ivory Fantasy", image: ivoryFantasy },
+  { id: 41, name: "Jeerawal White", image: jeerawalWhite },
+  { id: 42, name: "Jhansi Red", image: jhansiRed },
+  { id: 43, name: "Kashmir White", image: kashmirWhite },
+  { id: 44, name: "Koliwada Blue", image: koliwadaBlue },
+  { id: 45, name: "Lakha Red", image: lakhaRed },
+  { id: 46, name: "Magic White", image: magicWhite },
+  { id: 47, name: "Marigold", image: marigold },
+  { id: 48, name: "Merry Wood", image: merryWood },
+  { id: 49, name: "New Imperial Gold", image: newImperialGold },
+  { id: 50, name: "P White", image: pWhite },
+  { id: 51, name: "Rajasthan Black", image: rajasthanBlack },
+  { id: 52, name: "Rosy Pink", image: rosyPink },
+  { id: 53, name: "Royal Cream", image: royalCream },
+  { id: 54, name: "Royal Green", image: royalGreen },
+  { id: 55, name: "Sapphire Blue", image: sapphireBlue },
+  { id: 56, name: "Sunrise Gold", image: sunriseGold },
+  { id: 57, name: "Tan Brown", image: tanBrown },
+  { id: 58, name: "Bala Flower", image: balaFlower },
+  { id: 59, name: "Copper Silk", image: copperSilk },
+  { id: 60, name: "Ivory Brown", image: ivoryBrown },
 ];
 
 export default function Granite() {
@@ -93,6 +92,10 @@ export default function Granite() {
   const [searchTerm, setSearchTerm] = useState('')
   const [searchParams, setSearchParams] = useSearchParams()
   
+  const filteredProducts = graniteProducts.filter(product => 
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+  
   useEffect(() => {
     const nameParam = searchParams.get('name')
     if (nameParam) {
@@ -100,11 +103,11 @@ export default function Granite() {
     }
   }, [searchParams])
   
-  const filteredProducts = graniteProducts.filter(product => 
-    product.name.toLowerCase().includes(searchTerm.toLowerCase())
-  )
+  useEffect(() => {
+    setCurrentSlide(0)
+  }, [filteredProducts.length])
   
-  const maxSlides = Math.ceil(filteredProducts.length / 4)
+  const maxSlides = filteredProducts.length
   
   const handleSearch = (value) => {
     setSearchTerm(value)
@@ -116,11 +119,11 @@ export default function Granite() {
   }
 
   const nextSlide = () => {
-    setCurrentSlide(prev => Math.min(prev + 1, maxSlides - 1))
+    setCurrentSlide(prev => (prev + 1) % maxSlides)
   }
 
   const prevSlide = () => {
-    setCurrentSlide(prev => Math.max(prev - 1, 0))
+    setCurrentSlide(prev => (prev - 1 + maxSlides) % maxSlides)
   }
 
   const goToSlide = (slideIndex) => {
@@ -140,92 +143,20 @@ export default function Granite() {
 
          <div className="text-center mb-16 mt-10">
              <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-4xl font-bold text-[#0E5543] mb-4"
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0E5543] mb-4"
               style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
               Durable Granite Collection
             </h2>
             <div className="h-0.5 bg-gradient-to-r from-[#0E5543] via-[#F2E1C5] to-[#0E5543] mx-auto mb-6 w-20" />
-            <p className="text-gray-600 max-w-2xl mx-auto"
+            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto"
                style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
               Explore our extensive range of premium granite stones, engineered for strength and designed for modern applications.
             </p>
           </div>
         </div>
 
-        {/* Mobile Carousel */}
-        <div className="sm:hidden relative mb-8">
-          <div className="overflow-hidden">
-            <div
-              className="flex transition-transform duration-300"
-              style={{
-                transform: `translateX(-${currentSlide * 100}%)`
-              }}
-            >
-              {filteredProducts.map((product) => (
-                <div key={product.id} className="w-full flex-shrink-0 px-2">
-                  <div 
-                    className="group bg-whi shadow-xl overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-2xl border border-gray-100"
-                    onClick={() => navigate(`/product/${product.id}`)}
-                  >
-                    <div className="relative overflow-hidden">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <div className="absolute top-4 right-4">
-                        <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-[#0E5543] shadow-lg">
-                          Premium
-                        </span>
-                      </div>
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-gray-900 text-center group-hover:text-[#0E5543] transition-colors duration-300">
-                        {product.name}
-                      </h3>
-                      <div className="mt-3 flex justify-center">
-                        <div className="w-12 h-0.5 bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-full"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile Controls */}
-          <button
-            className="absolute left-2  top-[120px] -translate-y-1/2 bg-white/90 backdrop-blur-sm text-[#0E5543] p-3 rounded-full shadow-xl hover:bg-white hover:text-[#1A7A62] transition-all duration-300"
-            onClick={prevSlide}
-          >
-            <FiChevronLeft size={18} />
-          </button>
-          <button
-            className="absolute right-2 top-[120px] -translate-y-1/2 bg-white/90 backdrop-blur-sm text-[#0E5543] p-3 rounded-full shadow-xl hover:bg-white hover:text-[#1A7A62] transition-all duration-300"
-            onClick={nextSlide}
-          >
-            <FiChevronRight size={18} />
-          </button>
-
-          {/* Mobile Dots */}
-          <div className="flex justify-center mt-6 space-x-2">
-            {filteredProducts.map((_, idx) => (
-              <button
-                key={idx}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  idx === currentSlide 
-                    ? "bg-gradient-to-r from-[#0E5543] to-[#1A7A62] shadow-lg" 
-                    : "bg-gray-300"
-                }`}
-                onClick={() => goToSlide(idx)}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Desktop Grid */}
-        <div className="hidden sm:block">
+        {/* Product Grid */}
+        <div className="mb-8">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {filteredProducts.map((product) => (
               <div 
@@ -254,7 +185,7 @@ export default function Granite() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 text-center group-hover:text-[#0E5543] transition-colors duration-300"
+                  <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 text-center group-hover:text-[#0E5543] transition-colors duration-300"
                      style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                     {product.name}
                   </h3>
@@ -272,12 +203,12 @@ export default function Granite() {
         
            <div className="text-center mb-16 mt-10">
              <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-4xl font-bold text-[#0E5543] mb-4"
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0E5543] mb-4"
              style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
               Emphasise Your Walls and Floors with Shining Granite
             </h2>
             <div className="h-0.5 bg-gradient-to-r from-[#0E5543] via-[#F2E1C5] to-[#0E5543] mx-auto mb-6 w-20" />
-            <p className="text-gray-600 max-w-2xl mx-auto"
+            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto"
                style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
              Granite, a silica-rich magma, is one of the ingenious rocks that dominates the Indian and overseas market. Its popularity now rises above its common use in kitchen countertops. 
             </p>
@@ -288,15 +219,15 @@ export default function Granite() {
 
           {/* Granite Making Process */}
           <div className="bg-white rounded-2xl shadow-xl p-8 mb-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center"
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 text-center"
                 style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
               Granite Making Process and <span className="text-[#0E5543]">Its Source</span>
             </h3>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-4">
-                <h4 className="font-semibold text-lg text-gray-900 mb-3"
+                <h4 className="font-semibold text-base sm:text-lg text-gray-900 mb-3"
                     style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Natural Formation</h4>
-                <p className="text-gray-600 text-sm leading-relaxed"
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed"
                    style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                   Granite's magma undergoes heating and cooling changes beneath the Earth's surface. It is not individually present inside the earth but rather it comes from the heated continental rock. As the heated magma cools down and solidifies, it becomes an irresistible granite stone.
                 </p>

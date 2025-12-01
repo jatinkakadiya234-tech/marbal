@@ -266,7 +266,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                       style={{ backgroundColor: "white", color: "black" }}
                       onClick={(e) => {
                         e.stopPropagation();
-                        setActiveCategory(cat.name.toLowerCase());
+                        navigate('/OurStones/marble');
                       }}
                     >
                       Discover
@@ -316,7 +316,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                           className="px-4 sm:px-6 py-2 sm:py-3 border text-sm sm:text-base uppercase transition-all duration-300 rounded hover:scale-105"
                           onClick={(e) => {
                             e.stopPropagation();
-                            setActiveCategory(cat.name.toLowerCase());
+                            navigate('/OurStones/marble');
                           }}
                         >
                           Discover

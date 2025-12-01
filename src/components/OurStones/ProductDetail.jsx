@@ -61,9 +61,9 @@ export default function ProductDetail() {
                   <span className="w-2 h-2 bg-[#0E5543] rounded-full mr-2"></span>
                   {product.category}
                 </span>
-                <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                <p className="text-2xl lg:text-2xl font-bold text-gray-900 mb-4 leading-tight">
                   {product.name}
-                </h1>
+                </p>
                 <p className="text-gray-600 text-lg leading-relaxed">
                   {product.description}
                 </p>

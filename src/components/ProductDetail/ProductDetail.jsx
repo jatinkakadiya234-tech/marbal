@@ -171,7 +171,7 @@ const ProductDetail = () => {
           <div className="space-y-4 sm:space-y-6">
             <div>
               <p className="text-[#0E5543] font-medium mb-1 sm:mb-2 text-sm sm:text-base">{product.category}</p>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">{product.name}</h1>
+              <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">{product.name}</p>
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">{product.description}</p>
             </div>
 
@@ -460,7 +460,7 @@ const ProductDetail = () => {
                     className="w-full h-40 object-cover"
                   />
                   <div className="p-3">
-                    <h3 className="font-semibold text-gray-900 text-sm">{relatedProduct.name}</h3>
+                    <p className="font-semibold text-gray-900 text-sm">{relatedProduct.name}</p>
                     <p className="text-gray-500 text-xs">{relatedProduct.category}</p>
                     <button className="text-[#0E5543] text-xs font-medium mt-2 hover:underline">
                       View Details →
@@ -487,8 +487,8 @@ const ProductDetail = () => {
                   alt={relatedProduct.name}
                   className="w-full h-48 object-cover"
                 />
-                <div className="p-4">
-                  <h3 className="font-semibold text-gray-900">{relatedProduct.name}</h3>
+                <div className="p-1s">
+                  <p className="font-semibold text-gray-900 text-2xl">{relatedProduct.name}</p>
                   <p className="text-gray-500 text-sm">{relatedProduct.category}</p>
                   <button className="text-[#0E5543] text-sm font-medium mt-2 hover:underline">
                     View Details →

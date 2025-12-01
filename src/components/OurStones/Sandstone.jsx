@@ -16,17 +16,17 @@ import redSandstone from "../../assets/Sandstone/Red Sandstone.jpg";
 import teakwoodSandstone from "../../assets/Sandstone/Teakwood-Sandstone.jpg";
 
 const sandstoneProducts = [
-  { id: 53, name: "Beige Sandstone", image: beigeSandstone },
-  { id: 54, name: "Chocolate Sandstone", image: chocolateSandstone },
-  { id: 55, name: "Grey Sandstone", image: greySandstone },
-  { id: 56, name: "Gwalior White Mint", image: gwaliorWhiteMint },
-  { id: 57, name: "Jaisalmer Yellow", image: jaisalmerYellow },
-  { id: 58, name: "Jodhpur Pink", image: jodhpurPink },
-  { id: 59, name: "Kota Blue", image: kotaBlue },
-  { id: 60, name: "Merry Gold Sandstone", image: merryGoldSandstone },
-  { id: 61, name: "Rainbow Sandstone", image: rainbowSandstone },
-  { id: 62, name: "Red Sandstone", image: redSandstone },
-  { id: 63, name: "Teakwood Sandstone", image: teakwoodSandstone },
+  { id: 61, name: "Beige Sandstone", image: beigeSandstone },
+  { id: 62, name: "Chocolate Sandstone", image: chocolateSandstone },
+  { id: 63, name: "Grey Sandstone", image: greySandstone },
+  { id: 64, name: "Gwalior White Mint", image: gwaliorWhiteMint },
+  { id: 65, name: "Jaisalmer Yellow", image: jaisalmerYellow },
+  { id: 66, name: "Jodhpur Pink", image: jodhpurPink },
+  { id: 67, name: "Kota Blue", image: kotaBlue },
+  { id: 68, name: "Merry Gold Sandstone", image: merryGoldSandstone },
+  { id: 69, name: "Rainbow Sandstone", image: rainbowSandstone },
+  { id: 70, name: "Red Sandstone", image: redSandstone },
+  { id: 71, name: "Teakwood Sandstone", image: teakwoodSandstone },
 ];
 
 export default function Sandstone() {
@@ -58,7 +58,7 @@ export default function Sandstone() {
         <div className="text-center mb-16 mt-10">
           <div className="text-center mb-12">
             <h2
-              className="text-4xl md:text-4xl font-bold text-[#0E5543] mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0E5543] mb-4"
               style={{
                 fontFamily: "Arial, sans-serif",
                 fontWeight: "300",
@@ -69,7 +69,7 @@ export default function Sandstone() {
             </h2>
             <div className="h-0.5 bg-gradient-to-r from-[#0E5543] via-[#F2E1C5] to-[#0E5543] mx-auto mb-6 w-20" />
             <p
-              className="text-gray-600 max-w-2xl mx-auto"
+              className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto"
               style={{
                 fontFamily: "Arial, sans-serif",
                 fontWeight: "300",
@@ -82,90 +82,8 @@ export default function Sandstone() {
           </div>
         </div>
 
-        {/* Mobile Carousel */}
-        <div className="sm:hidden relative mb-8">
-          <div className="overflow-hidden">
-            <div
-              className="flex transition-transform duration-300"
-              style={{
-                transform: `translateX(-${currentSlide * 100}%)`,
-              }}
-            >
-              {sandstoneProducts.map((product) => (
-                <div key={product.id} className="w-full flex-shrink-0 px-2">
-                  <div
-                    className="group bg-white  shadow-xl overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-2xl border border-gray-100"
-                    onClick={() => navigate(`/product/${product.id}`)}
-                  >
-                    <div className="relative overflow-hidden">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <div className="absolute top-4 right-4">
-                        <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-[#0E5543] shadow-lg"
-                              style={{
-                                fontFamily: "Arial, sans-serif",
-                                fontWeight: "300",
-                                letterSpacing: "0.1em",
-                              }}>
-                          Premium
-                        </span>
-                      </div>
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-gray-900 text-center group-hover:text-[#0E5543] transition-colors duration-300"
-                          style={{
-                            fontFamily: "Arial, sans-serif",
-                            fontWeight: "300",
-                            letterSpacing: "0.1em",
-                          }}>
-                        {product.name}
-                      </h3>
-                      <div className="mt-3 flex justify-center">
-                        <div className="w-12 h-0.5 bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-full"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile Controls */}
-          <button
-            className="absolute left-2 top-[120px] -translate-y-1/2 bg-white/90 backdrop-blur-sm text-[#0E5543] p-3 rounded-full shadow-xl hover:bg-white hover:text-[#1A7A62] transition-all duration-300"
-            onClick={prevSlide}
-          >
-            <FiChevronLeft size={18} />
-          </button>
-          <button
-            className="absolute right-2 top-[120px] -translate-y-1/2 bg-white/90 backdrop-blur-sm text-[#0E5543] p-3 rounded-full shadow-xl hover:bg-white hover:text-[#1A7A62] transition-all duration-300"
-            onClick={nextSlide}
-          >
-            <FiChevronRight size={18} />
-          </button>
-
-          {/* Mobile Dots */}
-          <div className="flex justify-center mt-6 space-x-2">
-            {sandstoneProducts.map((_, idx) => (
-              <button
-                key={idx}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  idx === currentSlide
-                    ? "bg-gradient-to-r from-[#0E5543] to-[#1A7A62] shadow-lg"
-                    : "bg-gray-300"
-                }`}
-                onClick={() => goToSlide(idx)}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Desktop Grid */}
-        <div className="hidden sm:block">
+        {/* Product Grid */}
+        <div className="mb-8">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {sandstoneProducts.map((product) => (
               <div
@@ -202,7 +120,7 @@ export default function Sandstone() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 text-center group-hover:text-[#0E5543] transition-colors duration-300"
+                  <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 text-center group-hover:text-[#0E5543] transition-colors duration-300"
                       style={{
                         fontFamily: "Arial, sans-serif",
                         fontWeight: "300",
@@ -238,7 +156,7 @@ export default function Sandstone() {
           <div className="text-center mb-16 mt-10">
             <div className="text-center mb-12">
               <h2
-                className="text-4xl md:text-4xl font-bold text-[#0E5543] mb-4"
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0E5543] mb-4"
                 style={{
                   fontFamily: "Arial, sans-serif",
                   fontWeight: "300",
@@ -249,7 +167,7 @@ export default function Sandstone() {
               </h2>
               <div className="h-0.5 bg-gradient-to-r from-[#0E5543] via-[#F2E1C5] to-[#0E5543] mx-auto mb-6 w-20" />
               <p
-                className="text-gray-600 max-w-2xl mx-auto"
+                className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto"
                 style={{
                   fontFamily: "Arial, sans-serif",
                   fontWeight: "300",
