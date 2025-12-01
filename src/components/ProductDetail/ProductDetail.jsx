@@ -3,14 +3,13 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { FiChevronLeft, FiChevronRight, FiZoomIn, FiShare2, FiHeart, FiDownload } from 'react-icons/fi';
 
 // Import sample images (you can replace with actual product images)
-import agariaWhite from '../../assets/marbles/Agaria-White-Marble[1].jpg';
-import aravaliGreen from '../../assets/marbles/Aravali-Green[1].jpg';
-import bidasarBrown from '../../assets/marbles/bidasar brown marble.jpg';
+
 import cloudGrey from '../../assets/marbles/Cloud-Grey-Marble[1].jpg';
 import fantasyBrown from '../../assets/marbles/fantasy brown marble.jpg';
 import iconicBlack from '../../assets/marbles/Iconic-black-marble-1200x1200-1[1].jpg';
 import mysticGreen from '../../assets/marbles/Mystic-Green-Marble[1].jpg';
 import pinkMarble from '../../assets/marbles/pink-marble[1].jpg';
+import { allProducts } from '../../data/products';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -20,14 +19,7 @@ const ProductDetail = () => {
   const [activeTab, setActiveTab] = useState('overview');
 
   // All products data
-  const allProducts = [
-    { id: 1, name: "Agaria White", image: agariaWhite, category: "Premium White Marble" },
-    { id: 2, name: "Aravali Green", image: aravaliGreen, category: "Premium Green Marble" },
-    { id: 3, name: "Bidasar Brown", image: bidasarBrown, category: "Premium Brown Marble" },
-    { id: 4, name: "Cloud Grey", image: cloudGrey, category: "Premium Grey Marble" },
-    { id: 5, name: "Mystic Green", image: mysticGreen, category: "Premium Green Marble" },
-    { id: 6, name: "Pink Marble", image: pinkMarble, category: "Premium Pink Marble" }
-  ];
+
 
   // Get current product and related products
   const currentProduct = allProducts.find(p => p.id === parseInt(id)) || allProducts[0];
@@ -135,78 +127,76 @@ const ProductDetail = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen bg-gray-50 pt-16 sm:pt-20">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-8">
         
         {/* Breadcrumb */}
-        <nav className="mb-8">
-          <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <button onClick={() => navigate('/')} className="hover:text-[#0E5543]">Home</button>
+        <nav className="mb-4 sm:mb-8">
+          <div className="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm text-gray-600 overflow-x-auto">
+            <button onClick={() => navigate('/')} className="hover:text-[#0E5543] whitespace-nowrap">Home</button>
             <span>/</span>
-            <button onClick={() => navigate('/marble')} className="hover:text-[#0E5543]">Marble</button>
+            <button onClick={() => navigate('/marble')} className="hover:text-[#0E5543] whitespace-nowrap">Marble</button>
             <span>/</span>
-            <span className="text-[#0E5543] font-medium">{product.name}</span>
+            <span className="text-[#0E5543] font-medium truncate">{product.name}</span>
           </div>
         </nav>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 mb-8 lg:mb-16">
           
           {/* Image Gallery */}
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {/* Main Image */}
-            <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div className="relative bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden">
               <img
                 src={product.images[currentImageIndex]}
                 alt={product.name}
-                className="w-full h-96 lg:h-[500px] object-cover"
+                className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px] object-cover"
               />
               
-              {/* Image Navigation */}
-            
-              
+          
               {/* Zoom Button */}
               <button
                 onClick={() => setIsZoomed(true)}
-                className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-colors"
+                className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-white/90 backdrop-blur-sm p-1.5 sm:p-2 rounded-full shadow-lg hover:bg-white transition-colors"
               >
-                <FiZoomIn size={20} />
+                <FiZoomIn size={16} className="sm:w-5 sm:h-5" />
               </button>
             </div>
 
             {/* Thumbnail Images */}
-         
+           
           </div>
 
           {/* Product Information */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             <div>
-              <p className="text-[#0E5543] font-medium mb-2">{product.category}</p>
-              <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">{product.name}</h1>
-              <p className="text-gray-600 text-lg leading-relaxed">{product.description}</p>
+              <p className="text-[#0E5543] font-medium mb-1 sm:mb-2 text-sm sm:text-base">{product.category}</p>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">{product.name}</h1>
+              <p className="text-gray-600 text-base sm:text-lg leading-relaxed">{product.description}</p>
             </div>
 
             {/* Action Buttons */}
-            
+        
 
             {/* Quick Specs */}
-            <div className="bg-white rounded-xl p-6 shadow-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Specifications</h3>
-              <div className="grid grid-cols-2 gap-4">
+            <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">Quick Specifications</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div>
-                  <p className="text-sm text-gray-500">Stone Type</p>
-                  <p className="font-medium">{product.specifications["Stone Type"]}</p>
+                  <p className="text-xs sm:text-sm text-gray-500">Stone Type</p>
+                  <p className="font-medium text-sm sm:text-base">{product.specifications["Stone Type"]}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">Origin</p>
-                  <p className="font-medium">{product.specifications["Origin"]}</p>
+                  <p className="text-xs sm:text-sm text-gray-500">Origin</p>
+                  <p className="font-medium text-sm sm:text-base">{product.specifications["Origin"]}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">Color</p>
-                  <p className="font-medium">{product.specifications["Color"]}</p>
+                  <p className="text-xs sm:text-sm text-gray-500">Color</p>
+                  <p className="font-medium text-sm sm:text-base">{product.specifications["Color"]}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">Finish</p>
-                  <p className="font-medium">{product.specifications["Finish"]}</p>
+                  <p className="text-xs sm:text-sm text-gray-500">Finish</p>
+                  <p className="font-medium text-sm sm:text-base">{product.specifications["Finish"]}</p>
                 </div>
               </div>
             </div>
@@ -214,15 +204,15 @@ const ProductDetail = () => {
         </div>
 
         {/* Detailed Information Tabs */}
-        <div className="bg-white rounded-2xl shadow-lg mb-16">
+        <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg mb-8 sm:mb-16">
           {/* Tab Navigation */}
           <div className="border-b border-gray-200">
-            <nav className="flex space-x-8 px-8">
+            <nav className="flex space-x-2 sm:space-x-8 px-3 sm:px-8 overflow-x-auto">
               {['overview', 'specifications', 'applications', 'features'].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`py-4 px-2 border-b-2 font-medium text-sm capitalize transition-colors ${
+                  className={`py-3 sm:py-4 px-2 sm:px-2 border-b-2 font-medium text-xs sm:text-sm capitalize transition-colors whitespace-nowrap ${
                     activeTab === tab
                       ? 'border-[#0E5543] text-[#0E5543]'
                       : 'border-transparent text-gray-500 hover:text-gray-700'
@@ -235,47 +225,47 @@ const ProductDetail = () => {
           </div>
 
           {/* Tab Content */}
-          <div className="p-8">
+          <div className="p-4 sm:p-8">
             {activeTab === 'overview' && (
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900">Product Overview</h3>
-                <p className="text-gray-600 leading-relaxed">
+              <div className="space-y-4 sm:space-y-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Product Overview</h3>
+                <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
                   {product.description} This premium marble is quarried from the finest deposits in Rajasthan, India, 
                   ensuring consistent quality and exceptional beauty. The stone's natural characteristics make it an 
                   ideal choice for both residential and commercial applications.
                 </p>
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Key Highlights</h4>
+                    <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">Key Highlights</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-[#0E5543] rounded-full"></div>
-                        <span className="text-gray-600">Premium natural stone from India</span>
+                        <div className="w-2 h-2 bg-[#0E5543] rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-600 text-sm sm:text-base">Premium natural stone from India</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-[#0E5543] rounded-full"></div>
-                        <span className="text-gray-600">Excellent durability and longevity</span>
+                        <div className="w-2 h-2 bg-[#0E5543] rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-600 text-sm sm:text-base">Excellent durability and longevity</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-[#0E5543] rounded-full"></div>
-                        <span className="text-gray-600">Suitable for various applications</span>
+                        <div className="w-2 h-2 bg-[#0E5543] rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-600 text-sm sm:text-base">Suitable for various applications</span>
                       </li>
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Care Instructions</h4>
+                    <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">Care Instructions</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-[#0E5543] rounded-full"></div>
-                        <span className="text-gray-600">Seal regularly for protection</span>
+                        <div className="w-2 h-2 bg-[#0E5543] rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-600 text-sm sm:text-base">Seal regularly for protection</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-[#0E5543] rounded-full"></div>
-                        <span className="text-gray-600">Clean with pH-neutral cleaners</span>
+                        <div className="w-2 h-2 bg-[#0E5543] rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-600 text-sm sm:text-base">Clean with pH-neutral cleaners</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-[#0E5543] rounded-full"></div>
-                        <span className="text-gray-600">Avoid acidic substances</span>
+                        <div className="w-2 h-2 bg-[#0E5543] rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-600 text-sm sm:text-base">Avoid acidic substances</span>
                       </li>
                     </ul>
                   </div>
@@ -284,13 +274,13 @@ const ProductDetail = () => {
             )}
 
             {activeTab === 'specifications' && (
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900">Technical Specifications</h3>
-                <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-4 sm:space-y-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Technical Specifications</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   {Object.entries(product.specifications).map(([key, value]) => (
-                    <div key={key} className="flex justify-between items-center py-3 border-b border-gray-100">
-                      <span className="font-medium text-gray-900">{key}</span>
-                      <span className="text-gray-600">{value}</span>
+                    <div key={key} className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-3 border-b border-gray-100">
+                      <span className="font-medium text-gray-900 text-sm sm:text-base">{key}</span>
+                      <span className="text-gray-600 text-sm sm:text-base mt-1 sm:mt-0">{value}</span>
                     </div>
                   ))}
                 </div>
@@ -298,13 +288,13 @@ const ProductDetail = () => {
             )}
 
             {activeTab === 'applications' && (
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900">Applications</h3>
-                <p className="text-gray-600">This versatile marble is perfect for various interior and exterior applications:</p>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="space-y-4 sm:space-y-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Applications</h3>
+                <p className="text-gray-600 text-sm sm:text-base">This versatile marble is perfect for various interior and exterior applications:</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                   {product.applications.map((application, index) => (
-                    <div key={index} className="bg-gray-50 rounded-lg p-4 text-center">
-                      <span className="text-gray-700 font-medium">{application}</span>
+                    <div key={index} className="bg-gray-50 rounded-lg p-3 sm:p-4 text-center">
+                      <span className="text-gray-700 font-medium text-sm sm:text-base">{application}</span>
                     </div>
                   ))}
                 </div>
@@ -312,13 +302,13 @@ const ProductDetail = () => {
             )}
 
             {activeTab === 'features' && (
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900">Key Features</h3>
-                <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-4 sm:space-y-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Key Features</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   {product.features.map((feature, index) => (
                     <div key={index} className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-[#0E5543] rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-gray-600">{feature}</span>
+                      <span className="text-gray-600 text-sm sm:text-base">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -327,96 +317,120 @@ const ProductDetail = () => {
           </div>
         </div>
 
-          <div className="bg-white rounded-2xl shadow-lg p-8 mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
+          <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-8 mb-8 sm:mb-16">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">
             How <span className="text-[#0E5543]">Marble Looks</span> in Real Life
           </h2>
-          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+          <p className="text-gray-600 text-center mb-6 sm:mb-8 max-w-3xl mx-auto text-sm sm:text-base">
             See how our premium marble appears in actual installations and real-world applications
           </p>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="relative group overflow-hidden rounded-xl">
+          {/* Mobile Carousel */}
+          <div className="sm:hidden">
+            <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide">
+              {[
+                { src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", alt: "Marble Kitchen Countertop", title: "Kitchen Countertops" },
+                { src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", alt: "Marble Bathroom", title: "Bathroom Vanities" },
+                { src: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", alt: "Marble Flooring", title: "Luxury Flooring" },
+                { src: "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", alt: "Marble Wall Cladding", title: "Wall Cladding" },
+                { src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", alt: "Marble Fireplace", title: "Fireplace Surrounds" },
+                { src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", alt: "Marble Staircase", title: "Elegant Staircases" }
+              ].map((item, index) => (
+                <div key={index} className="flex-shrink-0 w-72 relative group overflow-hidden rounded-lg">
+                  <img 
+                    src={item.src}
+                    alt={item.alt}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop Grid */}
+          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <div className="relative group overflow-hidden rounded-lg sm:rounded-xl">
               <img 
                 src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
                 alt="Marble Kitchen Countertop" 
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white font-semibold">Kitchen Countertops</span>
+                <span className="text-white font-semibold text-sm sm:text-base">Kitchen Countertops</span>
               </div>
             </div>
             
-            <div className="relative group overflow-hidden rounded-xl">
+            <div className="relative group overflow-hidden rounded-lg sm:rounded-xl">
               <img 
                 src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
                 alt="Marble Bathroom" 
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white font-semibold">Bathroom Vanities</span>
+                <span className="text-white font-semibold text-sm sm:text-base">Bathroom Vanities</span>
               </div>
             </div>
             
-            <div className="relative group overflow-hidden rounded-xl">
+            <div className="relative group overflow-hidden rounded-lg sm:rounded-xl">
               <img 
                 src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
                 alt="Marble Flooring" 
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white font-semibold">Luxury Flooring</span>
+                <span className="text-white font-semibold text-sm sm:text-base">Luxury Flooring</span>
               </div>
             </div>
             
-            <div className="relative group overflow-hidden rounded-xl">
+            <div className="relative group overflow-hidden rounded-lg sm:rounded-xl">
               <img 
                 src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
                 alt="Marble Wall Cladding" 
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white font-semibold">Wall Cladding</span>
+                <span className="text-white font-semibold text-sm sm:text-base">Wall Cladding</span>
               </div>
             </div>
             
-            <div className="relative group overflow-hidden rounded-xl">
+            <div className="relative group overflow-hidden rounded-lg sm:rounded-xl">
               <img 
                 src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
                 alt="Marble Fireplace" 
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white font-semibold">Fireplace Surrounds</span>
+                <span className="text-white font-semibold text-sm sm:text-base">Fireplace Surrounds</span>
               </div>
             </div>
             
-            <div className="relative group overflow-hidden rounded-xl">
+            <div className="relative group overflow-hidden rounded-lg sm:rounded-xl">
               <img 
                 src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
                 alt="Marble Staircase" 
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white font-semibold">Elegant Staircases</span>
+                <span className="text-white font-semibold text-sm sm:text-base">Elegant Staircases</span>
               </div>
             </div>
           </div>
           
-          <div className="mt-8 text-center">
-            <div className="bg-[#0E5543]/5 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Natural Beauty & Characteristics</h3>
-              <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-[#0E5543] rounded-full"></div>
+          <div className="mt-6 sm:mt-8 text-center">
+            <div className="bg-[#0E5543]/5 rounded-lg sm:rounded-xl p-4 sm:p-6">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">Natural Beauty & Characteristics</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 text-xs sm:text-sm text-gray-600">
+                <div className="flex items-center justify-center md:justify-start space-x-2">
+                  <div className="w-2 h-2 bg-[#0E5543] rounded-full flex-shrink-0"></div>
                   <span>Unique veining patterns in every slab</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-[#0E5543] rounded-full"></div>
+                <div className="flex items-center justify-center md:justify-start space-x-2">
+                  <div className="w-2 h-2 bg-[#0E5543] rounded-full flex-shrink-0"></div>
                   <span>Natural color variations and depth</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-[#0E5543] rounded-full"></div>
+                <div className="flex items-center justify-center md:justify-start space-x-2">
+                  <div className="w-2 h-2 bg-[#0E5543] rounded-full flex-shrink-0"></div>
                   <span>Polished surface with mirror-like finish</span>
                 </div>
               </div>
@@ -425,9 +439,40 @@ const ProductDetail = () => {
         </div>
 
         {/* Related Products */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Related Products</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+        <div className="mb-8 sm:mb-16">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-8">Related Products</h2>
+          
+          {/* Mobile Carousel */}
+          <div className="md:hidden">
+            <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide">
+              {relatedProducts.map((relatedProduct) => (
+                <div
+                  key={relatedProduct.id}
+                  className="flex-shrink-0 w-64 bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                  onClick={() => {
+                    navigate(`/product/${relatedProduct.id}`);
+                    window.scrollTo(0, 0);
+                  }}
+                >
+                  <img
+                    src={relatedProduct.image}
+                    alt={relatedProduct.name}
+                    className="w-full h-40 object-cover"
+                  />
+                  <div className="p-3">
+                    <h3 className="font-semibold text-gray-900 text-sm">{relatedProduct.name}</h3>
+                    <p className="text-gray-500 text-xs">{relatedProduct.category}</p>
+                    <button className="text-[#0E5543] text-xs font-medium mt-2 hover:underline">
+                      View Details →
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop Grid */}
+          <div className="hidden md:grid md:grid-cols-3 gap-6">
             {relatedProducts.map((relatedProduct) => (
               <div
                 key={relatedProduct.id}
@@ -458,32 +503,33 @@ const ProductDetail = () => {
       
 
         {/* Contact CTA */}
-        <div className="bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-2xl p-8 text-white text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Interested in This Product?</h2>
-          <p className="text-lg mb-6 opacity-90">Get a custom quote or request samples for your project</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-white text-[#0E5543] px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+        <div className="bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-xl sm:rounded-2xl p-6 sm:p-8 text-white text-center">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">Interested in This Product?</h2>
+          <p className="text-base sm:text-lg mb-4 sm:mb-6 opacity-90">Get a custom quote or request samples for your project</p>
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+            <button className="bg-white text-[#0E5543] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
               Request Quote
             </button>
-            <button className="border border-white text-[#0E5543] px-8 py-3 rounded-full font-semibold  hover:text-[#0E5543] transition-colors">
+            <button className="border border-white text-[#0E5543] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[#0E5543] transition-colors">
               Contact Us
             </button>
+            
           </div>
         </div>
       </div>
 
       {/* Image Zoom Modal */}
       {isZoomed && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-4xl max-h-full">
+        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-2 sm:p-4">
+          <div className="relative max-w-4xl max-h-full w-full">
             <img
               src={product.images[currentImageIndex]}
               alt={product.name}
-              className="max-w-full max-h-full object-contain"
+              className="max-w-full max-h-full object-contain w-full"
             />
             <button
               onClick={() => setIsZoomed(false)}
-              className="absolute top-4 right-4 bg-white text-black p-2 rounded-full hover:bg-gray-100 transition-colors"
+              className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-white text-black p-2 rounded-full hover:bg-gray-100 transition-colors text-sm sm:text-base"
             >
               ✕
             </button>

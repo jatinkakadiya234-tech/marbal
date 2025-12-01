@@ -15,6 +15,12 @@ import mysticGreen from '../assets/marbles/Mystic-Green-Marble[1].jpg'
 import pinkAraveli from '../assets/marbles/pink araveli.jpg'
 import pinkMarble from '../assets/marbles/pink-marble[1].jpg'
 import rossoLavante from '../assets/marbles/rosso-lavante-italian-marble[1].jpg'
+import afyonWhite from '../assets/marbles/Afyon-White-8_(1)[1].jpg'
+import indianMarbleSupplier from '../assets/marbles/Indian-Marble-Supplier[1].jpg'
+import millenium from '../assets/marbles/millenium1-1[1].jpg'
+import whiteAravaliOnyx from '../assets/marbles/white-aravali-onyx-376129184-b5kzi[1].jpg'
+import marbleImage from '../assets/marbles/3-41-768x768[1].jpg'
+
 
 // Import all granite images
 import absoluteBlack from '../assets/Granites/Absolute Black  Granite Countertops and Tile.jpeg'
@@ -46,24 +52,26 @@ import marigold from '../assets/Granites/marigold-granite-1512372173-3494734.jpg
 import merryWood from '../assets/Granites/merry-wood-granite.jpg'
 import newImperialGold from '../assets/Granites/New Imperial Gold          Stones Picture -         Other Country         Granite         Image.jpeg'
 import pWhite from '../assets/Granites/P WHITE GRANITE.jpeg'
-import rajasthanBlack from '../assets/Granites/Rajasthan Black Granite.jpg'
-import rosyPink from '../assets/Granites/Rosy Pink Granite is a medium variation granite of soft peaches, reds and ivories with black spots.jpeg'
+import rajasthanBlack from '../assets/Granites/images.jpeg'
+import rosyPink from '../assets/Granites/-1le8zqvk.avif'
 import royalCream from '../assets/Granites/Royal Cream Granite.jpeg'
 import royalGreen from '../assets/Granites/royal-green-granite-1510815057-3455614.jpg'
 import sapphireBlue from '../assets/Granites/Sapphire Blue.jpeg'
 import sunriseGold from '../assets/Granites/Sunrise Gold granite.jpeg'
 import tanBrown from '../assets/Granites/Tanbrown granite.jpeg'
-
+import balaFlower from  "../assets/Granites/bala-flower-555x415.jpg"
+import copperSilk from '../assets/Granites/Best Copper Silk Granite (Pictures & Costs) _ Material ID_ 1132 _ Marble_com.jpeg'
+import ivoryBrown from '../assets/Granites/Best Ivory Brown Granite (Pictures & Costs) _ Material ID_ 556 _ Marble_com.jpeg'
 // Import all sandstone images
 import beigeSandstone from '../assets/Sandstone/Beige Sandstone.jpg'
 import chocolateSandstone from '../assets/Sandstone/Chocolate Sandstone.jpg'
 import greySandstone from '../assets/Sandstone/Grey Sandstone.jpg'
-import gwaliorWhiteMint from '../assets/Sandstone/Gwalior White Mint Sandstone _ White - Sandstone Slabs.jpeg'
+import gwaliorWhiteMint from '../assets/Sandstone/gwalior-mint-sandstone-500x500.webp'
 import jaisalmerYellow from '../assets/Sandstone/jaisalmer yellow sandstone.jpg'
 import jodhpurPink from '../assets/Sandstone/JODHPUR PINK Snadstone.jpg'
 import kotaBlue from '../assets/Sandstone/kota blue.jpg'
 import merryGoldSandstone from '../assets/Sandstone/merry-gold-500x500.webp'
-import rainbowSandstone from '../assets/Sandstone/Rainbow Sandstone.jpeg'
+import rainbowSandstone from '../assets/Sandstone/rainbow-1.jpg'
 import redSandstone from '../assets/Sandstone/Red Sandstone.jpg'
 import teakwoodSandstone from '../assets/Sandstone/Teakwood-Sandstone.jpg'
 
@@ -85,7 +93,11 @@ export const allProducts = [
   { id: 14, name: "Pink Araveli", image: pinkAraveli, category: "Marble", description: "Elegant pink marble with soft hues and natural variations." },
   { id: 15, name: "Pink Marble", image: pinkMarble, category: "Marble", description: "Beautiful pink marble with delicate coloring and smooth finish." },
   { id: 16, name: "Rosso Lavante", image: rossoLavante, category: "Marble", description: "Italian-style marble with rich red tones and elegant patterns." },
-  
+   { id: 17, name: "Afyon White", image: afyonWhite },
+    { id: 18, name: "Indian Marble Supplier", image: indianMarbleSupplier },
+    { id: 19, name: "Millenium", image: millenium },
+    { id: 20, name: "White Aravali Onyx", image: whiteAravaliOnyx },
+    { id: 21, name: "Premium Marble", image: marbleImage },
   // Granites (17-52)
   { id: 17, name: "Absolute Black", image: absoluteBlack, category: "Granite", description: "Pure black granite with consistent color and premium durability." },
   { id: 18, name: "Alaska Gold", image: alaskaGold, category: "Granite", description: "Golden granite with natural patterns and warm undertones." },
@@ -123,6 +135,9 @@ export const allProducts = [
   { id: 50, name: "Sapphire Blue", image: sapphireBlue, category: "Granite", description: "Precious blue granite with sapphire-like appearance and premium quality." },
   { id: 51, name: "Sunrise Gold", image: sunriseGold, category: "Granite", description: "Golden granite with sunrise-inspired coloring and warm appeal." },
   { id: 52, name: "Tan Brown", image: tanBrown, category: "Granite", description: "Rich brown granite with natural variations and excellent durability." },
+   { id: 53, name: "Bala Flower", image: balaFlower },
+    { id: 54, name: "Copper Silk", image: copperSilk },
+    { id: 55, name: "Ivory Brown", image: ivoryBrown },
   
   // Sandstones (53-63)
   { id: 53, name: "Beige Sandstone", image: beigeSandstone, category: "Sandstone", description: "Neutral beige sandstone perfect for versatile architectural applications." },

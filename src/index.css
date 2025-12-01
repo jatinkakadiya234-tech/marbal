@@ -93,4 +93,14 @@ button:focus-visible {
 .transform-gpu {
   transform: translateZ(0);
 }
+
+/* Hide scrollbar for carousel */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
 }

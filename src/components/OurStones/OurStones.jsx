@@ -54,6 +54,57 @@ const categories = [
   },
 ];
 
+const applications = [
+  {
+    id: 1,
+    title: "Kitchen Countertops",
+    image: "/kitchen.jpg",
+    alt: "Kitchen Countertops",
+    description: "Transform your kitchen with our premium granite and marble countertops. Heat-resistant, durable, and elegant.",
+    features: ["Heat & scratch resistant", "Easy to clean & maintain", "Available in multiple finishes"]
+  },
+  {
+    id: 2,
+    title: "Luxury Flooring",
+    image: "/livingrooom.jpg",
+    alt: "Flooring",
+    description: "Create stunning floors with our marble and granite tiles. Perfect for both residential and commercial spaces.",
+    features: ["Non-slip surface options", "Water resistant", "Long-lasting durability"]
+  },
+  {
+    id: 3,
+    title: "Wall Cladding",
+    image: "/bedroom.jpg",
+    alt: "Wall Cladding",
+    description: "Enhance your interiors with natural stone wall cladding. Add texture and elegance to any space.",
+    features: ["Natural texture & patterns", "Moisture resistant", "Easy installation"]
+  },
+  {
+    id: 4,
+    title: "Bathroom Vanities",
+    image: "/kitchen2.jpg",
+    alt: "Bathroom",
+    description: "Create luxurious bathrooms with our water-resistant marble and granite vanity tops.",
+    features: ["Water & stain resistant", "Hygienic surface", "Custom edge profiles"]
+  },
+  {
+    id: 5,
+    title: "Outdoor Spaces",
+    image: "/furniture.jpg",
+    alt: "Outdoor",
+    description: "Weather-resistant sandstone and granite for patios, walkways, and outdoor kitchens.",
+    features: ["Weather resistant", "Anti-slip surface", "UV resistant colors"]
+  },
+  {
+    id: 6,
+    title: "Commercial Projects",
+    image: "/cozyroom.jpg",
+    alt: "Commercial",
+    description: "Premium stones for hotels, offices, and commercial buildings. Durable and impressive.",
+    features: ["High traffic durability", "Low maintenance", "Professional appearance"]
+  }
+];
+
 export default function OurStones() {
   const [currentSlides, setCurrentSlides] = useState({});
   const navigate = useNavigate();
@@ -110,7 +161,7 @@ export default function OurStones() {
           {categories.map((category, index) => (
             <div
               key={category.name}
-              className="bg-white rounded-xl shadow-sm border border-gray-200 p-8"
+              className="bg-white  shadow-sm border border-gray-200 p-8"
             >
               {/* Category Header */}
               <div className="flex items-center justify-between mb-4 sm:mb-6">
@@ -118,7 +169,8 @@ export default function OurStones() {
                   <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-1">
                     {category.name}
                   </h2>
-                  <p className="text-xs sm:text-sm text-gray-500">
+                  <p className="text-xs sm:text-sm text-gray-500"
+                  style={{ fontFamily: 'Arial, sans-serif', fontWeight: '200',  }}>
                     {category.products.length} Products Available
                   </p>
                 </div>
@@ -149,7 +201,7 @@ export default function OurStones() {
                           className="group cursor-pointer"
                           onClick={() => navigate(`/product/${product.id}`)}
                         >
-                          <div className="relative overflow-hidden rounded-lg bg-gray-100 aspect-square">
+                          <div className="relative overflow-hidden  bg-gray-100 aspect-square">
                             <img
                               src={product.image}
                               alt={product.name}
@@ -157,7 +209,8 @@ export default function OurStones() {
                             />
                           </div>
                           <div className="mt-2">
-                            <h3 className="text-xs sm:text-sm font-medium text-gray-800 text-center">
+                            <h3 className="text-xs sm:text-sm font-medium text-gray-800 text-center"
+                              style={{ fontFamily: 'Arial, sans-serif', fontWeight: '200',  }}>
                               {product.name}
                             </h3>
                           </div>
@@ -223,7 +276,8 @@ export default function OurStones() {
                           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
                         </div>
                         <div className="mt-2">
-                          <h3 className="text-xs sm:text-sm font-medium text-gray-800 text-center group-hover:text-[#0E5543] transition-colors">
+                          <h3 className="text-xs sm:text-sm font-medium text-gray-800 text-center group-hover:text-[#0E5543] transition-colors"
+                            style={{ fontFamily: 'Arial, sans-serif', fontWeight: '200' }}>
                             {product.name}
                           </h3>
                         </div>
@@ -264,135 +318,43 @@ export default function OurStones() {
         {/* How Our Stones Are Used Section */}
         <div className="mt-20">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0E5543] mb-4">
+            <h2 className="text-4xl md:text-4xl font-bold text-[#0E5543] mb-4"
+             style={{ fontFamily: "Arial, sans-serif", fontWeight: "200" }}>
               How Our Stones Transform Spaces
             </h2>
             <div className="h-0.5 bg-gradient-to-r from-[#0E5543] via-[#F2E1C5] to-[#0E5543] mx-auto mb-6 w-20" />
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto"
+             style={{ fontFamily: "Arial, sans-serif", fontWeight: "200" }}>
               Discover the endless possibilities of our premium stones in real-world applications
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Kitchen Applications */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="h-48 bg-gray-200 relative overflow-hidden">
-                <img 
-                  src="/kitchen.jpg" 
-                  alt="Kitchen Countertops" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
+            {applications.map((app) => (
+              <div key={app.id} className="bg-white  shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div className="h-48 bg-gray-200 relative overflow-hidden">
+                  <img 
+                    src={app.image} 
+                    alt={app.alt} 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-[#0E5543] mb-3"
+                  style={{ fontFamily: "Arial, sans-serif", fontWeight: "200" }}
+                  >{app.title}</h3>
+                  <p className="text-gray-600 mb-4"
+                  style={{ fontFamily: "Arial, sans-serif", fontWeight: "200" }}
+                  >{app.description}</p>
+                  <ul className="text-sm text-gray-500 space-y-1"
+                  style={{ fontFamily: "Arial, sans-serif", fontWeight: "200" }}>
+                    {app.features.map((feature, index) => (
+                      <li key={index}>• {feature}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#0E5543] mb-3">Kitchen Countertops</h3>
-                <p className="text-gray-600 mb-4">Transform your kitchen with our premium granite and marble countertops. Heat-resistant, durable, and elegant.</p>
-                <ul className="text-sm text-gray-500 space-y-1">
-                  <li>• Heat & scratch resistant</li>
-                  <li>• Easy to clean & maintain</li>
-                  <li>• Available in multiple finishes</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Flooring Applications */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="h-48 bg-gray-200 relative overflow-hidden">
-                <img 
-                  src="/livingrooom.jpg" 
-                  alt="Flooring" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#0E5543] mb-3">Luxury Flooring</h3>
-                <p className="text-gray-600 mb-4">Create stunning floors with our marble and granite tiles. Perfect for both residential and commercial spaces.</p>
-                <ul className="text-sm text-gray-500 space-y-1">
-                  <li>• Non-slip surface options</li>
-                  <li>• Water resistant</li>
-                  <li>• Long-lasting durability</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Wall Cladding */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="h-48 bg-gray-200 relative overflow-hidden">
-                <img 
-                  src="/bedroom.jpg" 
-                  alt="Wall Cladding" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#0E5543] mb-3">Wall Cladding</h3>
-                <p className="text-gray-600 mb-4">Enhance your interiors with natural stone wall cladding. Add texture and elegance to any space.</p>
-                <ul className="text-sm text-gray-500 space-y-1">
-                  <li>• Natural texture & patterns</li>
-                  <li>• Moisture resistant</li>
-                  <li>• Easy installation</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Bathroom Applications */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="h-48 bg-gray-200 relative overflow-hidden">
-                <img 
-                  src="/kitchen2.jpg" 
-                  alt="Bathroom" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#0E5543] mb-3">Bathroom Vanities</h3>
-                <p className="text-gray-600 mb-4">Create luxurious bathrooms with our water-resistant marble and granite vanity tops.</p>
-                <ul className="text-sm text-gray-500 space-y-1">
-                  <li>• Water & stain resistant</li>
-                  <li>• Hygienic surface</li>
-                  <li>• Custom edge profiles</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Outdoor Applications */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="h-48 bg-gray-200 relative overflow-hidden">
-                <img 
-                  src="/furniture.jpg" 
-                  alt="Outdoor" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#0E5543] mb-3">Outdoor Spaces</h3>
-                <p className="text-gray-600 mb-4">Weather-resistant sandstone and granite for patios, walkways, and outdoor kitchens.</p>
-                <ul className="text-sm text-gray-500 space-y-1">
-                  <li>• Weather resistant</li>
-                  <li>• Anti-slip surface</li>
-                  <li>• UV resistant colors</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Commercial Applications */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="h-48 bg-gray-200 relative overflow-hidden">
-                <img 
-                  src="/cozyroom.jpg" 
-                  alt="Commercial" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#0E5543] mb-3">Commercial Projects</h3>
-                <p className="text-gray-600 mb-4">Premium stones for hotels, offices, and commercial buildings. Durable and impressive.</p>
-                <ul className="text-sm text-gray-500 space-y-1">
-                  <li>• High traffic durability</li>
-                  <li>• Low maintenance</li>
-                  <li>• Professional appearance</li>
-                </ul>
-              </div>
-            </div>
+            ))}
           </div>
 
           {/* CTA Section */}

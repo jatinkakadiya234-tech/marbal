@@ -197,7 +197,7 @@ const Europe = () => {
             <button className="bg-[#F2E1C5] text-[#0E5543] px-8 py-3 rounded-lg font-semibold hover:bg-[#F2E1C5]/90 transition-colors">
               Get Your Quote
             </button>
-            <button className="border-2 border-[#F2E1C5] text-[#F2E1C5] px-8 py-3 rounded-lg font-semibold hover:bg-[#F2E1C5] hover:text-[#0E5543] transition-colors">
+            <button className="border-2 border-[white] text-[#0E5543] px-8 py-3 rounded-lg font-semibold  hover:text-[#0E5543] transition-colors">
               Contact Us Today
             </button>
           </div>

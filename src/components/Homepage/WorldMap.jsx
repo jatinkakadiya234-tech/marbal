@@ -63,6 +63,14 @@ const locations = [
     projects: ["Lusail Stadium", "Museum of Islamic Art", "The Pearl"]
   },
   {
+    name: "Saudi Arabia",
+    top: "57%",
+    left: "55%",
+    description: "Marble Export - Saudi Arabia serving World Cup venues",
+    clients: "45+ stadium projects",
+    projects: ["Lusail Stadium", "Museum of Islamic Art", "The Pearl"]
+  },
+  {
     name: "Europe",
     top: "42%",
     left: "48%",
@@ -105,7 +113,7 @@ export default function WorldMap() {
   {[
   {
     icon: FaGlobeAmericas,
-    number: 8,
+    number:7,
     suffix: "+",
     label: "Countries",
     accent: "#6B7280",
