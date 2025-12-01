@@ -7,14 +7,14 @@ const BlogsPage = () => {
   // Sample blog data
   const featuredPost = {
     id: 1,
-    title: "The Ultimate Guide to Choosing the Perfect Marble for Your Home",
-    excerpt: "Discover how to select the ideal marble that complements your interior design while ensuring durability and longevity for your spaces.",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    category: "Marble Selection",
+    title: "A Complete Guide on the Indian Green Marble",
+    excerpt: "Indian Green marble, a long-known flooring material, is redefining luxury, elegance, and durability all over again. Discover a complete guide on Indian green marble, focusing on its origin, colour, brief history, sustainability, and interior use.",
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    category: "Green Marble Guide",
     date: "2024-01-15",
-    author: "Marble Expert",
-    readTime: "8 min read",
-    tags: ["Selection", "Design", "Quality"]
+    author: "Marble Specialists",
+    readTime: "12 min read",
+    tags: ["Indian green marble", "green marble manufacturers in India", "green marble suppliers in India", "leading marble company in India"]
   }
 
   const blogPosts = [
