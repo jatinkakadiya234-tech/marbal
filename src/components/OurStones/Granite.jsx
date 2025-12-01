@@ -312,6 +312,159 @@ export default function Granite() {
           </div>
         </div>
         
+        {/* About Granite Content */}
+        <div className="mt-20 mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Emphasise Your Walls and Floors with <span className="bg-gradient-to-r from-[#0E5543] to-[#1A7A62] bg-clip-text text-transparent">Shining Granite</span>
+            </h2>
+            <div className="flex items-center justify-center mb-6">
+              <div className="h-px bg-gradient-to-r from-transparent via-[#0E5543] to-transparent w-24"></div>
+              <div className="w-2 h-2 bg-[#0E5543] rounded-full mx-3"></div>
+              <div className="h-px bg-gradient-to-r from-transparent via-[#0E5543] to-transparent w-24"></div>
+            </div>
+            <p className="text-gray-600 max-w-4xl mx-auto text-lg leading-relaxed">
+              Granite, a silica-rich magma, is one of the ingenious rocks that dominates the Indian and overseas market. Its popularity now rises above its common use in kitchen countertops. At Rishabh Green Marble, a well-known marble exporter company in India, we offer premium quality and versatile granite and sandstone.
+            </p>
+          </div>
+
+          {/* Granite Making Process */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 mb-12">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              Granite Making Process and <span className="text-[#0E5543]">Its Source</span>
+            </h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-4">
+                <h4 className="font-semibold text-lg text-gray-900 mb-3">Natural Formation</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Granite's magma undergoes heating and cooling changes beneath the Earth's surface. It is not individually present inside the earth but rather it comes from the heated continental rock. As the heated magma cools down and solidifies, it becomes an irresistible granite stone.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <h4 className="font-semibold text-lg text-gray-900 mb-3">Our Sourcing Process</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Rishabh Green Marble, a reputable granite exporter in India, uses heavy-machines, drilling, and wire-cutting techniques to source granite. We purchase large and raw blocks of granite from Rajasthan quarries. Once the granite reaches the factory, our manufacturers cut them into slabs or tiles for high-quality finishing.
+                </p>
+              </div>
+            </div>
+            <div className="mt-6 p-4 bg-[#0E5543]/5 rounded-xl">
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Depending on the international buyer's standards, we polish the granite's surface, ensure similar thickness, and customise the stone. Our quality control checks leave no room for defects or uneven granite density.
+              </p>
+            </div>
+          </div>
+
+          {/* Unique Appearance */}
+          <div className="bg-gradient-to-br from-[#0E5543]/5 to-[#1A7A62]/5 rounded-2xl p-8 mb-12">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              Unique <span className="text-[#0E5543]">Appearance</span>
+            </h3>
+            <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+              Granite is known for exuding luxury and textured appearance. Interestingly, its rich colour originates from the minerals present inside it.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="text-center p-4 bg-white rounded-xl">
+                <h4 className="font-semibold text-lg text-gray-900 mb-2">Quartz</h4>
+                <p className="text-gray-600 text-sm">
+                  This mineral provides a crystal-clear and shiny grey appearance to the surface.
+                </p>
+              </div>
+              <div className="text-center p-4 bg-white rounded-xl">
+                <h4 className="font-semibold text-lg text-gray-900 mb-2">Alkaline Feldspar</h4>
+                <p className="text-gray-600 text-sm">
+                  With abundance of this mineral, granite gets its overall red, pink, or white colour.
+                </p>
+              </div>
+              <div className="text-center p-4 bg-white rounded-xl">
+                <h4 className="font-semibold text-lg text-gray-900 mb-2">Mica</h4>
+                <p className="text-gray-600 text-sm">
+                  These minerals are responsible for leaving shiny black or silver flakes throughout the granite's exterior surface.
+                </p>
+              </div>
+              <div className="text-center p-4 bg-white rounded-xl">
+                <h4 className="font-semibold text-lg text-gray-900 mb-2">Amphibole</h4>
+                <p className="text-gray-600 text-sm">
+                  These dark minerals provide black or dark green dots to the green stone.
+                </p>
+              </div>
+            </div>
+            <div className="mt-6 text-center">
+              <p className="text-gray-600 text-sm">
+                In addition to granite, we supply high-end marble which makes us the best marble exporter in India as well.
+              </p>
+            </div>
+          </div>
+
+          {/* Major Installation Areas */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 mb-12">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              Major <span className="text-[#0E5543]">Installation Areas</span>
+            </h3>
+            <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+              Granite is highly popular for its hardness, durability, and low maintenance attributes. You can consider granite installation for interior, exterior, and structural applications.
+            </p>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold text-sm">Indoor</span>
+                </div>
+                <h4 className="font-semibold text-lg mb-3 text-gray-900">Indoor Uses</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  For indoors, granite is a popular stone for kitchen countertops, bathroom sinks, shower walls, flooring, or fireplace surrounds. Favourably, this natural stone resists heat, stain marks, and daily weather impact.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold text-sm">Outdoor</span>
+                </div>
+                <h4 className="font-semibold text-lg mb-3 text-gray-900">Outdoor Uses</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Granite outside your premises is unarguably a strong choice for surfacing facades or paving the lawn. It is also suitable for cladding the entire house or commercial building for its weather resistance and durability factor.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold text-xs">Structure</span>
+                </div>
+                <h4 className="font-semibold text-lg mb-3 text-gray-900">Structural Use</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Granite is also a premium stone for staircases, monuments, or sculptures for its long-lasting shine. Also, its ability to remain unaffected from heavy foot traffic makes it a highly usable stone across overseas.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bestselling Granites */}
+          <div className="bg-gradient-to-br from-[#1A7A62]/5 to-[#0E5543]/5 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              Bestselling <span className="text-[#0E5543]">Granites Available</span> with Us
+            </h3>
+            <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+              When choosing the best granite exporter in India, Rishabh Green Marble offers premium granite stones that looks and feels premium once installed. Here are our few bestsellers that caters to the needs and demands of every space.
+            </p>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                <h4 className="font-semibold text-lg text-gray-900 mb-3">Lakha Red Granite</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  This fiery red granite delivers an uncompromising look and long-lasting durability for high-end interior and exterior flooring and wall surfaces.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                <h4 className="font-semibold text-lg text-gray-900 mb-3">P White Granite</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Being an economical choice, P white Granite has clean, bright, and unique appearance. As a leading P White granite exporter in India, you can trust us for customised white granite too.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                <h4 className="font-semibold text-lg text-gray-900 mb-3">Black Galaxy Granite</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  This kind of granite stone carries a luxurious, modern, yet dramatic appearance. With the Black Galaxy Granite, this type of stone mimics galaxy with white dots throughout its surface.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         {/* Call to Action */}
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-2xl p-8 text-white">

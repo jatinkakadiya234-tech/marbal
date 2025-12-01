@@ -268,6 +268,153 @@ export default function Marble() {
           </div>
         </div>
         
+        {/* About Rishabh Green Marbles */}
+        <div className="mt-20 mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Best <span className="bg-gradient-to-r from-[#0E5543] to-[#1A7A62] bg-clip-text text-transparent">Marble Exporters</span> in India
+            </h2>
+            <div className="flex items-center justify-center mb-6">
+              <div className="h-px bg-gradient-to-r from-transparent via-[#0E5543] to-transparent w-24"></div>
+              <div className="w-2 h-2 bg-[#0E5543] rounded-full mx-3"></div>
+              <div className="h-px bg-gradient-to-r from-transparent via-[#0E5543] to-transparent w-24"></div>
+            </div>
+            <p className="text-gray-600 max-w-4xl mx-auto text-lg leading-relaxed">
+              Rishabh Green Marbles features among the leading marble exporters in India, celebrated by clients across Saudi Arabia, Dubai, Qatar, and the best European countries. We are not just precision.
+            </p>
+          </div>
+
+          {/* Marble Production Process */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 mb-12">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              Stages of <span className="text-[#0E5543]">Marble Production</span>
+            </h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold text-xl">1</span>
+                </div>
+                <h4 className="font-semibold text-lg mb-3 text-gray-900">Extraction & Quarrying</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  The process starts with extraction and quarrying. Quarrying experts assess deposits, cut marble blocks using diamond wire saws, and transport them using heavy machinery.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold text-xl">2</span>
+                </div>
+                <h4 className="font-semibold text-lg mb-3 text-gray-900">Processing & Treatment</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Blocks are sent to the factory where they're cut into slabs, treated with resin for cracks, and precisely sized using CNC technology.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold text-xl">3</span>
+                </div>
+                <h4 className="font-semibold text-lg mb-3 text-gray-900">Finishing & Quality</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Slabs are polished, honed, or textured for desired appearance. Each piece is examined for quality, sealed, and prepared for shipping.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Premium Collection Details */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="bg-gradient-to-br from-[#0E5543]/5 to-[#1A7A62]/5 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                Our Premium <span className="text-[#0E5543]">Marble Collection</span>
+              </h3>
+              <div className="space-y-4">
+                <div className="border-l-4 border-[#0E5543] pl-4">
+                  <h4 className="font-semibold text-lg text-gray-900 mb-2">Green Marble</h4>
+                  <p className="text-gray-600 text-sm">
+                    Our flagship product with rich forest colors, fine veining, and lustrous finish. Perfect for flooring, wall cladding, countertops, and luxurious interiors.
+                  </p>
+                </div>
+                <div className="border-l-4 border-[#0E5543] pl-4">
+                  <h4 className="font-semibold text-lg text-gray-900 mb-2">White Marble</h4>
+                  <p className="text-gray-600 text-sm">
+                    Clean textures and radiant finishes including Morwad White and Indian Statuario, popular for modern and elegant aesthetics.
+                  </p>
+                </div>
+                <div className="border-l-4 border-[#0E5543] pl-4">
+                  <h4 className="font-semibold text-lg text-gray-900 mb-2">Rainforest Marble</h4>
+                  <p className="text-gray-600 text-sm">
+                    Natural tones and tree-like patterns bring an airy, rustic, and organic feel to both interiors and exteriors.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-br from-[#1A7A62]/5 to-[#0E5543]/5 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                What Makes Us <span className="text-[#0E5543]">Different?</span>
+              </h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-[#0E5543] rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-600 text-sm">
+                    Own quarries and production units ensuring complete quality control
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-[#0E5543] rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-600 text-sm">
+                    Traditional craftsmanship combined with modern design technology
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-[#0E5543] rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-600 text-sm">
+                    Finest texture, natural strength, and lasting luster in the industry
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-[#0E5543] rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-600 text-sm">
+                    Trusted by architects and designers worldwide
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-[#0E5543] rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-600 text-sm">
+                    Exotic marbles and granites with premium Indian craftsmanship
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Additional Collection Types */}
+          <div className="bg-white rounded-2xl shadow-xl p-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+              Complete <span className="text-[#0E5543]">Stone Collection</span>
+            </h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="text-center p-6 bg-gray-50 rounded-xl hover:bg-[#0E5543]/5 transition-colors">
+                <h4 className="font-semibold text-lg text-gray-900 mb-3">Brown & Beige Marble</h4>
+                <p className="text-gray-600 text-sm">
+                  Warm brown and beige marbles enhance any modern or traditional environment with natural beauty and balance.
+                </p>
+              </div>
+              <div className="text-center p-6 bg-gray-50 rounded-xl hover:bg-[#0E5543]/5 transition-colors">
+                <h4 className="font-semibold text-lg text-gray-900 mb-3">Imported & Exotic Stones</h4>
+                <p className="text-gray-600 text-sm">
+                  Selected range of exotic marbles and granites offering premium stone variety from overseas sources.
+                </p>
+              </div>
+              <div className="text-center p-6 bg-gray-50 rounded-xl hover:bg-[#0E5543]/5 transition-colors">
+                <h4 className="font-semibold text-lg text-gray-900 mb-3">Granite Collection</h4>
+                <p className="text-gray-600 text-sm">
+                  Not only marbles, but Rishabh Green is the place where you can buy premium granite as well.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         {/* Call to Action */}
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-2xl p-8 text-white">
