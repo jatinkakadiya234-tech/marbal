@@ -33,7 +33,7 @@ const Navbar = () => {
     { name: "About Us", path: "/about" },
     { 
       name: "Our Stones", 
-      path: "/OurStones",
+      path: "/ourstones",
       dropdown: [
         { name: "Marble", path: "/marble" },
         { name: "Granite", path: "/granite" },
