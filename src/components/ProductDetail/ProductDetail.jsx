@@ -41,11 +41,51 @@ const ProductDetail = () => {
   }, [id]);
 
   // Sample product data (replace with actual data fetching)
+  const getProductDescription = (name) => {
+    const descriptions = {
+      "Agaria White": "Agaria White Marble is a premium natural stone known for its pristine white background with subtle grey veining. This elegant marble adds sophistication to any space with its timeless beauty and durability.",
+      "Aravali Green": "Aravali Green Marble features rich forest green tones with distinctive veining patterns. This luxurious stone brings natural elegance and a calming presence to any interior space.",
+      "Bidasar Brown": "Bidasar Brown Marble showcases warm brown hues with intricate natural patterns. Perfect for creating cozy yet sophisticated environments with its earthy appeal.",
+      "Cloud Grey": "Cloud Grey Marble displays subtle grey tones with cloud-like veining patterns. This versatile stone offers modern elegance suitable for contemporary design schemes.",
+      "Mystic Green": "Mystic Green Marble presents deep emerald tones with mystical veining. This striking stone creates dramatic focal points while maintaining natural beauty.",
+      "Pink Marble": "Pink Marble features delicate rose hues with gentle veining patterns. This unique stone adds warmth and feminine elegance to luxury interiors."
+    };
+    return descriptions[name] || "Premium natural stone with exceptional beauty and durability.";
+  };
+
+  const getProductSpecs = (name) => {
+    const baseSpecs = {
+      "Stone Type": "Natural Marble",
+      "Origin": "Rajasthan, India",
+      "Finish": "Polished, Honed, Brushed",
+      "Thickness": "15mm, 18mm, 20mm, 30mm",
+      "Size": "Custom sizes available",
+      "Density": "2.7 g/cm³",
+      "Water Absorption": "< 0.5%",
+      "Compressive Strength": "120 MPa",
+      "Flexural Strength": "15 MPa"
+    };
+    
+    const colorMap = {
+      "Agaria White": "White with Grey Veining",
+      "Aravali Green": "Forest Green with Natural Patterns",
+      "Bidasar Brown": "Rich Brown with Earth Tones",
+      "Cloud Grey": "Subtle Grey with Cloud Patterns",
+      "Mystic Green": "Deep Emerald with Mystical Veining",
+      "Pink Marble": "Delicate Rose with Gentle Patterns"
+    };
+    
+    return {
+      ...baseSpecs,
+      "Color": colorMap[name] || "Premium Quality"
+    };
+  };
+
   const product = {
     id: currentProduct.id,
     name: currentProduct.name,
     category: currentProduct.category,
-    description: "This is a premium natural stone known for its pristine background with subtle veining. This elegant marble adds sophistication to any space with its timeless beauty and durability.",
+    description: getProductDescription(currentProduct.name),
     images: [
       currentProduct.image, 
       cloudGrey, 
