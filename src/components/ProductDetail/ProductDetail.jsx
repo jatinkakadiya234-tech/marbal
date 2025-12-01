@@ -6,6 +6,11 @@ import { FiChevronLeft, FiChevronRight, FiZoomIn, FiShare2, FiHeart, FiDownload 
 import agariaWhite from '../../assets/marbles/Agaria-White-Marble[1].jpg';
 import aravaliGreen from '../../assets/marbles/Aravali-Green[1].jpg';
 import bidasarBrown from '../../assets/marbles/bidasar brown marble.jpg';
+import cloudGrey from '../../assets/marbles/Cloud-Grey-Marble[1].jpg';
+import fantasyBrown from '../../assets/marbles/fantasy brown marble.jpg';
+import iconicBlack from '../../assets/marbles/Iconic-black-marble-1200x1200-1[1].jpg';
+import mysticGreen from '../../assets/marbles/Mystic-Green-Marble[1].jpg';
+import pinkMarble from '../../assets/marbles/pink-marble[1].jpg';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -19,9 +24,9 @@ const ProductDetail = () => {
     { id: 1, name: "Agaria White", image: agariaWhite, category: "Premium White Marble" },
     { id: 2, name: "Aravali Green", image: aravaliGreen, category: "Premium Green Marble" },
     { id: 3, name: "Bidasar Brown", image: bidasarBrown, category: "Premium Brown Marble" },
-    { id: 4, name: "Cloud Grey", image: agariaWhite, category: "Premium Grey Marble" },
-    { id: 5, name: "Mystic Green", image: aravaliGreen, category: "Premium Green Marble" },
-    { id: 6, name: "Pink Marble", image: bidasarBrown, category: "Premium Pink Marble" }
+    { id: 4, name: "Cloud Grey", image: cloudGrey, category: "Premium Grey Marble" },
+    { id: 5, name: "Mystic Green", image: mysticGreen, category: "Premium Green Marble" },
+    { id: 6, name: "Pink Marble", image: pinkMarble, category: "Premium Pink Marble" }
   ];
 
   // Get current product and related products
@@ -41,7 +46,14 @@ const ProductDetail = () => {
     name: currentProduct.name,
     category: currentProduct.category,
     description: "This is a premium natural stone known for its pristine background with subtle veining. This elegant marble adds sophistication to any space with its timeless beauty and durability.",
-    images: [currentProduct.image, currentProduct.image, currentProduct.image, currentProduct.image],
+    images: [
+      currentProduct.image, 
+      cloudGrey, 
+      fantasyBrown, 
+      iconicBlack, 
+      mysticGreen, 
+      pinkMarble
+    ],
     specifications: {
       "Stone Type": "Natural Marble",
       "Color": "Premium Quality",
@@ -134,20 +146,7 @@ const ProductDetail = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap gap-4">
-              <button className="bg-[#0E5543] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#1A7A62] transition-colors">
-                Get Quote
-              </button>
-              <button className="border border-[#0E5543] text-[#0E5543] px-8 py-3 rounded-full font-semibold hover:bg-[#0E5543] hover:text-white transition-colors">
-                Download Catalog
-              </button>
-              <button className="border border-gray-300 text-gray-600 p-3 rounded-full hover:border-[#0E5543] hover:text-[#0E5543] transition-colors">
-                <FiShare2 size={20} />
-              </button>
-              <button className="border border-gray-300 text-gray-600 p-3 rounded-full hover:border-[#0E5543] hover:text-[#0E5543] transition-colors">
-                <FiHeart size={20} />
-              </button>
-            </div>
+            
 
             {/* Quick Specs */}
             <div className="bg-white rounded-xl p-6 shadow-lg">
@@ -288,6 +287,103 @@ const ProductDetail = () => {
           </div>
         </div>
 
+          <div className="bg-white rounded-2xl shadow-lg p-8 mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
+            How <span className="text-[#0E5543]">Marble Looks</span> in Real Life
+          </h2>
+          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+            See how our premium marble appears in actual installations and real-world applications
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="relative group overflow-hidden rounded-xl">
+              <img 
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                alt="Marble Kitchen Countertop" 
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="text-white font-semibold">Kitchen Countertops</span>
+              </div>
+            </div>
+            
+            <div className="relative group overflow-hidden rounded-xl">
+              <img 
+                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                alt="Marble Bathroom" 
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="text-white font-semibold">Bathroom Vanities</span>
+              </div>
+            </div>
+            
+            <div className="relative group overflow-hidden rounded-xl">
+              <img 
+                src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                alt="Marble Flooring" 
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="text-white font-semibold">Luxury Flooring</span>
+              </div>
+            </div>
+            
+            <div className="relative group overflow-hidden rounded-xl">
+              <img 
+                src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                alt="Marble Wall Cladding" 
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="text-white font-semibold">Wall Cladding</span>
+              </div>
+            </div>
+            
+            <div className="relative group overflow-hidden rounded-xl">
+              <img 
+                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                alt="Marble Fireplace" 
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="text-white font-semibold">Fireplace Surrounds</span>
+              </div>
+            </div>
+            
+            <div className="relative group overflow-hidden rounded-xl">
+              <img 
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                alt="Marble Staircase" 
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="text-white font-semibold">Elegant Staircases</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <div className="bg-[#0E5543]/5 rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Natural Beauty & Characteristics</h3>
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-[#0E5543] rounded-full"></div>
+                  <span>Unique veining patterns in every slab</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-[#0E5543] rounded-full"></div>
+                  <span>Natural color variations and depth</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-[#0E5543] rounded-full"></div>
+                  <span>Polished surface with mirror-like finish</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Related Products */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-gray-900 mb-8">Related Products</h2>
@@ -318,6 +414,9 @@ const ProductDetail = () => {
           </div>
         </div>
 
+        {/* How Marble Looks in Real Life */}
+      
+
         {/* Contact CTA */}
         <div className="bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-2xl p-8 text-white text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Interested in This Product?</h2>
@@ -326,7 +425,7 @@ const ProductDetail = () => {
             <button className="bg-white text-[#0E5543] px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
               Request Quote
             </button>
-            <button className="border border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[#0E5543] transition-colors">
+            <button className="border border-white text-[#0E5543] px-8 py-3 rounded-full font-semibold  hover:text-[#0E5543] transition-colors">
               Contact Us
             </button>
           </div>
