@@ -130,7 +130,7 @@ const Section3 = () => {
   return (
     <>
       <section className="pt-20  pb-10 bg-gradient-to-br from-[#F2E1C5]/20 to-[#0E5543]/10"
-      style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}
+      style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}
       >
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           {/* Header Section */}
@@ -144,11 +144,11 @@ const Section3 = () => {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#0E5543] text-[#F2E1C5] mb-6">
               <FiTool size={28} />
             </div>
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif font-light text-[#0E5543] mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif font-light text-[#0E5543] mb-4" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
               Advanced Technology
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[#0E5543] to-[#F2E1C5] mx-auto mb-6"></div>
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#0E5543]/80 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#0E5543]/80 max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
               Discover the sophisticated machinery and innovative processes that
               elevate our marble craftsmanship to unparalleled excellence
             </p>
@@ -173,7 +173,7 @@ const Section3 = () => {
                     }}
                   >
                     <span>{category.icon}</span>
-                    <span className="font-medium whitespace-nowrap text-xs sm:text-sm md:text-base">
+                    <span className="font-medium whitespace-nowrap text-xs sm:text-sm md:text-base" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                       {category.name}
                     </span>
                   </button>
@@ -216,7 +216,7 @@ const Section3 = () => {
 
                     {/* Premium Badge */}
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-[#0E5543] text-[#F2E1C5] text-sm rounded-full font-medium">
+                      <span className="px-3 py-1 bg-[#0E5543] text-[#F2E1C5] text-sm rounded-full font-medium" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                         Premium Tech
                       </span>
                     </div>
@@ -235,10 +235,10 @@ const Section3 = () => {
                     {/* Accent Line */}
                     <div className="w-12 h-1 bg-gradient-to-r from-[#0E5543] to-[#F2E1C5] mb-4"></div>
 
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-serif text-[#0E5543] mb-2 sm:mb-3 font-light">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-serif text-[#0E5543] mb-2 sm:mb-3 font-light" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                       {tech.name}
                     </h3>
-                    <p className="text-xs sm:text-sm md:text-base text-[#0E5543]/80 leading-relaxed mb-4 sm:mb-6">
+                    <p className="text-xs sm:text-sm md:text-base text-[#0E5543]/80 leading-relaxed mb-4 sm:mb-6" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                       {tech.description}
                     </p>
 
@@ -246,6 +246,7 @@ const Section3 = () => {
                     <button
                       onClick={() => setActiveVideo(tech.video)}
                       className="inline-flex items-center px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 bg-[#0E5543] text-[#F2E1C5] rounded-lg hover:bg-[#0E5543]/90 transition-all duration-300 group/btn font-medium text-xs sm:text-sm md:text-base"
+                      style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}
                     >
                       <FiPlay className="mr-2 transition-transform group-hover/btn:translate-x-1" />
                       Watch in Action
@@ -268,10 +269,10 @@ const Section3 = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-12"
             >
-              <h3 className="text-lg sm:text-xl md:text-2xl font-serif text-[#0E5543] mb-2 sm:mb-3">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-serif text-[#0E5543] mb-2 sm:mb-3" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 {activeCategory.name}
               </h3>
-              <p className="text-xs sm:text-sm md:text-base text-[#0E5543]/70 italic max-w-3xl mx-auto">
+              <p className="text-xs sm:text-sm md:text-base text-[#0E5543]/70 italic max-w-3xl mx-auto" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 {activeCategory.description}
               </p>
             </motion.div>

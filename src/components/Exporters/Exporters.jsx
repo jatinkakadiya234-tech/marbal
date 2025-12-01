@@ -94,22 +94,26 @@ const Exporters = () => {
           <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center"></div>
         </div>
         <div className="relative max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold text-[#F2E1C5] mb-6 mt-10">
+          <h1 className="text-4xl md:text-6xl font-bold text-[#F2E1C5] mb-6 mt-10"   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}
+          >
             Leading Marble Exporters
           </h1>
-          <p className="text-xl text-[#F2E1C5]/90 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-[#F2E1C5]/90 mb-8 max-w-3xl mx-auto"
+             style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
             Rishabh Green Marbles - Your trusted partner for premium Indian marble exports worldwide. 
             Delivering excellence across continents with unmatched quality and service.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-[#F2E1C5]">
             <div className="bg-[#F2E1C5]/10 backdrop-blur-md px-6 py-3 rounded-full">
-              <span className="font-semibold">20+ Countries</span>
+              <span className="font-semibold"
+                 style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>20+ Countries</span>
             </div>
             <div className="bg-[#F2E1C5]/10 backdrop-blur-md px-6 py-3 rounded-full">
-              <span className="font-semibold">1000+ Projects</span>
+              <span className="font-semibold"
+                 style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>1000+ Projects</span>
             </div>
             <div className="bg-[#F2E1C5]/10 backdrop-blur-md px-6 py-3 rounded-full">
-              <span className="font-semibold">15+ Years Experience</span>
+              <span className="font-semibold" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>15+ Years Experience</span>
             </div>
           </div>
         </div>
@@ -119,10 +123,12 @@ const Exporters = () => {
       <div className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0E5543] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0E5543] mb-4"
+               style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
               Why Choose Us for Export?
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto"
+               style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
               We are committed to delivering the finest Indian marble to international markets with excellence in quality, service, and reliability.
             </p>
           </div>
@@ -132,10 +138,12 @@ const Exporters = () => {
                 <div className="mb-4 flex justify-center">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                <h3 className="text-xl font-semibold text-gray-800 mb-3"
+                   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 text-sm"
+                   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                   {feature.description}
                 </p>
               </div>
@@ -148,10 +156,12 @@ const Exporters = () => {
       <div className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0E5543] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0E5543] mb-4"
+               style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
               Our Main Export Destinations
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto"
+               style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
               Leading marble exporters to these key international markets with premium quality and trusted service.
             </p>
           </div>
@@ -167,10 +177,14 @@ const Exporters = () => {
                 <div className="mb-4 flex justify-center">
                   <img src={country.flag} alt={`${country.name} Flag`} className="w-16 h-12 object-cover rounded shadow-lg" />
                 </div>
-                <h3 className="text-2xl font-bold mb-2">{country.name}</h3>
-                <p className="text-[#F2E1C5]/80 text-sm mb-4">{country.description}</p>
-                <div className="text-3xl font-bold text-[#F2E1C5]">{country.projects}</div>
-                <div className="text-sm text-[#F2E1C5]/80">Projects</div>
+                <h3 className="text-2xl font-bold mb-2"
+                style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>{country.name}</h3>
+                <p className="text-[#F2E1C5]/80 text-sm mb-4"
+                style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>{country.description}</p>
+                <div className="text-3xl font-bold text-[#F2E1C5]"
+                   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>{country.projects}</div>
+                <div className="text-sm text-[#F2E1C5]/80"
+                   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Projects</div>
               </div>
             ))}
           </div>
@@ -185,28 +199,30 @@ const Exporters = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0E5543] mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0E5543] mb-6"
+                 style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 Premium Indian Marble Exports
               </h2>
-              <div className="space-y-4 text-gray-700">
-                <p>
+              <div className="space-y-4 text-gray-700"
+                 style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+                <p   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                   Rishabh Green Marbles has established itself as a leading exporter of premium Indian marble, serving clients across the globe with unmatched quality and service excellence.
                 </p>
-                <p>
+                <p   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                   Our extensive range includes the finest varieties of Indian marble, from the iconic Green Marble to pristine White Marble, each carefully selected and processed to meet international standards.
                 </p>
-                <p>
+                <p   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                   With state-of-the-art processing facilities and a dedicated export team, we ensure that every shipment meets the highest quality standards and reaches our clients on time.
                 </p>
               </div>
               <div className="mt-8 grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#0E5543]">20+</div>
-                  <div className="text-gray-600">Countries Served</div>
+                  <div className="text-3xl font-bold text-[#0E5543]"   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>20+</div>
+                  <div className="text-gray-600"   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Countries Served</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#0E5543]">1000+</div>
-                  <div className="text-gray-600">Export Projects</div>
+                  <div className="text-3xl font-bold text-[#0E5543]" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>1000+</div>
+                  <div className="text-gray-600"   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Export Projects</div>
                 </div>
               </div>
             </div>
@@ -226,41 +242,41 @@ const Exporters = () => {
       <div className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0E5543] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0E5543] mb-4"   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
               Our Export Process
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto"   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
               From quarry to your doorstep, we ensure a seamless export process with quality control at every step.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="bg-[#0E5543] text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+              <div className="bg-[#0E5543] text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 1
               </div>
-              <h3 className="font-semibold text-gray-800 mb-2">Selection</h3>
-              <p className="text-gray-600 text-sm">Premium marble selection from our quarries</p>
+              <h3 className="font-semibold text-gray-800 mb-2"   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Selection</h3>
+              <p className="text-gray-600 text-sm"   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Premium marble selection from our quarries</p>
             </div>
             <div className="text-center">
-              <div className="bg-[#0E5543] text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+              <div className="bg-[#0E5543] text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 2
               </div>
-              <h3 className="font-semibold text-gray-800 mb-2">Processing</h3>
-              <p className="text-gray-600 text-sm">State-of-the-art processing and quality control</p>
+              <h3 className="font-semibold text-gray-800 mb-2"   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Processing</h3>
+              <p className="text-gray-600 text-sm"   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>State-of-the-art processing and quality control</p>
             </div>
             <div className="text-center">
-              <div className="bg-[#0E5543] text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+              <div className="bg-[#0E5543] text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 3
               </div>
-              <h3 className="font-semibold text-gray-800 mb-2">Packaging</h3>
-              <p className="text-gray-600 text-sm">Secure packaging for international shipping</p>
+              <h3 className="font-semibold text-gray-800 mb-2"   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Packaging</h3>
+              <p className="text-gray-600 text-sm"   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Secure packaging for international shipping</p>
             </div>
             <div className="text-center">
-              <div className="bg-[#0E5543] text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+              <div className="bg-[#0E5543] text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 4
               </div>
-              <h3 className="font-semibold text-gray-800 mb-2">Delivery</h3>
-              <p className="text-gray-600 text-sm">Timely delivery to your destination</p>
+              <h3 className="font-semibold text-gray-800 mb-2"   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Delivery</h3>
+              <p className="text-gray-600 text-sm"   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Timely delivery to your destination</p>
             </div>
           </div>
         </div>
@@ -269,17 +285,17 @@ const Exporters = () => {
       {/* CTA Section */}
       <div className="py-16 px-4 bg-gradient-to-r from-[#0E5543] to-[#1a7a5e]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#F2E1C5] mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#F2E1C5] mb-6"   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
             Ready to Import Premium Indian Marble?
           </h2>
-          <p className="text-[#F2E1C5]/90 mb-8 text-lg">
+          <p className="text-[#F2E1C5]/90 mb-8 text-lg"   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
             Contact us today to discuss your marble import requirements and get a customized quote for your project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#F2E1C5] text-[#0E5543] px-8 py-3 rounded-lg font-semibold hover:bg-[#F2E1C5]/90 transition-colors">
+            <button className="bg-[#F2E1C5] text-[#0E5543] px-8 py-3 rounded-lg font-semibold hover:bg-[#F2E1C5]/90 transition-colors"   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
               Get Export Quote
             </button>
-            <button className="border-2 border-[#F2E1C5] text-[#F2E1C5] px-8 py-3 rounded-lg font-semibold hover:bg-[#F2E1C5] hover:text-[#0E5543] transition-colors">
+            <button className="border-2 border-[#F2E1C5] text-[#0E5543] px-8 py-3 rounded-lg font-semibold hover:bg-[#F2E1C5] hover:text-[#0E5543] transition-colors"   style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
               View Catalog
             </button>
           </div>

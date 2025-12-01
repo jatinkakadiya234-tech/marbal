@@ -7,7 +7,7 @@ const Section5 = () => {
     <>
       {/* CTA Section */}
       <section className="relative py-32 overflow-hidden" 
-      style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
+      style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
         {/* Background with elegant pattern */}
         <div className="absolute inset-0 bg-[white]">
           <div className="absolute inset-0 opacity-[0.03]">
@@ -50,8 +50,9 @@ const Section5 = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-light text-[#0E5543] mb-4 sm:mb-6 leading-tight"
+              style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}
             >
-              Witness <span className="italic">Marble</span>
+              Witness <span className="italic" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Marble</span>
               <br />
               Perfection
             </motion.h2>
@@ -74,6 +75,7 @@ const Section5 = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-[#0E5543]/80 mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed font-light"
+              style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}
             >
               Experience the transformation of raw marble into exquisite
               surfaces through our state-of-the-art technology and master
@@ -92,10 +94,10 @@ const Section5 = () => {
               {/* Button with gradient border effect */}
               <div className="relative">
                 {/* Main button */}
-                <button className="relative px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5  rounded-2xl font-medium text-sm sm:text-base md:text-lg tracking-wide overflow-hidden z-10 flex items-center mx-auto">
+                <button className="relative px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5  rounded-2xl font-medium text-sm sm:text-base md:text-lg tracking-wide overflow-hidden z-10 flex items-center mx-auto" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                   {/* Shine effect */}
 
-                  <span className="relative z-10">
+                  <span className="relative z-10" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                     Schedule a Private Factory Tour
                   </span>
                   <FiChevronRight
@@ -114,6 +116,7 @@ const Section5 = () => {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className="text-[#0E5543]/60 mt-3 sm:mt-4 text-xs sm:text-sm font-light"
+                style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}
               >
                 Limited slots available • Complimentary consultation included
               </motion.p>

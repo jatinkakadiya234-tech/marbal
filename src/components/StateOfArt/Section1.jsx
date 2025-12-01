@@ -7,7 +7,7 @@ const Section1 = () => {
 return (
     <>
         <section className="relative py-10 bg-gradient-to-br from-[#0E5543] via-[#1a6b52] to-[#0E5543] overflow-hidden"
-        style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
+        style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
             {/* Premium Background Elements */}
             <div className="absolute inset-0">
                 <div className="absolute inset-0 opacity-[0.03]">
@@ -38,16 +38,16 @@ return (
                             className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#F2E1C5]/10 border border-[#F2E1C5]/20 backdrop-blur-sm mb-8"
                         >
                             <div className="w-2 h-2 bg-[#F2E1C5] rounded-full animate-pulse"></div>
-                            <span className="text-[#F2E1C5] font-light tracking-widest text-sm uppercase">Craftsmanship & Innovation</span>
+                            <span className="text-[#F2E1C5] font-light tracking-widest text-sm uppercase" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Craftsmanship & Innovation</span>
                         </motion.div>
 
-                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif font-light text-[#F2E1C5] mb-4 sm:mb-6 leading-tight">
-                            Where <span className="italic font-normal">Timeless Craft</span> Meets Modern Innovation
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif font-light text-[#F2E1C5] mb-4 sm:mb-6 leading-tight" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+                            Where <span className="italic font-normal" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Timeless Craft</span> Meets Modern Innovation
                         </h2>
                         
                         <div className="w-20 h-0.5 bg-gradient-to-r from-[#F2E1C5] to-transparent mb-8"></div>
 
-                        <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#F2E1C5]/80 leading-relaxed mb-6 sm:mb-8">
+                        <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#F2E1C5]/80 leading-relaxed mb-6 sm:mb-8" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                             At Rishab Green Marbles, we blend generations of stoneworking artistry with cutting-edge technology 
                             to deliver unparalleled perfection in every slab. Our sophisticated machinery ensures precision cuts, 
                             flawless finishes, and consistent quality that defines industry excellence.
@@ -62,7 +62,7 @@ return (
                                 className="flex items-center group"
                             >
                                 <div className="w-3 h-3 bg-[#F2E1C5] rounded-full mr-4 group-hover:scale-125 transition-transform duration-300"></div>
-                                <span className="text-[#F2E1C5] font-medium text-xs sm:text-sm md:text-base">ISO 9001 Certified Manufacturing Processes</span>
+                                <span className="text-[#F2E1C5] font-medium text-xs sm:text-sm md:text-base" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>ISO 9001 Certified Manufacturing Processes</span>
                             </motion.div>
                             <motion.div
                                 initial={{ opacity: 0, x: -20 }}
@@ -71,7 +71,7 @@ return (
                                 className="flex items-center group"
                             >
                                 <div className="w-3 h-3 bg-[#F2E1C5] rounded-full mr-4 group-hover:scale-125 transition-transform duration-300"></div>
-                                <span className="text-[#F2E1C5] font-medium text-xs sm:text-sm md:text-base">0.1mm Precision Tolerance Guarantee</span>
+                                <span className="text-[#F2E1C5] font-medium text-xs sm:text-sm md:text-base" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>0.1mm Precision Tolerance Guarantee</span>
                             </motion.div>
                             <motion.div
                                 initial={{ opacity: 0, x: -20 }}
@@ -80,7 +80,7 @@ return (
                                 className="flex items-center group"
                             >
                                 <div className="w-3 h-3 bg-[#F2E1C5] rounded-full mr-4 group-hover:scale-125 transition-transform duration-300"></div>
-                                <span className="text-[#F2E1C5] font-medium text-xs sm:text-sm md:text-base">Advanced Digital Quality Control Systems</span>
+                                <span className="text-[#F2E1C5] font-medium text-xs sm:text-sm md:text-base" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Advanced Digital Quality Control Systems</span>
                             </motion.div>
                         </div>
 
@@ -151,7 +151,7 @@ return (
                             transition={{ delay: 0.6, duration: 0.6 }}
                             className="text-center mt-6"
                         >
-                            <p className="text-[#F2E1C5]/60 text-xs sm:text-sm font-light">Watch our precision technology in action</p>
+                            <p className="text-[#F2E1C5]/60 text-xs sm:text-sm font-light" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Watch our precision technology in action</p>
                         </motion.div>
                     </motion.div>
                 </div>

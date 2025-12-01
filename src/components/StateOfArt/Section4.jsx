@@ -29,7 +29,7 @@ return (
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif font-light text-[#F2E1C5] mb-4">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif font-light text-[#F2E1C5] mb-4" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                         Excellence in Numbers
                     </h2>
                     <div className="w-24 h-0.5 bg-gradient-to-r from-[#F2E1C5] to-transparent mx-auto mb-4"></div>
@@ -67,12 +67,12 @@ return (
                                     </motion.div>
                                     
                                     {/* Suffix */}
-                                    <div className="text-[#F2E1C5]/70 text-xs sm:text-sm font-light mb-1 sm:mb-2 tracking-wider">
+                                    <div className="text-[#F2E1C5]/70 text-xs sm:text-sm font-light mb-1 sm:mb-2 tracking-wider" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                                         {stat.suffix}
                                     </div>
                                     
                                     {/* Label */}
-                                    <div className="text-[#F2E1C5]/90 font-medium text-xs sm:text-sm md:text-base lg:text-lg leading-tight">
+                                    <div className="text-[#F2E1C5]/90 font-medium text-xs sm:text-sm md:text-base lg:text-lg leading-tight" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                                         {stat.label}
                                     </div>
                                 </div>
@@ -119,12 +119,12 @@ return (
                     {/* Modal header */}
                     <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/50 to-transparent z-20 p-6">
                         <div className="flex justify-between items-center">
-                            <div className="text-[#F2E1C5] font-serif text-xl">Technology Preview</div>
+                            <div className="text-[#F2E1C5] font-serif text-xl" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Technology Preview</div>
                             <button
                                 onClick={() => setActiveVideo(null)}
                                 className="text-[#F2E1C5] hover:text-white transition-colors duration-300 flex items-center space-x-2 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full border border-[#F2E1C5]/20"
                             >
-                                <span>Close</span>
+                                <span style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Close</span>
                                 <div className="w-2 h-2 bg-[#F2E1C5] rounded-full"></div>
                             </button>
                         </div>
@@ -143,7 +143,7 @@ return (
 
                     {/* Modal footer */}
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent z-20 p-6">
-                        <div className="text-[#F2E1C5]/80 text-center text-sm">
+                        <div className="text-[#F2E1C5]/80 text-center text-sm" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                             Experience our cutting-edge technology in action
                         </div>
                     </div>
