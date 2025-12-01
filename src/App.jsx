@@ -13,7 +13,6 @@ import TechnologyShowcase from "./components/StateOfArt/StateOfArtPage";
 import NotFoundPage from "./components/Errors/NotFoundPage";
 import ScrollToTop from "./components/Helper/NavigateScrolletop";
 import OurStones from "./components/OurStones/OurStones";
-import ProductDetail from "./components/OurStones/ProductDetail";
 import Marble from "./components/OurStones/Marble";
 import Granite from "./components/OurStones/Granite";
 import Sandstone from "./components/OurStones/Sandstone";
@@ -24,6 +23,7 @@ import UAE from "./components/Exporters/UAE";
 import Qatar from "./components/Exporters/Qatar";
 import SaudiArabia from "./components/Exporters/SaudiArabia";
 import Europe from "./components/Exporters/Europe";
+import ProductDetail from "./components/ProductDetail/ProductDetail";
 
 function App() {
 

@@ -15,7 +15,7 @@ export default function ProductDetail() {
         <div className="text-center">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">Product Not Found</h2>
           <button 
-            onClick={() => navigate('/OurStones')}
+            onClick={() => navigate('/ourstones')}
             className="text-[#0E5543] hover:underline"
           >
             Back to Our Stones
