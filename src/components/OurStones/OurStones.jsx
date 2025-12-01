@@ -169,13 +169,13 @@ export default function OurStones() {
 
                 {/* Carousel Controls */}
                 <button
-                  className="absolute left-2 top-1/2 -translate-y-1/2 text-[#0E5543] p-2 rounded-full shadow-lg hover:text-[#1A7A62]"
+                  className="absolute left-2 top-[140px] -translate-y-1/2 text-[#0E5543] p-2 rounded-full shadow-lg hover:text-[#1A7A62]"
                   onClick={() => prevSlide(category.name)}
                 >
                   <FiChevronLeft size={16} />
                 </button>
                 <button
-                  className="absolute right-2 top-1/2 -translate-y-1/2 text-[#0E5543] p-2 rounded-full shadow-lg hover:text-[#1A7A62]"
+                  className="absolute right-2 top-[140px] -translate-y-1/2 text-[#0E5543] p-2 rounded-full shadow-lg hover:text-[#1A7A62]"
                   onClick={() =>
                     nextSlide(category.name, category.products.length)
                   }

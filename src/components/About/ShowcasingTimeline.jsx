@@ -129,7 +129,7 @@ export default function ShowcasingTimeline() {
                       </div>
 
                       <div
-                        className={`w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 bg-white border-2 sm:border-3 md:border-4 flex items-center justify-center shadow-lg transition-all duration-500 rounded-b-lg sm:rounded-full hover:scale-125 cursor-pointer ${
+                        className={`w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 bg-white border-2 sm:border-3 md:border-4 flex items-center justify-center shadow-lg transition-all duration-500  sm:rounded-full hover:scale-125 cursor-pointer ${
                           idx === activeIndex
                             ? "border-[#0E5543] scale-110"
                             : "border-[#0E5543]/60 scale-100"
