@@ -146,7 +146,7 @@ const ProductDetail = () => {
           {/* Image Gallery */}
           <div className="space-y-3 sm:space-y-4">
             {/* Main Image */}
-            <div className="relative bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden">
+            <div className="relative bg-white  shadow-lg overflow-hidden">
               <img
                 src={product.images[currentImageIndex]}
                 alt={product.name}
@@ -293,7 +293,7 @@ const ProductDetail = () => {
                 <p className="text-gray-600 text-sm sm:text-base">This versatile marble is perfect for various interior and exterior applications:</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                   {product.applications.map((application, index) => (
-                    <div key={index} className="bg-gray-50 rounded-lg p-3 sm:p-4 text-center">
+                    <div key={index} className="bg-gray-50  p-3 sm:p-4 text-center">
                       <span className="text-gray-700 font-medium text-sm sm:text-base">{application}</span>
                     </div>
                   ))}
@@ -307,7 +307,7 @@ const ProductDetail = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   {product.features.map((feature, index) => (
                     <div key={index} className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-[#0E5543] rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-[#0E5543]  mt-2 flex-shrink-0"></div>
                       <span className="text-gray-600 text-sm sm:text-base">{feature}</span>
                     </div>
                   ))}
@@ -336,7 +336,7 @@ const ProductDetail = () => {
                 { src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", alt: "Marble Fireplace", title: "Fireplace Surrounds" },
                 { src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", alt: "Marble Staircase", title: "Elegant Staircases" }
               ].map((item, index) => (
-                <div key={index} className="flex-shrink-0 w-72 relative group overflow-hidden rounded-lg">
+                <div key={index} className="flex-shrink-0 w-72 relative group overflow-hidden ">
                   <img 
                     src={item.src}
                     alt={item.alt}
@@ -350,7 +350,7 @@ const ProductDetail = () => {
 
           {/* Desktop Grid */}
           <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            <div className="relative group overflow-hidden rounded-lg sm:rounded-xl">
+            <div className="relative group overflow-hidden">
               <img 
                 src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
                 alt="Marble Kitchen Countertop" 
@@ -361,7 +361,7 @@ const ProductDetail = () => {
               </div>
             </div>
             
-            <div className="relative group overflow-hidden rounded-lg sm:rounded-xl">
+            <div className="relative group overflow-hidden ">
               <img 
                 src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
                 alt="Marble Bathroom" 
@@ -372,7 +372,7 @@ const ProductDetail = () => {
               </div>
             </div>
             
-            <div className="relative group overflow-hidden rounded-lg sm:rounded-xl">
+            <div className="relative group overflow-hidden ">
               <img 
                 src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
                 alt="Marble Flooring" 
@@ -383,7 +383,7 @@ const ProductDetail = () => {
               </div>
             </div>
             
-            <div className="relative group overflow-hidden rounded-lg sm:rounded-xl">
+            <div className="relative group overflow-hidden ">
               <img 
                 src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
                 alt="Marble Wall Cladding" 
@@ -394,7 +394,7 @@ const ProductDetail = () => {
               </div>
             </div>
             
-            <div className="relative group overflow-hidden rounded-lg sm:rounded-xl">
+            <div className="relative group overflow-hidden ">
               <img 
                 src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
                 alt="Marble Fireplace" 
@@ -405,7 +405,7 @@ const ProductDetail = () => {
               </div>
             </div>
             
-            <div className="relative group overflow-hidden rounded-lg sm:rounded-xl">
+            <div className="relative group overflow-hidden ">
               <img 
                 src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
                 alt="Marble Staircase" 
@@ -448,7 +448,7 @@ const ProductDetail = () => {
               {relatedProducts.map((relatedProduct) => (
                 <div
                   key={relatedProduct.id}
-                  className="flex-shrink-0 w-64 bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                  className="flex-shrink-0 w-64 bg-white  shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
                   onClick={() => {
                     navigate(`/product/${relatedProduct.id}`);
                     window.scrollTo(0, 0);
@@ -476,7 +476,7 @@ const ProductDetail = () => {
             {relatedProducts.map((relatedProduct) => (
               <div
                 key={relatedProduct.id}
-                className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                className="bg-white  shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
                 onClick={() => {
                   navigate(`/product/${relatedProduct.id}`);
                   window.scrollTo(0, 0);

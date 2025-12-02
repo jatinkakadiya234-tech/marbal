@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiArrowLeft, FiZoomIn, FiShare2, FiHeart } from 'react-icons/fi';
+import { allProducts } from '../../data/products';
 
 const categoryData = {
   'surata-green': {
@@ -155,7 +156,7 @@ const CategoryProductDetail = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
   const [isZoomed, setIsZoomed] = useState(false);
-
+  const relatedProducts = allProducts.filter(p => p.name !== parseInt(name)).slice(0, 3);
   const product = categoryData[name];
 
   if (!product) {
@@ -318,6 +319,154 @@ const CategoryProductDetail = () => {
                 </div>
               </div>
             )}
+          </div>
+        </div>
+           <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <div className="relative group overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                alt="Marble Kitchen Countertop" 
+                className="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="text-white font-semibold text-sm sm:text-base">Kitchen Countertops</span>
+              </div>
+            </div>
+            
+            <div className="relative group overflow-hidden ">
+              <img 
+                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                alt="Marble Bathroom" 
+                className="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="text-white font-semibold text-sm sm:text-base">Bathroom Vanities</span>
+              </div>
+            </div>
+            
+            <div className="relative group overflow-hidden ">
+              <img 
+                src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                alt="Marble Flooring" 
+                className="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="text-white font-semibold text-sm sm:text-base">Luxury Flooring</span>
+              </div>
+            </div>
+            
+            <div className="relative group overflow-hidden ">
+              <img 
+                src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                alt="Marble Wall Cladding" 
+                className="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="text-white font-semibold text-sm sm:text-base">Wall Cladding</span>
+              </div>
+            </div>
+            
+            <div className="relative group overflow-hidden ">
+              <img 
+                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                alt="Marble Fireplace" 
+                className="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="text-white font-semibold text-sm sm:text-base">Fireplace Surrounds</span>
+              </div>
+            </div>
+            
+            <div className="relative group overflow-hidden ">
+              <img 
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                alt="Marble Staircase" 
+                className="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="text-white font-semibold text-sm sm:text-base">Elegant Staircases</span>
+              </div>
+            </div>
+          </div>
+
+
+           <div className="mt-6 sm:mt-8 text-center">
+            <div className="bg-[#0E5543]/5 rounded-lg sm:rounded-xl p-4 sm:p-6">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">Natural Beauty & Characteristics</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 text-xs sm:text-sm text-gray-600">
+                <div className="flex items-center justify-center md:justify-start space-x-2">
+                  <div className="w-2 h-2 bg-[#0E5543] rounded-full flex-shrink-0"></div>
+                  <span>Unique veining patterns in every slab</span>
+                </div>
+                <div className="flex items-center justify-center md:justify-start space-x-2">
+                  <div className="w-2 h-2 bg-[#0E5543] rounded-full flex-shrink-0"></div>
+                  <span>Natural color variations and depth</span>
+                </div>
+                <div className="flex items-center justify-center md:justify-start space-x-2">
+                  <div className="w-2 h-2 bg-[#0E5543] rounded-full flex-shrink-0"></div>
+                  <span>Polished surface with mirror-like finish</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <div className="mb-8 sm:mb-16">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-8">Related Products</h2>
+          
+          {/* Mobile Carousel */}
+          <div className="md:hidden">
+            <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide">
+              {relatedProducts.map((relatedProduct) => (
+                <div
+                  key={relatedProduct.id}
+                  className="flex-shrink-0 w-64 bg-white  shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                  onClick={() => {
+                    navigate(`/product/${relatedProduct.id}`);
+                    window.scrollTo(0, 0);
+                  }}
+                >
+                  <img
+                    src={relatedProduct.image}
+                    alt={relatedProduct.name}
+                    className="w-full h-40 object-cover"
+                  />
+                  <div className="p-3">
+                    <p className="font-semibold text-gray-900 text-lx">{relatedProduct.name}</p>
+                    <p className="text-gray-500 text-xs">{relatedProduct.category}</p>
+                    <button className="text-[#0E5543] text-xs font-medium mt-2 hover:underline">
+                      View Details →
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop Grid */}
+          <div className="hidden md:grid md:grid-cols-3 gap-6">
+            {relatedProducts.map((relatedProduct) => (
+              <div
+                key={relatedProduct.id}
+                className="bg-white  shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                onClick={() => {
+                  navigate(`/product/${relatedProduct.id}`);
+                  window.scrollTo(0, 0);
+                }}
+              >
+                <img
+                  src={relatedProduct.image}
+                  alt={relatedProduct.name}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4">
+                  <p className="font-semibold text-gray-900 text-xl">{relatedProduct.name}</p>
+                  <p className="text-gray-500 text-sm">{relatedProduct.category}</p>
+                  <button className="text-[#0E5543] text-sm font-medium mt-2 hover:underline">
+                    View Details →
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
