@@ -460,7 +460,7 @@ const ProductDetail = () => {
                     className="w-full h-40 object-cover"
                   />
                   <div className="p-3">
-                    <p className="font-semibold text-gray-900 text-sm">{relatedProduct.name}</p>
+                    <p className="font-semibold text-gray-900 text-lx">{relatedProduct.name}</p>
                     <p className="text-gray-500 text-xs">{relatedProduct.category}</p>
                     <button className="text-[#0E5543] text-xs font-medium mt-2 hover:underline">
                       View Details →
@@ -487,8 +487,8 @@ const ProductDetail = () => {
                   alt={relatedProduct.name}
                   className="w-full h-48 object-cover"
                 />
-                <div className="p-1s">
-                  <p className="font-semibold text-gray-900 text-2xl">{relatedProduct.name}</p>
+                <div className="p-4">
+                  <p className="font-semibold text-gray-900 text-xl">{relatedProduct.name}</p>
                   <p className="text-gray-500 text-sm">{relatedProduct.category}</p>
                   <button className="text-[#0E5543] text-sm font-medium mt-2 hover:underline">
                     View Details →
