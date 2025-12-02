@@ -215,7 +215,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                 onMouseLeave={handleMouseLeave}
                 onHoverStart={() => setHoveredCard(index)}
                 onHoverEnd={() => setHoveredCard(null)}
-                onClick={() => setActiveCategory(cat.name.toLowerCase())}
+                onClick={() => navigate(`/productdetail/${cat.name.toLowerCase().replace(/\s+/g, '-')}`)}
                 custom={index}
                 variants={floatingVariants}
                 initial={{ opacity: 0, y: 50 }}
@@ -290,7 +290,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                 <div key={cat.name} className="w-full flex-shrink-0 px-3 sm:px-4">
                   <motion.div
                     className="relative h-[350px] sm:h-[400px] cursor-pointer"
-                    onClick={() => setActiveCategory(cat.name.toLowerCase())}
+                    onClick={() => navigate(`/productdetail/${cat.name.toLowerCase().replace(/\s+/g, '-')}`)}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
