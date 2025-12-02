@@ -262,11 +262,11 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                       {cat.description}
                     </p>
                     <button
-                      className="px-4 sm:px-6 py-2 border rounded transition-all duration-300 hover:scale-105"
+                      className="px-4 sm:px-6 py-2 border rounded transition-all duration-300 hover:scale-105 cursor-pointer"
                       style={{ backgroundColor: "white", color: "black" }}
                       onClick={(e) => {
                         e.stopPropagation();
-                        navigate('/OurStones/marble');
+                       navigate(`/productdetail/${cat.name.toLowerCase().replace(/\s+/g, '-')}`);
                       }}
                     >
                       Discover
