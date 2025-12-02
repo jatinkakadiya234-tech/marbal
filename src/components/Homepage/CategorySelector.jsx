@@ -33,7 +33,7 @@ const categories = [
     accent: "amber",
   },
   {
-    name: "R Green ",
+    name: "R Green",
     image:
       "https://www.ilpiccolodesign.it/wp-content/uploads/2022/08/kitchen-island-black-marble.jpg",
     description:
