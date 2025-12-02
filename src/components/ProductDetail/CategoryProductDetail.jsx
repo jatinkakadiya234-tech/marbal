@@ -112,8 +112,8 @@ const categoryData = {
       "Suitable for Interior & Exterior Use"
     ]
   },
-  'r-green': {
-    name: "R Green",
+  'r-green-marble': {
+    name: "R Green-Marble",
     image: "https://www.ilpiccolodesign.it/wp-content/uploads/2022/08/kitchen-island-black-marble.jpg",
     description: "Choose the shade of distinction, crafted for those who value rare.",
     category: "Premium Marble",
