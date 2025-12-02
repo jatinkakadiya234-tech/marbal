@@ -25,6 +25,7 @@ import SaudiArabia from "./components/Exporters/SaudiArabia";
 import Europe from "./components/Exporters/Europe";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
 import CategoryProductDetail from "./components/ProductDetail/CategoryProductDetail";
+import RequestQuote from "./components/Quote/RequestQuote";
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
           <Route path="/OurStones" element={<OurStones />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/productdetail/:name" element={<CategoryProductDetail />} />
+          <Route path="/request-quote" element={<RequestQuote />} />
           <Route path="/marble" element={<Marble />} />
           <Route path="/granite" element={<Granite />} />
           <Route path="/sandstone" element={<Sandstone />} />

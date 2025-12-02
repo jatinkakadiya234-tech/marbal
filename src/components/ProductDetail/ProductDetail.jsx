@@ -510,7 +510,8 @@ const ProductDetail = () => {
             <button className="bg-white text-[#0E5543] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
               Request Quote
             </button>
-            <button className="border border-white text-[#0E5543] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[#0E5543] transition-colors">
+            <button className="border border-white text-[#0E5543] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[#0E5543] transition-colors"
+            onClick={()=>navigate("/contact")}>
               Contact Us
             </button>
             

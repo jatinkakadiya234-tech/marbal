@@ -15,7 +15,7 @@ const categories = [
     accent: "amber",
   },
   {
-    name: "ForestGreen ",
+    name: "ForestGreen",
     image:
       "https://www.aclassmarble.co.in/images/media_images/240730075202_blog_image.jpg",
     description:

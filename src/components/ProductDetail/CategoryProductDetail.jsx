@@ -326,10 +326,14 @@ const CategoryProductDetail = () => {
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">Interested in This Product?</h2>
           <p className="text-base sm:text-lg mb-4 sm:mb-6 opacity-90">Get a custom quote or request samples for your project</p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-            <button className="bg-white text-[#0E5543] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+            <button 
+              onClick={() => navigate('/request-quote')}
+              className="bg-white text-[#0E5543] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
+            >
               Request Quote
             </button>
-            <button className="border border-white text-white px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[#0E5543] transition-colors">
+            <button className="border border-white text-[#0E5543] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[#0E5543] transition-colors"
+            onClick={()=>navigate("/contact")}>
               Contact Us
             </button>
           </div>

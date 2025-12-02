@@ -87,22 +87,22 @@ const ContactUs = () => {
                 {
                   icon: FaPhoneAlt,
                   title: "Phone",
-                  content: "+1 (555) 123-4567",
+                  content: "+91 94141 65062",
                   subtext: "Mon-Sun: 6:00 AM - 9:00 PM",
                   color: "from-[#0E5543] to-[#1A7A62]"
                 },
                 {
                   icon: FaEnvelope,
                   title: "Email",
-                  content: "hello@premiummarble.com",
+                  content: "rishabhgreenminerals@gmail.com",
                   subtext: "Response within 4 hours",
                   color: "from-[#1A7A62] to-[#2D8C6E]"
                 },
                 {
                   icon: FaMapMarkerAlt,
                   title: "Showroom",
-                  content: "123 Luxury Avenue",
-                  subtext: "Mumbai, India 400001",
+                  content: "Araji No. 114, NH. 8",
+                  subtext: "Sukher, Udaipur – 313001, Rajasthan, IND",
                   color: "from-[#0E5543] to-[#1A7A62]"
                 },
                 {
@@ -254,19 +254,26 @@ const ContactUs = () => {
             </p>
           </div>
 
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#0E5543]/30">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#0E5543]/20 to-[#F2E1C5]/10 z-10"></div>
+          <div 
+            className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#0E5543]/30 cursor-pointer"
+            onClick={() => window.open('https://maps.google.com/?q=Araji+No.+114,+NH.+8,+Sukher,+Udaipur+313001,+Rajasthan,+India', '_blank')}
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0E5543]/20 to-[#F2E1C5]/10 z-10 pointer-events-none"></div>
             <iframe
-              title="Google Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.036154387616!2d72.83044417506567!3d19.099676982107667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9f6d8e4b7e1%3A0xf36a6f3f3a2c4cf2!2sMumbai%20City%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1695825569850!5m2!1sen!2sin"
-              className="w-full h-[400px] md:h-[500px] border-0 grayscale contrast-125"
-              allowFullScreen=""
-            ></iframe>
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14505.737118653076!2d73.70916980336501!3d24.643175792274544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e5007f115f6d%3A0x98f10b58f37a4f3e!2sRishabh%20Green%20Marbles%20Pvt.%20Ltd!5e0!3m2!1sen!2sin!4v1764654468178!5m2!1sen!2sin"
+      width="100%"
+      height="450"
+      style={{ border: 0 }}
+      allowFullScreen
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      className="pointer-events-none"
+    ></iframe>
 
             {/* Map Overlay Info */}
-            <div className="absolute bottom-6 left-6 z-20 bg-[#0d0d0d]/90 backdrop-blur-sm p-4 rounded-xl border border-[#0E5543]/30 max-w-xs">
-              <h3 className="text-[#F2E1C5] font-medium mb-1">Ceramic Luxury Showroom</h3>
-              <p className="text-[#F2E1C5]/70 text-sm">21, Premium Avenue, Mumbai, India</p>
+            <div className="absolute bottom-6 left-6 z-20 bg-[#0d0d0d]/90 backdrop-blur-sm p-4 rounded-xl border border-[#0E5543]/30 max-w-xs pointer-events-none">
+              <h3 className="text-[#F2E1C5] font-medium mb-1">Siramic Stone Gallery</h3>
+              <p className="text-[#F2E1C5]/70 text-sm">Araji No. 114, NH. 8, Sukher, Udaipur – 313001, Rajasthan, IND</p>
             </div>
           </div>
 
@@ -274,7 +281,7 @@ const ContactUs = () => {
           <div className="grid md:grid-cols-3 gap-6 mt-8">
             {[
               { icon: FaClock, title: "Visit Us", text: "Mon-Sat: 9AM-7PM" },
-              { icon: FaPhoneAlt, title: "Call Ahead", text: "+1 (555) 123-4567" },
+              { icon: FaPhoneAlt, title: "Call", text: "+91 84338 20920" },
               { icon: FaStar, title: "Premium Service", text: "By appointment only" }
             ].map((item, index) => (
               <motion.div
