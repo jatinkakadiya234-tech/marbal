@@ -22,7 +22,7 @@ import UAE from "./components/Exporters/UAE";
 import Qatar from "./components/Exporters/Qatar";
 import SaudiArabia from "./components/Exporters/SaudiArabia";
 import Europe from "./components/Exporters/Europe";
-import ProductDetail from "./components/ProductDetail/ProductDetail";
+import ProductDetail from "./components/ProductDetail/ProductDetail.jsx";
 import RequestQuote from "./components/Quote/RequestQuote";
 
 function App() {
