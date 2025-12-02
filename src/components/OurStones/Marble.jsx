@@ -24,7 +24,10 @@ import indianMarbleSupplier from '../../assets/marbles/Indian-Marble-Supplier[1]
 import millenium from '../../assets/marbles/millenium1-1[1].jpg'
 import whiteAravaliOnyx from '../../assets/marbles/white-aravali-onyx-376129184-b5kzi[1].jpg'
 import marbleImage from '../../assets/marbles/3-41-768x768[1].jpg'
-
+import forestGreen from '../../assets/marbles/Forestgeen.png'
+import spiderGreen from '../../assets/marbles/SPIDERGreen.png'
+import rGreenMarble from '../../assets/marbles/Rgreen.png'
+import surataGreen from '../../assets/marbles/SuttreGeern.png'
 const marbleProducts = [
   { id: 1, name: "Agaria White", image: agariaWhite },
   { id: 2, name: "Aravali Green", image: aravaliGreen },
@@ -42,11 +45,15 @@ const marbleProducts = [
   { id: 14, name: "Pink Araveli", image: pinkAraveli },
   { id: 15, name: "Pink Marble", image: pinkMarble },
   { id: 16, name: "Rosso Lavante", image: rossoLavante },
-  { id: 17, name: "Afyon White", image: afyonWhite },
-  { id: 18, name: "Indian Marble Supplier", image: indianMarbleSupplier },
-  { id: 19, name: "Millenium", image: millenium },
-  { id: 20, name: "White Aravali Onyx", image: whiteAravaliOnyx },
-  { id: 21, name: "Premium Marble", image: marbleImage }
+  { id: 17, name: "Surata Green", image: surataGreen },
+  { id: 18, name: "ForestGreen", image: forestGreen },
+  { id: 19, name: "Spider Green", image: spiderGreen },
+  { id: 20, name: "R Green-Marble", image: rGreenMarble },
+  { id: 21, name: "Afyon White", image: afyonWhite },
+  { id: 22, name: "Indian Marble Supplier", image: indianMarbleSupplier },
+  { id: 23, name: "Millenium", image: millenium },
+  { id: 24, name: "White Aravali Onyx", image: whiteAravaliOnyx },
+  { id: 25, name: "Premium Marble", image: marbleImage }
 ];
 
 export default function Marble() {

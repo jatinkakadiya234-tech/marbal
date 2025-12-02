@@ -48,7 +48,6 @@ function App() {
           <Route path="/state-of-the-art" element={<TechnologyShowcase />} />
           <Route path="/OurStones" element={<OurStones />} />
           <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="/productdetail/:name" element={<CategoryProductDetail />} />
           <Route path="/request-quote" element={<RequestQuote />} />
           <Route path="/marble" element={<Marble />} />
           <Route path="/granite" element={<Granite />} />

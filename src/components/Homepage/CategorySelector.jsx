@@ -3,39 +3,43 @@ import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import HeaderContent from "../Helper/HeaderContent";
+import SurataGreen  from "../../assets/home_img/DARK (SURATA) GREEN.png";
+import ForestGreen from "../../assets/home_img/FOREST GREEN.png";
+import rGreen from "../../assets/home_img/rGreen.png";
+import SPIDERGreen from "../../assets/home_img/SPIDER GREEN.png";
 
 const categories = [
-  {
+  { 
+    id: 17,
     name: "Surata Green",
-    image:
-      "https://www.aclassmarble.co.in/images/media_images/240826063842_blog_image.jpg",
+    image : "https://everwallpaper.com/cdn/shop/files/dark-green-marble-hallway-mural-wallpaper_4a24f584-357c-4534-81d9-b1ce275f526e.jpg?v=1732537204&width=416",
     description:
       "Choose the shade of distinction, crafted for those who value rarity.",
     color: "from-amber-900/30 to-amber-700/20",
     accent: "amber",
   },
   {
+    id: 18,
     name: "ForestGreen",
-    image:
-      "https://www.aclassmarble.co.in/images/media_images/240730075202_blog_image.jpg",
+    image : ForestGreen,
     description:
       "Enrich your interiors with the timeless charm of nature’s finest creation.",
     color: "from-amber-800/30 to-amber-600/20",
     accent: "amber",
   },
   {
+    id: 19,
     name: "Spider Green",
-    image:
-      "https://lifencolors.in/cdn/shop/products/81d868_98eaac6a5ff84298b9e0728109e46c67_mv2_4af1098c-41e8-4961-9e60-a2e76d62a28a.jpg?v=1753695316",
+    image : SPIDERGreen,
     description:
       "Let the calm of green breathe life into every corner of your space. ",
     color: "from-amber-900/30 to-amber-700/20",
     accent: "amber",
   },
   {
+    id: 20,
     name: "R Green-Marble",
-    image:
-      "https://www.ilpiccolodesign.it/wp-content/uploads/2022/08/kitchen-island-black-marble.jpg",
+    image : rGreen,
     description:
       "Choose the shade of distinction ,crafted for those who value rare. ",
     color: "from-amber-800/30 to-amber-600/20",
@@ -215,7 +219,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                 onMouseLeave={handleMouseLeave}
                 onHoverStart={() => setHoveredCard(index)}
                 onHoverEnd={() => setHoveredCard(null)}
-                onClick={() => navigate(`/productdetail/${cat.name.toLowerCase().replace(/\s+/g, '-')}`)}
+                onClick={() => navigate(`/product/${cat.id}`)}
                 custom={index}
                 variants={floatingVariants}
                 initial={{ opacity: 0, y: 50 }}

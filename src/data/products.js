@@ -20,6 +20,11 @@ import indianMarbleSupplier from '../assets/marbles/Indian-Marble-Supplier[1].jp
 import millenium from '../assets/marbles/millenium1-1[1].jpg'
 import whiteAravaliOnyx from '../assets/marbles/white-aravali-onyx-376129184-b5kzi[1].jpg'
 import marbleImage from '../assets/marbles/3-41-768x768[1].jpg'
+import forestGreen from '../assets/marbles/Forestgeen.png'
+import spiderGreen from '../assets/marbles/SPIDERGreen.png'
+import rGreenMarble from '../assets/marbles/Rgreen.png'
+import surataGreen from '../assets/marbles/SuttreGeern.png'
+
 
 
 // Import all granite images
@@ -74,6 +79,8 @@ import merryGoldSandstone from '../assets/Sandstone/merry-gold-500x500.webp'
 import rainbowSandstone from '../assets/Sandstone/rainbow-1.jpg'
 import redSandstone from '../assets/Sandstone/Red Sandstone.jpg'
 import teakwoodSandstone from '../assets/Sandstone/Teakwood-Sandstone.jpg'
+import { i } from 'framer-motion/client'
+import { Frown } from 'lucide-react'
 
 // Main product collections for sub-categories
 export const allProducts = [
@@ -94,13 +101,17 @@ export const allProducts = [
   { id: 14, name: "Pink Araveli", image: pinkAraveli, category: "Marble", description: "Elegant pink marble with soft hues and natural variations." },
   { id: 15, name: "Pink Marble", image: pinkMarble, category: "Marble", description: "Beautiful pink marble with delicate coloring and smooth finish." },
   { id: 16, name: "Rosso Lavante", image: rossoLavante, category: "Marble", description: "Italian-style marble with rich red tones and elegant patterns." },
-   { id: 17, name: "Afyon White", image: afyonWhite },
-    { id: 18, name: "Indian Marble Supplier", image: indianMarbleSupplier },
-    { id: 19, name: "Millenium", image: millenium },
-    { id: 20, name: "White Aravali Onyx", image: whiteAravaliOnyx },
-    { id: 21, name: "Premium Marble", image: marbleImage },
-  // Granites (17-52)
-  { id: 17, name: "Absolute Black", image: absoluteBlack, category: "Granite", description: "Pure black granite with consistent color and premium durability." },
+  { id: 17, name: "Surata Green", image: surataGreen, category: "Marble", description: "Choose the shade of distinction, crafted for those who value rarity." },
+  { id: 18, name: "ForestGreen", image: forestGreen, category: "Marble", description: "Enrich your interiors with the timeless charm of nature's finest creation." },
+  { id: 19, name: "Spider Green", image: spiderGreen, category: "Marble", description: "Let the calm of green breathe life into every corner of your space." },
+  { id: 20, name: "R Green-Marble", image: rGreenMarble, category: "Marble", description: "Choose the shade of distinction, crafted for those who value rare." },
+   { id: 21, name: "Afyon White", image: afyonWhite },
+    { id: 22, name: "Indian Marble Supplier", image: indianMarbleSupplier },
+    { id: 23, name: "Millenium", image: millenium },
+    { id: 24, name: "White Aravali Onyx", image: whiteAravaliOnyx },
+    { id: 25, name: "Premium Marble", image: marbleImage },
+  // Granites (26-61)
+  { id: 26, name: "Absolute Black", image: absoluteBlack, category: "Granite", description: "Pure black granite with consistent color and premium durability." },
   { id: 18, name: "Alaska Gold", image: alaskaGold, category: "Granite", description: "Golden granite with natural patterns and warm undertones." },
   { id: 19, name: "Alaska White", image: alaskaWhite, category: "Granite", description: "Clean white granite with subtle patterns and modern appeal." },
   { id: 20, name: "Alpine White", image: alpineWhite, category: "Granite", description: "Pure white granite with minimal patterns and elegant finish." },
