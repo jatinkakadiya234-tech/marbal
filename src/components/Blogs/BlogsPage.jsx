@@ -1,90 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaSearch, FaCalendar, FaUser, FaArrowRight, FaShare, FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaTags, FaClock } from 'react-icons/fa'
+import Apihelper from '../../services/Apihelper'
 
 const BlogsPage = () => {
   const [searchTerm, setSearchTerm] = useState('')
-  
-  // Sample blog data
-  const featuredPost = {
-    id: 1,
-    title: "A Complete Guide on the Indian Green Marble",
-    excerpt: "Indian Green marble, a long-known flooring material, is redefining luxury, elegance, and durability all over again. Discover a complete guide on Indian green marble, focusing on its origin, colour, brief history, sustainability, and interior use.",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    category: "Green Marble Guide",
-    date: "2024-01-15",
-    author: "Marble Specialists",
-    readTime: "12 min read",
-    tags: ["Indian green marble", "green marble manufacturers in India", "green marble suppliers in India", "leading marble company in India"]
-  }
-
-  const blogPosts = [
-    {
-      id: 2,
-      title: "A Complete Guide on the Indian Green Marble",
-      excerpt: "Indian Green marble, a long-known flooring material, is redefining luxury, elegance, and durability all over again. Discover a complete guide on Indian green marble, focusing on its origin, colour, brief history, sustainability, and interior use.",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Green Marble Guide",
-      date: "2024-01-15",
-      author: "Marble Specialists",
-      readTime: "12 min read",
-      tags: ["Indian green marble", "green marble manufacturers in India", "green marble suppliers in India", "leading marble company in India"]
-    },
-    {
-      id: 3,
-      title: "Modern Marble Trends: What's Hot in 2024",
-      excerpt: "Explore the latest marble trends taking the interior design world by storm this year.",
-      image: "https://images.unsplash.com/photo-1514053026555-49ce8886ae41?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Trends",
-      date: "2024-01-12",
-      author: "Design Team",
-      readTime: "5 min read",
-      tags: ["Trends", "2024", "Innovation"]
-    },
-    {
-      id: 4,
-      title: "Caring for Your Marble Surfaces: Maintenance Tips",
-      excerpt: "Learn professional tips to maintain the pristine condition of your marble surfaces for years to come.",
-      image: "https://images.unsplash.com/photo-1565538420870-da08ff96a207?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Maintenance",
-      date: "2024-01-08",
-      author: "Care Experts",
-      readTime: "6 min read",
-      tags: ["Maintenance", "Care", "Longevity"]
-    },
-    {
-      id: 5,
-      title: "Italian vs Indian Marble: A Comprehensive Comparison",
-      excerpt: "Understand the key differences between Italian and Indian marble to make an informed decision.",
-      image: "https://images.unsplash.com/photo-1554743365-a80c1243316e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Comparison",
-      date: "2024-01-05",
-      author: "Marble Specialists",
-      readTime: "10 min read",
-      tags: ["Comparison", "Quality", "Origin"]
-    },
-    {
-      id: 6,
-      title: "Transforming Spaces with Marble Accent Walls",
-      excerpt: "Discover creative ways to use marble accent walls to elevate your interior spaces.",
-      image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Design Ideas",
-      date: "2024-01-02",
-      author: "Interior Designers",
-      readTime: "7 min read",
-      tags: ["Design", "Accent Walls", "Transformation"]
-    },
-    {
-      id: 7,
-      title: "Sustainable Marble Sourcing: Our Eco-Friendly Approach",
-      excerpt: "Learn about our commitment to sustainable and environmentally responsible marble sourcing practices.",
-      image: "https://images.unsplash.com/photo-1511389026070-a14ae610a1be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Sustainability",
-      date: "2023-12-28",
-      author: "Sustainability Team",
-      readTime: "4 min read",
-      tags: ["Sustainability", "Eco-Friendly", "Responsible"]
-    }
-  ]
+  const [Bloge, setBloge] = useState([])
 
   const categories = [
     { name: "Green Marble Guide", count: 1 },
@@ -98,11 +18,26 @@ const BlogsPage = () => {
 
   const popularTags = ["Indian green marble", "green marble manufacturers in India", "green marble suppliers in India", "leading marble company in India", "Marble", "Design", "Interior", "Luxury", "Home", "Trending", "Quality", "Natural Stone", "Elegance", "Modern"]
 
-  const filteredPosts = blogPosts.filter(post =>
-    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
-  )
+  const filteredPosts = Bloge && Bloge.length > 0 ? Bloge.filter((post) =>
+    (post.title || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (post.description || "").toLowerCase().includes(searchTerm.toLowerCase())
+  ) : [];
+
+  const featuredPost = Bloge && Bloge.length > 0 ? Bloge[0] : null;
+
+  async function getAllBlogs() {
+    try {
+      const response = await Apihelper.getallblogs();
+      console.log(response.data);
+      setBloge(response?.data || []);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    getAllBlogs();
+  }, [])
 
   return (
     <div className="min-h-screen bg-gradient-to-br  bg-white">
@@ -186,55 +121,57 @@ const BlogsPage = () => {
           {/* Blog Posts */}
           <div className="lg:col-span-3">
             {/* Featured Post */}
-            <div className="mb-12">
-              <div className="bg-white rounded-2xl overflow-hidden shadow-2xl border border-[#0E5543]/10">
-                <div className="relative h-96">
-                  <img 
-                    src={featuredPost.image} 
-                    alt={featuredPost.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <span className="bg-[#F2E1C5] text-[#0E5543] px-4 py-1 rounded-full text-sm font-semibold mb-4 inline-block">
-                      {featuredPost.category}
-                    </span>
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-['Playfair_Display']">
-                      {featuredPost.title}
-                    </h2>
-                    <div className="flex items-center text-white/80 text-sm mb-4">
-                      <FaCalendar className="mr-2" />
-                      <span className="mr-4">{featuredPost.date}</span>
-                      <FaUser className="mr-2" />
-                      <span className="mr-4">{featuredPost.author}</span>
-                      <FaClock className="mr-2" />
-                      <span>{featuredPost.readTime}</span>
+            {featuredPost && (
+              <div className="mb-12">
+                <div className="bg-white rounded-2xl overflow-hidden shadow-2xl border border-[#0E5543]/10">
+                  <div className="relative h-96">
+                    <img 
+                      src={featuredPost.image || 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'} 
+                      alt={featuredPost.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                      <span className="bg-[#F2E1C5] text-[#0E5543] px-4 py-1 rounded-full text-sm font-semibold mb-4 inline-block">
+                        {featuredPost.category || 'Blog'}
+                      </span>
+                      <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-['Playfair_Display']">
+                        {featuredPost.title}
+                      </h2>
+                      <div className="flex items-center text-white/80 text-sm mb-4">
+                        <FaCalendar className="mr-2" />
+                        <span className="mr-4">{new Date(featuredPost.createdAt || featuredPost.date).toLocaleDateString()}</span>
+                        <FaUser className="mr-2" />
+                        <span className="mr-4">{featuredPost.author || 'Admin'}</span>
+                        <FaClock className="mr-2" />
+                        <span>5 min read</span>
+                      </div>
+                      <p className="text-white/90 mb-6">{featuredPost.description || featuredPost.excerpt}</p>
+                      <button className="bg-[#F2E1C5] text-[#0E5543] px-6 py-3 rounded-xl font-semibold hover:bg-[#F2E1C5]/90 transition-colors flex items-center gap-2">
+                        Read Article <FaArrowRight />
+                      </button>
                     </div>
-                    <p className="text-white/90 mb-6">{featuredPost.excerpt}</p>
-                    <button className="bg-[#F2E1C5] text-[#0E5543] px-6 py-3 rounded-xl font-semibold hover:bg-[#F2E1C5]/90 transition-colors flex items-center gap-2">
-                      Read Article <FaArrowRight />
-                    </button>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
 
             {/* Recent Posts Grid */}
             <div>
               <h2 className="text-3xl font-bold text-[#0E5543] mb-8 font-['Playfair_Display']">Recent Articles</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {filteredPosts.map((post) => (
-                  <div key={post.id} className="bg-white  overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#0E5543]/10 group">
+                {filteredPosts.length > 0 ? filteredPosts.slice(1).map((post) => (
+                  <div key={post._id || post.id} className="bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#0E5543]/10 group">
                     <div className="relative h-48">
                       <img 
-                        src={post.image} 
+                        src={post.image || 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'} 
                         alt={post.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute top-4 left-4">
                         <span className="bg-[#0E5543] text-[#F2E1C5] px-3 py-1 rounded-full text-sm font-semibold">
-                          {post.category}
+                          {post.category || 'Blog'}
                         </span>
                       </div>
                     </div>
@@ -243,24 +180,24 @@ const BlogsPage = () => {
                       <h3 className="text-xl font-bold text-[#0E5543] mb-3 font-['Playfair_Display'] group-hover:text-[#1a7a5e] transition-colors">
                         {post.title}
                       </h3>
-                      <p className="text-gray-600 mb-4 line-clamp-2">{post.excerpt}</p>
+                      <p className="text-gray-600 mb-4 line-clamp-2">{post.description || post.excerpt}</p>
                       
                       <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                         <div className="flex items-center space-x-4">
                           <span className="flex items-center">
                             <FaCalendar className="mr-1" />
-                            {post.date}
+                            {new Date(post.createdAt || post.date).toLocaleDateString()}
                           </span>
                           <span className="flex items-center">
                             <FaClock className="mr-1" />
-                            {post.readTime}
+                            5 min read
                           </span>
                         </div>
                       </div>
                       
                       <div className="flex items-center justify-between">
                         <div className="flex flex-wrap gap-1">
-                          {post.tags.map((tag, index) => (
+                          {(post.tags || ['Blog']).slice(0, 2).map((tag, index) => (
                             <span key={index} className="bg-[#F2E1C5] text-[#0E5543] px-2 py-1 rounded text-xs">
                               #{tag}
                             </span>
@@ -272,7 +209,11 @@ const BlogsPage = () => {
                       </div>
                     </div>
                   </div>
-                ))}
+                )) : (
+                  <div className="col-span-2 text-center py-12">
+                    <p className="text-gray-500 text-lg">Loading blogs...</p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
