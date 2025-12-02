@@ -294,7 +294,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                 <div key={cat.name} className="w-full flex-shrink-0 px-3 sm:px-4">
                   <motion.div
                     className="relative h-[350px] sm:h-[400px] cursor-pointer"
-                    onClick={() => navigate(`/productdetail/${cat.name.toLowerCase().replace(/\s+/g, '-')}`)}
+                    onClick={() => navigate(`/product/${cat.id}`)}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
