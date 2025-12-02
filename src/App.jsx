@@ -16,7 +16,6 @@ import OurStones from "./components/OurStones/OurStones";
 import Marble from "./components/OurStones/Marble";
 import Granite from "./components/OurStones/Granite";
 import Sandstone from "./components/OurStones/Sandstone";
-import HelpandAddvaice from "./components/Advice/HelpandAddvaice";
 import BlogsPage from "./components/Blogs/BlogsPage";
 import Exporters from "./components/Exporters/Exporters";
 import UAE from "./components/Exporters/UAE";
@@ -24,7 +23,6 @@ import Qatar from "./components/Exporters/Qatar";
 import SaudiArabia from "./components/Exporters/SaudiArabia";
 import Europe from "./components/Exporters/Europe";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
-import CategoryProductDetail from "./components/ProductDetail/CategoryProductDetail";
 import RequestQuote from "./components/Quote/RequestQuote";
 
 function App() {
