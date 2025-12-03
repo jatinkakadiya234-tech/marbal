@@ -136,11 +136,7 @@ export default function ShowcasingTimeline() {
                         } relative z-40`}
                       >
                         <span
-                          className={`text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold transition-all duration-500 ${
-                            idx === activeIndex
-                              ? "text-[#0E5543] scale-110"
-                              : "text-[#0E5543]/80 scale-100"
-                          }`}
+                          className={`text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold transition-all duration-500 `}
                         >
                           {m.year}
                         </span>

@@ -17,8 +17,30 @@ const RequestQuote = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Quote request submitted successfully!');
-    navigate('/');
+    
+    // Create WhatsApp message with form data
+    const message = `*New Quote Request*
+
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Phone:* ${formData.phone}
+*Company:* ${formData.company || 'Not provided'}
+*Location:* ${formData.location}
+*Product Type:* ${formData.productType}
+*Quantity:* ${formData.quantity}
+*Message:* ${formData.message || 'No additional message'}`;
+    
+    // WhatsApp number (replace with your actual WhatsApp business number)
+    const whatsappNumber = '919414047471'; // Replace with your WhatsApp number
+    
+    // Create WhatsApp URL
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    
+    // Open WhatsApp
+    window.open(whatsappURL, '_blank');
+    
+    // Show success message
+    alert('Redirecting to WhatsApp...');
   };
 
   const handleChange = (e) => {
@@ -158,7 +180,7 @@ const RequestQuote = () => {
               <button
               style={{backgroundColor:"#0E5543"}}
                 type="submit"
-                className="flex-1 bg-[#0E5543]  text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#0E5543]/90 transition-colors"
+                className="flex-1 bg-[#0E5543] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#0E5543]/90 hover:scale-105 transition-all duration-300"
               >
                 Submit Quote Request
               </button>

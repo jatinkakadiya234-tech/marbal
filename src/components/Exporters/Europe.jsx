@@ -1,7 +1,9 @@
 import React from 'react';
 import { FaGem, FaCogs, FaShippingFast, FaCertificate, FaLeaf } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const Europe = () => {
+  const navigate = useNavigate();
   const whyChooseReasons = [
     {
       icon: <FaGem className="text-xl sm:text-2xl text-[#0E5543]" />,
@@ -209,24 +211,28 @@ const Europe = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="py-16 px-4 bg-gradient-to-r from-[#0E5543] to-[#1a7a5e]">
+       <div className="py-16 px-4 bg-gradient-to-r from-[#0E5543] to-[#1a7a5e]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-[#F2E1C5] mb-6"
-              style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
-            Collaborate with a Reliable Marble Exporter in Europe
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F2E1C5] mb-6" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+            Reach Out to Us for The Best Marbles Exporter to Saudi Arabia
           </h2>
-          <p className="text-[#F2E1C5]/90 mb-8 text-xs sm:text-sm md:text-base"
-             style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
-            Whether you are an architect sourcing stone for a major building project or a distributor seeking the best quality Indian marble for your European customer base, Rishabh Green Marbles is your trusted source.
+          <p className="text-[#F2E1C5]/90 mb-8 text-lg" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+            Are you looking for the best Indian exporter of marble in Saudi Arabia? Work with Rishabh Green Marbles, where you will experience artistry, precision and trust in global emergence. We can customize our export solutions on traditional and exotic Stone and Marble to suit all of your needs, whether you are an architect, builder, or distributor.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#F2E1C5] text-[#0E5543] px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:bg-[#F2E1C5]/90 transition-colors text-xs sm:text-sm"
-                    style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
-              Get Your Quote
+            <button 
+              className="bg-[#F2E1C5] text-[#0E5543] px-8 py-3 rounded-lg font-semibold hover:bg-[#F2E1C5]/90 hover:scale-105 transition-all duration-300" 
+              style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}
+              onClick={() => navigate('/request-quote')}
+            >
+              Get Your Quote Today
             </button>
-            <button className="border-2 border-[white] text-[#0E5543] px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold  hover:text-[#0E5543] transition-colors text-xs sm:text-sm"
-                    style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
-              Contact Us Today
+            <button 
+              className="border-2 border-[#F2E1C5] text-[#0E5543] px-8 py-3 rounded-lg font-semibold hover:bg-[#F2E1C5] hover:text-[#0E5543] hover:scale-105 transition-all duration-300" 
+              style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}
+              onClick={() => navigate('/contact')}
+            >
+              Contact Our Experts
             </button>
           </div>
         </div>

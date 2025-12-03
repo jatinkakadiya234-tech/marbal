@@ -245,7 +245,7 @@ const Section3 = () => {
                     {/* Play Button */}
                     <button
                       onClick={() => setActiveVideo(tech.video)}
-                      className="inline-flex items-center px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 bg-[#0E5543] text-[#F2E1C5] rounded-lg hover:bg-[#0E5543]/90 transition-all duration-300 group/btn font-medium text-xs sm:text-sm md:text-base"
+                      className="inline-flex items-center px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 bg-[#0E5543] text-[#0E5543] rounded-lg hover:bg-[#0E5543]/90 transition-all duration-300 group/btn font-medium text-xs sm:text-sm md:text-base"
                       style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}
                     >
                       <FiPlay className="mr-2 transition-transform group-hover/btn:translate-x-1" />

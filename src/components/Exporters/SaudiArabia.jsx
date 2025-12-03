@@ -1,7 +1,10 @@
 import React from 'react';
 import { FaGem, FaCogs, FaShieldAlt, FaShippingFast, FaLeaf, FaAward } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const SaudiArabia = () => {
+  
+  const navigate = useNavigate();
   const marbleVarieties = [
     {
       name: "Green Marble (Rishabh Green Signature)",
@@ -189,7 +192,7 @@ const SaudiArabia = () => {
                 5
               </div>
               <h3 className="font-semibold text-gray-800 mb-3 text-center text-sm sm:text-base" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>Prompt Delivery & Support</h3>
-              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>ily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
                 Timely delivery record and customer service support making us reliable marble exporters to Saudi Arabia.
               </p>
             </div>
@@ -272,10 +275,18 @@ const SaudiArabia = () => {
             Are you looking for the best Indian exporter of marble in Saudi Arabia? Work with Rishabh Green Marbles, where you will experience artistry, precision and trust in global emergence. We can customize our export solutions on traditional and exotic Stone and Marble to suit all of your needs, whether you are an architect, builder, or distributor.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#F2E1C5] text-[#0E5543] px-8 py-3 rounded-lg font-semibold hover:bg-[#F2E1C5]/90 transition-colors" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+            <button 
+              className="bg-[#F2E1C5] text-[#0E5543] px-8 py-3 rounded-lg font-semibold hover:bg-[#F2E1C5]/90 hover:scale-105 transition-all duration-300" 
+              style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}
+              onClick={() => navigate('/request-quote')}
+            >
               Get Your Quote Today
             </button>
-            <button className="border-2 border-[#F2E1C5] text-[#F2E1C5] px-8 py-3 rounded-lg font-semibold hover:bg-[#F2E1C5] hover:text-[#0E5543] transition-colors" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+            <button 
+              className="border-2 border-[#F2E1C5] text-[#0E5543] px-8 py-3 rounded-lg font-semibold hover:bg-[#F2E1C5] hover:text-[#0E5543] hover:scale-105 transition-all duration-300" 
+              style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}
+              onClick={() => navigate('/contact')}
+            >
               Contact Our Experts
             </button>
           </div>

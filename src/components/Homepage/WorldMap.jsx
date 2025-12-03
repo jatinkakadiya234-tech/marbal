@@ -151,7 +151,7 @@ export default function WorldMap() {
 .map((stat, index) => (
     <motion.div
       key={index}
-     
+      whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       className="relative group cursor-pointer perspective-1000"
     >

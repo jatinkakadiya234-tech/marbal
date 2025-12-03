@@ -1,5 +1,5 @@
 // components/ContactUs.js
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   FaPhoneAlt,
@@ -16,6 +16,43 @@ import {
 import HeaderContent from "../Helper/HeaderContent";
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    projectType: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Create WhatsApp message with form data
+    const message = `*New Contact Form Submission*
+
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Project Type:* ${formData.projectType || 'Not specified'}
+*Message:* ${formData.message}`;
+    
+    // WhatsApp number
+    const whatsappNumber = '919414047471';
+    
+    // Create WhatsApp URL
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    
+    // Open WhatsApp
+    window.open(whatsappURL, '_blank');
+    
+    // Show success message
+    alert('Redirecting to WhatsApp...');
+    
+    // Reset form
+    setFormData({ name: '', email: '', projectType: '', message: '' });
+  };
   return (
     <div className="min-h-screen overflow-x-hidden bg-gradient-to-br bg-white">
       {/* Enhanced Hero Section */}
@@ -174,13 +211,17 @@ const ContactUs = () => {
 
               {/* Form Content */}
               <div className="p-6 md:p-8">
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div>
                     <label className="block text-sm font-['Inter'] font-medium text-[#0E5543] mb-2">
                       Full Name *
                     </label>
                     <input
                       type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 bg-[#F2E1C5]/10 border border-[#0E5543]/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0E5543]/30 focus:border-[#0E5543] text-[#0E5543] placeholder-[#0E5543]/50 transition-all duration-300"
                       placeholder="Your full name"
                     />
@@ -192,6 +233,10 @@ const ContactUs = () => {
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 bg-[#F2E1C5]/10 border border-[#0E5543]/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0E5543]/30 focus:border-[#0E5543] text-[#0E5543] placeholder-[#0E5543]/50 transition-all duration-300"
                       placeholder="your@email.com"
                     />
@@ -201,12 +246,17 @@ const ContactUs = () => {
                     <label className="block text-sm font-['Inter'] font-medium text-[#0E5543] mb-2">
                       Project Type
                     </label>
-                    <select className="w-full px-4 py-3 bg-[#F2E1C5]/10 border border-[#0E5543]/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0E5543]/30 focus:border-[#0E5543] text-[#0E5543] transition-all duration-300">
-                      <option>Select project type</option>
-                      <option>Residential Marble</option>
-                      <option>Commercial Project</option>
-                      <option>Marble Restoration</option>
-                      <option>Consultation</option>
+                    <select 
+                      name="projectType"
+                      value={formData.projectType}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-[#F2E1C5]/10 border border-[#0E5543]/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0E5543]/30 focus:border-[#0E5543] text-[#0E5543] transition-all duration-300"
+                    >
+                      <option value="">Select project type</option>
+                      <option value="Residential Marble">Residential Marble</option>
+                      <option value="Commercial Project">Commercial Project</option>
+                      <option value="Marble Restoration">Marble Restoration</option>
+                      <option value="Consultation">Consultation</option>
                     </select>
                   </div>
 
@@ -216,6 +266,10 @@ const ContactUs = () => {
                     </label>
                     <textarea
                       rows="4"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 bg-[#F2E1C5]/10 border border-[#0E5543]/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0E5543]/30 focus:border-[#0E5543] text-[#0E5543] placeholder-[#0E5543]/50 resize-none transition-all duration-300"
                       placeholder="Tell us about your project..."
                     ></textarea>

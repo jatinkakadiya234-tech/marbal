@@ -47,8 +47,9 @@ return (
                             key={index}
                             initial={{ opacity: 0, y: 40, scale: 0.9 }}
                             whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                            whileHover={{ scale: 1.05 }}
                             viewport={{ once: true }}
-                            className="relative"
+                            className="relative cursor-pointer"
                         >
                             {/* Card with glassmorphism effect */}
                             <div className="relative bg-white/10 backdrop-blur-lg p-3 sm:p-4 md:p-6 lg:p-8 border border-white/20 shadow-2xl shadow-black/20">

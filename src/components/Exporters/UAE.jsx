@@ -1,7 +1,9 @@
 import React from 'react';
 import { FaHome, FaBuilding, FaWarehouse, FaShippingFast } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const UAE = () => {
+  const navigate = useNavigate();
   const projectTypes = [
     {
       icon: <FaHome className="text-2xl sm:text-3xl text-[#0E5543]" />,
@@ -204,25 +206,30 @@ const UAE = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="py-16 px-4 bg-gradient-to-r from-[#0E5543] to-[#1a7a5e]">
+        <div className="py-16 px-4 bg-gradient-to-r from-[#0E5543] to-[#1a7a5e]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F2E1C5] mb-6">
-            Looking for Exclusive Marble Solutions for all your UAE Projects?
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F2E1C5] mb-6" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+            Reach Out to Us for The Best Marbles Exporter to Saudi Arabia
           </h2>
-          <p className="text-[#F2E1C5]/90 mb-8 text-lg">
-            If you are looking for exclusive marble solutions for the UAE projects, requesting a quote is just a click away. With us, you will get expert consultations in a professional transparent environment for fast responses.
+          <p className="text-[#F2E1C5]/90 mb-8 text-lg" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+            Are you looking for the best Indian exporter of marble in Saudi Arabia? Work with Rishabh Green Marbles, where you will experience artistry, precision and trust in global emergence. We can customize our export solutions on traditional and exotic Stone and Marble to suit all of your needs, whether you are an architect, builder, or distributor.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#F2E1C5] text-[#0E5543] px-8 py-3 rounded-lg font-semibold hover:bg-[#F2E1C5]/90 transition-colors">
-              Request Your Quote Now
+            <button 
+              className="bg-[#F2E1C5] text-[#0E5543] px-8 py-3 rounded-lg font-semibold hover:bg-[#F2E1C5]/90 hover:scale-105 transition-all duration-300" 
+              style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}
+              onClick={() => navigate('/request-quote')}
+            >
+              Get Your Quote Today
             </button>
-            <button className="border-2 border-[#F2E1C5] text-[#F2E1C5] px-8 py-3 rounded-lg font-semibold hover:bg-[#F2E1C5] hover:text-[#0E5543] transition-colors">
-              Connect With Us
+            <button 
+              className="border-2 border-[#F2E1C5] text-[#0E5543] px-8 py-3 rounded-lg font-semibold hover:bg-[#F2E1C5] hover:text-[#0E5543] hover:scale-105 transition-all duration-300" 
+              style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}
+              onClick={() => navigate('/contact')}
+            >
+              Contact Our Experts
             </button>
           </div>
-          <p className="text-[#F2E1C5]/80 mt-6 text-sm">
-            Connect with us and discover why we are the best marble exporter in India.
-          </p>
         </div>
       </div>
     </div>

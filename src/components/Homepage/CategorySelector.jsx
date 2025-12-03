@@ -234,11 +234,11 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                     className={`absolute inset-0 border border-${cat.accent}-700/30`}
                   />
 
-                  <div
+                  <motion.div
                     className="absolute inset-0 w-full h-full bg-cover bg-center"
                     style={{ backgroundImage: `url(${cat.image})` }}
-                    animate={{ scale: hoveredCard === index ? 1.05 : 1 }}
-                    transition={{ duration: 0.7 }}
+                    animate={{ scale: hoveredCard === index ? 1.15 : 1 }}
+                    transition={{ duration: 0.5 }}
                   />
 
                   <div
@@ -266,8 +266,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                       {cat.description}
                     </p>
                     <button
-                      className="px-4 sm:px-6 py-2 border rounded transition-all duration-300 hover:scale-105 cursor-pointer"
-                      style={{ backgroundColor: "white", color: "black" }}
+                      className="px-4 sm:px-6 py-2 border rounded transition-all duration-300 hover:scale-105 hover:!bg-[#0E5543] hover:!text-white cursor-pointer bg-white text-black"
                       onClick={(e) => {
                         e.stopPropagation();
                        navigate(`/productdetail/${cat.name.toLowerCase().replace(/\s+/g, '-')}`);
@@ -316,8 +315,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
                           {cat.description}
                         </p>
                         <button
-                          style={{ backgroundColor: "white", color: "black" }}
-                          className="px-4 sm:px-6 py-2 sm:py-3 border text-sm sm:text-base uppercase transition-all duration-300 rounded hover:scale-105"
+                          className="px-4 sm:px-6 py-2 sm:py-3 border text-sm sm:text-base uppercase transition-all duration-300 rounded hover:scale-105 hover:!bg-[#0E5543] hover:!text-white bg-white text-black"
                           onClick={(e) => {
                             e.stopPropagation();
                             navigate('/OurStones/marble');
@@ -398,8 +396,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }) => {
 
             {/* Button content */}
             <button
-              className="flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-medium rounded transition-all duration-300 hover:scale-105"
-              style={{ backgroundColor: "white", color: "black" }}
+              className="flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-medium rounded transition-all duration-300 hover:scale-105 hover:!bg-[#0E5543] hover:!text-white bg-white text-black"
             >
               View All Stone Collections
             </button>

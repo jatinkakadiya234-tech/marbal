@@ -1,8 +1,10 @@
-import React from "react";
+import React, { use } from "react";
 import { motion } from "framer-motion";
 import { FiChevronRight } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 const Section5 = () => {
+  const navigate = useNavigate();
   return (
     <>
       {/* CTA Section */}
@@ -94,10 +96,10 @@ const Section5 = () => {
               {/* Button with gradient border effect */}
               <div className="relative">
                 {/* Main button */}
-                <button className="relative px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5  rounded-2xl font-medium text-sm sm:text-base md:text-lg tracking-wide overflow-hidden z-10 flex items-center mx-auto" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+                <button className="relative px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5  cursor-pointer rounded-2xl font-medium text-sm sm:text-base md:text-lg tracking-wide overflow-hidden z-10 flex items-center mx-auto" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}onClick={()=>navigate("/contact")}>
                   {/* Shine effect */}
 
-                  <span className="relative z-10" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}>
+                  <span className="relative z-10" style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }} >
                     Schedule a Private Factory Tour
                   </span>
                   <FiChevronRight

@@ -13,7 +13,7 @@ import iconicBlack from '../../assets/marbles/Iconic-black-marble-1200x1200-1[1]
 import iconicGold from '../../assets/marbles/istockphoto-1134258949-612x612.jpg'
 import indianBlack from '../../assets/marbles/indian-black-marble[1].jpg'
 import katniBeige from '../../assets/marbles/katni-beige-marble-500x500[1].jpg'
-import merryGold from '../../assets/marbles/merry-gold-500x500[1].jpg'
+import merryGold from '../../assets/Sandstone/merigold.jpg'
 import morchanaGold from '../../assets/marbles/morchana gold marble.jpg'
 import mysticGreen from '../../assets/marbles/Mystic-Green-Marble[1].jpg'
 import pinkAraveli from '../../assets/marbles/pink araveli.jpg'
@@ -55,9 +55,9 @@ import magicWhite from '../../assets/Granites/magic-white-granite-slabs-tiles-p2
 import marigold from '../../assets/Granites/marigold-granite-1512372173-3494734.jpg'
 import merryWood from '../../assets/Granites/merry-wood-granite.jpg'
 import newImperialGold from '../../assets/Granites/New Imperial Gold          Stones Picture -         Other Country         Granite         Image.jpeg'
-import pWhite from '../../assets/Granites/P WHITE GRANITE.jpeg'
+import pWhite from '../../assets/Granites/P-white-granite.webp'
 import rajasthanBlack from '../../assets/Granites/images.jpeg'
-import rosyPink from '../../assets/Granites/-1le8zqvk.avif'
+import rosyPink from '../../assets/Granites/rosy-pink-granite-p370113-1b.jpg'
 import royalCream from '../../assets/Granites/Royal Cream Granite.jpeg'
 import royalGreen from '../../assets/Granites/royal-green-granite-1510815057-3455614.jpg'
 import sapphireBlue from '../../assets/Granites/Sapphire Blue.jpeg'
@@ -68,13 +68,13 @@ import copperSilk from '../../assets/Granites/Best Copper Silk Granite (Pictures
 import ivoryBrown from '../../assets/Granites/Best Ivory Brown Granite (Pictures & Costs) _ Material ID_ 556 _ Marble_com.jpeg'
 // Import all sandstone images
 import beigeSandstone from '../../assets/Sandstone/Beige Sandstone.jpg'
-import chocolateSandstone from '../../assets/Sandstone/Chocolate Sandstone.jpg'
+import chocolateSandstone from '../../assets/Sandstone/chocolate-sandstone-natural-finish-calibrated-tiles.jpg'
 import greySandstone from '../../assets/Sandstone/Grey Sandstone.jpg'
-import gwaliorWhiteMint from '../../assets/Sandstone/gwalior-mint-sandstone-500x500.webp'
+import gwaliorWhiteMint from '../../assets/Sandstone/big15.jpg'
 import jaisalmerYellow from '../../assets/Sandstone/jaisalmer yellow sandstone.jpg'
 import jodhpurPink from '../../assets/Sandstone/JODHPUR PINK Snadstone.jpg'
 import kotaBlue from '../../assets/Sandstone/kota blue.jpg'
-import merryGoldSandstone from '../../assets/Sandstone/merry-gold-500x500.webp'
+import merryGoldSandstone from '../../assets/Sandstone/merigold.jpg'
 import rainbowSandstone from '../../assets/Sandstone/rainbow-1.jpg'
 import redSandstone from '../../assets/Sandstone/Red Sandstone.jpg'
 import teakwoodSandstone from '../../assets/Sandstone/Teakwood-Sandstone.jpg'
@@ -427,7 +427,7 @@ export default function OurStones() {
               {/* View All Button */}
               <div className="border-t border-gray-100 pt-4">
                 <button
-                  className="w-full sm:w-auto text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg transition-colors duration-300 text-xs sm:text-sm font-medium"
+                  className="w-full sm:w-auto text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg transition-all duration-300 text-xs sm:text-sm font-medium hover:scale-105"
                   style={{ backgroundColor: "#0E5543" }}
                   onClick={() => navigate(`/${category.name.toLowerCase()}`)}
                 >

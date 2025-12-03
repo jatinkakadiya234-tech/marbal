@@ -224,27 +224,28 @@ const About = () => {
                 { icon: FiHeart, value: "99%", label: "Happy Clients" },
               ].map((stat, i) => (
                 <motion.div
+                
                   key={i}
                   className={`p-4 sm:p-5 md:p-6 rounded-lg ${theme === "dark" ? "bg-gray-800" : "bg-white"
-                    } shadow-lg border border-[#0E5543]/10`}
+                    } shadow-lg border border-[#0E5543]/10  hover:shadow-xl transition-all duration-300 hover:bg-[#0E5543] group`}
                   variants={statVariants}
                   custom={i}
                   whileHover={{ y: -5, transition: { duration: 0.3 } }}
                 >
                   <stat.icon
                     className={`mx-auto mb-3 sm:mb-4 ${theme === "dark" ? "text-[#8DB596]" : "text-[#0E5543]"
-                      }`}
+                      } group-hover:text-white transition-colors duration-300`}
                     size={28}
                   />
                   <div
                     className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-[#0E5543]"
-                      }`}
+                      } group-hover:text-white transition-colors duration-300`}
                   >
                     {stat.value}
                   </div>
                   <div
                     className={`text-sm sm:text-base font-medium ${theme === "dark" ? "text-gray-400" : "text-gray-600"
-                      }`}
+                      } group-hover:text-white transition-colors duration-300`}
                   >
                     {stat.label}
                   </div>
