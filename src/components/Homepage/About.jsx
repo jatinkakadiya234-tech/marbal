@@ -9,6 +9,7 @@ import about2 from "../../assets/about2.jpg";
 import about3 from "../../assets/about3.jpg";
 import about4 from "../../assets/about4.jpg";
 import HeaderContent from "../Helper/HeaderContent";
+import Banner from "../Helper/Banner";
 
 
 const About = () => {
@@ -63,8 +64,10 @@ const About = () => {
 
   return (
     <section id="about" className={`py-6 sm:py-10 md:py-16 lg:py-24 bg-white transition-colors duration-500 overflow-hidden`}>
+   
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-8">
         {/* Header */}
+
        <HeaderContent  />
 
         {/* Content */}

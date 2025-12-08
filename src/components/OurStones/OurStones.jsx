@@ -1,109 +1,222 @@
 import React, { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 // Import sample images
-import agariaWhite from '../../assets/marbles/Agaria-White-Marble[1].jpg'
-import aravaliGreen from '../../assets/marbles/Aravali-Green[1].jpg'
-import bidasarBrown from '../../assets/marbles/bidasar brown marble.jpg'
-import bidasarGreen from '../../assets/marbles/bidasar-green-500x500[1].jpg'
-import cloudGrey from '../../assets/marbles/Cloud-Grey-Marble[1].jpg'
-import fantasyBrown from '../../assets/marbles/fantasy brown marble.jpg'
-import iconicBlack from '../../assets/marbles/Iconic-black-marble-1200x1200-1[1].jpg'
-import iconicGold from '../../assets/marbles/istockphoto-1134258949-612x612.jpg'
-import indianBlack from '../../assets/marbles/indian-black-marble[1].jpg'
-import katniBeige from '../../assets/marbles/katni-beige-marble-500x500[1].jpg'
-import merryGold from '../../assets/Sandstone/merigold.jpg'
-import morchanaGold from '../../assets/marbles/morchana gold marble.jpg'
-import mysticGreen from '../../assets/marbles/Mystic-Green-Marble[1].jpg'
-import pinkAraveli from '../../assets/marbles/pink araveli.jpg'
-import pinkMarble from '../../assets/marbles/pink-marble[1].jpg'
-import rossoLavante from '../../assets/marbles/rosso-lavante-italian-marble[1].jpg'
-import afyonWhite from '../../assets/marbles/Afyon-White-8_(1)[1].jpg'
-import indianMarbleSupplier from '../../assets/marbles/Indian-Marble-Supplier[1].jpg'
-import millenium from '../../assets/marbles/millenium1-1[1].jpg'
-import whiteAravaliOnyx from '../../assets/marbles/white-aravali-onyx-376129184-b5kzi[1].jpg'
-import marbleImage from '../../assets/marbles/3-41-768x768[1].jpg'
-
+import agariaWhite from "../../assets/marbles/Agaria-White-Marble[1].jpg";
+import aravaliGreen from "../../assets/marbles/Aravali-Green[1].jpg";
+import bidasarBrown from "../../assets/marbles/bidasar brown marble.jpg";
+import bidasarGreen from "../../assets/marbles/bidasar-green-500x500[1].jpg";
+import cloudGrey from "../../assets/marbles/Cloud-Grey-Marble[1].jpg";
+import fantasyBrown from "../../assets/marbles/fantasy brown marble.jpg";
+import iconicBlack from "../../assets/marbles/Iconic-black-marble-1200x1200-1[1].jpg";
+import iconicGold from "../../assets/marbles/istockphoto-1134258949-612x612.jpg";
+import indianBlack from "../../assets/marbles/indian-black-marble[1].jpg";
+import katniBeige from "../../assets/marbles/katni-beige-marble-500x500[1].jpg";
+import merryGold from "../../assets/Sandstone/merigold.jpg";
+import morchanaGold from "../../assets/marbles/morchana gold marble.jpg";
+import mysticGreen from "../../assets/marbles/Mystic-Green-Marble[1].jpg";
+import pinkAraveli from "../../assets/marbles/pink araveli.jpg";
+import pinkMarble from "../../assets/marbles/pink-marble[1].jpg";
+import rossoLavante from "../../assets/marbles/rosso-lavante-italian-marble[1].jpg";
+import afyonWhite from "../../assets/marbles/Afyon-White-8_(1)[1].jpg";
+import indianMarbleSupplier from "../../assets/marbles/Indian-Marble-Supplier[1].jpg";
+import millenium from "../../assets/marbles/millenium1-1[1].jpg";
+import whiteAravaliOnyx from "../../assets/marbles/white-aravali-onyx-376129184-b5kzi[1].jpg";
+import marbleImage from "../../assets/marbles/3-41-768x768[1].jpg";
 
 // Import all granite images
-import absoluteBlack from '../../assets/Granites/Absolute Black  Granite Countertops and Tile.jpeg'
-import alaskaGold from '../../assets/Granites/Alaska Gold Granite Supplier in India.jpeg'
-import alaskaWhite from '../../assets/Granites/Alaska White Granite.jpeg'
-import alpineWhite from '../../assets/Granites/Alpine White.jpeg'
-import blackGalaxy from '../../assets/Granites/Black Galaxy Granite From Ongole, India.jpeg'
-import blackPearl from '../../assets/Granites/Black Pearl Granite.jpeg'
-import blackBeauty from '../../assets/Granites/Black-beauty-granite.webp'
-import brunoRed from '../../assets/Granites/bruno-red-granite-1537608397-4328307.jpg'
-import champagneGold from '../../assets/Granites/champagne-gold-granite-tile--926486-0-B.jpg'
-import chimaBlue from '../../assets/Granites/chima-blue-granite-2012014226-0ul1gqog.avif'
-import chimaPink from '../../assets/Granites/chima-pink-granite-1566713706-5053745.jpeg'
-import crystalYellow from '../../assets/Granites/Crystal yellow granite.jpeg'
-import desertBrown from '../../assets/Granites/Desert Brown Granite - Kitchen Countertop Ideas.jpeg'
-import dessertGreen from '../../assets/Granites/Dessert Green Granite.jpeg'
-import ambaWhite from '../../assets/Granites/granite_Amba-White_Ym0ggR4uINTH96XsG9DW.jpg'
-import ikonBrown from '../../assets/Granites/Ikon Brown Grantine.jpeg'
-import impalaBlack from '../../assets/Granites/Impala Black.jpeg'
-import imperialRed from '../../assets/Granites/IMPERIAL RED GRANITE.jpeg'
-import ivoryFantasy from '../../assets/Granites/IVORY FANTASY GRANITE - Ivory _ 20MM _ Polished _ Per Sq Mt.jpeg'
-import jeerawalWhite from '../../assets/Granites/jeerawal-white-granite-1000x1000.jpg'
-import jhansiRed from '../../assets/Granites/JHANSI RED GRANITE.jpeg'
-import kashmirWhite from '../../assets/Granites/Kashmir White Granite _ Marella Granite & Marble.jpeg'
-import koliwadaBlue from '../../assets/Granites/Koliwada Blue Granite.jpeg'
-import lakhaRed from '../../assets/Granites/LAKHA RED GRANITE -.jpeg'
-import magicWhite from '../../assets/Granites/magic-white-granite-slabs-tiles-p2787-1B.jpg'
-import marigold from '../../assets/Granites/marigold-granite-1512372173-3494734.jpg'
-import merryWood from '../../assets/Granites/merry-wood-granite.jpg'
-import newImperialGold from '../../assets/Granites/New Imperial Gold          Stones Picture -         Other Country         Granite         Image.jpeg'
-import pWhite from '../../assets/Granites/P-white-granite.webp'
-import rajasthanBlack from '../../assets/Granites/images.jpeg'
-import rosyPink from '../../assets/Granites/rosy-pink-granite-p370113-1b.jpg'
-import royalCream from '../../assets/Granites/Royal Cream Granite.jpeg'
-import royalGreen from '../../assets/Granites/royal-green-granite-1510815057-3455614.jpg'
-import sapphireBlue from '../../assets/Granites/Sapphire Blue.jpeg'
-import sunriseGold from '../../assets/Granites/Sunrise Gold granite.jpeg'
-import tanBrown from '../../assets/Granites/Tanbrown granite.jpeg'
-import balaFlower from  "../../assets/Granites/bala-flower-555x415.jpg"
-import copperSilk from '../../assets/Granites/Best Copper Silk Granite (Pictures & Costs) _ Material ID_ 1132 _ Marble_com.jpeg'
-import ivoryBrown from '../../assets/Granites/Best Ivory Brown Granite (Pictures & Costs) _ Material ID_ 556 _ Marble_com.jpeg'
+import absoluteBlack from "../../assets/Granites/Absolute Black  Granite Countertops and Tile.jpeg";
+import alaskaGold from "../../assets/Granites/Alaska Gold Granite Supplier in India.jpeg";
+import alaskaWhite from "../../assets/Granites/Alaska White Granite.jpeg";
+import alpineWhite from "../../assets/Granites/Alpine White.jpeg";
+import blackGalaxy from "../../assets/Granites/Black Galaxy Granite From Ongole, India.jpeg";
+import blackPearl from "../../assets/Granites/Black Pearl Granite.jpeg";
+import blackBeauty from "../../assets/Granites/Black-beauty-granite.webp";
+import brunoRed from "../../assets/Granites/bruno-red-granite-1537608397-4328307.jpg";
+import champagneGold from "../../assets/Granites/champagne-gold-granite-tile--926486-0-B.jpg";
+import chimaBlue from "../../assets/Granites/chima-blue-granite-2012014226-0ul1gqog.avif";
+import chimaPink from "../../assets/Granites/chima-pink-granite-1566713706-5053745.jpeg";
+import crystalYellow from "../../assets/Granites/Crystal yellow granite.jpeg";
+import desertBrown from "../../assets/Granites/Desert Brown Granite - Kitchen Countertop Ideas.jpeg";
+import dessertGreen from "../../assets/Granites/Dessert Green Granite.jpeg";
+import ambaWhite from "../../assets/Granites/granite_Amba-White_Ym0ggR4uINTH96XsG9DW.jpg";
+import ikonBrown from "../../assets/Granites/Ikon Brown Grantine.jpeg";
+import impalaBlack from "../../assets/Granites/Impala Black.jpeg";
+import imperialRed from "../../assets/Granites/IMPERIAL RED GRANITE.jpeg";
+import ivoryFantasy from "../../assets/Granites/IVORY FANTASY GRANITE - Ivory _ 20MM _ Polished _ Per Sq Mt.jpeg";
+import jeerawalWhite from "../../assets/Granites/jeerawal-white-granite-1000x1000.jpg";
+import jhansiRed from "../../assets/Granites/JHANSI RED GRANITE.jpeg";
+import kashmirWhite from "../../assets/Granites/Kashmir White Granite _ Marella Granite & Marble.jpeg";
+import koliwadaBlue from "../../assets/Granites/Koliwada Blue Granite.jpeg";
+import lakhaRed from "../../assets/Granites/LAKHA RED GRANITE -.jpeg";
+import magicWhite from "../../assets/Granites/magic-white-granite-slabs-tiles-p2787-1B.jpg";
+import marigold from "../../assets/Granites/marigold-granite-1512372173-3494734.jpg";
+import merryWood from "../../assets/Granites/merry-wood-granite.jpg";
+import newImperialGold from "../../assets/Granites/New Imperial Gold          Stones Picture -         Other Country         Granite         Image.jpeg";
+import pWhite from "../../assets/Granites/P-white-granite.webp";
+import rajasthanBlack from "../../assets/Granites/images.jpeg";
+import rosyPink from "../../assets/Granites/rosy-pink-granite-p370113-1b.jpg";
+import royalCream from "../../assets/Granites/Royal Cream Granite.jpeg";
+import royalGreen from "../../assets/Granites/royal-green-granite-1510815057-3455614.jpg";
+import sapphireBlue from "../../assets/Granites/Sapphire Blue.jpeg";
+import sunriseGold from "../../assets/Granites/Sunrise Gold granite.jpeg";
+import tanBrown from "../../assets/Granites/Tanbrown granite.jpeg";
+import balaFlower from "../../assets/Granites/bala-flower-555x415.jpg";
+import copperSilk from "../../assets/Granites/Best Copper Silk Granite (Pictures & Costs) _ Material ID_ 1132 _ Marble_com.jpeg";
+import ivoryBrown from "../../assets/Granites/Best Ivory Brown Granite (Pictures & Costs) _ Material ID_ 556 _ Marble_com.jpeg";
 // Import all sandstone images
-import beigeSandstone from '../../assets/Sandstone/Beige Sandstone.jpg'
-import chocolateSandstone from '../../assets/Sandstone/chocolate-sandstone-natural-finish-calibrated-tiles.jpg'
-import greySandstone from '../../assets/Sandstone/Grey Sandstone.jpg'
-import gwaliorWhiteMint from '../../assets/Sandstone/big15.jpg'
-import jaisalmerYellow from '../../assets/Sandstone/jaisalmer yellow sandstone.jpg'
-import jodhpurPink from '../../assets/Sandstone/JODHPUR PINK Snadstone.jpg'
-import kotaBlue from '../../assets/Sandstone/kota blue.jpg'
-import merryGoldSandstone from '../../assets/Sandstone/merigold.jpg'
-import rainbowSandstone from '../../assets/Sandstone/rainbow-1.jpg'
-import redSandstone from '../../assets/Sandstone/Red Sandstone.jpg'
-import teakwoodSandstone from '../../assets/Sandstone/Teakwood-Sandstone.jpg'
+import beigeSandstone from "../../assets/Sandstone/Beige Sandstone.jpg";
+import chocolateSandstone from "../../assets/Sandstone/chocolate-sandstone-natural-finish-calibrated-tiles.jpg";
+import greySandstone from "../../assets/Sandstone/Grey Sandstone.jpg";
+import gwaliorWhiteMint from "../../assets/Sandstone/big15.jpg";
+import jaisalmerYellow from "../../assets/Sandstone/jaisalmer yellow sandstone.jpg";
+import jodhpurPink from "../../assets/Sandstone/JODHPUR PINK Snadstone.jpg";
+import kotaBlue from "../../assets/Sandstone/kota blue.jpg";
+import merryGoldSandstone from "../../assets/Sandstone/merigold.jpg";
+import rainbowSandstone from "../../assets/Sandstone/rainbow-1.jpg";
+import redSandstone from "../../assets/Sandstone/Red Sandstone.jpg";
+import teakwoodSandstone from "../../assets/Sandstone/Teakwood-Sandstone.jpg";
+import UpdatedApplicationSection from "../Helper/UpdatedApplicationSection";
+import FlautCollection from "../Helper/FlautCollection";
 
 const categories = [
   {
     name: "Marble",
     products: [
-       { id: 1, name: "Agaria White", image: agariaWhite, category: "Marble", description: "Premium white marble with elegant natural patterns and superior quality finish." },
-        { id: 2, name: "Aravali Green", image: aravaliGreen, category: "Marble", description: "Beautiful green marble with natural patterns and rich coloring." },
-        { id: 3, name: "Bidasar Brown", image: bidasarBrown, category: "Marble", description: "Rich brown marble with warm tones and natural beauty." },
-        { id: 4, name: "Bidasar Green", image: bidasarGreen, category: "Marble", description: "Elegant green marble with distinctive patterns and smooth finish." },
-        { id: 5, name: "Cloud Grey", image: cloudGrey, category: "Marble", description: "Sophisticated grey marble with cloud-like patterns and modern appeal." },
-        { id: 6, name: "Fantasy Brown", image: fantasyBrown, category: "Marble", description: "Rich brown marble with unique patterns and warm golden undertones." },
-        { id: 7, name: "Iconic Black", image: iconicBlack, category: "Marble", description: "Luxurious black marble with distinctive veining, perfect for modern interiors." },
-        { id: 8, name: "Iconic Gold", image: iconicGold, category: "Marble", description: "Premium gold marble with luxurious appearance and elegant finish." },
-        { id: 9, name: "Indian Black", image: indianBlack, category: "Marble", description: "Classic black marble with consistent color and premium quality." },
-        { id: 10, name: "Katni Beige", image: katniBeige, category: "Marble", description: "Neutral beige marble perfect for versatile design applications." },
-        { id: 11, name: "Merry Gold", image: merryGold, category: "Marble", description: "Warm gold marble with natural patterns and rich coloring." },
-        { id: 12, name: "Morchana Gold", image: morchanaGold, category: "Marble", description: "Premium gold marble with distinctive patterns and luxury appeal." },
-        { id: 13, name: "Mystic Green", image: mysticGreen, category: "Marble", description: "Stunning green marble with natural mystical patterns and smooth texture." },
-        { id: 14, name: "Pink Araveli", image: pinkAraveli, category: "Marble", description: "Elegant pink marble with soft hues and natural variations." },
-        { id: 15, name: "Pink Marble", image: pinkMarble, category: "Marble", description: "Beautiful pink marble with delicate coloring and smooth finish." },
-        { id: 16, name: "Rosso Lavante", image: rossoLavante, category: "Marble", description: "Italian-style marble with rich red tones and elegant patterns." },
-         { id: 17, name: "Afyon White", image: afyonWhite },
-          { id: 18, name: "Indian Marble Supplier", image: indianMarbleSupplier },
-          { id: 19, name: "Millenium", image: millenium },
-          { id: 20, name: "White Aravali Onyx", image: whiteAravaliOnyx },
-          { id: 21, name: "Premium Marble", image: marbleImage },
+      {
+        id: 1,
+        name: "Agaria White",
+        image: agariaWhite,
+        category: "Marble",
+        description:
+          "Premium white marble with elegant natural patterns and superior quality finish.",
+      },
+      {
+        id: 2,
+        name: "Aravali Green",
+        image: aravaliGreen,
+        category: "Marble",
+        description:
+          "Beautiful green marble with natural patterns and rich coloring.",
+      },
+      {
+        id: 3,
+        name: "Bidasar Brown",
+        image: bidasarBrown,
+        category: "Marble",
+        description: "Rich brown marble with warm tones and natural beauty.",
+      },
+      {
+        id: 4,
+        name: "Bidasar Green",
+        image: bidasarGreen,
+        category: "Marble",
+        description:
+          "Elegant green marble with distinctive patterns and smooth finish.",
+      },
+      {
+        id: 5,
+        name: "Cloud Grey",
+        image: cloudGrey,
+        category: "Marble",
+        description:
+          "Sophisticated grey marble with cloud-like patterns and modern appeal.",
+      },
+      {
+        id: 6,
+        name: "Fantasy Brown",
+        image: fantasyBrown,
+        category: "Marble",
+        description:
+          "Rich brown marble with unique patterns and warm golden undertones.",
+      },
+      {
+        id: 7,
+        name: "Iconic Black",
+        image: iconicBlack,
+        category: "Marble",
+        description:
+          "Luxurious black marble with distinctive veining, perfect for modern interiors.",
+      },
+      {
+        id: 8,
+        name: "Iconic Gold",
+        image: iconicGold,
+        category: "Marble",
+        description:
+          "Premium gold marble with luxurious appearance and elegant finish.",
+      },
+      {
+        id: 9,
+        name: "Indian Black",
+        image: indianBlack,
+        category: "Marble",
+        description:
+          "Classic black marble with consistent color and premium quality.",
+      },
+      {
+        id: 10,
+        name: "Katni Beige",
+        image: katniBeige,
+        category: "Marble",
+        description:
+          "Neutral beige marble perfect for versatile design applications.",
+      },
+      {
+        id: 11,
+        name: "Merry Gold",
+        image: merryGold,
+        category: "Marble",
+        description:
+          "Warm gold marble with natural patterns and rich coloring.",
+      },
+      {
+        id: 12,
+        name: "Morchana Gold",
+        image: morchanaGold,
+        category: "Marble",
+        description:
+          "Premium gold marble with distinctive patterns and luxury appeal.",
+      },
+      {
+        id: 13,
+        name: "Mystic Green",
+        image: mysticGreen,
+        category: "Marble",
+        description:
+          "Stunning green marble with natural mystical patterns and smooth texture.",
+      },
+      {
+        id: 14,
+        name: "Pink Araveli",
+        image: pinkAraveli,
+        category: "Marble",
+        description:
+          "Elegant pink marble with soft hues and natural variations.",
+      },
+      {
+        id: 15,
+        name: "Pink Marble",
+        image: pinkMarble,
+        category: "Marble",
+        description:
+          "Beautiful pink marble with delicate coloring and smooth finish.",
+      },
+      {
+        id: 16,
+        name: "Rosso Lavante",
+        image: rossoLavante,
+        category: "Marble",
+        description:
+          "Italian-style marble with rich red tones and elegant patterns.",
+      },
+      { id: 17, name: "Afyon White", image: afyonWhite },
+      { id: 18, name: "Indian Marble Supplier", image: indianMarbleSupplier },
+      { id: 19, name: "Millenium", image: millenium },
+      { id: 20, name: "White Aravali Onyx", image: whiteAravaliOnyx },
+      { id: 21, name: "Premium Marble", image: marbleImage },
     ],
   },
   {
@@ -112,61 +225,389 @@ const categories = [
       { id: 21, name: "Black Galaxy", image: blackGalaxy },
       { id: 38, name: "Kashmir White", image: kashmirWhite },
       { id: 52, name: "Tan Brown", image: tanBrown },
-      { id: 34, name: "Imperial Red", image: imperialRed }, { id: 17, name: "Absolute Black", image: absoluteBlack, category: "Granite", description: "Pure black granite with consistent color and premium durability." },
-        { id: 18, name: "Alaska Gold", image: alaskaGold, category: "Granite", description: "Golden granite with natural patterns and warm undertones." },
-        { id: 19, name: "Alaska White", image: alaskaWhite, category: "Granite", description: "Clean white granite with subtle patterns and modern appeal." },
-        { id: 20, name: "Alpine White", image: alpineWhite, category: "Granite", description: "Pure white granite with minimal patterns and elegant finish." },
-        { id: 21, name: "Black Galaxy", image: blackGalaxy, category: "Granite", description: "Premium black granite with golden speckles resembling a starry night sky." },
-        { id: 22, name: "Black Pearl", image: blackPearl, category: "Granite", description: "Lustrous black granite with pearl-like finish and premium quality." },
-        { id: 23, name: "Black Beauty", image: blackBeauty, category: "Granite", description: "Stunning black granite with natural beauty and consistent patterns." },
-        { id: 24, name: "Bruno Red", image: brunoRed, category: "Granite", description: "Rich red granite with warm tones and natural variations." },
-        { id: 25, name: "Champagne Gold", image: champagneGold, category: "Granite", description: "Elegant champagne-colored granite with golden highlights." },
-        { id: 26, name: "Chima Blue", image: chimaBlue, category: "Granite", description: "Unique blue granite with natural patterns and cool tones." },
-        { id: 27, name: "Chima Pink", image: chimaPink, category: "Granite", description: "Beautiful pink granite with soft coloring and natural appeal." },
-        { id: 28, name: "Crystal Yellow", image: crystalYellow, category: "Granite", description: "Bright yellow granite with crystal-like appearance and vibrant color." },
-        { id: 29, name: "Desert Brown", image: desertBrown, category: "Granite", description: "Warm brown granite with desert-inspired tones and natural patterns." },
-        { id: 30, name: "Dessert Green", image: dessertGreen, category: "Granite", description: "Natural green granite with rich coloring and distinctive patterns." },
-        { id: 31, name: "Amba White", image: ambaWhite, category: "Granite", description: "Premium white granite with subtle patterns and clean appearance." },
-        { id: 32, name: "Ikon Brown", image: ikonBrown, category: "Granite", description: "Rich brown granite with consistent patterns and warm appeal." },
-        { id: 33, name: "Impala Black", image: impalaBlack, category: "Granite", description: "Deep black granite with natural strength and elegant finish." },
-        { id: 34, name: "Imperial Red", image: imperialRed, category: "Granite", description: "Vibrant red granite with bold patterns and exceptional strength." },
-        { id: 35, name: "Ivory Fantasy", image: ivoryFantasy, category: "Granite", description: "Creamy ivory granite with fantasy patterns and luxury appeal." },
-        { id: 36, name: "Jeerawal White", image: jeerawalWhite, category: "Granite", description: "Pure white granite with minimal veining and clean finish." },
-        { id: 37, name: "Jhansi Red", image: jhansiRed, category: "Granite", description: "Traditional red granite with rich coloring and natural durability." },
-        { id: 38, name: "Kashmir White", image: kashmirWhite, category: "Granite", description: "Pure white granite with subtle patterns, ideal for contemporary designs." },
-        { id: 39, name: "Koliwada Blue", image: koliwadaBlue, category: "Granite", description: "Distinctive blue granite with unique patterns and cool tones." },
-        { id: 40, name: "Lakha Red", image: lakhaRed, category: "Granite", description: "Deep red granite with consistent coloring and premium quality." },
-        { id: 41, name: "Magic White", image: magicWhite, category: "Granite", description: "Enchanting white granite with magical patterns and elegant appeal." },
-        { id: 42, name: "Marigold", image: marigold, category: "Granite", description: "Golden granite with marigold-inspired coloring and natural beauty." },
-        { id: 43, name: "Merry Wood", image: merryWood, category: "Granite", description: "Wood-like granite with natural grain patterns and warm tones." },
-        { id: 44, name: "New Imperial Gold", image: newImperialGold, category: "Granite", description: "Premium gold granite with imperial quality and luxury finish." },
-        { id: 45, name: "P White", image: pWhite, category: "Granite", description: "Pure white granite with consistent color and premium quality." },
-        { id: 46, name: "Rajasthan Black", image: rajasthanBlack, category: "Granite", description: "Traditional black granite from Rajasthan with authentic heritage." },
-        { id: 47, name: "Rosy Pink", image: rosyPink, category: "Granite", description: "Soft pink granite with rosy tones and natural variations." },
-        { id: 48, name: "Royal Cream", image: royalCream, category: "Granite", description: "Luxurious cream granite with royal quality and elegant finish." },
-        { id: 49, name: "Royal Green", image: royalGreen, category: "Granite", description: "Majestic green granite with royal appeal and natural beauty." },
-        { id: 50, name: "Sapphire Blue", image: sapphireBlue, category: "Granite", description: "Precious blue granite with sapphire-like appearance and premium quality." },
-        { id: 51, name: "Sunrise Gold", image: sunriseGold, category: "Granite", description: "Golden granite with sunrise-inspired coloring and warm appeal." },
-        { id: 52, name: "Tan Brown", image: tanBrown, category: "Granite", description: "Rich brown granite with natural variations and excellent durability." },
-         { id: 53, name: "Bala Flower", image: balaFlower },
-          { id: 54, name: "Copper Silk", image: copperSilk },
-          { id: 55, name: "Ivory Brown", image: ivoryBrown },
+      { id: 34, name: "Imperial Red", image: imperialRed },
+      {
+        id: 17,
+        name: "Absolute Black",
+        image: absoluteBlack,
+        category: "Granite",
+        description:
+          "Pure black granite with consistent color and premium durability.",
+      },
+      {
+        id: 18,
+        name: "Alaska Gold",
+        image: alaskaGold,
+        category: "Granite",
+        description:
+          "Golden granite with natural patterns and warm undertones.",
+      },
+      {
+        id: 19,
+        name: "Alaska White",
+        image: alaskaWhite,
+        category: "Granite",
+        description:
+          "Clean white granite with subtle patterns and modern appeal.",
+      },
+      {
+        id: 20,
+        name: "Alpine White",
+        image: alpineWhite,
+        category: "Granite",
+        description:
+          "Pure white granite with minimal patterns and elegant finish.",
+      },
+      {
+        id: 21,
+        name: "Black Galaxy",
+        image: blackGalaxy,
+        category: "Granite",
+        description:
+          "Premium black granite with golden speckles resembling a starry night sky.",
+      },
+      {
+        id: 22,
+        name: "Black Pearl",
+        image: blackPearl,
+        category: "Granite",
+        description:
+          "Lustrous black granite with pearl-like finish and premium quality.",
+      },
+      {
+        id: 23,
+        name: "Black Beauty",
+        image: blackBeauty,
+        category: "Granite",
+        description:
+          "Stunning black granite with natural beauty and consistent patterns.",
+      },
+      {
+        id: 24,
+        name: "Bruno Red",
+        image: brunoRed,
+        category: "Granite",
+        description: "Rich red granite with warm tones and natural variations.",
+      },
+      {
+        id: 25,
+        name: "Champagne Gold",
+        image: champagneGold,
+        category: "Granite",
+        description:
+          "Elegant champagne-colored granite with golden highlights.",
+      },
+      {
+        id: 26,
+        name: "Chima Blue",
+        image: chimaBlue,
+        category: "Granite",
+        description:
+          "Unique blue granite with natural patterns and cool tones.",
+      },
+      {
+        id: 27,
+        name: "Chima Pink",
+        image: chimaPink,
+        category: "Granite",
+        description:
+          "Beautiful pink granite with soft coloring and natural appeal.",
+      },
+      {
+        id: 28,
+        name: "Crystal Yellow",
+        image: crystalYellow,
+        category: "Granite",
+        description:
+          "Bright yellow granite with crystal-like appearance and vibrant color.",
+      },
+      {
+        id: 29,
+        name: "Desert Brown",
+        image: desertBrown,
+        category: "Granite",
+        description:
+          "Warm brown granite with desert-inspired tones and natural patterns.",
+      },
+      {
+        id: 30,
+        name: "Dessert Green",
+        image: dessertGreen,
+        category: "Granite",
+        description:
+          "Natural green granite with rich coloring and distinctive patterns.",
+      },
+      {
+        id: 31,
+        name: "Amba White",
+        image: ambaWhite,
+        category: "Granite",
+        description:
+          "Premium white granite with subtle patterns and clean appearance.",
+      },
+      {
+        id: 32,
+        name: "Ikon Brown",
+        image: ikonBrown,
+        category: "Granite",
+        description:
+          "Rich brown granite with consistent patterns and warm appeal.",
+      },
+      {
+        id: 33,
+        name: "Impala Black",
+        image: impalaBlack,
+        category: "Granite",
+        description:
+          "Deep black granite with natural strength and elegant finish.",
+      },
+      {
+        id: 34,
+        name: "Imperial Red",
+        image: imperialRed,
+        category: "Granite",
+        description:
+          "Vibrant red granite with bold patterns and exceptional strength.",
+      },
+      {
+        id: 35,
+        name: "Ivory Fantasy",
+        image: ivoryFantasy,
+        category: "Granite",
+        description:
+          "Creamy ivory granite with fantasy patterns and luxury appeal.",
+      },
+      {
+        id: 36,
+        name: "Jeerawal White",
+        image: jeerawalWhite,
+        category: "Granite",
+        description:
+          "Pure white granite with minimal veining and clean finish.",
+      },
+      {
+        id: 37,
+        name: "Jhansi Red",
+        image: jhansiRed,
+        category: "Granite",
+        description:
+          "Traditional red granite with rich coloring and natural durability.",
+      },
+      {
+        id: 38,
+        name: "Kashmir White",
+        image: kashmirWhite,
+        category: "Granite",
+        description:
+          "Pure white granite with subtle patterns, ideal for contemporary designs.",
+      },
+      {
+        id: 39,
+        name: "Koliwada Blue",
+        image: koliwadaBlue,
+        category: "Granite",
+        description:
+          "Distinctive blue granite with unique patterns and cool tones.",
+      },
+      {
+        id: 40,
+        name: "Lakha Red",
+        image: lakhaRed,
+        category: "Granite",
+        description:
+          "Deep red granite with consistent coloring and premium quality.",
+      },
+      {
+        id: 41,
+        name: "Magic White",
+        image: magicWhite,
+        category: "Granite",
+        description:
+          "Enchanting white granite with magical patterns and elegant appeal.",
+      },
+      {
+        id: 42,
+        name: "Marigold",
+        image: marigold,
+        category: "Granite",
+        description:
+          "Golden granite with marigold-inspired coloring and natural beauty.",
+      },
+      {
+        id: 43,
+        name: "Merry Wood",
+        image: merryWood,
+        category: "Granite",
+        description:
+          "Wood-like granite with natural grain patterns and warm tones.",
+      },
+      {
+        id: 44,
+        name: "New Imperial Gold",
+        image: newImperialGold,
+        category: "Granite",
+        description:
+          "Premium gold granite with imperial quality and luxury finish.",
+      },
+      {
+        id: 45,
+        name: "P White",
+        image: pWhite,
+        category: "Granite",
+        description:
+          "Pure white granite with consistent color and premium quality.",
+      },
+      {
+        id: 46,
+        name: "Rajasthan Black",
+        image: rajasthanBlack,
+        category: "Granite",
+        description:
+          "Traditional black granite from Rajasthan with authentic heritage.",
+      },
+      {
+        id: 47,
+        name: "Rosy Pink",
+        image: rosyPink,
+        category: "Granite",
+        description:
+          "Soft pink granite with rosy tones and natural variations.",
+      },
+      {
+        id: 48,
+        name: "Royal Cream",
+        image: royalCream,
+        category: "Granite",
+        description:
+          "Luxurious cream granite with royal quality and elegant finish.",
+      },
+      {
+        id: 49,
+        name: "Royal Green",
+        image: royalGreen,
+        category: "Granite",
+        description:
+          "Majestic green granite with royal appeal and natural beauty.",
+      },
+      {
+        id: 50,
+        name: "Sapphire Blue",
+        image: sapphireBlue,
+        category: "Granite",
+        description:
+          "Precious blue granite with sapphire-like appearance and premium quality.",
+      },
+      {
+        id: 51,
+        name: "Sunrise Gold",
+        image: sunriseGold,
+        category: "Granite",
+        description:
+          "Golden granite with sunrise-inspired coloring and warm appeal.",
+      },
+      {
+        id: 52,
+        name: "Tan Brown",
+        image: tanBrown,
+        category: "Granite",
+        description:
+          "Rich brown granite with natural variations and excellent durability.",
+      },
+      { id: 53, name: "Bala Flower", image: balaFlower },
+      { id: 54, name: "Copper Silk", image: copperSilk },
+      { id: 55, name: "Ivory Brown", image: ivoryBrown },
     ],
   },
   {
     name: "Sandstone",
     products: [
-     { id: 53, name: "Beige Sandstone", image: beigeSandstone, category: "Sandstone", description: "Neutral beige sandstone perfect for versatile architectural applications." },
-      { id: 54, name: "Chocolate Sandstone", image: chocolateSandstone, category: "Sandstone", description: "Rich chocolate brown sandstone with smooth finish and earthy appeal." },
-      { id: 55, name: "Grey Sandstone", image: greySandstone, category: "Sandstone", description: "Classic grey sandstone with natural texture and modern appeal." },
-      { id: 56, name: "Gwalior White Mint", image: gwaliorWhiteMint, category: "Sandstone", description: "Premium white sandstone with mint undertones and elegant finish." },
-      { id: 57, name: "Jaisalmer Yellow", image: jaisalmerYellow, category: "Sandstone", description: "Traditional yellow sandstone from Jaisalmer with authentic Rajasthani heritage." },
-      { id: 58, name: "Jodhpur Pink", image: jodhpurPink, category: "Sandstone", description: "Classic pink sandstone from Jodhpur with royal heritage and timeless beauty." },
-      { id: 59, name: "Kota Blue", image: kotaBlue, category: "Sandstone", description: "Distinctive blue sandstone with natural patterns and cool tones." },
-      { id: 60, name: "Merry Gold Sandstone", image: merryGoldSandstone, category: "Sandstone", description: "Golden sandstone with warm tones and natural beauty." },
-      { id: 61, name: "Rainbow Sandstone", image: rainbowSandstone, category: "Sandstone", description: "Multicolored sandstone with beautiful rainbow patterns and natural texture." },
-      { id: 62, name: "Red Sandstone", image: redSandstone, category: "Sandstone", description: "Traditional red sandstone with natural texture and warm appeal." },
-      { id: 63, name: "Teakwood Sandstone", image: teakwoodSandstone, category: "Sandstone", description: "Natural teakwood sandstone with wood-like grain patterns and warm tones." },
+      {
+        id: 53,
+        name: "Beige Sandstone",
+        image: beigeSandstone,
+        category: "Sandstone",
+        description:
+          "Neutral beige sandstone perfect for versatile architectural applications.",
+      },
+      {
+        id: 54,
+        name: "Chocolate Sandstone",
+        image: chocolateSandstone,
+        category: "Sandstone",
+        description:
+          "Rich chocolate brown sandstone with smooth finish and earthy appeal.",
+      },
+      {
+        id: 55,
+        name: "Grey Sandstone",
+        image: greySandstone,
+        category: "Sandstone",
+        description:
+          "Classic grey sandstone with natural texture and modern appeal.",
+      },
+      {
+        id: 56,
+        name: "Gwalior White Mint",
+        image: gwaliorWhiteMint,
+        category: "Sandstone",
+        description:
+          "Premium white sandstone with mint undertones and elegant finish.",
+      },
+      {
+        id: 57,
+        name: "Jaisalmer Yellow",
+        image: jaisalmerYellow,
+        category: "Sandstone",
+        description:
+          "Traditional yellow sandstone from Jaisalmer with authentic Rajasthani heritage.",
+      },
+      {
+        id: 58,
+        name: "Jodhpur Pink",
+        image: jodhpurPink,
+        category: "Sandstone",
+        description:
+          "Classic pink sandstone from Jodhpur with royal heritage and timeless beauty.",
+      },
+      {
+        id: 59,
+        name: "Kota Blue",
+        image: kotaBlue,
+        category: "Sandstone",
+        description:
+          "Distinctive blue sandstone with natural patterns and cool tones.",
+      },
+      {
+        id: 60,
+        name: "Merry Gold Sandstone",
+        image: merryGoldSandstone,
+        category: "Sandstone",
+        description: "Golden sandstone with warm tones and natural beauty.",
+      },
+      {
+        id: 61,
+        name: "Rainbow Sandstone",
+        image: rainbowSandstone,
+        category: "Sandstone",
+        description:
+          "Multicolored sandstone with beautiful rainbow patterns and natural texture.",
+      },
+      {
+        id: 62,
+        name: "Red Sandstone",
+        image: redSandstone,
+        category: "Sandstone",
+        description:
+          "Traditional red sandstone with natural texture and warm appeal.",
+      },
+      {
+        id: 63,
+        name: "Teakwood Sandstone",
+        image: teakwoodSandstone,
+        category: "Sandstone",
+        description:
+          "Natural teakwood sandstone with wood-like grain patterns and warm tones.",
+      },
     ],
   },
 ];
@@ -177,49 +618,75 @@ const applications = [
     title: "Kitchen Countertops",
     image: "/kitchen.jpg",
     alt: "Kitchen Countertops",
-    description: "Transform your kitchen with our premium granite and marble countertops. Heat-resistant, durable, and elegant.",
-    features: ["Heat & scratch resistant", "Easy to clean & maintain", "Available in multiple finishes"]
+    description:
+      "Transform your kitchen with our premium granite and marble countertops. Heat-resistant, durable, and elegant.",
+    features: [
+      "Heat & scratch resistant",
+      "Easy to clean & maintain",
+      "Available in multiple finishes",
+    ],
   },
   {
     id: 2,
     title: "Luxury Flooring",
     image: "/livingrooom.jpg",
     alt: "Flooring",
-    description: "Create stunning floors with our marble and granite tiles. Perfect for both residential and commercial spaces.",
-    features: ["Non-slip surface options", "Water resistant", "Long-lasting durability"]
+    description:
+      "Create stunning floors with our marble and granite tiles. Perfect for both residential and commercial spaces.",
+    features: [
+      "Non-slip surface options",
+      "Water resistant",
+      "Long-lasting durability",
+    ],
   },
   {
     id: 3,
     title: "Wall Cladding",
     image: "/bedroom.jpg",
     alt: "Wall Cladding",
-    description: "Enhance your interiors with natural stone wall cladding. Add texture and elegance to any space.",
-    features: ["Natural texture & patterns", "Moisture resistant", "Easy installation"]
+    description:
+      "Enhance your interiors with natural stone wall cladding. Add texture and elegance to any space.",
+    features: [
+      "Natural texture & patterns",
+      "Moisture resistant",
+      "Easy installation",
+    ],
   },
   {
     id: 4,
     title: "Bathroom Vanities",
     image: "/kitchen2.jpg",
     alt: "Bathroom",
-    description: "Create luxurious bathrooms with our water-resistant marble and granite vanity tops.",
-    features: ["Water & stain resistant", "Hygienic surface", "Custom edge profiles"]
+    description:
+      "Create luxurious bathrooms with our water-resistant marble and granite vanity tops.",
+    features: [
+      "Water & stain resistant",
+      "Hygienic surface",
+      "Custom edge profiles",
+    ],
   },
   {
     id: 5,
     title: "Outdoor Spaces",
     image: "/furniture.jpg",
     alt: "Outdoor",
-    description: "Weather-resistant sandstone and granite for patios, walkways, and outdoor kitchens.",
-    features: ["Weather resistant", "Anti-slip surface", "UV resistant colors"]
+    description:
+      "Weather-resistant sandstone and granite for patios, walkways, and outdoor kitchens.",
+    features: ["Weather resistant", "Anti-slip surface", "UV resistant colors"],
   },
   {
     id: 6,
     title: "Commercial Projects",
     image: "/cozyroom.jpg",
     alt: "Commercial",
-    description: "Premium stones for hotels, offices, and commercial buildings. Durable and impressive.",
-    features: ["High traffic durability", "Low maintenance", "Professional appearance"]
-  }
+    description:
+      "Premium stones for hotels, offices, and commercial buildings. Durable and impressive.",
+    features: [
+      "High traffic durability",
+      "Low maintenance",
+      "Professional appearance",
+    ],
+  },
 ];
 
 export default function OurStones() {
@@ -275,7 +742,8 @@ export default function OurStones() {
               letterSpacing: "0.02em",
             }}
           >
-       Explore our exclusive range of premium stones, from exquisite marbles and timeless limestones to elegant granites
+            Explore our exclusive range of premium stones, from exquisite
+            marbles and timeless limestones to elegant granites
           </p>
         </div>
 
@@ -284,24 +752,15 @@ export default function OurStones() {
           {categories.map((category, index) => (
             <div
               key={category.name}
-              className="bg-white  shadow-sm border border-gray-200 p-8"
+              className="mb-16"
             >
               {/* Category Header */}
-              <div className="flex items-center justify-between mb-4 sm:mb-6">
-                <div>
-                  <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-1">
-                    {category.name}
-                  </h2>
-                  <p className="text-xs sm:text-sm text-gray-500"
-                  style={{ fontFamily: 'Arial, sans-serif', fontWeight: '200',  }}>
-                    {category.products.length} Products Available
-                  </p>
-                </div>
-                <div className="text-right">
-                  <span className="inline-block px-2 sm:px-3 py-1 bg-[#0E5543]/10 text-[#0E5543] text-xs font-medium rounded-full">
-                    Premium Quality
-                  </span>
-                </div>
+              <div className="flex items-center mb-6">
+                <h2 className="text-2xl font-bold text-gray-800"
+                  style={{ fontFamily: "Arial, sans-serif", fontWeight: "400" }}>
+                  {category.name}
+                </h2>
+                <span className="ml-4 text-gray-500 text-sm">⓪</span>
               </div>
 
               {/* Mobile Carousel */}
@@ -320,7 +779,7 @@ export default function OurStones() {
                         key={product.id}
                         className="w-full flex-shrink-0 px-2"
                       >
-                        <div 
+                        <div
                           className="group cursor-pointer"
                           onClick={() => navigate(`/product/${product.id}`)}
                         >
@@ -332,8 +791,13 @@ export default function OurStones() {
                             />
                           </div>
                           <div className="mt-2">
-                            <h3 className="text-xs sm:text-sm font-medium text-gray-800 text-center"
-                              style={{ fontFamily: 'Arial, sans-serif', fontWeight: '200',  }}>
+                            <h3
+                              className="text-xs sm:text-sm font-medium text-gray-800 text-center"
+                              style={{
+                                fontFamily: "Arial, sans-serif",
+                                fontWeight: "200",
+                              }}
+                            >
                               {product.name}
                             </h3>
                           </div>
@@ -346,7 +810,9 @@ export default function OurStones() {
                 {/* Carousel Controls */}
                 <button
                   className="absolute left-2 top-[140px] -translate-y-1/2 text-[#0E5543] p-2 rounded-full shadow-lg hover:text-[#1A7A62]"
-                  onClick={() => prevSlide(category.name, category.products.length)}
+                  onClick={() =>
+                    prevSlide(category.name, category.products.length)
+                  }
                 >
                   <FiChevronLeft size={16} />
                 </button>
@@ -376,119 +842,70 @@ export default function OurStones() {
               </div>
 
               {/* Desktop Carousel */}
-              <div className="hidden sm:block relative mb-6">
-                <div className="overflow-hidden">
-                  <div
-                    className="flex transition-transform duration-300 space-x-4"
-                    style={{
-                      transform: `translateX(-${(currentSlides[category.name] || 0) * 25}%)`,
-                    }}
-                  >
-                    {category.products.map((product) => (
-                      <div 
-                        key={product.id} 
-                        className="flex-shrink-0 w-1/4 group cursor-pointer"
-                        onClick={() => navigate(`/product/${product.id}`)}
-                      >
-                        <div className="relative overflow-hidden bg-gray-100 aspect-square">
-                          <img
-                            src={product.image}
-                            alt={product.name}
-                            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                          />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
-                        </div>
-                        <div className="mt-2">
-                          <h3 className="text-xs sm:text-sm font-medium text-gray-800 text-center group-hover:text-[#0E5543] transition-colors"
-                            style={{ fontFamily: 'Arial, sans-serif', fontWeight: '200' }}>
-                            {product.name}
-                          </h3>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                
-                {/* Desktop Carousel Controls */}
-                <button
-                  className="absolute left-2 top-1/2 -translate-y-1/2 text-[#0E5543] p-2 rounded-full shadow-lg hover:text-[#1A7A62] bg-white"
-                  onClick={() => prevSlide(category.name, category.products.length)}
-                >
-                  <FiChevronLeft size={20} />
-                </button>
-                <button
-                  className="absolute right-2 top-1/2 -translate-y-1/2 text-[#0E5543] p-2 rounded-full shadow-lg hover:text-[#1A7A62] bg-white"
-                  onClick={() => nextSlide(category.name, category.products.length)}
-                >
-                  <FiChevronRight size={20} />
-                </button>
+            <div className="hidden sm:block relative">
+  <div className="flex items-center gap-4">
+    <button
+      className="p-2 border-2 border-gray-300 hover:border-[#0E5543] transition-all"
+      onClick={() => prevSlide(category.name, category.products.length)}
+    >
+      <FiChevronLeft size={20} />
+    </button>
+    
+    <div className="flex-1 overflow-hidden h-48" style={{ maxWidth: 'calc(5 * 140px)' }}>
+      <div 
+        className="flex gap-6 transition-transform duration-300 h-full items-center"
+        style={{
+          transform: `translateX(-${(currentSlides[category.name] || 0) * 140}px)`
+        }}
+      >
+        {category.products.map((product, idx) => {
+          // यहां पोजिशन बदली गई है
+          // ऊपर-नीचे की बजाय अब सभी एक ही लेवल पर होंगे
+          const positions = [70, 15, 70, 15];
+          const offset = positions[idx % 5 ];
+          
+          return (
+            <div
+              key={product.id}
+              className="cursor-pointer group w-32 flex-shrink-0"
+              style={{ marginTop: `${offset}px` }}
+              onClick={() => navigate(`/product/${product.id}`)}
+            >
+              <div className="relative overflow-hidden bg-gray-100 aspect-square border-2 border-gray-300">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
-
-              {/* View All Button */}
-              <div className="border-t border-gray-100 pt-4">
-                <button
-                  className="w-full sm:w-auto text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg transition-all duration-300 text-xs sm:text-sm font-medium hover:scale-105"
-                  style={{ backgroundColor: "#0E5543" }}
-                  onClick={() => navigate(`/${category.name.toLowerCase()}`)}
-                >
-                  View All {category.name} →
-                </button>
-              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+    
+    <button
+      className="p-2 border-2 border-gray-300 hover:border-[#0E5543] transition-all"
+      onClick={() => nextSlide(category.name, category.products.length)}
+    >
+      <FiChevronRight size={20} />
+    </button>
+    
+    <button
+      className="px-6 py-2 border-2 border-[#0E5543] text-[#0E5543] hover:bg-[#0E5543] hover:text-white transition-all duration-300 whitespace-nowrap"
+      onClick={() => navigate(`/${category.name.toLowerCase()}`)}
+    >
+      VIEW ALL
+    </button>
+  </div>
+</div>
             </div>
           ))}
         </div>
 
         {/* How Our Stones Are Used Section */}
-        <div className="mt-20">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-4xl font-bold text-[#0E5543] mb-4"
-             style={{ fontFamily: "Arial, sans-serif", fontWeight: "200" }}>
-              How Our Stones Transform Spaces
-            </h2>
-            <div className="h-0.5 bg-gradient-to-r from-[#0E5543] via-[#F2E1C5] to-[#0E5543] mx-auto mb-6 w-20" />
-            <p className="text-gray-600 max-w-2xl mx-auto"
-             style={{ fontFamily: "Arial, sans-serif", fontWeight: "200" }}>
-              Discover the endless possibilities of our premium stones in real-world applications
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {applications.map((app) => (
-              <div key={app.id} className="bg-white  shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div className="h-48 bg-gray-200 relative overflow-hidden">
-                  <img 
-                    src={app.image} 
-                    alt={app.alt} 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-[#0E5543] mb-3"
-                  style={{ fontFamily: "Arial, sans-serif", fontWeight: "200" }}
-                  >{app.title}</h3>
-                  <p className="text-gray-600 mb-4"
-                  style={{ fontFamily: "Arial, sans-serif", fontWeight: "200" }}
-                  >{app.description}</p>
-                  <ul className="text-sm text-gray-500 space-y-1"
-                  style={{ fontFamily: "Arial, sans-serif", fontWeight: "200" }}>
-                    {app.features.map((feature, index) => (
-                      <li key={index}>• {feature}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA Section */}
-          <div className="text-center mt-12">
-            <button 
-              onClick={() => navigate('/contact')}
-              className="bg-[#0E5543] text-white px-8 py-3 rounded-lg hover:bg-[#1A7A62] transition-colors font-medium"
-            >
-              Get Custom Quote for Your Project
-            </button>
-          </div>
+        <div className="mt-32">
+        <FlautCollection/>
         </div>
       </div>
     </div>

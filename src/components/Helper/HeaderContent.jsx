@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const HeaderContent = ({
-  title = "leading marble exporters \n in India",
+  title = "Leading marble exporters \n in India",
   subtitle = "Turning the finest natural stones into masterpieces of elegance, precision, and lasting sophistication for any space.",
   tagline = "",
   theme = "light" // Added theme prop with default value
