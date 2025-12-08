@@ -7,9 +7,9 @@ export default  function About () {
     return  (
         <>
         {/* <Banner /> */}
-        <div className="bg-gradient-to-r from-[#0E5543] to-[#0E5543] py-16 text-white text-center ">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 mt-10">About Us</h1>
-            <p className="text-xl md:text-2xl opacity-90">Discover Our Journey in Stone Excellence</p>
+        <div className="bg-gradient-to-r from-[#0E5543] to-[#0E5543] py-6 md:py-16 text-white text-center px-4">
+            <p className="text-2xl md:text-4xl font-bold mb-2 md:mb-4 mt-10 sm:mt-12">About Us</p>
+            <p className="text-base md:text-xl opacity-90">Discover Our Journey in Stone Excellence - 25+ Years of Crafting Premium Marble, Granite & Sandstone</p>
         </div>
         <ShowcasingTimeline/>
         {/* <VideoShot/> */}
