@@ -24,6 +24,7 @@ import SaudiArabia from "./components/Exporters/SaudiArabia";
 import Europe from "./components/Exporters/Europe";
 import ProductDetail from "./components/ProductDetail/ProductDetail.jsx";
 import RequestQuote from "./components/Quote/RequestQuote";
+import CarouselDemo from "./components/Demo/CarouselDemo";
 
 function App() {
 
@@ -57,6 +58,7 @@ function App() {
           <Route path="/exporters/qatar" element={<Qatar />} />
           <Route path="/exporters/saudi-arabia" element={<SaudiArabia />} />
           <Route path="/exporters/europe" element={<Europe />} />
+          <Route path="/carousel-demo" element={<CarouselDemo />} />
 
 
 

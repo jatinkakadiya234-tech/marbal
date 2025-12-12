@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 
-// Import sample images
+// Import sample images (keep your existing imports)
 import agariaWhite from "../../assets/marbles/Agaria-White-Marble[1].jpg";
 import aravaliGreen from "../../assets/marbles/Aravali-Green[1].jpg";
 import bidasarBrown from "../../assets/marbles/bidasar brown marble.jpg";
@@ -26,7 +25,7 @@ import millenium from "../../assets/marbles/millenium1-1[1].jpg";
 import whiteAravaliOnyx from "../../assets/marbles/white-aravali-onyx-376129184-b5kzi[1].jpg";
 import marbleImage from "../../assets/marbles/3-41-768x768[1].jpg";
 
-// Import all granite images
+// Import all granite images (keep your existing imports)
 import absoluteBlack from "../../assets/Granites/Absolute Black  Granite Countertops and Tile.jpeg";
 import alaskaGold from "../../assets/Granites/Alaska Gold Granite Supplier in India.jpeg";
 import alaskaWhite from "../../assets/Granites/Alaska White Granite.jpeg";
@@ -66,7 +65,8 @@ import tanBrown from "../../assets/Granites/Tanbrown granite.jpeg";
 import balaFlower from "../../assets/Granites/bala-flower-555x415.jpg";
 import copperSilk from "../../assets/Granites/Best Copper Silk Granite (Pictures & Costs) _ Material ID_ 1132 _ Marble_com.jpeg";
 import ivoryBrown from "../../assets/Granites/Best Ivory Brown Granite (Pictures & Costs) _ Material ID_ 556 _ Marble_com.jpeg";
-// Import all sandstone images
+
+// Import all sandstone images (keep your existing imports)
 import beigeSandstone from "../../assets/Sandstone/Beige Sandstone.jpg";
 import chocolateSandstone from "../../assets/Sandstone/chocolate-sandstone-natural-finish-calibrated-tiles.jpg";
 import greySandstone from "../../assets/Sandstone/Grey Sandstone.jpg";
@@ -78,8 +78,10 @@ import merryGoldSandstone from "../../assets/Sandstone/merigold.jpg";
 import rainbowSandstone from "../../assets/Sandstone/rainbow-1.jpg";
 import redSandstone from "../../assets/Sandstone/Red Sandstone.jpg";
 import teakwoodSandstone from "../../assets/Sandstone/Teakwood-Sandstone.jpg";
-import UpdatedApplicationSection from "../Helper/UpdatedApplicationSection";
 import FlautCollection from "../Helper/FlautCollection";
+import ModernCarousel from "../Helper/ModernCarousel";
+
+import LuxuryCarousel from "../Helper/LuxuryCarousel";
 
 const categories = [
   {
@@ -612,83 +614,6 @@ const categories = [
   },
 ];
 
-const applications = [
-  {
-    id: 1,
-    title: "Kitchen Countertops",
-    image: "/kitchen.jpg",
-    alt: "Kitchen Countertops",
-    description:
-      "Transform your kitchen with our premium granite and marble countertops. Heat-resistant, durable, and elegant.",
-    features: [
-      "Heat & scratch resistant",
-      "Easy to clean & maintain",
-      "Available in multiple finishes",
-    ],
-  },
-  {
-    id: 2,
-    title: "Luxury Flooring",
-    image: "/livingrooom.jpg",
-    alt: "Flooring",
-    description:
-      "Create stunning floors with our marble and granite tiles. Perfect for both residential and commercial spaces.",
-    features: [
-      "Non-slip surface options",
-      "Water resistant",
-      "Long-lasting durability",
-    ],
-  },
-  {
-    id: 3,
-    title: "Wall Cladding",
-    image: "/bedroom.jpg",
-    alt: "Wall Cladding",
-    description:
-      "Enhance your interiors with natural stone wall cladding. Add texture and elegance to any space.",
-    features: [
-      "Natural texture & patterns",
-      "Moisture resistant",
-      "Easy installation",
-    ],
-  },
-  {
-    id: 4,
-    title: "Bathroom Vanities",
-    image: "/kitchen2.jpg",
-    alt: "Bathroom",
-    description:
-      "Create luxurious bathrooms with our water-resistant marble and granite vanity tops.",
-    features: [
-      "Water & stain resistant",
-      "Hygienic surface",
-      "Custom edge profiles",
-    ],
-  },
-  {
-    id: 5,
-    title: "Outdoor Spaces",
-    image: "/furniture.jpg",
-    alt: "Outdoor",
-    description:
-      "Weather-resistant sandstone and granite for patios, walkways, and outdoor kitchens.",
-    features: ["Weather resistant", "Anti-slip surface", "UV resistant colors"],
-  },
-  {
-    id: 6,
-    title: "Commercial Projects",
-    image: "/cozyroom.jpg",
-    alt: "Commercial",
-    description:
-      "Premium stones for hotels, offices, and commercial buildings. Durable and impressive.",
-    features: [
-      "High traffic durability",
-      "Low maintenance",
-      "Professional appearance",
-    ],
-  },
-];
-
 export default function OurStones() {
   const [currentSlides, setCurrentSlides] = useState({});
   const navigate = useNavigate();
@@ -696,9 +621,10 @@ export default function OurStones() {
   const nextSlide = (categoryName, maxSlides) => {
     setCurrentSlides((prev) => {
       const currentSlide = prev[categoryName] || 0;
+      const itemsPerView = 6; // Show 6 items at a time
       return {
         ...prev,
-        [categoryName]: currentSlide >= maxSlides - 1 ? 0 : currentSlide + 1,
+        [categoryName]: currentSlide >= maxSlides - itemsPerView ? 0 : currentSlide + 2,
       };
     });
   };
@@ -706,9 +632,10 @@ export default function OurStones() {
   const prevSlide = (categoryName, maxSlides) => {
     setCurrentSlides((prev) => {
       const currentSlide = prev[categoryName] || 0;
+      const itemsPerView = 6;
       return {
         ...prev,
-        [categoryName]: currentSlide <= 0 ? maxSlides - 1 : currentSlide - 1,
+        [categoryName]: currentSlide <= 0 ? maxSlides - itemsPerView : currentSlide - 2,
       };
     });
   };
@@ -721,11 +648,13 @@ export default function OurStones() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50">
+    
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        {/* Header Section */}
         <div className="relative text-center mb-20">
           <h2
-            className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#0E5543] leading-tight w-full mb-4 mt-10 "
+            className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#0E5543] leading-tight w-full mb-4 mt-10"
             style={{ fontFamily: "Arial, sans-serif", fontWeight: "200" }}
           >
             <span className="relative">Our Premium Stones Collection</span>
@@ -748,23 +677,195 @@ export default function OurStones() {
         </div>
 
         {/* Categories */}
-        <div className="space-y-12">
-          {categories.map((category, index) => (
-            <div
-              key={category.name}
-              className="mb-16"
-            >
+        <div className="space-y-16">
+          {categories.map((category) => (
+            <div key={category.name} className="mb-16">
               {/* Category Header */}
-              <div className="flex items-center mb-6">
-                <h2 className="text-2xl font-bold text-gray-800"
-                  style={{ fontFamily: "Arial, sans-serif", fontWeight: "400" }}>
+              <div className="flex items-center mb-8">
+                <h2
+                  className="text-2xl font-bold text-gray-800"
+                  style={{ fontFamily: "Arial, sans-serif", fontWeight: "400" }}
+                >
                   {category.name}
                 </h2>
                 <span className="ml-4 text-gray-500 text-sm">⓪</span>
               </div>
 
-              {/* Mobile Carousel */}
-              <div className="sm:hidden relative mb-6">
+              {/* Modern 3D Carousel */}
+              <LuxuryCarousel items={category.products} category={category.name} />
+
+              {/* DESKTOP STAGGERED CAROUSEL - Hidden for now */}
+              <div className="hidden">
+                <div className="flex items-start gap-4">
+                  {/* Left Arrow */}
+                  <button
+                    className="p-2 border-2 border-gray-300 hover:border-[#0E5543] hover:bg-[#0E5543] hover:text-white transition-all duration-300 mt-12"
+                    onClick={() => prevSlide(category.name, category.products.length)}
+                  >
+                    <FiChevronLeft size={20} />
+                  </button>
+
+                  {/* Carousel Container */}
+                  <div className="flex-1 overflow-hidden">
+                    <div
+                      className="flex gap-4 transition-transform duration-500"
+                      style={{
+                        transform: `translateX(-${
+                          (currentSlides[category.name] || 0) * 140
+                        }px)`,
+                      }}
+                    >
+                      {category.products.map((product, index) => {
+                        // Create staggered layout
+                        const columnIndex = index % 3;
+                        let marginTop = 0;
+                        
+                        // Apply different margins for each column
+                        if (columnIndex === 0) {
+                          marginTop = 0; // First column - top aligned
+                        } else if (columnIndex === 1) {
+                          marginTop = 30; // Second column - middle
+                        } else {
+                          marginTop = 60; // Third column - bottom
+                        }
+                        
+                        return (
+                          <div
+                            key={product.id}
+                            className="group cursor-pointer flex-shrink-0 w-32"
+                            style={{ marginTop: `${marginTop}px` }}
+                            onClick={() => navigate(`/product/${product.id}`)}
+                          >
+                            {/* Image Container */}
+                            <div className="relative overflow-hidden bg-gray-100 aspect-square border border-gray-200 shadow-sm">
+                              <img
+                                src={product.image}
+                                alt={product.name}
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                              />
+                              {/* Overlay on hover */}
+                              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
+                            </div>
+                            
+                            {/* Product Name */}
+                            <div className="mt-2">
+                              <h3
+                                className="text-xs font-medium text-gray-800 text-center truncate px-1"
+                                style={{
+                                  fontFamily: "Arial, sans-serif",
+                                  fontWeight: "200",
+                                }}
+                              >
+                                {product.name}
+                              </h3>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Right Arrow */}
+                  <button
+                    className="p-2 border-2 border-gray-300 hover:border-[#0E5543] hover:bg-[#0E5543] hover:text-white transition-all duration-300 mt-12"
+                    onClick={() => nextSlide(category.name, category.products.length)}
+                  >
+                    <FiChevronRight size={20} />
+                  </button>
+
+                  {/* View All Button */}
+                  <button
+                    className="px-6 py-2 border-2 border-[#0E5543] text-[#0E5543] hover:bg-[#0E5543] hover:text-white transition-all duration-300 whitespace-nowrap ml-4 mt-12"
+                    onClick={() => navigate(`/${category.name.toLowerCase()}`)}
+                  >
+                    VIEW ALL
+                  </button>
+                </div>
+
+                {/* Dots Indicator */}
+                <div className="flex justify-center mt-8 space-x-2">
+                  {Array.from({
+                    length: Math.ceil(category.products.length / 6),
+                  }).map((_, idx) => (
+                    <button
+                      key={idx}
+                      className={`w-2 h-2 rounded-full transition-colors ${
+                        idx === Math.floor((currentSlides[category.name] || 0) / 6)
+                          ? "bg-[#0E5543]"
+                          : "bg-gray-300"
+                      }`}
+                      onClick={() => goToSlide(category.name, idx * 6)}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* TABLET CAROUSEL - Hidden for now */}
+              <div className="hidden">
+                <div className="flex items-center gap-4">
+                  <button
+                    className="p-2 border-2 border-gray-300 hover:border-[#0E5543] hover:bg-[#0E5543] hover:text-white transition-all duration-300"
+                    onClick={() => prevSlide(category.name, category.products.length)}
+                  >
+                    <FiChevronLeft size={20} />
+                  </button>
+                  
+                  <div className="flex-1 overflow-hidden">
+                    <div
+                      className="flex gap-4 transition-transform duration-300"
+                      style={{
+                        transform: `translateX(-${
+                          (currentSlides[category.name] || 0) * 140
+                        }px)`,
+                      }}
+                    >
+                      {category.products.map((product) => (
+                        <div
+                          key={product.id}
+                          className="group cursor-pointer flex-shrink-0 w-32"
+                          onClick={() => navigate(`/product/${product.id}`)}
+                        >
+                          <div className="relative overflow-hidden bg-gray-100 aspect-square">
+                            <img
+                              src={product.image}
+                              alt={product.name}
+                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                            />
+                          </div>
+                          <div className="mt-2">
+                            <h3
+                              className="text-xs font-medium text-gray-800 text-center truncate"
+                              style={{
+                                fontFamily: "Arial, sans-serif",
+                                fontWeight: "200",
+                              }}
+                            >
+                              {product.name}
+                            </h3>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <button
+                    className="p-2 border-2 border-gray-300 hover:border-[#0E5543] hover:bg-[#0E5543] hover:text-white transition-all duration-300"
+                    onClick={() => nextSlide(category.name, category.products.length)}
+                  >
+                    <FiChevronRight size={20} />
+                  </button>
+                  
+                  <button
+                    className="px-6 py-2 border-2 border-[#0E5543] text-[#0E5543] hover:bg-[#0E5543] hover:text-white transition-all duration-300 whitespace-nowrap ml-4"
+                    onClick={() => navigate(`/${category.name.toLowerCase()}`)}
+                  >
+                    VIEW ALL
+                  </button>
+                </div>
+              </div>
+
+              {/* MOBILE CAROUSEL - Hidden for now */}
+              <div className="hidden">
                 <div className="overflow-hidden">
                   <div
                     className="flex transition-transform duration-300"
@@ -775,15 +876,12 @@ export default function OurStones() {
                     }}
                   >
                     {category.products.map((product) => (
-                      <div
-                        key={product.id}
-                        className="w-full flex-shrink-0 px-2"
-                      >
+                      <div key={product.id} className="w-full flex-shrink-0 px-2">
                         <div
                           className="group cursor-pointer"
                           onClick={() => navigate(`/product/${product.id}`)}
                         >
-                          <div className="relative overflow-hidden  bg-gray-100 aspect-square">
+                          <div className="relative overflow-hidden bg-gray-100 aspect-square">
                             <img
                               src={product.image}
                               alt={product.name}
@@ -807,25 +905,21 @@ export default function OurStones() {
                   </div>
                 </div>
 
-                {/* Carousel Controls */}
+                {/* Mobile Controls */}
                 <button
-                  className="absolute left-2 top-[140px] -translate-y-1/2 text-[#0E5543] p-2 rounded-full shadow-lg hover:text-[#1A7A62]"
-                  onClick={() =>
-                    prevSlide(category.name, category.products.length)
-                  }
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 text-[#0E5543] p-2 rounded-full shadow-lg hover:bg-white"
+                  onClick={() => prevSlide(category.name, category.products.length)}
                 >
                   <FiChevronLeft size={16} />
                 </button>
                 <button
-                  className="absolute right-2 top-[140px] -translate-y-1/2 text-[#0E5543] p-2 rounded-full shadow-lg hover:text-[#1A7A62]"
-                  onClick={() =>
-                    nextSlide(category.name, category.products.length)
-                  }
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 text-[#0E5543] p-2 rounded-full shadow-lg hover:bg-white"
+                  onClick={() => nextSlide(category.name, category.products.length)}
                 >
                   <FiChevronRight size={16} />
                 </button>
 
-                {/* Dots */}
+                {/* Mobile Dots */}
                 <div className="flex justify-center mt-4 space-x-2">
                   {category.products.map((_, idx) => (
                     <button
@@ -840,72 +934,13 @@ export default function OurStones() {
                   ))}
                 </div>
               </div>
-
-              {/* Desktop Carousel */}
-            <div className="hidden sm:block relative">
-  <div className="flex items-center gap-4">
-    <button
-      className="p-2 border-2 border-gray-300 hover:border-[#0E5543] transition-all"
-      onClick={() => prevSlide(category.name, category.products.length)}
-    >
-      <FiChevronLeft size={20} />
-    </button>
-    
-    <div className="flex-1 overflow-hidden h-48" style={{ maxWidth: 'calc(5 * 140px)' }}>
-      <div 
-        className="flex gap-6 transition-transform duration-300 h-full items-center"
-        style={{
-          transform: `translateX(-${(currentSlides[category.name] || 0) * 140}px)`
-        }}
-      >
-        {category.products.map((product, idx) => {
-          // यहां पोजिशन बदली गई है
-          // ऊपर-नीचे की बजाय अब सभी एक ही लेवल पर होंगे
-          const positions = [70, 15, 70, 15];
-          const offset = positions[idx % 5 ];
-          
-          return (
-            <div
-              key={product.id}
-              className="cursor-pointer group w-32 flex-shrink-0"
-              style={{ marginTop: `${offset}px` }}
-              onClick={() => navigate(`/product/${product.id}`)}
-            >
-              <div className="relative overflow-hidden bg-gray-100 aspect-square border-2 border-gray-300">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-    
-    <button
-      className="p-2 border-2 border-gray-300 hover:border-[#0E5543] transition-all"
-      onClick={() => nextSlide(category.name, category.products.length)}
-    >
-      <FiChevronRight size={20} />
-    </button>
-    
-    <button
-      className="px-6 py-2 border-2 border-[#0E5543] text-[#0E5543] hover:bg-[#0E5543] hover:text-white transition-all duration-300 whitespace-nowrap"
-      onClick={() => navigate(`/${category.name.toLowerCase()}`)}
-    >
-      VIEW ALL
-    </button>
-  </div>
-</div>
             </div>
           ))}
         </div>
 
         {/* How Our Stones Are Used Section */}
         <div className="mt-32">
-        <FlautCollection/>
+          <FlautCollection />
         </div>
       </div>
     </div>
