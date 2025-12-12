@@ -692,7 +692,8 @@ export default function OurStones() {
               </div>
 
               {/* Modern 3D Carousel */}
-              <LuxuryCarousel items={category.products} category={category.name} />
+              <ModernCarousel items={category.products} category={category.name} />
+              {/* <LuxuryCarousel items={category.products} category={category.name} /> */}
 
               {/* DESKTOP STAGGERED CAROUSEL - Hidden for now */}
               <div className="hidden">
