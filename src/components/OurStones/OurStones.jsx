@@ -683,12 +683,13 @@ export default function OurStones() {
               {/* Category Header */}
               <div className="flex items-center mb-8">
                 <h2
-                  className="text-2xl font-bold text-gray-800"
+                  className="text-3xl font-bold text-[#0E5543]"
                   style={{ fontFamily: "Arial, sans-serif", fontWeight: "400" }}
                 >
                   {category.name}
                 </h2>
-                <span className="ml-4 text-gray-500 text-sm">⓪</span>
+                
+                <span className="ml-4 text-[#0E5543] text-sm">⓪</span>
               </div>
 
               {/* Modern 3D Carousel */}
