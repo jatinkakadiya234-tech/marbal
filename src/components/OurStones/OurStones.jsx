@@ -81,7 +81,6 @@ import teakwoodSandstone from "../../assets/Sandstone/Teakwood-Sandstone.jpg";
 import FlautCollection from "../Helper/FlautCollection";
 import ModernCarousel from "../Helper/ModernCarousel";
 
-import LuxuryCarousel from "../Helper/LuxuryCarousel";
 
 const categories = [
   {
@@ -624,7 +623,8 @@ export default function OurStones() {
       const itemsPerView = 6; // Show 6 items at a time
       return {
         ...prev,
-        [categoryName]: currentSlide >= maxSlides - itemsPerView ? 0 : currentSlide + 2,
+        [categoryName]:
+          currentSlide >= maxSlides - itemsPerView ? 0 : currentSlide + 2,
       };
     });
   };
@@ -635,7 +635,8 @@ export default function OurStones() {
       const itemsPerView = 6;
       return {
         ...prev,
-        [categoryName]: currentSlide <= 0 ? maxSlides - itemsPerView : currentSlide - 2,
+        [categoryName]:
+          currentSlide <= 0 ? maxSlides - itemsPerView : currentSlide - 2,
       };
     });
   };
@@ -649,7 +650,6 @@ export default function OurStones() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-    
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Header Section */}
         <div className="relative text-center mb-20">
@@ -692,16 +692,32 @@ export default function OurStones() {
               </div>
 
               {/* Modern 3D Carousel */}
-              <ModernCarousel items={category.products} category={category.name} />
-              {/* <LuxuryCarousel items={category.products} category={category.name} /> */}
+              <ModernCarousel
+                items={category.products}
+                category={category.name}
+              />
+              
+              {/* View All Button */}
+              <div className="flex justify-center mt-8">
+                <button
+                style={{backgroundColor:"#0E5543"}}
+                  onClick={() => navigate(`/${category.name.toLowerCase()}`)}
+                 className="bg-[#0E5543] mt-5 text-white px-6 sm:px-8 py-3  font-semibold hover:bg-gray-100 hover:scale-105 transition-all duration-300"
+                >
+                  View All {category.name}
+                </button>
+              </div>
 
               {/* DESKTOP STAGGERED CAROUSEL - Hidden for now */}
               <div className="hidden">
+              
                 <div className="flex items-start gap-4">
                   {/* Left Arrow */}
                   <button
                     className="p-2 border-2 border-gray-300 hover:border-[#0E5543] hover:bg-[#0E5543] hover:text-white transition-all duration-300 mt-12"
-                    onClick={() => prevSlide(category.name, category.products.length)}
+                    onClick={() =>
+                      prevSlide(category.name, category.products.length)
+                    }
                   >
                     <FiChevronLeft size={20} />
                   </button>
@@ -720,7 +736,7 @@ export default function OurStones() {
                         // Create staggered layout
                         const columnIndex = index % 3;
                         let marginTop = 0;
-                        
+
                         // Apply different margins for each column
                         if (columnIndex === 0) {
                           marginTop = 0; // First column - top aligned
@@ -729,7 +745,7 @@ export default function OurStones() {
                         } else {
                           marginTop = 60; // Third column - bottom
                         }
-                        
+
                         return (
                           <div
                             key={product.id}
@@ -747,7 +763,7 @@ export default function OurStones() {
                               {/* Overlay on hover */}
                               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
                             </div>
-                            
+
                             {/* Product Name */}
                             <div className="mt-2">
                               <h3
@@ -769,7 +785,9 @@ export default function OurStones() {
                   {/* Right Arrow */}
                   <button
                     className="p-2 border-2 border-gray-300 hover:border-[#0E5543] hover:bg-[#0E5543] hover:text-white transition-all duration-300 mt-12"
-                    onClick={() => nextSlide(category.name, category.products.length)}
+                    onClick={() =>
+                      nextSlide(category.name, category.products.length)
+                    }
                   >
                     <FiChevronRight size={20} />
                   </button>
@@ -791,7 +809,8 @@ export default function OurStones() {
                     <button
                       key={idx}
                       className={`w-2 h-2 rounded-full transition-colors ${
-                        idx === Math.floor((currentSlides[category.name] || 0) / 6)
+                        idx ===
+                        Math.floor((currentSlides[category.name] || 0) / 6)
                           ? "bg-[#0E5543]"
                           : "bg-gray-300"
                       }`}
@@ -806,11 +825,13 @@ export default function OurStones() {
                 <div className="flex items-center gap-4">
                   <button
                     className="p-2 border-2 border-gray-300 hover:border-[#0E5543] hover:bg-[#0E5543] hover:text-white transition-all duration-300"
-                    onClick={() => prevSlide(category.name, category.products.length)}
+                    onClick={() =>
+                      prevSlide(category.name, category.products.length)
+                    }
                   >
                     <FiChevronLeft size={20} />
                   </button>
-                  
+
                   <div className="flex-1 overflow-hidden">
                     <div
                       className="flex gap-4 transition-transform duration-300"
@@ -848,14 +869,16 @@ export default function OurStones() {
                       ))}
                     </div>
                   </div>
-                  
+
                   <button
                     className="p-2 border-2 border-gray-300 hover:border-[#0E5543] hover:bg-[#0E5543] hover:text-white transition-all duration-300"
-                    onClick={() => nextSlide(category.name, category.products.length)}
+                    onClick={() =>
+                      nextSlide(category.name, category.products.length)
+                    }
                   >
                     <FiChevronRight size={20} />
                   </button>
-                  
+
                   <button
                     className="px-6 py-2 border-2 border-[#0E5543] text-[#0E5543] hover:bg-[#0E5543] hover:text-white transition-all duration-300 whitespace-nowrap ml-4"
                     onClick={() => navigate(`/${category.name.toLowerCase()}`)}
@@ -877,7 +900,10 @@ export default function OurStones() {
                     }}
                   >
                     {category.products.map((product) => (
-                      <div key={product.id} className="w-full flex-shrink-0 px-2">
+                      <div
+                        key={product.id}
+                        className="w-full flex-shrink-0 px-2"
+                      >
                         <div
                           className="group cursor-pointer"
                           onClick={() => navigate(`/product/${product.id}`)}
@@ -909,13 +935,17 @@ export default function OurStones() {
                 {/* Mobile Controls */}
                 <button
                   className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 text-[#0E5543] p-2 rounded-full shadow-lg hover:bg-white"
-                  onClick={() => prevSlide(category.name, category.products.length)}
+                  onClick={() =>
+                    prevSlide(category.name, category.products.length)
+                  }
                 >
                   <FiChevronLeft size={16} />
                 </button>
                 <button
                   className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 text-[#0E5543] p-2 rounded-full shadow-lg hover:bg-white"
-                  onClick={() => nextSlide(category.name, category.products.length)}
+                  onClick={() =>
+                    nextSlide(category.name, category.products.length)
+                  }
                 >
                   <FiChevronRight size={16} />
                 </button>

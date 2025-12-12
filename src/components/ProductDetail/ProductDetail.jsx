@@ -435,7 +435,7 @@ const ProductDetail = () => {
 
           {/* Mobile Carousel */}
           <div className="sm:hidden">
-            <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide">
+            {/* <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide">
               {[
                 {
                   src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
@@ -479,7 +479,7 @@ const ProductDetail = () => {
                   />
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Desktop Grid */}
