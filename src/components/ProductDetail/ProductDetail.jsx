@@ -424,10 +424,19 @@ const ProductDetail = () => {
         </div>
 
         <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-8 mb-8 sm:mb-16">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">
+          {/* <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">
             How <span className="text-[#0E5543]">Marble Looks</span> in Real
             Life
+          </h2> */}
+          <h2
+            className="text-2xl text-center sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#0E5543] leading-tight w-full mb-4 mt-10"
+            style={{ fontFamily: "Arial, sans-serif", fontWeight: "200" }}
+          >
+            <span className="relative">How Marble Looks in Real Life</span>
           </h2>
+
+          {/* Decorative line */}
+          <div className="h-0.5 bg-gradient-to-r from-[#0E5543] via-[#F2E1C5] to-[#0E5543] mx-auto mb-4 sm:mb-5 md:mb-6 lg:mb-8 w-20" />
           <p className="text-gray-600 text-center mb-6 sm:mb-8 max-w-3xl mx-auto text-sm sm:text-base">
             See how our premium marble appears in actual installations and
             real-world applications
@@ -484,11 +493,11 @@ const ProductDetail = () => {
 
           {/* Desktop Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
-            <div className="relative group overflow-hidden">
+            <div className="relative group overflow-hidden ">
               <img
                 src="https://a.storyblok.com/f/150360/1100x825/5d46235b7a/whitesands_bath_01.jpg/m/"
-                alt="Neolith Gallery"
-                className="w-full h-64 lg:h-80 object-cover"
+                alt="Neolith Gallery "
+                className="w-full h-64 lg:h-80 object-cover  hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute bottom-4 left-4">
                 <div className="text-white text-xs tracking-[0.2em] uppercase font-light">
@@ -501,7 +510,7 @@ const ProductDetail = () => {
               <img
                 src="https://goodhomes.wwmindia.com/content/2023/jun/bathroom-thumbnail1686988646.jpg"
                 alt="Kitchen & Bathroom"
-                className="w-full h-64 lg:h-80 object-cover"
+                className="w-full h-64 lg:h-80 object-cover hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute bottom-4 left-4">
                 <div className="text-white text-xs tracking-[0.2em] uppercase font-light">
@@ -514,7 +523,7 @@ const ProductDetail = () => {
               <img
                 src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Skin"
-                className="w-full h-64 lg:h-80 object-cover"
+                className="w-full h-64 lg:h-80 object-cover hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute bottom-4 left-4">
                 <div className="text-white text-xs tracking-[0.2em] uppercase font-light">
@@ -527,7 +536,7 @@ const ProductDetail = () => {
               <img
                 src="https://cdn.mohd.it/cache/image/width=800,format=webp/media/catalog/product/s/k/skyline-marble-lavabo-glass-design-4.jpg"
                 alt="Skyline"
-                className="w-full h-64 lg:h-80 object-cover"
+                className="w-full h-64 lg:h-80 object-cover hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute bottom-4 left-4">
                 <div className="text-white text-xs tracking-[0.2em] uppercase font-light">
@@ -542,16 +551,16 @@ const ProductDetail = () => {
               <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">
                 Natural Beauty & Characteristics
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 text-xs sm:text-sm text-gray-600">
-                <div className="flex items-center justify-center md:justify-start space-x-2">
+              <div className="grid grid-cols-1   md:grid-cols-3 gap-3 sm:gap-4 text-xs sm:text-sm text-gray-600">
+                <div className="flex items-center  justify-center md:justify-center space-x-2">
                   <div className="w-2 h-2 bg-[#0E5543] rounded-full flex-shrink-0"></div>
                   <span>Unique veining patterns in every slab</span>
                 </div>
-                <div className="flex items-center justify-center md:justify-start space-x-2">
+                <div className="flex items-center justify-center md:justify-center space-x-2">
                   <div className="w-2 h-2 bg-[#0E5543] rounded-full flex-shrink-0"></div>
                   <span>Natural color variations and depth</span>
                 </div>
-                <div className="flex items-center justify-center md:justify-start space-x-2">
+                <div className="flex items-center justify-center md:justify-center space-x-2">
                   <div className="w-2 h-2 bg-[#0E5543] rounded-full flex-shrink-0"></div>
                   <span>Polished surface with mirror-like finish</span>
                 </div>

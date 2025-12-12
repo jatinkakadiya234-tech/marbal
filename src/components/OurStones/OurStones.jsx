@@ -689,7 +689,7 @@ export default function OurStones() {
                   {category.name}
                 </h2>
                 
-                <span className="ml-4 text-[#0E5543] text-sm">⓪</span>
+               
               </div>
 
               {/* Modern 3D Carousel */}

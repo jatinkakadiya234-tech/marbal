@@ -5,56 +5,62 @@ const FlautCollection = () => {
   const collections = [
     {
       mainProduct: {
-        name: "Kitchen Countertops",
-        description: "Transform your kitchen with our premium granite and marble countertops. Heat-resistant, durable, and elegant.",
+        name: "Black Galaxy Granite",
+        description: "Premium black granite with golden speckles, perfect for kitchen countertops. Heat-resistant, durable, and elegant.",
         origin: "Heat & scratch resistant",
         type: "Easy to clean & maintain",
         category: "Available in multiple finishes",
-        image: "/kitchen.jpg"
+        image: "/kitchen.jpg",
+        productId: 30
       },
       secondaryProduct: {
-        name: "Luxury Flooring",
-        description: "Create stunning floors with our marble and granite tiles. Perfect for both residential and commercial spaces.",
+        name: "Agaria White Marble",
+        description: "Elegant white marble with natural patterns, ideal for luxury flooring in residential and commercial spaces.",
         origin: "Non-slip surface options",
         type: "Water resistant",
         category: "Long-lasting durability",
-        image: "/livingrooom.jpg"
+        image: "/livingrooom.jpg",
+        productId: 1
       }
     },
     {
       mainProduct: {
-        name: "Wall Cladding",
-        description: "Enhance your interiors with natural stone wall cladding. Add texture and elegance to any space.",
+        name: "Jaisalmer Yellow Sandstone",
+        description: "Traditional yellow sandstone perfect for wall cladding. Add natural texture and elegance to any space.",
         origin: "Natural texture & patterns",
         type: "Moisture resistant",
         category: "Easy installation",
-        image: "/bedroom.jpg"
+        image: "/bedroom.jpg",
+        productId: 69
       },
       secondaryProduct: {
-        name: "Bathroom Vanities",
-        description: "Create luxurious bathrooms with our water-resistant marble and granite vanity tops.",
+        name: "Kashmir White Granite",
+        description: "Pure white granite ideal for bathroom vanities. Water-resistant and hygienic surface for luxury bathrooms.",
         origin: "Water & stain resistant",
         type: "Hygienic surface",
         category: "Custom edge profiles",
-        image: "/kitchen2.jpg"
+        image: "/kitchen2.jpg",
+        productId: 47
       }
     },
     {
       mainProduct: {
-        name: "Outdoor Spaces",
-        description: "Weather-resistant sandstone and granite for patios, walkways, and outdoor kitchens.",
+        name: "Tan Brown Granite",
+        description: "Weather-resistant granite perfect for outdoor spaces, patios, walkways, and outdoor kitchens.",
         origin: "Weather resistant",
         type: "Anti-slip surface",
         category: "UV resistant colors",
-        image: "/furniture.jpg"
+        image: "/furniture.jpg",
+        productId: 61
       },
       secondaryProduct: {
-        name: "Commercial Projects",
-        description: "Premium stones for hotels, offices, and commercial buildings. Durable and impressive.",
+        name: "Imperial Red Granite",
+        description: "Premium red granite for commercial projects, hotels, offices, and buildings. Durable and impressive.",
         origin: "High traffic durability",
         type: "Low maintenance",
         category: "Professional appearance",
-        image: "/cozyroom.jpg"
+        image: "/cozyroom.jpg",
+        productId: 43
       }
     }
   ];
